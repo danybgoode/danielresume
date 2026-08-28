@@ -1,0 +1,113 @@
+---
+title: Daniel Vásquez — Product Executive
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">{{ resume.eyebrow }}</p>
+    <h1 class="name">{{ resume.name }}</h1>
+    <p class="role">{{ resume.role }}</p>
+    <p class="disciplines">{{ resume.disciplines }}</p>
+    <div class="meta">
+      <a href="{{ resume.links.website.url }}">{{ resume.links.website.label }}</a>
+      <a href="mailto:{{ resume.email }}">{{ resume.email }}</a>
+      <a href="{{ resume.links.linkedin.url }}">LinkedIn</a>
+      <span>{{ resume.location }}</span>
+    </div>
+  </header>
+
+  <section class="stats-section">
+    <div class="stats">
+      {% for stat in resume.stats %}
+      <div class="stat"><p class="figure">{{ stat.figure }}</p><p class="label">{{ stat.label }}</p></div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="snapshot">
+    <p class="eyebrow">Executive Snapshot</p>
+    {% for para in resume.snapshot %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </section>
+
+  <section class="experience">
+    <p class="eyebrow">Selected Experience</p>
+    {% for role in resume.experience.featured %}
+    <div class="role-card">
+      <div class="role-head">
+        <span class="role-company">{{ role.company }}</span>
+        <span class="role-dates">{{ role.dates }}</span>
+      </div>
+      <p class="role-title">{{ role.title }}</p>
+      <p class="role-chain">
+        {% for step in role.chain %}<span class="step">{{ step }}</span>{% if not loop.last %}<span class="sep">→</span>{% endif %}{% endfor %}
+      </p>
+      {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
+    </div>
+    {% endfor %}
+
+    <div class="earlier">
+      <p class="eyebrow" style="margin-bottom:0;">Earlier Career</p>
+      {% for role in resume.experience.earlier %}
+      <div class="earlier-row">
+        <div>
+          <div class="co">{{ role.company }}</div>
+          <div class="role">{{ role.title }}</div>
+        </div>
+        <div class="dates">{{ role.dates }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="skills">
+    <p class="eyebrow">Capabilities</p>
+    <ul class="tag-list">
+      {% for skill in resume.skills %}<li>{{ skill }}</li>{% endfor %}
+    </ul>
+  </section>
+
+  <section class="timeline">
+    <p class="eyebrow">Timeline</p>
+    <ul class="timeline-list">
+      {% for entry in resume.timeline %}
+      <li class="timeline-row{% if entry.current %} current{% endif %}">
+        <span class="timeline-year">{{ entry.year }}</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">{{ entry.role }}</span><br><span class="t-sub">{{ entry.sub }}</span></span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="philosophy">
+    <p class="eyebrow">Approach</p>
+    <blockquote>{{ resume.philosophy }}</blockquote>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:{{ resume.email }}">Email</a>
+      <a href="{{ resume.links.linkedin.url }}">LinkedIn</a>
+      <a href="{{ resume.links.website.url }}">Website</a>
+      <a href="/resume.md" class="print-hide">View Markdown</a>
+    </div>
+    <p class="footer-note">Last updated automatically from source · Built with Eleventy, zero client-side JavaScript</p>
+  </footer>
+
+</div>
+</body>
+</html>

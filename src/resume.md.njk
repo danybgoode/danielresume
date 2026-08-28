@@ -1,0 +1,31 @@
+---
+permalink: "resume.md"
+eleventyExcludeFromCollections: true
+---
+# {{ resume.name | safe }}
+**{{ resume.role | safe }}** — {{ resume.location | safe }}
+{{ resume.links.website.url }} · {{ resume.email }} · {{ resume.links.linkedin.url }}
+
+## Executive Snapshot
+{% for para in resume.snapshot %}
+{{ para | safe }}
+{% endfor %}
+## Selected Experience
+{% for role in resume.experience.featured %}
+### {{ role.company | safe }} — {{ role.dates | safe }}
+*{{ role.title | safe }}*
+{% for step in role.chain %}- {{ step | safe }}
+{% endfor %}{% if role.tags %}{{ role.tags | safe }}
+{% endif %}
+{% endfor %}
+## Earlier Career
+{% for role in resume.experience.earlier %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
+{% endfor %}
+## Capabilities
+{{ resume.skills | join(", ") | safe }}
+
+## Timeline
+{% for entry in resume.timeline %}- {{ entry.year | safe }} — {{ entry.role | safe }} ({{ entry.sub | safe }})
+{% endfor %}
+## Approach
+{{ resume.philosophy | safe }}

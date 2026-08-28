@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniel Vásquez — Product Executive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --bg: #FAFAF8;
+    --text: #1E1E1E;
+    --muted: #6B6B6B;
+    --faint: #999691;
+    --border: #E4E1DB;
+    --accent: #111111;
+
+    --serif: "Literata", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --measure: 640px;
+    --gutter: clamp(24px, 6vw, 64px);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--text); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .page {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: clamp(48px, 9vw, 96px) var(--gutter) 80px;
+  }
+
+  /* ---------- Eyebrow / section labels ---------- */
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 20px;
+  }
+
+  .rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  /* ---------- Masthead ---------- */
+
+  .masthead {
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+
+  .masthead .name {
+    font-size: clamp(2.1rem, 5.4vw, 2.85rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin: 0 0 6px;
+  }
+
+  .masthead .role {
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    margin: 0 0 4px;
+  }
+
+  .masthead .disciplines {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0 0 20px;
+  }
+
+  .masthead .meta {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    color: var(--muted);
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  .masthead .meta a { text-decoration: none; border-bottom: 1px solid var(--border); }
+  .masthead .meta a:hover { border-color: var(--text); }
+
+  /* ---------- Stat grid ---------- */
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 0;
+  }
+
+  .stat {
+    padding-right: 20px;
+    border-left: 1px solid var(--border);
+    padding-left: 20px;
+  }
+
+  .stat:nth-child(3n+1) { border-left: none; padding-left: 0; }
+
+  .stat .figure {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 0 0 6px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat .label {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ---------- Snapshot ---------- */
+
+  .snapshot p {
+    margin: 0 0 18px;
+    font-size: 1.08rem;
+  }
+
+  .snapshot p:last-child { margin-bottom: 0; }
+
+  /* ---------- Experience ---------- */
+
+  .role-card {
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .role-card:first-of-type { border-top: none; padding-top: 0; }
+
+  .role-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .role-company {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  .role-dates {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .role-title {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .role-chain {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0 0 12px;
+  }
+
+  .role-chain .step { }
+  .role-chain .sep { color: var(--faint); padding: 0 8px; }
+
+  .role-tags {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .earlier {
+    margin-top: 8px;
+  }
+
+  .earlier-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+
+  .earlier-row .co { }
+  .earlier-row .role { color: var(--muted); font-family: var(--sans); font-size: 0.82rem; grid-column: 1; }
+  .earlier-row .dates { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); grid-row: 1; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Skills ---------- */
+
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-family: var(--sans);
+  }
+
+  .tag-list li {
+    font-size: 0.82rem;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    color: var(--text);
+  }
+
+  /* ---------- Timeline ---------- */
+
+  .timeline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .timeline-list::before {
+    content: "";
+    position: absolute;
+    left: 52px;
+    top: 6px;
+    bottom: 6px;
+    border-left: 1px solid var(--border);
+  }
+
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 40px 24px 1fr;
+    align-items: baseline;
+    gap: 0 0;
+    padding: 12px 0;
+  }
+
+  .timeline-year {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .timeline-dot {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .timeline-dot::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: block;
+  }
+
+  .timeline-row.current .timeline-dot::before { background: var(--accent); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--border); }
+
+  .timeline-entry .t-role { font-size: 0.98rem; }
+  .timeline-entry .t-sub { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); }
+
+  /* ---------- Philosophy ---------- */
+
+  .philosophy blockquote {
+    margin: 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.65;
+    padding: 0;
+  }
+
+  /* ---------- Footer ---------- */
+
+  footer {
+    padding-top: 40px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 0;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    padding-right: 16px;
+    margin-right: 16px;
+    border-right: 1px solid var(--border);
+  }
+
+  .footer-links a:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+  .footer-links a:hover { color: var(--muted); }
+
+  .footer-note {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    color: var(--faint);
+    margin-top: 18px;
+  }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 560px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(3n+1) { border-left: 1px solid var(--border); padding-left: 20px; }
+    .stat:nth-child(2n+1) { border-left: none; padding-left: 0; }
+    .role-head { flex-direction: column; align-items: flex-start; gap: 2px; }
+    .timeline-list::before { left: 44px; }
+    .timeline-row { grid-template-columns: 34px 20px 1fr; }
+  }
+
+  /* ---------- Print ---------- */
+
+  @media print {
+    @page { size: A4; margin: 22mm; }
+    body { background: #fff; font-size: 11.5pt; }
+    .page { max-width: none; padding: 0; }
+    a { text-decoration: none; color: var(--text); }
+    section { break-inside: avoid; padding: 28px 0; }
+    .role-card { break-inside: avoid; }
+    .footer-links a[href="#"] { display: none; }
+    .print-hide { display: none; }
+  }
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <p class="eyebrow">Product Executive</p>
+    <h1 class="name">Daniel Vásquez</h1>
+    <p class="role">Software · Product · Finance</p>
+    <p class="disciplines">Global product leadership across startups, agencies, and Fortune&nbsp;100 organizations</p>
+    <div class="meta">
+      <a href="https://miyagisanchez.com">miyagisanchez.com</a>
+      <a href="mailto:danielvp1987@gmail.com">danielvp1987@gmail.com</a>
+      <a href="https://www.linkedin.com/in/danielvasquezparedes">LinkedIn</a>
+      <span>Aberdeen, Scotland</span>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats">
+      <div class="stat"><p class="figure">15+</p><p class="label">Years in product leadership</p></div>
+      <div class="stat"><p class="figure">$70M+</p><p class="label">Budget owned, AB InBev</p></div>
+      <div class="stat"><p class="figure">70+</p><p class="label">People led, cross-functional</p></div>
+      <div class="stat"><p class="figure">4</p><p class="label">Ventures founded</p></div>
+      <div class="stat"><p class="figure">MSc</p><p class="label">Finance, Univ. of Aberdeen</p></div>
+      <div class="stat"><p class="figure">MX / UK</p><p class="label">Mexico City &amp; Aberdeen</p></div>
+    </div>
+  </section>
+
+  <!-- EXECUTIVE SNAPSHOT -->
+  <section class="snapshot">
+    <p class="eyebrow">Executive Snapshot</p>
+    <p>Product executive building software, marketplaces, and AI-enabled organizations across fifteen years of global leadership.</p>
+    <p>Experience spans zero-to-one startups, high-stakes M&amp;A integrations, and Fortune 100 scale — most recently directing a seventy-person team and a $70M+ portfolio at AB InBev.</p>
+    <p>Focused on turning ambiguity into systems that scale, bridging technical architecture, financial strategy, and organizational design.</p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <p class="eyebrow">Selected Experience</p>
+
+    <div class="role-card">
+      <div class="role-head">
+        <span class="role-company">AB InBev</span>
+        <span class="role-dates">2020 — 2023</span>
+      </div>
+      <p class="role-title">Global Principal Product Manager · Largest brewer worldwide</p>
+      <p class="role-chain">
+        <span class="step">Built global rewards ecosystem</span><span class="sep">→</span>
+        <span class="step">70+ person product &amp; engineering team</span><span class="sep">→</span>
+        <span class="step">$70M+ portfolio</span>
+      </p>
+      <p class="role-tags">Central America · Europe · South Korea — campaigns activated at the Super Bowl and The Voice Brasil</p>
+    </div>
+
+    <div class="role-card">
+      <div class="role-head">
+        <span class="role-company">Linio Group</span>
+        <span class="role-dates">2019 — 2020</span>
+      </div>
+      <p class="role-title">Senior Product Manager · Mexico City</p>
+      <p class="role-chain">
+        <span class="step">Falabella acquisition</span><span class="sep">→</span>
+        <span class="step">Directed post-M&amp;A systems integration</span><span class="sep">→</span>
+        <span class="step">Unified multi-platform infrastructure</span>
+      </p>
+    </div>
+
+    <div class="role-card">
+      <div class="role-head">
+        <span class="role-company">Bicimensajero.com</span>
+        <span class="role-dates">2014 — 2016</span>
+      </div>
+      <p class="role-title">Founder · On-demand bike logistics, pre-AI landscape</p>
+      <p class="role-chain">
+        <span class="step">Built the stack solo</span><span class="sep">→</span>
+        <span class="step">Scaled to 100+ messengers</span><span class="sep">→</span>
+        <span class="step">Negotiated acquisition exit</span>
+      </p>
+    </div>
+
+    <div class="role-card">
+      <div class="role-head">
+        <span class="role-company">CTIN</span>
+        <span class="role-dates">2012 — 2014</span>
+      </div>
+      <p class="role-title">Team Lead · Centro de Tecnología e Innovación</p>
+      <p class="role-chain">
+        <span class="step">Bitcoin remittance platform</span><span class="sep">→</span>
+        <span class="step">5,000+ active users</span><span class="sep">→</span>
+        <span class="step">América Móvil / Grupo Carso proposal</span>
+      </p>
+      <p class="role-tags">Second team: gamified coding-literacy comic platform for children</p>
+    </div>
+
+    <div class="earlier">
+      <p class="eyebrow" style="margin-bottom:0;">Earlier Career</p>
+      <div class="earlier-row">
+        <div>
+          <div class="co">Wagento Commerce</div>
+          <div class="role">Head of Customer Experience &amp; Project Management</div>
+        </div>
+        <div class="dates">2017 — 2019</div>
+      </div>
+      <div class="earlier-row">
+        <div>
+          <div class="co">MagmaLabs</div>
+          <div class="role">Product Manager</div>
+        </div>
+        <div class="dates">2016 — 2017</div>
+      </div>
+      <div class="earlier-row">
+        <div>
+          <div class="co">Pokapok.mx</div>
+          <div class="role">Founder — corporate wellness platform</div>
+        </div>
+        <div class="dates">2016 — 2017</div>
+      </div>
+      <div class="earlier-row">
+        <div>
+          <div class="co">Independent Consultancy</div>
+          <div class="role">Founder &amp; Principal Consultant — Magento, CRM, agile coaching</div>
+        </div>
+        <div class="dates">2012 — 2015</div>
+      </div>
+      <div class="earlier-row">
+        <div>
+          <div class="co">Blue Label Telecoms</div>
+          <div class="role">Business Analyst</div>
+        </div>
+        <div class="dates">2010 — 2011</div>
+      </div>
+      <div class="earlier-row">
+        <div>
+          <div class="co">CompuCom · Accenture</div>
+          <div class="role">Tech Support · Customer Service</div>
+        </div>
+        <div class="dates">2006 — 2010</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills">
+    <p class="eyebrow">Capabilities</p>
+    <ul class="tag-list">
+      <li>Leadership</li>
+      <li>Product Strategy</li>
+      <li>Organization Design</li>
+      <li>Platform Thinking</li>
+      <li>Marketplace Design</li>
+      <li>AI Workflows</li>
+      <li>Financial Modeling</li>
+      <li>System Architecture</li>
+      <li>M&amp;A Integration</li>
+      <li>Agile Coaching</li>
+      <li>E-commerce (Magento)</li>
+      <li>DevOps</li>
+    </ul>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <p class="eyebrow">Timeline</p>
+    <ul class="timeline-list">
+      <li class="timeline-row current">
+        <span class="timeline-year">2026</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">Founder, Miyagi Sánchez</span><br><span class="t-sub">current — placeholder, confirm dates</span></span>
+      </li>
+      <li class="timeline-row">
+        <span class="timeline-year">2024</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">MSc Finance</span><br><span class="t-sub">University of Aberdeen</span></span>
+      </li>
+      <li class="timeline-row">
+        <span class="timeline-year">2020</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">AB InBev</span><br><span class="t-sub">Global Group → Principal Product Manager</span></span>
+      </li>
+      <li class="timeline-row">
+        <span class="timeline-year">2019</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">Linio Group</span><br><span class="t-sub">Senior Product Manager</span></span>
+      </li>
+      <li class="timeline-row">
+        <span class="timeline-year">2016</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">MagmaLabs</span><br><span class="t-sub">Product Manager</span></span>
+      </li>
+      <li class="timeline-row">
+        <span class="timeline-year">2014</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">Founder, Bicimensajero</span><br><span class="t-sub">On-demand logistics</span></span>
+      </li>
+      <li class="timeline-row">
+        <span class="timeline-year">2012</span>
+        <span class="timeline-dot"></span>
+        <span class="timeline-entry"><span class="t-role">CTIN</span><br><span class="t-sub">Team Lead</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philosophy">
+    <p class="eyebrow">Approach</p>
+    <blockquote>
+      I build products by combining business strategy, technical architecture, and organizational design. Execution matters, but judgment determines what's worth building in the first place — the hardest part of any product isn't the code, it's deciding what deserves to exist.
+    </blockquote>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="mailto:danielvp1987@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/danielvasquezparedes">LinkedIn</a>
+      <a href="https://miyagisanchez.com">Website</a>
+      <a href="#" class="print-hide">Download PDF</a>
+      <a href="#" class="print-hide">View Markdown</a>
+    </div>
+    <p class="footer-note">Last updated automatically from source · Built with Eleventy, zero client-side JavaScript</p>
+  </footer>
+
+</div>
+</body>
+</html>
