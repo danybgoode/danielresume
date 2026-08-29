@@ -1,7 +1,7 @@
 export default {
   eyebrow: "Product Executive",
   name: "Daniel Vásquez",
-  role: "Software · Product · Finance",
+  role: "Product · Software · Finance",
   disciplines: "Global product leadership across startups, agencies, and Fortune 100 organizations",
   email: "danielvp1987@gmail.com",
   location: "Aberdeen, Scotland",
