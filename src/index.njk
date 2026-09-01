@@ -92,6 +92,9 @@ title: Daniel Vásquez — Product Executive
         <button id="viewToggleBtn" class="action-btn toggle-view-btn" type="button" aria-label="Toggle TL;DR quick summary view">
           <span id="viewToggleText">TL;DR</span>
         </button>
+        <button id="downloadPdfBtn" class="action-btn" type="button" aria-label="Download resume as PDF">
+          <span id="downloadPdfText">PDF</span>
+        </button>
         <div class="lang-switch" role="group" aria-label="Language selector">
           <button type="button" class="lang-btn is-active" id="langBtnEn" data-lang="en" aria-pressed="true">EN</button>
           <span class="lang-divider">/</span>
@@ -281,6 +284,7 @@ title: Daniel Vásquez — Product Executive
       // Update Eyebrow and Button
       document.getElementById('eyebrowText').textContent = data.eyebrow;
       document.getElementById('viewToggleText').textContent = currentView === 'tldr' ? data.ui.classicButton : data.ui.tldrButton;
+      document.getElementById('downloadPdfText').textContent = data.ui.downloadPdf;
 
       // Update Masthead
       document.getElementById('profileRole').textContent = data.role;
@@ -414,6 +418,27 @@ title: Daniel Vásquez — Product Executive
     // Event Listeners
     document.getElementById('viewToggleBtn').addEventListener('click', function() {
       setView(currentView === 'classic' ? 'tldr' : 'classic');
+    });
+
+    document.getElementById('downloadPdfBtn').addEventListener('click', function() {
+      // Save current view state
+      const wasTldr = currentView === 'tldr';
+      // Force classic view to be visible for printing
+      const classicEl = document.getElementById('classicView');
+      const tldrEl = document.getElementById('tldrView');
+      classicEl.classList.remove('view-hidden');
+      tldrEl.classList.add('view-hidden');
+      // Use setTimeout to ensure the DOM update before print
+      setTimeout(() => {
+        window.print();
+        // Restore view state after print dialog closes
+        setTimeout(() => {
+          if (wasTldr) {
+            classicEl.classList.add('view-hidden');
+            tldrEl.classList.remove('view-hidden');
+          }
+        }, 100);
+      }, 50);
     });
 
     document.getElementById('tldrBackBtn').addEventListener('click', function(e) {

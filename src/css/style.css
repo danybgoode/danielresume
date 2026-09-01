@@ -273,12 +273,126 @@ footer { padding-top: 40px; margin-top: auto; }
 }
 
 @media print {
-  @page { size: A4; margin: 22mm; }
-  body { background: #fff; font-size: 11.5pt; }
-  .page { max-width: none; padding: 0; }
-  a { text-decoration: none; color: var(--text); }
-  section { break-inside: avoid; padding: 28px 0; }
-  .role-card { break-inside: avoid; }
-  .print-hide, .header-actions, #tldrView { display: none !important; }
+  @page { size: A4; margin: 20mm; }
+  body { 
+    background: #fff; 
+    color: #1E1E1E; 
+    font-family: "Literata", "Times New Roman", Times, serif;
+    font-size: 10.5pt; 
+    line-height: 1.45;
+  }
+  .page { max-width: none; padding: 0; margin: 0; }
+  a { text-decoration: none; color: #1E1E1E; }
+  
+  /* Hide everything except what we want in PDF */
+  .print-hide, .header-actions, #tldrView, .masthead-top,
+  .stats-section, .earlier, .skills, .timeline, .philosophy, footer { 
+    display: none !important; 
+  }
   #classicView { display: block !important; }
+
+  /* Header - Name and Email in a single row */
+  .masthead { padding-bottom: 14px; }
+  .masthead-main { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .masthead-main .name { 
+    font-size: 22pt; 
+    font-weight: 500; 
+    letter-spacing: -0.01em; 
+    margin: 0; 
+    padding: 0;
+  }
+  /* Hide role and disciplines */
+  .masthead-main .role, .masthead-main .disciplines { display: none !important; }
+  /* Style meta to show only email on the right */
+  .masthead-main .meta { 
+    display: block !important;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+  .masthead-main .meta a#metaEmail { 
+    display: inline !important; 
+    color: #1E1E1E; 
+    text-decoration: none;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 9.5pt;
+  }
+  .masthead-main .meta a:not(#metaEmail), .masthead-main .meta span { display: none !important; }
+
+  /* Snapshot */
+  .snapshot { margin-top: 20px; }
+  .snapshot .eyebrow { 
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 7.5pt; 
+    font-weight: 600; 
+    letter-spacing: 0.1em; 
+    text-transform: uppercase; 
+    color: #6B6B6B; 
+    margin: 0 0 10px;
+  }
+  .snapshot p { 
+    margin: 0 0 12px; 
+    font-size: 10.5pt; 
+    line-height: 1.5;
+  }
+  .snapshot p:last-child { margin-bottom: 0; }
+
+  /* Experience */
+  .experience { margin-top: 24px; }
+  .experience .eyebrow { 
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 7.5pt; 
+    font-weight: 600; 
+    letter-spacing: 0.1em; 
+    text-transform: uppercase; 
+    color: #6B6B6B; 
+    margin: 0 0 10px;
+  }
+  .role-card { 
+    padding: 12px 0; 
+    border-top: 1px solid #E4E1DB;
+  }
+  .role-card:first-of-type { border-top: none; padding-top: 0; }
+  .role-head { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline; 
+    gap: 16px; 
+    flex-wrap: wrap; 
+    margin-bottom: 3px;
+  }
+  .role-company { 
+    font-size: 11pt; 
+    font-weight: 500;
+  }
+  .role-dates { 
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 8pt; 
+    color: #6B6B6B; 
+    white-space: nowrap;
+  }
+  .role-title { 
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 8.5pt; 
+    color: #6B6B6B; 
+    margin-bottom: 6px;
+  }
+  .role-chain { 
+    font-size: 9.5pt; 
+    line-height: 1.6; 
+    margin: 0 0 8px;
+  }
+  .role-chain .sep { color: #999691; padding: 0 8px; }
+  .role-tags { 
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 7.5pt; 
+    color: #6B6B6B;
+  }
 }
