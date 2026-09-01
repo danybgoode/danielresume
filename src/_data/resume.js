@@ -10,6 +10,7 @@ const resumeData = {
       website: { url: "https://miyagisanchez.com", label: "miyagisanchez.com" },
       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
       goldenfrijoles: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
+      github: { url: "https://github.com/danybgoode", label: "GitHub" },
     },
     stats: [
       { figure: "15+", label: "Years in product leadership" },
@@ -23,9 +24,21 @@ const resumeData = {
       "Product executive building software, marketplaces, and AI-enabled organizations across fifteen years of global leadership.",
       "Experience spans zero-to-one startups, high-stakes M&A integrations, and Fortune 100 scale — most recently directing a seventy-person team and a $70M+ portfolio at AB InBev.",
       "Focused on turning ambiguity into systems that scale, bridging technical architecture, financial strategy, and organizational design.",
+      "Outside corporate roles, I design the operating systems product teams use to build with AI agents — dobby-foundation, my own plugin-based framework, turns planning, QA, and reporting into agent-run routines with human approval gates.",
     ],
     experience: {
       featured: [
+        {
+          company: "miyagisanchez.com / goldenfrijoles.com",
+          dates: "2025 — Present",
+          title: "Founder · Local marketplace & agentic Product Management platform",
+          chain: [
+            "Designed dobby-foundation — a portable operating system for AI-agent product work",
+            "Automated the full delivery loop: planning, QA gates, PR review, PMO reporting",
+            "Multi-agent orchestration across Claude Code and Cowork, with human-approval gates by design",
+          ],
+          tags: "Open-sourced as a reusable plugin marketplace · CI-enforced portability guards · reproducible skill packaging",
+        },
         {
           company: "AB InBev",
           dates: "2020 — 2023",
@@ -68,7 +81,7 @@ const resumeData = {
       "Organization Design",
       "Platform Thinking",
       "Marketplace Design",
-      "AI Workflows",
+      "Multi-Agent Orchestration",
       "Financial Modeling",
       "System Architecture",
       "M&A Integration",
@@ -92,7 +105,8 @@ const resumeData = {
       bullets: [
         "Learned to code in high school while managing a local computer shop",
         "Started as tech support, then software development to later settle in Product Management",
-        "Everything I build now is with AI agents",
+        "Everything I build now runs through agents, from planning to shipping",
+        "Built <a href=\"https://github.com/danybgoode/dobby-foundation\" target=\"_blank\" rel=\"noopener noreferrer\">dobby-foundation</a>, my own open-sourced operating system for AI-agent product work — plugins for planning, QA, and reporting, reused across every project I build",
         "Currently building <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, my idea of how to do Product Management with agents",
       ],
       punchline: "Have a knack for taking things from 0 to the whole world.",
@@ -110,7 +124,7 @@ const resumeData = {
       approachTitle: "Approach",
       tldrButton: "TL;DR",
       classicButton: "Classic",
-      lastUpdated: "Last updated August 2026",
+      lastUpdated: "Last updated September 2026",
       viewMarkdown: "View Markdown",
       markdownUrl: "/resume.md",
       emailLabel: "Email",
@@ -129,6 +143,7 @@ const resumeData = {
       website: { url: "https://miyagisanchez.com", label: "miyagisanchez.com" },
       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
       goldenfrijoles: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
+      github: { url: "https://github.com/danybgoode", label: "GitHub" },
     },
     stats: [
       { figure: "15+", label: "Años en liderazgo de producto" },
@@ -142,9 +157,21 @@ const resumeData = {
       "Ejecutivo de producto creando software, marketplaces y organizaciones impulsadas por IA a lo largo de quince años de liderazgo global.",
       "Trayectoria que abarca startups desde cero, integraciones estratégicas de M&A y escala Fortune 100 — recientemente dirigiendo un equipo de 70 personas y un portafolio de más de $70M USD en AB InBev.",
       "Enfocado en transformar la ambigüedad en sistemas escalables, articulando arquitectura técnica, estrategia financiera y diseño organizacional.",
+      "Fuera de roles corporativos, diseño los sistemas operativos que los equipos de producto usan para construir con agentes de IA — dobby-foundation, mi propio framework basado en plugins, convierte la planeación, el QA y el reporteo en rutinas ejecutadas por agentes con puntos de aprobación humana.",
     ],
     experience: {
       featured: [
+        {
+          company: "miyagisanchez.com / goldenfrijoles.com",
+          dates: "2025 — Presente",
+          title: "Fundador · Marketplace local y plataforma de Product Management con agentes",
+          chain: [
+            "Diseño de dobby-foundation — un sistema operativo portátil para trabajo de producto con agentes de IA",
+            "Automatización del ciclo completo de entrega: planeación, gates de QA, revisión de PRs, reporteo tipo PMO",
+            "Orquestación multi-agente entre Claude Code y Cowork, con puntos de aprobación humana por diseño",
+          ],
+          tags: "Código abierto como marketplace de plugins reutilizable · guardas de portabilidad exigidas por CI · empaquetado reproducible de skills",
+        },
         {
           company: "AB InBev",
           dates: "2020 — 2023",
@@ -187,7 +214,7 @@ const resumeData = {
       "Diseño Organizacional",
       "Pensamiento de Plataforma",
       "Diseño de Marketplaces",
-      "Flujos de Trabajo con IA",
+      "Orquestación Multi-Agente",
       "Modelado Financiero",
       "Arquitectura de Sistemas",
       "Integración M&A",
@@ -211,7 +238,8 @@ const resumeData = {
       bullets: [
         "Aprendí a programar en la prepa mientras administraba una tienda local de computación",
         "Empecé en soporte técnico, pasé a desarrollo de software y después me consolidé en Product Management",
-        "Todo lo que construyo ahora es con agentes de IA",
+        "Todo lo que construyo ahora pasa por agentes, desde la planeación hasta el lanzamiento",
+        "Construí <a href=\"https://github.com/danybgoode/dobby-foundation\" target=\"_blank\" rel=\"noopener noreferrer\">dobby-foundation</a>, mi propio sistema operativo de código abierto para trabajo de producto con agentes de IA — plugins para planeación, QA y reporteo, reutilizados en cada proyecto que construyo",
         "Actualmente construyendo <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, mi idea de cómo hacer Product Management con agentes",
       ],
       punchline: "Tengo facilidad para llevar las cosas de 0 a todo el mundo.",
@@ -229,7 +257,7 @@ const resumeData = {
       approachTitle: "Enfoque",
       tldrButton: "TL;DR",
       classicButton: "Clásico",
-      lastUpdated: "Última actualización: Agosto 2026",
+      lastUpdated: "Última actualización: Septiembre 2026",
       viewMarkdown: "Ver Markdown",
       markdownUrl: "/resume-es.md",
       emailLabel: "Correo",
@@ -245,4 +273,3 @@ export default {
   en: resumeData.en,
   es: resumeData.es,
 };
-
