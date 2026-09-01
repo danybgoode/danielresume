@@ -5,9 +5,8 @@ const resumeData = {
     role: "Product · Software · Finance",
     disciplines: "Global product leadership across startups, agencies, and Fortune 100 organizations",
     email: "danielvp1987@gmail.com",
-    location: "Mexico City",
     links: {
-      website: { url: "https://miyagisanchez.com", label: "miyagisanchez.com" },
+      website: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
       goldenfrijoles: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
       github: { url: "https://github.com/danybgoode", label: "GitHub" },
@@ -138,9 +137,8 @@ const resumeData = {
     role: "Producto · Software · Finanzas",
     disciplines: "Liderazgo global de producto en startups, agencias y empresas Fortune 100",
     email: "danielvp1987@gmail.com",
-    location: "Ciudad de México",
     links: {
-      website: { url: "https://miyagisanchez.com", label: "miyagisanchez.com" },
+      website: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
       goldenfrijoles: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
       github: { url: "https://github.com/danybgoode", label: "GitHub" },
