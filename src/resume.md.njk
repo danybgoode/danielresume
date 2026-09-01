@@ -1,31 +1,42 @@
 ---
-permalink: "resume.md"
+pagination:
+  data: languages
+  size: 1
+  alias: item
+languages:
+  - lang: en
+    permalink: resume.md
+  - lang: es
+    permalink: resume-es.md
+permalink: "{{ item.permalink }}"
 eleventyExcludeFromCollections: true
 ---
-# {{ resume.name | safe }}
-**{{ resume.role | safe }}** — {{ resume.location | safe }}
-{{ resume.links.website.url }} · {{ resume.email }} · {{ resume.links.linkedin.url }}
+{% set data = resume[item.lang] %}
+# {{ data.name | safe }}
+**{{ data.role | safe }}** — {{ data.location | safe }}
+{{ data.links.website.url }} · {{ data.email }} · {{ data.links.linkedin.url }}
 
-## Executive Snapshot
-{% for para in resume.snapshot %}
+## {{ data.ui.snapshotTitle | safe }}
+{% for para in data.snapshot %}
 {{ para | safe }}
 {% endfor %}
-## Selected Experience
-{% for role in resume.experience.featured %}
+## {{ data.ui.experienceTitle | safe }}
+{% for role in data.experience.featured %}
 ### {{ role.company | safe }} — {{ role.dates | safe }}
 *{{ role.title | safe }}*
 {% for step in role.chain %}- {{ step | safe }}
 {% endfor %}{% if role.tags %}{{ role.tags | safe }}
 {% endif %}
 {% endfor %}
-## Earlier Career
-{% for role in resume.experience.earlier %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
+## {{ data.ui.earlierTitle | safe }}
+{% for role in data.experience.earlier %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
 {% endfor %}
-## Capabilities
-{{ resume.skills | join(", ") | safe }}
+## {{ data.ui.capabilitiesTitle | safe }}
+{{ data.skills | join(", ") | safe }}
 
-## Timeline
-{% for entry in resume.timeline %}- {{ entry.year | safe }} — {{ entry.role | safe }} ({{ entry.sub | safe }})
+## {{ data.ui.timelineTitle | safe }}
+{% for entry in data.timeline %}- {{ entry.year | safe }} — {{ entry.role | safe }} ({{ entry.sub | safe }})
 {% endfor %}
-## Approach
-{{ resume.philosophy | safe }}
+## {{ data.ui.approachTitle | safe }}
+{{ data.philosophy | safe }}
+

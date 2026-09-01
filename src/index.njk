@@ -6,108 +6,446 @@ title: Daniel Vásquez — Product Executive
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ title }}</title>
+<title>{{ resume.en.ui.pageTitle }}</title>
+<meta name="description" content="{{ resume.en.ui.metaDesc }}">
+<meta name="author" content="Daniel Vásquez">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FAFAF8">
+
+<!-- Favicons -->
+<link rel="icon" type="image/png" href="/cauldron.png">
+<link rel="shortcut icon" href="/cauldron.png">
+<link rel="apple-touch-icon" href="/cauldron.png">
+
+<!-- Canonical & Multilingual -->
+<link rel="canonical" href="https://miyagisanchez.com/">
+<link rel="alternate" hreflang="en" href="https://miyagisanchez.com/">
+<link rel="alternate" hreflang="es" href="https://miyagisanchez.com/">
+<link rel="alternate" hreflang="x-default" href="https://miyagisanchez.com/">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Daniel Vásquez — Product Executive">
+<meta property="og:description" content="Product executive building software, marketplaces, and AI-enabled organizations across 15 years of global leadership.">
+<meta property="og:url" content="https://miyagisanchez.com/">
+<meta property="og:site_name" content="Daniel Vásquez Résumé">
+<meta property="og:image" content="https://miyagisanchez.com/cauldron.png">
+<meta property="og:image:alt" content="Daniel Vásquez — Product Executive">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Daniel Vásquez — Product Executive">
+<meta name="twitter:description" content="Product executive building software, marketplaces, and AI-enabled organizations across 15 years of global leadership.">
+<meta name="twitter:image" content="https://miyagisanchez.com/cauldron.png">
+<meta name="twitter:image:alt" content="Daniel Vásquez — Product Executive">
+
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Daniel Vásquez",
+  "jobTitle": "Product Executive",
+  "description": "Product executive building software, marketplaces, and AI-enabled organizations across fifteen years of global leadership.",
+  "url": "https://miyagisanchez.com",
+  "email": "mailto:danielvp1987@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mexico City",
+    "addressCountry": "MX"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University of Aberdeen"
+  },
+  "knowsAbout": [
+    "Product Management",
+    "AI Workflows & Agents",
+    "System Architecture",
+    "Marketplace Design",
+    "Financial Modeling",
+    "M&A Integration",
+    "E-commerce"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/danielvasquezparedes",
+    "https://goldenfrijoles.com",
+    "https://miyagisanchez.com"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <div class="page">
 
   <header class="masthead">
-    <p class="eyebrow">{{ resume.eyebrow }}</p>
-    <h1 class="name">{{ resume.name }}</h1>
-    <p class="role">{{ resume.role }}</p>
-    <p class="disciplines">{{ resume.disciplines }}</p>
-    <div class="meta">
-      <a href="{{ resume.links.website.url }}">{{ resume.links.website.label }}</a>
-      <a href="mailto:{{ resume.email }}">{{ resume.email }}</a>
-      <a href="{{ resume.links.linkedin.url }}">LinkedIn</a>
-      <span>{{ resume.location }}</span>
+    <div class="masthead-top">
+      <p class="eyebrow" id="eyebrowText">{{ resume.en.eyebrow }}</p>
+      <div class="header-actions">
+        <button id="viewToggleBtn" class="action-btn toggle-view-btn" type="button" aria-label="Toggle TL;DR quick summary view">
+          <span id="viewToggleText">TL;DR</span>
+        </button>
+        <div class="lang-switch" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn is-active" id="langBtnEn" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-divider">/</span>
+          <button type="button" class="lang-btn" id="langBtnEs" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
     </div>
   </header>
 
-  <section class="stats-section">
-    <div class="stats">
-      {% for stat in resume.stats %}
-      <div class="stat"><p class="figure">{{ stat.figure }}</p><p class="label">{{ stat.label }}</p></div>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="snapshot">
-    <p class="eyebrow">Executive Snapshot</p>
-    {% for para in resume.snapshot %}
-    <p>{{ para }}</p>
-    {% endfor %}
-  </section>
-
-  <section class="experience">
-    <p class="eyebrow">Selected Experience</p>
-    {% for role in resume.experience.featured %}
-    <div class="role-card">
-      <div class="role-head">
-        <span class="role-company">{{ role.company }}</span>
-        <span class="role-dates">{{ role.dates }}</span>
+  <!-- CLASSIC RÉSUMÉ VIEW -->
+  <main id="classicView" class="view-container">
+    <div class="masthead-main">
+      <h1 class="name" id="profileName">{{ resume.en.name }}</h1>
+      <p class="role" id="profileRole">{{ resume.en.role }}</p>
+      <p class="disciplines" id="profileDisciplines">{{ resume.en.disciplines }}</p>
+      <div class="meta">
+        <a href="{{ resume.en.links.website.url }}" id="metaWebsite">{{ resume.en.links.website.label }}</a>
+        <a href="mailto:{{ resume.en.email }}" id="metaEmail">{{ resume.en.email }}</a>
+        <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span id="metaLocation">{{ resume.en.location }}</span>
       </div>
-      <p class="role-title">{{ role.title }}</p>
-      <p class="role-chain">
-        {% for step in role.chain %}<span class="step">{{ step }}</span>{% if not loop.last %}<span class="sep">→</span>{% endif %}{% endfor %}
-      </p>
-      {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
     </div>
-    {% endfor %}
 
-    <div class="earlier">
-      <p class="eyebrow" style="margin-bottom:0;">Earlier Career</p>
-      {% for role in resume.experience.earlier %}
-      <div class="earlier-row">
-        <div>
-          <div class="co">{{ role.company }}</div>
-          <div class="role">{{ role.title }}</div>
+    <section class="stats-section">
+      <div class="stats" id="statsContainer">
+        {% for stat in resume.en.stats %}
+        <div class="stat"><p class="figure">{{ stat.figure }}</p><p class="label">{{ stat.label }}</p></div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="snapshot">
+      <p class="eyebrow" id="snapshotTitle">{{ resume.en.ui.snapshotTitle }}</p>
+      <div id="snapshotContent">
+        {% for para in resume.en.snapshot %}
+        <p>{{ para }}</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="experience">
+      <p class="eyebrow" id="experienceTitle">{{ resume.en.ui.experienceTitle }}</p>
+      <div id="featuredRoles">
+        {% for role in resume.en.experience.featured %}
+        <div class="role-card">
+          <div class="role-head">
+            <span class="role-company">{{ role.company }}</span>
+            <span class="role-dates">{{ role.dates }}</span>
+          </div>
+          <p class="role-title">{{ role.title }}</p>
+          <p class="role-chain">
+            {% for step in role.chain %}<span class="step">{{ step }}</span>{% if not loop.last %}<span class="sep">→</span>{% endif %}{% endfor %}
+          </p>
+          {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
         </div>
-        <div class="dates">{{ role.dates }}</div>
+        {% endfor %}
       </div>
-      {% endfor %}
+
+      <div class="earlier">
+        <p class="eyebrow" id="earlierTitle" style="margin-bottom:0;">{{ resume.en.ui.earlierTitle }}</p>
+        <div id="earlierRoles">
+          {% for role in resume.en.experience.earlier %}
+          <div class="earlier-row">
+            <div>
+              <div class="co">{{ role.company }}</div>
+              <div class="role">{{ role.title }}</div>
+            </div>
+            <div class="dates">{{ role.dates }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="skills">
+      <p class="eyebrow" id="capabilitiesTitle">{{ resume.en.ui.capabilitiesTitle }}</p>
+      <ul class="tag-list" id="skillsList">
+        {% for skill in resume.en.skills %}<li>{{ skill }}</li>{% endfor %}
+      </ul>
+    </section>
+
+    <section class="timeline">
+      <p class="eyebrow" id="timelineTitle">{{ resume.en.ui.timelineTitle }}</p>
+      <ul class="timeline-list" id="timelineList">
+        {% for entry in resume.en.timeline %}
+        <li class="timeline-row{% if entry.current %} current{% endif %}">
+          <span class="timeline-year">{{ entry.year }}</span>
+          <span class="timeline-dot"></span>
+          <span class="timeline-entry"><span class="t-role">{{ entry.role }}</span><br><span class="t-sub">{{ entry.sub }}</span></span>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    <section class="philosophy">
+      <p class="eyebrow" id="approachTitle">{{ resume.en.ui.approachTitle }}</p>
+      <blockquote id="philosophyQuote">{{ resume.en.philosophy }}</blockquote>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a href="mailto:{{ resume.en.email }}" id="footerEmail">{{ resume.en.ui.emailLabel }}</a>
+        <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer" id="footerLinkedin">{{ resume.en.ui.linkedinLabel }}</a>
+        <a href="{{ resume.en.links.website.url }}" id="footerWebsite">{{ resume.en.ui.websiteLabel }}</a>
+        <a href="/resume.md" class="print-hide" id="footerMarkdown">{{ resume.en.ui.viewMarkdown }}</a>
+      </div>
+      <p class="footer-note" id="footerNote">{{ resume.en.ui.lastUpdated }}</p>
+    </footer>
+  </main>
+
+  <!-- TL;DR FULL-SCREEN VIEW -->
+  <main id="tldrView" class="view-container tldr-view view-hidden">
+    <div class="tldr-content">
+      <h1 class="tldr-greeting" id="tldrGreeting">{{ resume.en.tldr.greeting }}</h1>
+      <p class="tldr-intro" id="tldrIntro">{{ resume.en.tldr.intro }}</p>
+      <ul class="tldr-list" id="tldrBullets">
+        {% for bullet in resume.en.tldr.bullets %}
+        <li>{{ bullet | safe }}</li>
+        {% endfor %}
+      </ul>
+      <p class="tldr-punchline" id="tldrPunchline">{{ resume.en.tldr.punchline }}</p>
+      <p class="tldr-contact" id="tldrContact">
+        <span id="tldrContactLabel">{{ resume.en.tldr.contactText }}</span>
+        <a href="mailto:{{ resume.en.tldr.contactEmail }}" id="tldrContactEmail">{{ resume.en.tldr.contactEmail }}</a>
+      </p>
     </div>
-  </section>
-
-  <section class="skills">
-    <p class="eyebrow">Capabilities</p>
-    <ul class="tag-list">
-      {% for skill in resume.skills %}<li>{{ skill }}</li>{% endfor %}
-    </ul>
-  </section>
-
-  <section class="timeline">
-    <p class="eyebrow">Timeline</p>
-    <ul class="timeline-list">
-      {% for entry in resume.timeline %}
-      <li class="timeline-row{% if entry.current %} current{% endif %}">
-        <span class="timeline-year">{{ entry.year }}</span>
-        <span class="timeline-dot"></span>
-        <span class="timeline-entry"><span class="t-role">{{ entry.role }}</span><br><span class="t-sub">{{ entry.sub }}</span></span>
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
-
-  <section class="philosophy">
-    <p class="eyebrow">Approach</p>
-    <blockquote>{{ resume.philosophy }}</blockquote>
-  </section>
-
-  <footer>
-    <div class="footer-links">
-      <a href="mailto:{{ resume.email }}">Email</a>
-      <a href="{{ resume.links.linkedin.url }}">LinkedIn</a>
-      <a href="{{ resume.links.website.url }}">Website</a>
-      <a href="/resume.md" class="print-hide">View Markdown</a>
+    <div class="tldr-footer-nav">
+      <a href="#" id="tldrBackBtn" class="action-link">← Classic</a>
+      <div class="footer-links">
+        <a href="mailto:{{ resume.en.email }}" id="tldrFooterEmail">{{ resume.en.ui.emailLabel }}</a>
+        <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="{{ resume.en.links.website.url }}">{{ resume.en.links.website.label }}</a>
+      </div>
     </div>
-    <p class="footer-note">Last updated August 2026</p>
-  </footer>
+  </main>
 
 </div>
+
+<script>
+  (function() {
+    const RESUME_DATA = {{ resume | dump | safe }};
+    let currentLang = 'en';
+    let currentView = 'classic';
+
+    function detectInitialLang() {
+      try {
+        const stored = localStorage.getItem('resume_lang');
+        if (stored === 'es' || stored === 'en') return stored;
+        const navLang = (navigator.language || (navigator.languages && navigator.languages[0]) || '').toLowerCase();
+        if (navLang.startsWith('es')) return 'es';
+      } catch (e) {}
+      return 'en';
+    }
+
+    function setLanguage(lang) {
+      if (!RESUME_DATA[lang]) return;
+      currentLang = lang;
+      try {
+        localStorage.setItem('resume_lang', lang);
+      } catch (e) {}
+
+      document.documentElement.lang = lang;
+      const data = RESUME_DATA[lang];
+
+      // Update Page Title and Meta Description
+      document.title = data.ui.pageTitle;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.setAttribute('content', data.ui.metaDesc);
+
+      // Update Lang buttons
+      const btnEn = document.getElementById('langBtnEn');
+      const btnEs = document.getElementById('langBtnEs');
+      if (btnEn && btnEs) {
+        if (lang === 'en') {
+          btnEn.classList.add('is-active');
+          btnEn.setAttribute('aria-pressed', 'true');
+          btnEs.classList.remove('is-active');
+          btnEs.setAttribute('aria-pressed', 'false');
+        } else {
+          btnEs.classList.add('is-active');
+          btnEs.setAttribute('aria-pressed', 'true');
+          btnEn.classList.remove('is-active');
+          btnEn.setAttribute('aria-pressed', 'false');
+        }
+      }
+
+      // Update Eyebrow and Button
+      document.getElementById('eyebrowText').textContent = data.eyebrow;
+      document.getElementById('viewToggleText').textContent = currentView === 'tldr' ? data.ui.classicButton : data.ui.tldrButton;
+
+      // Update Masthead
+      document.getElementById('profileRole').textContent = data.role;
+      document.getElementById('profileDisciplines').textContent = data.disciplines;
+      document.getElementById('metaLocation').textContent = data.location;
+
+      // Update Stats
+      const statsContainer = document.getElementById('statsContainer');
+      if (statsContainer) {
+        statsContainer.innerHTML = data.stats.map(s => `<div class="stat"><p class="figure">${s.figure}</p><p class="label">${s.label}</p></div>`).join('');
+      }
+
+      // Update Snapshot
+      document.getElementById('snapshotTitle').textContent = data.ui.snapshotTitle;
+      const snapshotEl = document.getElementById('snapshotContent');
+      if (snapshotEl) {
+        snapshotEl.innerHTML = data.snapshot.map(p => `<p>${p}</p>`).join('');
+      }
+
+      // Update Featured Experience
+      document.getElementById('experienceTitle').textContent = data.ui.experienceTitle;
+      const featEl = document.getElementById('featuredRoles');
+      if (featEl) {
+        featEl.innerHTML = data.experience.featured.map(role => `
+          <div class="role-card">
+            <div class="role-head">
+              <span class="role-company">${role.company}</span>
+              <span class="role-dates">${role.dates}</span>
+            </div>
+            <p class="role-title">${role.title}</p>
+            <p class="role-chain">
+              ${role.chain.map(step => `<span class="step">${step}</span>`).join('<span class="sep">→</span>')}
+            </p>
+            ${role.tags ? `<p class="role-tags">${role.tags}</p>` : ''}
+          </div>
+        `).join('');
+      }
+
+      // Update Earlier Roles
+      document.getElementById('earlierTitle').textContent = data.ui.earlierTitle;
+      const earlierEl = document.getElementById('earlierRoles');
+      if (earlierEl) {
+        earlierEl.innerHTML = data.experience.earlier.map(role => `
+          <div class="earlier-row">
+            <div>
+              <div class="co">${role.company}</div>
+              <div class="role">${role.title}</div>
+            </div>
+            <div class="dates">${role.dates}</div>
+          </div>
+        `).join('');
+      }
+
+      // Update Capabilities
+      document.getElementById('capabilitiesTitle').textContent = data.ui.capabilitiesTitle;
+      const skillsEl = document.getElementById('skillsList');
+      if (skillsEl) {
+        skillsEl.innerHTML = data.skills.map(s => `<li>${s}</li>`).join('');
+      }
+
+      // Update Timeline
+      document.getElementById('timelineTitle').textContent = data.ui.timelineTitle;
+      const timelineEl = document.getElementById('timelineList');
+      if (timelineEl) {
+        timelineEl.innerHTML = data.timeline.map(entry => `
+          <li class="timeline-row${entry.current ? ' current' : ''}">
+            <span class="timeline-year">${entry.year}</span>
+            <span class="timeline-dot"></span>
+            <span class="timeline-entry"><span class="t-role">${entry.role}</span><br><span class="t-sub">${entry.sub}</span></span>
+          </li>
+        `).join('');
+      }
+
+      // Update Philosophy
+      document.getElementById('approachTitle').textContent = data.ui.approachTitle;
+      document.getElementById('philosophyQuote').textContent = data.philosophy;
+
+      // Update Footer
+      document.getElementById('footerEmail').textContent = data.ui.emailLabel;
+      document.getElementById('footerLinkedin').textContent = data.ui.linkedinLabel;
+      document.getElementById('footerWebsite').textContent = data.ui.websiteLabel;
+      const footerMarkdown = document.getElementById('footerMarkdown');
+      if (footerMarkdown) {
+        footerMarkdown.textContent = data.ui.viewMarkdown;
+        footerMarkdown.setAttribute('href', data.ui.markdownUrl);
+      }
+      document.getElementById('footerNote').textContent = data.ui.lastUpdated;
+
+      // Update TL;DR View
+      document.getElementById('tldrGreeting').textContent = data.tldr.greeting;
+      document.getElementById('tldrIntro').textContent = data.tldr.intro;
+      const tldrBullets = document.getElementById('tldrBullets');
+      if (tldrBullets) {
+        tldrBullets.innerHTML = data.tldr.bullets.map(b => `<li>${b}</li>`).join('');
+      }
+      document.getElementById('tldrPunchline').textContent = data.tldr.punchline;
+      document.getElementById('tldrContactLabel').textContent = data.tldr.contactText;
+      document.getElementById('tldrFooterEmail').textContent = data.ui.emailLabel;
+      updateTldrBackBtn();
+    }
+
+    function updateTldrBackBtn() {
+      const data = RESUME_DATA[currentLang];
+      const backBtn = document.getElementById('tldrBackBtn');
+      if (backBtn) {
+        backBtn.textContent = currentLang === 'es' ? '← Clásico' : '← Classic';
+      }
+    }
+
+    function setView(view) {
+      currentView = view;
+      const classicEl = document.getElementById('classicView');
+      const tldrEl = document.getElementById('tldrView');
+      const toggleBtnText = document.getElementById('viewToggleText');
+      const data = RESUME_DATA[currentLang];
+
+      if (view === 'tldr') {
+        classicEl.classList.add('view-hidden');
+        tldrEl.classList.remove('view-hidden');
+        toggleBtnText.textContent = data.ui.classicButton;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#tldr');
+      } else {
+        tldrEl.classList.add('view-hidden');
+        classicEl.classList.remove('view-hidden');
+        toggleBtnText.textContent = data.ui.tldrButton;
+        if (history.replaceState) history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+
+    // Event Listeners
+    document.getElementById('viewToggleBtn').addEventListener('click', function() {
+      setView(currentView === 'classic' ? 'tldr' : 'classic');
+    });
+
+    document.getElementById('tldrBackBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      setView('classic');
+    });
+
+    document.getElementById('langBtnEn').addEventListener('click', function() {
+      setLanguage('en');
+    });
+
+    document.getElementById('langBtnEs').addEventListener('click', function() {
+      setLanguage('es');
+    });
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && currentView === 'tldr') {
+        setView('classic');
+      }
+    });
+
+    // Check initial hash
+    if (window.location.hash === '#tldr') {
+      currentView = 'tldr';
+    }
+
+    // Initialize
+    const initLang = detectInitialLang();
+    setLanguage(initLang);
+    setView(currentView);
+  })();
+</script>
 </body>
 </html>
+

@@ -1,4 +1,34 @@
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+
+# Dependencies & Build Output
 node_modules/
 _site/
+dist/
+.cache/
+
+# Environment & Credentials
+.env
+.env.*
+!.env.example
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Deployments & CLI caches
 .vercel/
-.env*
+.turbo/
+.temp/
+.gemini/
+.system_generated/
