@@ -1,0 +1,587 @@
+From e232d7846e055a966f942ec24eb3c7e1d928f309 Mon Sep 17 00:00:00 2001
+From: Daniel <champion327@gmail.com>
+Date: Wed, 2 Sep 2026 19:47:36 +0000
+Subject: [PATCH] Add dedicated three-column PDF/print layout
+
+- New src/resume-pdf.njk builds /print/, a standalone executive-length
+  layout (header + sidebar/2-col experience/earlier-career strip)
+  instead of reusing the on-screen page's stripped print CSS.
+  Bilingual (reads ?lang= or the stored site preference), auto-opens
+  the print dialog once fonts are ready, with a manual print/back/lang
+  fallback bar that is hidden in the printed output.
+- Download PDF button now opens /print/ in a new tab instead of
+  printing the live page.
+- resume.js: added the 'location' field index.njk already referenced
+  but never had (was rendering blank), plus PDF-specific UI strings
+  (statsTitle, pdfFooterNote, pdfPrintButton, pdfBackLink) in both
+  languages.
+---
+ src/_data/resume.js |  10 +
+ src/index.njk       |  22 +-
+ src/resume-pdf.njk  | 479 ++++++++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 493 insertions(+), 18 deletions(-)
+ create mode 100644 src/resume-pdf.njk
+
+diff --git a/src/_data/resume.js b/src/_data/resume.js
+index df3072d..2f9f567 100644
+--- a/src/_data/resume.js
++++ b/src/_data/resume.js
+@@ -5,6 +5,7 @@ const resumeData = {
+     role: "Product · Software · Finance",
+     disciplines: "Global product leadership across startups, agencies, and Fortune 100 organizations",
+     email: "danielvp1987@gmail.com",
++    location: "Mexico City · Aberdeen, UK",
+     links: {
+       website: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
+       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
+@@ -130,6 +131,10 @@ const resumeData = {
+       emailLabel: "Email",
+       linkedinLabel: "LinkedIn",
+       websiteLabel: "Website",
++      statsTitle: "At a Glance",
++      pdfFooterNote: "Extended profile, full timeline & capabilities at",
++      pdfPrintButton: "Print / Save as PDF",
++      pdfBackLink: "← Back to site",
+     },
+   },
+   es: {
+@@ -138,6 +143,7 @@ const resumeData = {
+     role: "Producto · Software · Finanzas",
+     disciplines: "Liderazgo global de producto en startups, agencias y empresas Fortune 100",
+     email: "danielvp1987@gmail.com",
++    location: "Ciudad de México · Aberdeen, UK",
+     links: {
+       website: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
+       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
+@@ -263,6 +269,10 @@ const resumeData = {
+       emailLabel: "Correo",
+       linkedinLabel: "LinkedIn",
+       websiteLabel: "Sitio Web",
++      statsTitle: "En Cifras",
++      pdfFooterNote: "Perfil extendido, trayectoria completa y capacidades en",
++      pdfPrintButton: "Imprimir / Guardar como PDF",
++      pdfBackLink: "← Volver al sitio",
+     },
+   },
+ };
+diff --git a/src/index.njk b/src/index.njk
+index 34f7bf1..825ef0e 100644
+--- a/src/index.njk
++++ b/src/index.njk
+@@ -421,24 +421,10 @@ title: Daniel Vásquez — Product Executive
+     });
+ 
+     document.getElementById('downloadPdfBtn').addEventListener('click', function() {
+-      // Save current view state
+-      const wasTldr = currentView === 'tldr';
+-      // Force classic view to be visible for printing
+-      const classicEl = document.getElementById('classicView');
+-      const tldrEl = document.getElementById('tldrView');
+-      classicEl.classList.remove('view-hidden');
+-      tldrEl.classList.add('view-hidden');
+-      // Use setTimeout to ensure the DOM update before print
+-      setTimeout(() => {
+-        window.print();
+-        // Restore view state after print dialog closes
+-        setTimeout(() => {
+-          if (wasTldr) {
+-            classicEl.classList.add('view-hidden');
+-            tldrEl.classList.remove('view-hidden');
+-          }
+-        }, 100);
+-      }, 50);
++      // The PDF is its own dedicated, print-optimized layout (three-column,
++      // executive-length) rather than a printed copy of this page — see
++      // /print/. Carry the current language selection along.
++      window.open('/print/?lang=' + currentLang, '_blank', 'noopener');
+     });
+ 
+     document.getElementById('tldrBackBtn').addEventListener('click', function(e) {
+diff --git a/src/resume-pdf.njk b/src/resume-pdf.njk
+new file mode 100644
+index 0000000..b74b8a2
+--- /dev/null
++++ b/src/resume-pdf.njk
+@@ -0,0 +1,479 @@
++---
++permalink: "print/index.html"
++eleventyExcludeFromCollections: true
++---
++<!DOCTYPE html>
++<html lang="en">
++<head>
++<meta charset="UTF-8">
++<meta name="viewport" content="width=device-width, initial-scale=1.0">
++<title>{{ resume.en.name }} — {{ resume.en.eyebrow }} (PDF)</title>
++<meta name="robots" content="noindex, nofollow">
++<link rel="icon" type="image/png" href="/cauldron.png">
++
++<link rel="preconnect" href="https://fonts.googleapis.com">
++<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
++<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
++
++<style>
++  :root{
++    --bg:#FAFAF8;
++    --text:#1E1E1E;
++    --muted:#6B6B6B;
++    --faint:#999691;
++    --border:#E4E1DB;
++    --serif:"Literata", Georgia, serif;
++    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
++  }
++  *{box-sizing:border-box;}
++  html,body{margin:0; padding:0;}
++  body{
++    background:#EDEBE6;
++    font-family:var(--sans);
++    padding:60px 16px;
++  }
++
++  /* ---------- On-screen-only control bar ---------- */
++  .no-print{
++    max-width:210mm;
++    margin:0 auto 16px;
++    display:flex;
++    align-items:center;
++    justify-content:space-between;
++    gap:12px;
++  }
++  .no-print a, .no-print button{
++    font-family:var(--sans);
++    font-size:12px;
++    color:var(--muted);
++    background:none;
++    border:none;
++    cursor:pointer;
++    text-decoration:none;
++  }
++  .no-print .actions{ display:flex; align-items:center; gap:14px; }
++  .no-print .lang-btn{ font-weight:600; color:var(--faint); }
++  .no-print .lang-btn.is-active{ color:var(--text); text-decoration:underline; }
++  .no-print .print-btn{
++    font-weight:600;
++    color:#fff;
++    background:#111;
++    padding:7px 14px;
++    border-radius:3px;
++  }
++
++  /* ---------- The page itself ---------- */
++  .sheet{
++    position:relative;
++    width:210mm;
++    min-height:297mm;
++    margin:0 auto;
++    background:var(--bg);
++    color:var(--text);
++    padding:22mm;
++    box-shadow:0 12px 40px rgba(0,0,0,.18);
++  }
++
++  .eyebrow{
++    font-family:var(--sans);
++    font-size:7pt;
++    font-weight:600;
++    letter-spacing:.12em;
++    text-transform:uppercase;
++    color:var(--muted);
++    margin:0 0 9pt;
++  }
++  .rule{border:none; border-top:1px solid var(--border); margin:0;}
++
++  /* ---------- Header ---------- */
++  .head{
++    display:flex;
++    justify-content:space-between;
++    align-items:flex-start;
++    gap:14mm;
++    padding-bottom:13pt;
++  }
++  .head-name h1{
++    font-family:var(--serif);
++    font-weight:500;
++    font-size:25pt;
++    letter-spacing:-.01em;
++    margin:0 0 3pt;
++    line-height:1.05;
++  }
++  .head-name .role-line{
++    font-family:var(--sans);
++    font-size:9pt;
++    color:var(--muted);
++    margin:0;
++    max-width:118mm;
++    line-height:1.4;
++  }
++  .head-contact{
++    flex:0 0 auto;
++    display:flex;
++    flex-direction:column;
++    align-items:flex-end;
++    padding-top:2pt;
++  }
++  .head-contact p{
++    margin:0 0 6pt;
++    font-family:var(--sans);
++    font-size:9pt;
++    color:var(--text);
++    white-space:nowrap;
++  }
++  .head-contact p:last-child{margin-bottom:0;}
++
++  /* ---------- Body grid: sidebar + 2-col main ---------- */
++  .body-grid{
++    display:flex;
++    gap:10mm;
++    align-items:flex-start;
++    padding-top:18pt;
++  }
++  .sidebar{ flex:0 0 48mm; width:48mm; }
++  .v-divider{ align-self:stretch; width:0; border-left:1px solid var(--border); }
++  .main-col{ flex:1 1 auto; min-width:0; }
++
++  .sb-block{ margin-bottom:22pt; }
++  .sb-block:last-child{ margin-bottom:0; }
++  .sb-block p.body-text{
++    font-family:var(--serif);
++    font-size:8.8pt;
++    line-height:1.55;
++    margin:0 0 10pt;
++    color:var(--text);
++  }
++  .sb-block p.body-text:last-child{ margin-bottom:0; }
++
++  .stat-grid{
++    display:flex;
++    flex-direction:column;
++  }
++  .stat{
++    padding:9pt 0;
++    border-top:1px solid var(--border);
++  }
++  .stat:first-child{
++    padding-top:0;
++    border-top:none;
++  }
++  .stat .figure{
++    font-family:var(--serif);
++    font-weight:500;
++    font-size:15.5pt;
++    margin:0;
++    line-height:1;
++  }
++  .stat .label{
++    font-family:var(--sans);
++    font-size:6.6pt;
++    letter-spacing:.03em;
++    text-transform:uppercase;
++    color:var(--faint);
++    line-height:1.3;
++    margin:3pt 0 0;
++  }
++
++  .main-col > .eyebrow{ margin-bottom:12pt; }
++  .exp-flow{
++    column-count:2;
++    column-gap:9mm;
++  }
++  .role{
++    break-inside:avoid;
++    -webkit-column-break-inside:avoid;
++    padding-top:12pt;
++    border-top:1px solid var(--border);
++    margin-bottom:12pt;
++  }
++  .role:first-child{
++    padding-top:0;
++    border-top:none;
++  }
++  .role-head{
++    overflow:hidden; /* clearfix for the floated date */
++    margin-bottom:2pt;
++  }
++  .role-dates{
++    float:right;
++    font-family:var(--sans);
++    font-size:7pt;
++    color:var(--muted);
++    white-space:nowrap;
++    margin-left:6pt;
++    padding-top:1pt;
++  }
++  .role-company{
++    display:block;
++    font-family:var(--sans);
++    font-weight:600;
++    font-size:8.8pt;
++    line-height:1.25;
++  }
++  .role-title{
++    font-family:var(--sans);
++    font-size:8pt;
++    color:var(--muted);
++    margin:0 0 7pt;
++    line-height:1.35;
++  }
++  .role-bullets{
++    margin:0 0 6pt;
++    padding-left:9pt;
++    font-family:var(--serif);
++    font-size:8.5pt;
++    line-height:1.48;
++  }
++  .role-bullets li{ margin-bottom:2pt; }
++  .role-bullets li::marker{ color:var(--faint); }
++  .role-tags{
++    font-family:var(--sans);
++    font-size:6.7pt;
++    font-style:italic;
++    color:var(--faint);
++    line-height:1.4;
++    margin:0;
++  }
++
++  /* ---------- Earlier career strip ---------- */
++  .earlier{ padding-top:17pt; }
++  .earlier-grid{
++    column-count:3;
++    column-gap:9mm;
++  }
++  .earlier-item{
++    break-inside:avoid;
++    margin-bottom:10pt;
++  }
++  .earlier-item .co{
++    font-family:var(--sans);
++    font-weight:600;
++    font-size:8pt;
++    line-height:1.3;
++  }
++  .earlier-item .title{
++    font-family:var(--sans);
++    font-size:7.4pt;
++    color:var(--muted);
++    line-height:1.35;
++  }
++  .earlier-item .dates{
++    font-family:var(--sans);
++    font-size:6.7pt;
++    color:var(--faint);
++    margin-top:1pt;
++  }
++
++  .foot-note{
++    padding-top:17pt;
++    text-align:center;
++  }
++  .foot-note p{
++    font-family:var(--sans);
++    font-size:6.7pt;
++    letter-spacing:.02em;
++    color:var(--faint);
++    margin:0;
++  }
++  .foot-note a{ color:var(--faint); }
++
++  /* ---------- Print ---------- */
++  @page{ size:A4; margin:0; }
++  @media print{
++    body{ background:#fff; padding:0; }
++    .no-print{ display:none !important; }
++    .sheet{ box-shadow:none; margin:0; }
++  }
++</style>
++</head>
++<body>
++
++<div class="no-print">
++  <a href="/" id="backLink">{{ resume.en.ui.pdfBackLink }}</a>
++  <div class="actions">
++    <button type="button" class="lang-btn is-active" id="langBtnEn" data-lang="en">EN</button>
++    <button type="button" class="lang-btn" id="langBtnEs" data-lang="es">ES</button>
++    <button type="button" class="print-btn" id="printBtn" title="{{ resume.en.ui.pdfPrintButton }}">🖨</button>
++  </div>
++</div>
++
++<div class="sheet">
++
++  <header class="head">
++    <div class="head-name">
++      <p class="eyebrow" id="eyebrow">{{ resume.en.eyebrow }}</p>
++      <h1 id="name">{{ resume.en.name }}</h1>
++      <p class="role-line" id="roleLine">{{ resume.en.role }} — {{ resume.en.disciplines }}</p>
++    </div>
++    <div class="head-contact" id="contactBlock">
++      <p>{{ resume.en.email }}</p>
++      <p>{{ resume.en.links.linkedin.url | replace("https://www.", "") }}</p>
++      <p>{{ resume.en.links.website.label }}</p>
++      <p>{{ resume.en.location }}</p>
++    </div>
++  </header>
++
++  <hr class="rule">
++
++  <div class="body-grid">
++
++    <aside class="sidebar">
++      <section class="sb-block" id="snapshotBlock">
++        <p class="body-text">{{ resume.en.snapshot[0] }}</p>
++        <p class="body-text">{{ resume.en.snapshot[2] }}</p>
++      </section>
++
++      <section class="sb-block stats-block">
++        <p class="eyebrow" id="statsTitle">{{ resume.en.ui.statsTitle }}</p>
++        <div class="stat-grid" id="statsGrid">
++          {% for stat in resume.en.stats %}
++          <div class="stat"><p class="figure">{{ stat.figure }}</p><p class="label">{{ stat.label }}</p></div>
++          {% endfor %}
++        </div>
++      </section>
++    </aside>
++
++    <div class="v-divider"></div>
++
++    <main class="main-col">
++      <p class="eyebrow" id="experienceTitle">{{ resume.en.ui.experienceTitle }}</p>
++      <div class="exp-flow" id="expFlow">
++        {% for role in resume.en.experience.featured %}
++        <article class="role">
++          <div class="role-head">
++            <span class="role-dates">{{ role.dates }}</span>
++            <span class="role-company">{{ role.company }}</span>
++          </div>
++          <p class="role-title">{{ role.title }}</p>
++          <ul class="role-bullets">
++            {% for step in role.chain %}<li>{{ step }}</li>{% endfor %}
++          </ul>
++          {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
++        </article>
++        {% endfor %}
++      </div>
++    </main>
++  </div>
++
++  <hr class="rule" style="margin-top:12pt;">
++
++  <section class="earlier">
++    <p class="eyebrow" id="earlierTitle">{{ resume.en.ui.earlierTitle }}</p>
++    <div class="earlier-grid" id="earlierGrid">
++      {% for role in resume.en.experience.earlier %}
++      <div class="earlier-item">
++        <div class="co">{{ role.company }}</div>
++        <div class="title">{{ role.title }}</div>
++        <div class="dates">{{ role.dates }}</div>
++      </div>
++      {% endfor %}
++    </div>
++  </section>
++
++  <footer class="foot-note">
++    <p id="footNote">{{ resume.en.ui.pdfFooterNote }} {{ resume.en.links.website.label }} — {{ resume.en.ui.lastUpdated }}</p>
++  </footer>
++
++</div>
++
++<script>
++  (function() {
++    const RESUME_DATA = {{ resume | dump | safe }};
++
++    function linkedinHandle(url) {
++      return url.replace("https://www.", "");
++    }
++
++    function render(lang) {
++      const d = RESUME_DATA[lang];
++      if (!d) return;
++      document.documentElement.lang = lang;
++
++      document.getElementById('eyebrow').textContent = d.eyebrow;
++      document.getElementById('name').textContent = d.name;
++      document.getElementById('roleLine').textContent = d.role + ' — ' + d.disciplines;
++
++      const contact = document.getElementById('contactBlock');
++      contact.innerHTML = `
++        <p>${d.email}</p>
++        <p>${linkedinHandle(d.links.linkedin.url)}</p>
++        <p>${d.links.website.label}</p>
++        <p>${d.location}</p>
++      `;
++
++      const snapshot = document.getElementById('snapshotBlock');
++      snapshot.innerHTML = `
++        <p class="body-text">${d.snapshot[0]}</p>
++        <p class="body-text">${d.snapshot[2]}</p>
++      `;
++
++      document.getElementById('statsTitle').textContent = d.ui.statsTitle;
++      document.getElementById('statsGrid').innerHTML = d.stats.map(s =>
++        `<div class="stat"><p class="figure">${s.figure}</p><p class="label">${s.label}</p></div>`
++      ).join('');
++
++      document.getElementById('experienceTitle').textContent = d.ui.experienceTitle;
++      document.getElementById('expFlow').innerHTML = d.experience.featured.map(role => `
++        <article class="role">
++          <div class="role-head">
++            <span class="role-dates">${role.dates}</span>
++            <span class="role-company">${role.company}</span>
++          </div>
++          <p class="role-title">${role.title}</p>
++          <ul class="role-bullets">${role.chain.map(step => `<li>${step}</li>`).join('')}</ul>
++          ${role.tags ? `<p class="role-tags">${role.tags}</p>` : ''}
++        </article>
++      `).join('');
++
++      document.getElementById('earlierTitle').textContent = d.ui.earlierTitle;
++      document.getElementById('earlierGrid').innerHTML = d.experience.earlier.map(role => `
++        <div class="earlier-item">
++          <div class="co">${role.company}</div>
++          <div class="title">${role.title}</div>
++          <div class="dates">${role.dates}</div>
++        </div>
++      `).join('');
++
++      document.getElementById('footNote').textContent = `${d.ui.pdfFooterNote} ${d.links.website.label} — ${d.ui.lastUpdated}`;
++
++      const btnEn = document.getElementById('langBtnEn');
++      const btnEs = document.getElementById('langBtnEs');
++      btnEn.classList.toggle('is-active', lang === 'en');
++      btnEs.classList.toggle('is-active', lang === 'es');
++      document.getElementById('printBtn').title = d.ui.pdfPrintButton;
++      document.getElementById('backLink').textContent = d.ui.pdfBackLink;
++    }
++
++    function detectLang() {
++      try {
++        const params = new URLSearchParams(window.location.search);
++        const fromQuery = params.get('lang');
++        if (fromQuery === 'es' || fromQuery === 'en') return fromQuery;
++        const stored = localStorage.getItem('resume_lang');
++        if (stored === 'es' || stored === 'en') return stored;
++      } catch (e) {}
++      return 'en';
++    }
++
++    const initialLang = detectLang();
++    render(initialLang);
++
++    document.getElementById('langBtnEn').addEventListener('click', () => render('en'));
++    document.getElementById('langBtnEs').addEventListener('click', () => render('es'));
++    document.getElementById('printBtn').addEventListener('click', () => window.print());
++
++    // Auto-open the print dialog once fonts are settled, so the PDF button
++    // feels instant. Users can still print manually via the button above
++    // if the browser blocks the automatic call.
++    const triggerPrint = () => setTimeout(() => window.print(), 250);
++    if (document.fonts && document.fonts.ready) {
++      document.fonts.ready.then(triggerPrint);
++    } else {
++      window.addEventListener('load', triggerPrint);
++    }
++  })();
++</script>
++</body>
++</html>
+-- 
+2.43.0
+

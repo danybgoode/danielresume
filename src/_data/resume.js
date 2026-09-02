@@ -5,6 +5,7 @@ const resumeData = {
     role: "Product · Software · Finance",
     disciplines: "Global product leadership across startups, agencies, and Fortune 100 organizations",
     email: "danielvp1987@gmail.com",
+    location: "Mexico City · Aberdeen, UK",
     links: {
       website: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
@@ -130,6 +131,10 @@ const resumeData = {
       emailLabel: "Email",
       linkedinLabel: "LinkedIn",
       websiteLabel: "Website",
+      statsTitle: "At a Glance",
+      pdfFooterNote: "Extended profile, full timeline & capabilities at",
+      pdfPrintButton: "Print / Save as PDF",
+      pdfBackLink: "← Back to site",
     },
   },
   es: {
@@ -138,6 +143,7 @@ const resumeData = {
     role: "Producto · Software · Finanzas",
     disciplines: "Liderazgo global de producto en startups, agencias y empresas Fortune 100",
     email: "danielvp1987@gmail.com",
+    location: "Ciudad de México · Aberdeen, UK",
     links: {
       website: { url: "https://goldenfrijoles.com", label: "goldenfrijoles.com" },
       linkedin: { url: "https://www.linkedin.com/in/danielvasquezparedes" },
@@ -263,6 +269,10 @@ const resumeData = {
       emailLabel: "Correo",
       linkedinLabel: "LinkedIn",
       websiteLabel: "Sitio Web",
+      statsTitle: "En Cifras",
+      pdfFooterNote: "Perfil extendido, trayectoria completa y capacidades en",
+      pdfPrintButton: "Imprimir / Guardar como PDF",
+      pdfBackLink: "← Volver al sitio",
     },
   },
 };

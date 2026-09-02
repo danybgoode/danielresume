@@ -421,24 +421,10 @@ title: Daniel Vásquez — Product Executive
     });
 
     document.getElementById('downloadPdfBtn').addEventListener('click', function() {
-      // Save current view state
-      const wasTldr = currentView === 'tldr';
-      // Force classic view to be visible for printing
-      const classicEl = document.getElementById('classicView');
-      const tldrEl = document.getElementById('tldrView');
-      classicEl.classList.remove('view-hidden');
-      tldrEl.classList.add('view-hidden');
-      // Use setTimeout to ensure the DOM update before print
-      setTimeout(() => {
-        window.print();
-        // Restore view state after print dialog closes
-        setTimeout(() => {
-          if (wasTldr) {
-            classicEl.classList.add('view-hidden');
-            tldrEl.classList.remove('view-hidden');
-          }
-        }, 100);
-      }, 50);
+      // The PDF is its own dedicated, print-optimized layout (three-column,
+      // executive-length) rather than a printed copy of this page — see
+      // /print/. Carry the current language selection along.
+      window.open('/print/?lang=' + currentLang, '_blank', 'noopener');
     });
 
     document.getElementById('tldrBackBtn').addEventListener('click', function(e) {
