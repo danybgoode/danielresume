@@ -7,30 +7,52 @@ eleventyExcludeFromCollections: true
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ resume.en.name }} — {{ resume.en.eyebrow }} (PDF)</title>
+<title>{{ resume.en.ui.pdfTitle }}</title>
+<meta name="author" content="{{ resume.en.name }}">
+<meta name="description" content="{{ resume.en.ui.metaDesc }}">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" href="/cauldron.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  /* ============================================================
+     PRINT SHEET — structured for machines first, humans second.
+
+     THE LOAD-BEARING RULE: a PDF printed from HTML has no notion of
+     "columns". Chrome emits text in visual line order across the FULL
+     page width, so any two independent text blocks that share a
+     horizontal band get interleaved in the extracted text — which is
+     what an ATS parser, an LLM, and a human dragging a selection all
+     read. The previous version of this sheet used `column-count:2` for
+     experience, `column-count:3` for earlier career, and a flex sidebar
+     beside the main column; its extracted text merged the profile
+     paragraphs, the stats, and two unrelated roles line by line.
+
+     So: ONE column, top to bottom, DOM order == reading order.
+     The only elements allowed to share a band are a company and its
+     own dates (they belong together and concatenate correctly).
+     Do not reintroduce column-count, float, or a side rail here.
+     ============================================================ */
+
   :root{
     --bg:#FAFAF8;
     --text:#1E1E1E;
-    --muted:#6B6B6B;
-    --faint:#999691;
+    --muted:#5F5F5F;
+    --faint:#8C8983;
     --border:#E4E1DB;
-    --serif:"Literata", Georgia, serif;
-    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --serif:"Literata", Georgia, "Times New Roman", serif;
+    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
-  *{box-sizing:border-box;}
-  html,body{margin:0; padding:0;}
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
   body{
     background:#EDEBE6;
-    font-family:var(--sans);
-    padding:60px 16px;
+    font-family:var(--serif);
+    color:var(--text);
+    padding:48px 16px;
   }
 
   /* ---------- On-screen-only control bar ---------- */
@@ -41,6 +63,7 @@ eleventyExcludeFromCollections: true
     align-items:center;
     justify-content:space-between;
     gap:12px;
+    font-family:var(--sans);
   }
   .no-print a, .no-print button{
     font-family:var(--sans);
@@ -62,229 +85,240 @@ eleventyExcludeFromCollections: true
     border-radius:3px;
   }
 
-  /* ---------- The page itself ---------- */
+  /* ---------- The sheet ---------- */
   .sheet{
-    position:relative;
     width:210mm;
-    min-height:297mm;
     margin:0 auto;
     background:var(--bg);
-    color:var(--text);
-    padding:22mm;
+    padding:13mm 16mm;
     box-shadow:0 12px 40px rgba(0,0,0,.18);
   }
 
-  .eyebrow{
+  /* ---------- Typography primitives ---------- */
+  h1,h2,h3{ margin:0; font-weight:500; }
+  p{ margin:0; }
+  a{ color:var(--text); text-decoration:none; }
+
+  .section-title{
     font-family:var(--sans);
-    font-size:7pt;
-    font-weight:600;
-    letter-spacing:.12em;
+    font-size:7.6pt;
+    font-weight:700;
+    /* Deliberately modest tracking: wide letter-spacing makes Chrome emit
+       each glyph as its own positioned run, and pdftotext then reads
+       "E X P E R I E N C E". Section headings are the anchors an ATS
+       looks for, so they have to survive extraction intact. */
+    letter-spacing:.055em;
     text-transform:uppercase;
     color:var(--muted);
-    margin:0 0 9pt;
+    margin:0 0 5.5pt;
+    padding-bottom:3pt;
+    border-bottom:1px solid var(--border);
   }
-  .rule{border:none; border-top:1px solid var(--border); margin:0;}
+  .rule{ border:none; border-top:1px solid var(--border); margin:0; }
 
   /* ---------- Header ---------- */
-  .head{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:14mm;
-    padding-bottom:13pt;
-  }
-  .head-name h1{
+  .head{ padding-bottom:8pt; }
+  .head h1{
     font-family:var(--serif);
-    font-weight:500;
-    font-size:25pt;
+    font-size:24pt;
     letter-spacing:-.01em;
-    margin:0 0 3pt;
     line-height:1.05;
+    margin:0 0 4pt;
   }
-  .head-name .role-line{
+  .head .role-line{
     font-family:var(--sans);
-    font-size:9pt;
-    color:var(--muted);
-    margin:0;
-    max-width:118mm;
-    line-height:1.4;
-  }
-  .head-contact{
-    flex:0 0 auto;
-    display:flex;
-    flex-direction:column;
-    align-items:flex-end;
-    padding-top:2pt;
-  }
-  .head-contact p{
-    margin:0 0 6pt;
-    font-family:var(--sans);
-    font-size:9pt;
+    font-size:9.5pt;
+    font-weight:600;
     color:var(--text);
-    white-space:nowrap;
+    margin:0 0 3pt;
   }
-  .head-contact p:last-child{margin-bottom:0;}
-
-  /* ---------- Body grid: sidebar + 2-col main ---------- */
-  .body-grid{
-    display:flex;
-    gap:10mm;
-    align-items:flex-start;
-    padding-top:18pt;
-  }
-  .sidebar{ flex:0 0 48mm; width:48mm; }
-  .v-divider{ align-self:stretch; width:0; border-left:1px solid var(--border); }
-  .main-col{ flex:1 1 auto; min-width:0; }
-
-  .sb-block{ margin-bottom:22pt; }
-  .sb-block:last-child{ margin-bottom:0; }
-  .sb-block p.body-text{
+  .head .disciplines{
     font-family:var(--serif);
     font-size:8.8pt;
-    line-height:1.55;
-    margin:0 0 10pt;
-    color:var(--text);
+    line-height:1.42;
+    color:var(--muted);
+    margin:0 0 7pt;
   }
-  .sb-block p.body-text:last-child{ margin-bottom:0; }
-
-  .stat-grid{
-    display:flex;
-    flex-direction:column;
-  }
-  .stat{
-    padding:9pt 0;
-    border-top:1px solid var(--border);
-  }
-  .stat:first-child{
-    padding-top:0;
-    border-top:none;
-  }
-  .stat .figure{
-    font-family:var(--serif);
-    font-weight:500;
-    font-size:15.5pt;
-    margin:0;
-    line-height:1;
-  }
-  .stat .label{
+  /* One flowing contact line — extracts as a single readable run, and
+     every item is a real <a href>, so the PDF carries link annotations. */
+  .head .contact{
     font-family:var(--sans);
-    font-size:6.6pt;
-    letter-spacing:.03em;
-    text-transform:uppercase;
-    color:var(--faint);
-    line-height:1.3;
-    margin:3pt 0 0;
+    font-size:8.6pt;
+    line-height:1.6;
+    color:var(--text);
+    margin:0;
   }
+  .head .contact a{ text-decoration:none; border-bottom:.5px solid var(--border); }
+  .head .contact .sep{ color:var(--faint); padding:0 5pt; }
+  /* Keep the city pair from breaking mid-phrase across the wrap. */
+  .head .contact .loc{ white-space:nowrap; }
 
-  .main-col > .eyebrow{ margin-bottom:12pt; }
-  .exp-flow{
-    column-count:2;
-    column-gap:9mm;
+  /* ---------- Section spacing ---------- */
+  section{ padding-top:8pt; }
+
+  /* ---------- Profile ---------- */
+  .profile p{
+    font-family:var(--serif);
+    font-size:9.2pt;
+    line-height:1.48;
+    margin:0 0 5pt;
   }
+  .profile p:last-child{ margin-bottom:0; }
+
+  /* ---------- At a glance: a single flowing line, never a grid.
+     A grid of figures over labels extracts as "15+ $70M+ 70+" then
+     "YEARS IN… BUDGET…" — six numbers divorced from six meanings.
+     Inline, each fact is a complete phrase wherever it is cut. ---------- */
+  .glance{
+    font-family:var(--sans);
+    font-size:8.6pt;
+    line-height:1.6;
+    color:var(--text);
+    margin:0;
+  }
+  .glance .figure{ font-family:var(--serif); font-weight:600; }
+  .glance .sep{ color:var(--faint); padding:0 5pt; }
+
+  /* ---------- Experience ---------- */
   .role{
     break-inside:avoid;
-    -webkit-column-break-inside:avoid;
-    padding-top:12pt;
+    page-break-inside:avoid;
+    padding:5pt 0;
     border-top:1px solid var(--border);
-    margin-bottom:12pt;
   }
-  .role:first-child{
-    padding-top:0;
-    border-top:none;
-  }
+  .role:first-of-type{ border-top:none; padding-top:2pt; }
+  /* Flex, not float: DOM order is company-then-dates, so the extracted
+     line reads "AB InBev 2020 — 2023" rather than the reverse. */
   .role-head{
-    overflow:hidden; /* clearfix for the floated date */
-    margin-bottom:2pt;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8pt;
+    margin-bottom:1pt;
   }
-  .role-dates{
-    float:right;
+  .role-head h3{
     font-family:var(--sans);
-    font-size:7pt;
+    font-weight:700;
+    font-size:9.6pt;
+    line-height:1.25;
+  }
+  .role-head h3 a{ border-bottom:.5px solid var(--border); }
+  .role-dates{
+    font-family:var(--sans);
+    font-size:7.8pt;
     color:var(--muted);
     white-space:nowrap;
-    margin-left:6pt;
-    padding-top:1pt;
-  }
-  .role-company{
-    display:block;
-    font-family:var(--sans);
-    font-weight:600;
-    font-size:8.8pt;
-    line-height:1.25;
+    font-variant-numeric:tabular-nums;
   }
   .role-title{
     font-family:var(--sans);
-    font-size:8pt;
+    font-size:8.4pt;
+    font-style:italic;
     color:var(--muted);
-    margin:0 0 7pt;
-    line-height:1.35;
+    margin:0 0 4pt;
   }
   .role-bullets{
-    margin:0 0 6pt;
-    padding-left:9pt;
+    margin:0 0 4pt;
+    padding-left:11pt;
     font-family:var(--serif);
-    font-size:8.5pt;
-    line-height:1.48;
+    font-size:8.8pt;
+    line-height:1.45;
   }
-  .role-bullets li{ margin-bottom:2pt; }
+  .role-bullets li{ margin-bottom:1.5pt; }
+  .role-bullets li:last-child{ margin-bottom:0; }
   .role-bullets li::marker{ color:var(--faint); }
   .role-tags{
     font-family:var(--sans);
-    font-size:6.7pt;
+    font-size:7.6pt;
     font-style:italic;
     color:var(--faint);
     line-height:1.4;
     margin:0;
   }
 
-  /* ---------- Earlier career strip ---------- */
-  .earlier{ padding-top:17pt; }
-  .earlier-grid{
-    column-count:3;
-    column-gap:9mm;
+  /* ---------- How I work ---------- */
+  .how-list{
+    margin:0;
+    padding-left:11pt;
+    font-family:var(--serif);
+    font-size:8.8pt;
+    line-height:1.45;
   }
-  .earlier-item{
+  .how-list li{ margin-bottom:2.5pt; break-inside:avoid; }
+  .how-list li:last-child{ margin-bottom:0; }
+  .how-list li::marker{ color:var(--faint); }
+
+  /* ---------- Earlier career: one line per role, full width.
+     (Was a 3-column grid; three unrelated employers per band.) ---------- */
+  .earlier-list{ margin:0; padding:0; list-style:none; }
+  .earlier-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8pt;
+    font-family:var(--sans);
+    font-size:8.4pt;
+    line-height:1.5;
+    padding:1pt 0;
     break-inside:avoid;
-    margin-bottom:10pt;
   }
-  .earlier-item .co{
-    font-family:var(--sans);
-    font-weight:600;
-    font-size:8pt;
-    line-height:1.3;
-  }
-  .earlier-item .title{
-    font-family:var(--sans);
-    font-size:7.4pt;
-    color:var(--muted);
-    line-height:1.35;
-  }
-  .earlier-item .dates{
-    font-family:var(--sans);
-    font-size:6.7pt;
+  .earlier-list .co{ font-weight:600; }
+  .earlier-list .title{ color:var(--muted); font-weight:400; }
+  .earlier-list .dates{
     color:var(--faint);
-    margin-top:1pt;
+    font-size:7.8pt;
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
   }
 
+  /* ---------- Education ---------- */
+  .edu-list{ margin:0; padding:0; list-style:none; }
+  .edu-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:8pt;
+    font-family:var(--sans);
+    font-size:8.6pt;
+    line-height:1.5;
+  }
+  .edu-list .credential{ font-weight:600; }
+  .edu-list .school{ color:var(--muted); font-weight:400; }
+  .edu-list .dates{ color:var(--faint); font-size:7.8pt; white-space:nowrap; }
+
+  /* ---------- Footer ---------- */
   .foot-note{
-    padding-top:17pt;
+    padding-top:8pt;
+    margin-top:8pt;
+    border-top:1px solid var(--border);
     text-align:center;
   }
   .foot-note p{
     font-family:var(--sans);
-    font-size:6.7pt;
-    letter-spacing:.02em;
+    font-size:7.4pt;
     color:var(--faint);
     margin:0;
   }
-  .foot-note a{ color:var(--faint); }
+  .foot-note a{ color:var(--faint); border-bottom:.5px solid var(--border); }
 
   /* ---------- Print ---------- */
-  @page{ size:A4; margin:0; }
+  @page{
+    size:A4;
+    /* Page margins live on @page, not on .sheet padding — padding only
+       applies to the first and last fragment, so a two-page sheet would
+       run its second page hard against the paper edge. */
+    margin:13mm 16mm;
+  }
   @media print{
     body{ background:#fff; padding:0; }
     .no-print{ display:none !important; }
-    .sheet{ box-shadow:none; margin:0; }
+    .sheet{
+      width:auto;
+      margin:0;
+      padding:0;
+      box-shadow:none;
+      background:#fff;
+    }
   }
 </style>
 </head>
@@ -299,149 +333,143 @@ eleventyExcludeFromCollections: true
   </div>
 </div>
 
-<div class="sheet">
-
+<article class="sheet" id="sheet">
+{% set d = resume.en %}
   <header class="head">
-    <div class="head-name">
-      <p class="eyebrow" id="eyebrow">{{ resume.en.eyebrow }}</p>
-      <h1 id="name">{{ resume.en.name }}</h1>
-      <p class="role-line" id="roleLine">{{ resume.en.role }} — {{ resume.en.disciplines }}</p>
-    </div>
-    <div class="head-contact" id="contactBlock">
-      <p>{{ resume.en.email }}</p>
-      <p>{{ resume.en.links.linkedin.url | replace("https://www.", "") }}</p>
-      <p>{{ resume.en.links.website.label }}</p>
-      <p>{{ resume.en.location }}</p>
-    </div>
+    <h1>{{ d.name }}</h1>
+    <p class="role-line">{{ d.role }}</p>
+    <p class="disciplines">{{ d.disciplines }}</p>
+    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><a href="{{ d.links.website.url }}">{{ d.links.website.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
   </header>
 
   <hr class="rule">
 
-  <div class="body-grid">
+  <section class="profile">
+    <h2 class="section-title">{{ d.ui.snapshotTitle }}</h2>
+    {% for para in d.snapshot %}<p>{{ para }}</p>{% endfor %}
+  </section>
 
-    <aside class="sidebar">
-      <section class="sb-block" id="snapshotBlock">
-        <p class="body-text">{{ resume.en.snapshot[0] }}</p>
-        <p class="body-text">{{ resume.en.snapshot[2] }}</p>
-      </section>
+  <section class="glance-block">
+    <h2 class="section-title">{{ d.ui.statsTitle }}</h2>
+    <p class="glance">{% for stat in d.stats %}<span class="figure">{{ stat.figure }}</span> {{ stat.label }}{% if not loop.last %}<span class="sep">·</span>{% endif %}{% endfor %}</p>
+  </section>
 
-      <section class="sb-block stats-block">
-        <p class="eyebrow" id="statsTitle">{{ resume.en.ui.statsTitle }}</p>
-        <div class="stat-grid" id="statsGrid">
-          {% for stat in resume.en.stats %}
-          <div class="stat"><p class="figure">{{ stat.figure }}</p><p class="label">{{ stat.label }}</p></div>
-          {% endfor %}
-        </div>
-      </section>
-    </aside>
-
-    <div class="v-divider"></div>
-
-    <main class="main-col">
-      <p class="eyebrow" id="experienceTitle">{{ resume.en.ui.experienceTitle }}</p>
-      <div class="exp-flow" id="expFlow">
-        {% for role in resume.en.experience.featured %}
-        <article class="role">
-          <div class="role-head">
-            <span class="role-dates">{{ role.dates }}</span>
-            <span class="role-company">{{ role.company }}</span>
-          </div>
-          <p class="role-title">{{ role.title }}</p>
-          <ul class="role-bullets">
-            {% for step in role.chain %}<li>{{ step }}</li>{% endfor %}
-          </ul>
-          {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
-        </article>
-        {% endfor %}
+  <section class="experience">
+    <h2 class="section-title">{{ d.ui.experienceTitle }}</h2>
+    {% for role in d.experience.featured %}
+    <div class="role">
+      <div class="role-head">
+        <h3>{% if role.url %}<a href="{{ role.url }}">{{ role.company }}</a>{% else %}{{ role.company }}{% endif %}</h3>
+        <span class="role-dates">{{ role.dates }}</span>
       </div>
-    </main>
-  </div>
+      <p class="role-title">{{ role.title }}</p>
+      <ul class="role-bullets">{% for step in role.chain %}<li>{{ step }}</li>{% endfor %}</ul>
+      {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </section>
 
-  <hr class="rule" style="margin-top:12pt;">
+  <section class="how">
+    <h2 class="section-title">{{ d.ui.howIWorkTitle }}</h2>
+    <ul class="how-list">{% for item in d.howIWork %}<li>{{ item }}</li>{% endfor %}</ul>
+  </section>
 
   <section class="earlier">
-    <p class="eyebrow" id="earlierTitle">{{ resume.en.ui.earlierTitle }}</p>
-    <div class="earlier-grid" id="earlierGrid">
-      {% for role in resume.en.experience.earlier %}
-      <div class="earlier-item">
-        <div class="co">{{ role.company }}</div>
-        <div class="title">{{ role.title }}</div>
-        <div class="dates">{{ role.dates }}</div>
-      </div>
-      {% endfor %}
-    </div>
+    <h2 class="section-title">{{ d.ui.earlierTitle }}</h2>
+    <ul class="earlier-list">{% for role in d.experience.earlier %}<li><span><span class="co">{{ role.company }}</span> — <span class="title">{{ role.title }}</span></span><span class="dates">{{ role.dates }}</span></li>{% endfor %}</ul>
+  </section>
+
+  <section class="education">
+    <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
+    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% endfor %}</ul>
   </section>
 
   <footer class="foot-note">
-    <p id="footNote">{{ resume.en.ui.pdfFooterNote }} {{ resume.en.links.website.label }} — {{ resume.en.ui.lastUpdated }}</p>
+    <p>{{ d.ui.pdfFooterNote }} <a href="{{ d.links.website.url }}">{{ d.links.website.label }}</a> — {{ d.ui.lastUpdated }}</p>
   </footer>
-
-</div>
+</article>
 
 <script>
   (function() {
     const RESUME_DATA = {{ resume | dump | safe }};
 
-    function linkedinHandle(url) {
-      return url.replace("https://www.", "");
+    // Escape anything that reaches innerHTML. The data file is trusted, but a
+    // stray "&" or "<" in a bullet would otherwise silently mangle the sheet.
+    function esc(s) {
+      return String(s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Mirrors the server-rendered markup above, element for element. If you
+    // change one, change the other — the static render is what a crawler and
+    // a JS-less print see, and this is what the language toggle produces.
+    function sheetHtml(d) {
+      return `
+  <header class="head">
+    <h1>${esc(d.name)}</h1>
+    <p class="role-line">${esc(d.role)}</p>
+    <p class="disciplines">${esc(d.disciplines)}</p>
+    <p class="contact"><a href="mailto:${esc(d.email)}">${esc(d.email)}</a><span class="sep">·</span><a href="${esc(d.links.linkedin.url)}">${esc(d.links.linkedin.label)}</a><span class="sep">·</span><a href="${esc(d.links.github.url)}">${esc(d.links.github.label)}</a><span class="sep">·</span><a href="${esc(d.links.website.url)}">${esc(d.links.website.label)}</a><span class="sep">·</span><span class="loc">${esc(d.location)}</span></p>
+  </header>
+
+  <hr class="rule">
+
+  <section class="profile">
+    <h2 class="section-title">${esc(d.ui.snapshotTitle)}</h2>
+    ${d.snapshot.map(p => `<p>${esc(p)}</p>`).join('')}
+  </section>
+
+  <section class="glance-block">
+    <h2 class="section-title">${esc(d.ui.statsTitle)}</h2>
+    <p class="glance">${d.stats.map(s => `<span class="figure">${esc(s.figure)}</span> ${esc(s.label)}`).join('<span class="sep">·</span>')}</p>
+  </section>
+
+  <section class="experience">
+    <h2 class="section-title">${esc(d.ui.experienceTitle)}</h2>
+    ${d.experience.featured.map(role => `
+    <div class="role">
+      <div class="role-head">
+        <h3>${role.url ? `<a href="${esc(role.url)}">${esc(role.company)}</a>` : esc(role.company)}</h3>
+        <span class="role-dates">${esc(role.dates)}</span>
+      </div>
+      <p class="role-title">${esc(role.title)}</p>
+      <ul class="role-bullets">${role.chain.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
+      ${role.tags ? `<p class="role-tags">${esc(role.tags)}</p>` : ''}
+    </div>`).join('')}
+  </section>
+
+  <section class="how">
+    <h2 class="section-title">${esc(d.ui.howIWorkTitle)}</h2>
+    <ul class="how-list">${d.howIWork.map(i => `<li>${esc(i)}</li>`).join('')}</ul>
+  </section>
+
+  <section class="earlier">
+    <h2 class="section-title">${esc(d.ui.earlierTitle)}</h2>
+    <ul class="earlier-list">${d.experience.earlier.map(r => `<li><span><span class="co">${esc(r.company)}</span> — <span class="title">${esc(r.title)}</span></span><span class="dates">${esc(r.dates)}</span></li>`).join('')}</ul>
+  </section>
+
+  <section class="education">
+    <h2 class="section-title">${esc(d.ui.educationTitle)}</h2>
+    <ul class="edu-list">${d.education.map(e => `<li><span><span class="credential">${esc(e.credential)}</span> — <span class="school">${esc(e.school)}</span></span><span class="dates">${esc(e.dates)}</span></li>`).join('')}</ul>
+  </section>
+
+  <footer class="foot-note">
+    <p>${esc(d.ui.pdfFooterNote)} <a href="${esc(d.links.website.url)}">${esc(d.links.website.label)}</a> — ${esc(d.ui.lastUpdated)}</p>
+  </footer>`;
     }
 
     function render(lang) {
       const d = RESUME_DATA[lang];
       if (!d) return;
       document.documentElement.lang = lang;
+      // The <title> becomes the PDF's /Title metadata, which is the first
+      // thing many ATS parsers and file managers read. Keep it a real name.
+      document.title = d.ui.pdfTitle;
+      document.getElementById('sheet').innerHTML = sheetHtml(d);
 
-      document.getElementById('eyebrow').textContent = d.eyebrow;
-      document.getElementById('name').textContent = d.name;
-      document.getElementById('roleLine').textContent = d.role + ' — ' + d.disciplines;
-
-      const contact = document.getElementById('contactBlock');
-      contact.innerHTML = `
-        <p>${d.email}</p>
-        <p>${linkedinHandle(d.links.linkedin.url)}</p>
-        <p>${d.links.website.label}</p>
-        <p>${d.location}</p>
-      `;
-
-      const snapshot = document.getElementById('snapshotBlock');
-      snapshot.innerHTML = `
-        <p class="body-text">${d.snapshot[0]}</p>
-        <p class="body-text">${d.snapshot[2]}</p>
-      `;
-
-      document.getElementById('statsTitle').textContent = d.ui.statsTitle;
-      document.getElementById('statsGrid').innerHTML = d.stats.map(s =>
-        `<div class="stat"><p class="figure">${s.figure}</p><p class="label">${s.label}</p></div>`
-      ).join('');
-
-      document.getElementById('experienceTitle').textContent = d.ui.experienceTitle;
-      document.getElementById('expFlow').innerHTML = d.experience.featured.map(role => `
-        <article class="role">
-          <div class="role-head">
-            <span class="role-dates">${role.dates}</span>
-            <span class="role-company">${role.company}</span>
-          </div>
-          <p class="role-title">${role.title}</p>
-          <ul class="role-bullets">${role.chain.map(step => `<li>${step}</li>`).join('')}</ul>
-          ${role.tags ? `<p class="role-tags">${role.tags}</p>` : ''}
-        </article>
-      `).join('');
-
-      document.getElementById('earlierTitle').textContent = d.ui.earlierTitle;
-      document.getElementById('earlierGrid').innerHTML = d.experience.earlier.map(role => `
-        <div class="earlier-item">
-          <div class="co">${role.company}</div>
-          <div class="title">${role.title}</div>
-          <div class="dates">${role.dates}</div>
-        </div>
-      `).join('');
-
-      document.getElementById('footNote').textContent = `${d.ui.pdfFooterNote} ${d.links.website.label} — ${d.ui.lastUpdated}`;
-
-      const btnEn = document.getElementById('langBtnEn');
-      const btnEs = document.getElementById('langBtnEs');
-      btnEn.classList.toggle('is-active', lang === 'en');
-      btnEs.classList.toggle('is-active', lang === 'es');
+      document.getElementById('langBtnEn').classList.toggle('is-active', lang === 'en');
+      document.getElementById('langBtnEs').classList.toggle('is-active', lang === 'es');
       document.getElementById('printBtn').title = d.ui.pdfPrintButton;
       document.getElementById('backLink').textContent = d.ui.pdfBackLink;
     }
@@ -458,7 +486,9 @@ eleventyExcludeFromCollections: true
     }
 
     const initialLang = detectLang();
-    render(initialLang);
+    // Skip the re-render when the server-rendered EN markup is already what we
+    // want — it keeps the no-JS output and the JS output provably identical.
+    if (initialLang !== 'en') render(initialLang);
 
     document.getElementById('langBtnEn').addEventListener('click', () => render('en'));
     document.getElementById('langBtnEs').addEventListener('click', () => render('es'));

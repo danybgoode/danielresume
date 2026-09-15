@@ -1,5 +1,5 @@
 ---
-title: Daniel Vásquez — Product Executive
+title: Daniel Vásquez — Product & Agentic Delivery
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -25,30 +25,33 @@ title: Daniel Vásquez — Product Executive
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="profile">
-<meta property="og:title" content="Daniel Vásquez — Product Executive">
-<meta property="og:description" content="Product executive building software, marketplaces, and AI-enabled organizations across 15 years of global leadership.">
+<meta property="og:title" content="{{ resume.en.ui.pageTitle }}">
+<meta property="og:description" content="{{ resume.en.ui.metaDesc }}">
 <meta property="og:url" content="https://miyagisanchez.com/">
-<meta property="og:site_name" content="Daniel Vásquez Résumé">
+<meta property="og:site_name" content="Daniel Vásquez">
 <meta property="og:image" content="https://miyagisanchez.com/cauldron.png">
-<meta property="og:image:alt" content="Daniel Vásquez — Product Executive">
+<meta property="og:image:alt" content="Daniel Vásquez — Product & Agentic Delivery">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_MX">
 
 <!-- Twitter / X -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Daniel Vásquez — Product Executive">
-<meta name="twitter:description" content="Product executive building software, marketplaces, and AI-enabled organizations across 15 years of global leadership.">
+<meta name="twitter:title" content="{{ resume.en.ui.pageTitle }}">
+<meta name="twitter:description" content="{{ resume.en.ui.metaDesc }}">
 <meta name="twitter:image" content="https://miyagisanchez.com/cauldron.png">
-<meta name="twitter:image:alt" content="Daniel Vásquez — Product Executive">
+<meta name="twitter:image:alt" content="Daniel Vásquez — Product & Agentic Delivery">
 
-<!-- Structured Data (JSON-LD) -->
+<!-- Structured Data (JSON-LD).
+     The visible Capabilities tag-cloud is gone, but keyword matching has not
+     — recruiters' tooling and LLM readers both mine knowsAbout. This is where
+     the skill keywords live now: machine-readable, not a wall of pills. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Daniel Vásquez",
-  "jobTitle": "Product Executive",
-  "description": "Product executive building software, marketplaces, and AI-enabled organizations across fifteen years of global leadership.",
+  "jobTitle": "Product Engineering Leader",
+  "description": "Product leader shipping production software with multi-agent teams, and designing the operating system those teams run on.",
   "url": "https://miyagisanchez.com",
   "email": "mailto:danielvp1987@gmail.com",
   "address": {
@@ -62,15 +65,35 @@ title: Daniel Vásquez — Product Executive
   },
   "knowsAbout": [
     "Product Management",
-    "AI Workflows & Agents",
-    "System Architecture",
+    "Product Strategy",
+    "Product Engineering",
+    "Multi-Agent Orchestration",
+    "AI Agents",
+    "LLM Application Development",
+    "Agentic Workflows",
+    "Model Context Protocol (MCP)",
+    "Engineering Leadership",
+    "Organization Design",
+    "Agile and Scrum",
+    "Platform Engineering",
     "Marketplace Design",
+    "Payments and Checkout",
+    "E-commerce",
+    "Experimentation and A/B Testing",
+    "Feature Flags",
+    "Product Analytics",
+    "System Architecture",
+    "Next.js",
+    "TypeScript",
+    "Supabase and PostgreSQL",
+    "Google Cloud Run",
+    "CI/CD",
     "Financial Modeling",
-    "M&A Integration",
-    "E-commerce"
+    "M&A Integration"
   ],
   "sameAs": [
     "https://www.linkedin.com/in/danielvasquezparedes",
+    "https://github.com/danybgoode",
     "https://goldenfrijoles.com",
     "https://miyagisanchez.com"
   ]
@@ -111,20 +134,13 @@ title: Daniel Vásquez — Product Executive
       <p class="role" id="profileRole">{{ resume.en.role }}</p>
       <p class="disciplines" id="profileDisciplines">{{ resume.en.disciplines }}</p>
       <div class="meta">
-        <a href="{{ resume.en.links.website.url }}" id="metaWebsite">{{ resume.en.links.website.label }}</a>
         <a href="mailto:{{ resume.en.email }}" id="metaEmail">{{ resume.en.email }}</a>
         <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="{{ resume.en.links.github.url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="{{ resume.en.links.goldenfrijoles.url }}" target="_blank" rel="noopener noreferrer">{{ resume.en.links.goldenfrijoles.label }}</a>
         <span id="metaLocation">{{ resume.en.location }}</span>
       </div>
     </div>
-
-    <section class="stats-section">
-      <div class="stats" id="statsContainer">
-        {% for stat in resume.en.stats %}
-        <div class="stat"><p class="figure">{{ stat.figure }}</p><p class="label">{{ stat.label }}</p></div>
-        {% endfor %}
-      </div>
-    </section>
 
     <section class="snapshot">
       <p class="eyebrow" id="snapshotTitle">{{ resume.en.ui.snapshotTitle }}</p>
@@ -135,58 +151,69 @@ title: Daniel Vásquez — Product Executive
       </div>
     </section>
 
+    <section class="stats-section">
+      <p class="eyebrow" id="statsTitle">{{ resume.en.ui.statsTitle }}</p>
+      <div class="stats" id="statsContainer">
+        {% for stat in resume.en.stats %}
+        <div class="stat"><p class="figure">{{ stat.figure }}</p><p class="label">{{ stat.label }}</p></div>
+        {% endfor %}
+      </div>
+    </section>
+
     <section class="experience">
       <p class="eyebrow" id="experienceTitle">{{ resume.en.ui.experienceTitle }}</p>
       <div id="featuredRoles">
         {% for role in resume.en.experience.featured %}
         <div class="role-card">
           <div class="role-head">
-            <span class="role-company">{{ role.company }}</span>
+            <span class="role-company">{% if role.url %}<a href="{{ role.url }}" target="_blank" rel="noopener noreferrer">{{ role.company }}</a>{% else %}{{ role.company }}{% endif %}</span>
             <span class="role-dates">{{ role.dates }}</span>
           </div>
           <p class="role-title">{{ role.title }}</p>
-          <p class="role-chain">
-            {% for step in role.chain %}<span class="step">{{ step }}</span>{% if not loop.last %}<span class="sep">→</span>{% endif %}{% endfor %}
-          </p>
+          <ul class="role-bullets">
+            {% for step in role.chain %}<li>{{ step }}</li>{% endfor %}
+          </ul>
           {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
         </div>
         {% endfor %}
       </div>
+    </section>
 
-      <div class="earlier">
-        <p class="eyebrow" id="earlierTitle" style="margin-bottom:0;">{{ resume.en.ui.earlierTitle }}</p>
-        <div id="earlierRoles">
-          {% for role in resume.en.experience.earlier %}
-          <div class="earlier-row">
-            <div>
-              <div class="co">{{ role.company }}</div>
-              <div class="role">{{ role.title }}</div>
-            </div>
-            <div class="dates">{{ role.dates }}</div>
+    <section class="how">
+      <p class="eyebrow" id="howTitle">{{ resume.en.ui.howIWorkTitle }}</p>
+      <ul class="how-list" id="howList">
+        {% for item in resume.en.howIWork %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+    </section>
+
+    <section class="earlier-section">
+      <p class="eyebrow" id="earlierTitle">{{ resume.en.ui.earlierTitle }}</p>
+      <div id="earlierRoles">
+        {% for role in resume.en.experience.earlier %}
+        <div class="earlier-row">
+          <div>
+            <div class="co">{{ role.company }}</div>
+            <div class="role">{{ role.title }}</div>
           </div>
-          {% endfor %}
+          <div class="dates">{{ role.dates }}</div>
         </div>
+        {% endfor %}
       </div>
     </section>
 
-    <section class="skills">
-      <p class="eyebrow" id="capabilitiesTitle">{{ resume.en.ui.capabilitiesTitle }}</p>
-      <ul class="tag-list" id="skillsList">
-        {% for skill in resume.en.skills %}<li>{{ skill }}</li>{% endfor %}
-      </ul>
-    </section>
-
-    <section class="timeline">
-      <p class="eyebrow" id="timelineTitle">{{ resume.en.ui.timelineTitle }}</p>
-      <ul class="timeline-list" id="timelineList">
-        {% for entry in resume.en.timeline %}
-        <li class="timeline-row{% if entry.current %} current{% endif %}">
-          <span class="timeline-year">{{ entry.year }}</span>
-          <span class="timeline-dot"></span>
-          <span class="timeline-entry"><span class="t-role">{{ entry.role }}</span><br><span class="t-sub">{{ entry.sub }}</span></span>
-        </li>
+    <section class="education">
+      <p class="eyebrow" id="educationTitle">{{ resume.en.ui.educationTitle }}</p>
+      <div id="educationList">
+        {% for e in resume.en.education %}
+        <div class="edu-row">
+          <div>
+            <div class="credential">{{ e.credential }}</div>
+            <div class="school">{{ e.school }}</div>
+          </div>
+          <div class="dates">{{ e.dates }}</div>
+        </div>
         {% endfor %}
-      </ul>
+      </div>
     </section>
 
     <section class="philosophy">
@@ -198,7 +225,7 @@ title: Daniel Vásquez — Product Executive
       <div class="footer-links">
         <a href="mailto:{{ resume.en.email }}" id="footerEmail">{{ resume.en.ui.emailLabel }}</a>
         <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer" id="footerLinkedin">{{ resume.en.ui.linkedinLabel }}</a>
-        <a href="{{ resume.en.links.website.url }}" id="footerWebsite">{{ resume.en.ui.websiteLabel }}</a>
+        <a href="{{ resume.en.links.github.url }}" target="_blank" rel="noopener noreferrer" id="footerGithub">{{ resume.en.ui.githubLabel }}</a>
         <a href="/resume.md" class="print-hide" id="footerMarkdown">{{ resume.en.ui.viewMarkdown }}</a>
       </div>
       <p class="footer-note" id="footerNote">{{ resume.en.ui.lastUpdated }}</p>
@@ -226,7 +253,7 @@ title: Daniel Vásquez — Product Executive
       <div class="footer-links">
         <a href="mailto:{{ resume.en.email }}" id="tldrFooterEmail">{{ resume.en.ui.emailLabel }}</a>
         <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="{{ resume.en.links.website.url }}">{{ resume.en.links.website.label }}</a>
+        <a href="{{ resume.en.links.github.url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </main>
@@ -238,6 +265,12 @@ title: Daniel Vásquez — Product Executive
     const RESUME_DATA = {{ resume | dump | safe }};
     let currentLang = 'en';
     let currentView = 'classic';
+
+    function esc(s) {
+      return String(s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
 
     function detectInitialLang() {
       try {
@@ -281,7 +314,7 @@ title: Daniel Vásquez — Product Executive
         }
       }
 
-      // Update Eyebrow and Button
+      // Update Eyebrow and Buttons
       document.getElementById('eyebrowText').textContent = data.eyebrow;
       document.getElementById('viewToggleText').textContent = currentView === 'tldr' ? data.ui.classicButton : data.ui.tldrButton;
       document.getElementById('downloadPdfText').textContent = data.ui.downloadPdf;
@@ -291,17 +324,18 @@ title: Daniel Vásquez — Product Executive
       document.getElementById('profileDisciplines').textContent = data.disciplines;
       document.getElementById('metaLocation').textContent = data.location;
 
-      // Update Stats
-      const statsContainer = document.getElementById('statsContainer');
-      if (statsContainer) {
-        statsContainer.innerHTML = data.stats.map(s => `<div class="stat"><p class="figure">${s.figure}</p><p class="label">${s.label}</p></div>`).join('');
-      }
-
-      // Update Snapshot
+      // Update Profile
       document.getElementById('snapshotTitle').textContent = data.ui.snapshotTitle;
       const snapshotEl = document.getElementById('snapshotContent');
       if (snapshotEl) {
-        snapshotEl.innerHTML = data.snapshot.map(p => `<p>${p}</p>`).join('');
+        snapshotEl.innerHTML = data.snapshot.map(p => `<p>${esc(p)}</p>`).join('');
+      }
+
+      // Update Stats
+      document.getElementById('statsTitle').textContent = data.ui.statsTitle;
+      const statsContainer = document.getElementById('statsContainer');
+      if (statsContainer) {
+        statsContainer.innerHTML = data.stats.map(s => `<div class="stat"><p class="figure">${esc(s.figure)}</p><p class="label">${esc(s.label)}</p></div>`).join('');
       }
 
       // Update Featured Experience
@@ -311,16 +345,21 @@ title: Daniel Vásquez — Product Executive
         featEl.innerHTML = data.experience.featured.map(role => `
           <div class="role-card">
             <div class="role-head">
-              <span class="role-company">${role.company}</span>
-              <span class="role-dates">${role.dates}</span>
+              <span class="role-company">${role.url ? `<a href="${esc(role.url)}" target="_blank" rel="noopener noreferrer">${esc(role.company)}</a>` : esc(role.company)}</span>
+              <span class="role-dates">${esc(role.dates)}</span>
             </div>
-            <p class="role-title">${role.title}</p>
-            <p class="role-chain">
-              ${role.chain.map(step => `<span class="step">${step}</span>`).join('<span class="sep">→</span>')}
-            </p>
-            ${role.tags ? `<p class="role-tags">${role.tags}</p>` : ''}
+            <p class="role-title">${esc(role.title)}</p>
+            <ul class="role-bullets">${role.chain.map(step => `<li>${esc(step)}</li>`).join('')}</ul>
+            ${role.tags ? `<p class="role-tags">${esc(role.tags)}</p>` : ''}
           </div>
         `).join('');
+      }
+
+      // Update How I Work
+      document.getElementById('howTitle').textContent = data.ui.howIWorkTitle;
+      const howEl = document.getElementById('howList');
+      if (howEl) {
+        howEl.innerHTML = data.howIWork.map(i => `<li>${esc(i)}</li>`).join('');
       }
 
       // Update Earlier Roles
@@ -330,31 +369,26 @@ title: Daniel Vásquez — Product Executive
         earlierEl.innerHTML = data.experience.earlier.map(role => `
           <div class="earlier-row">
             <div>
-              <div class="co">${role.company}</div>
-              <div class="role">${role.title}</div>
+              <div class="co">${esc(role.company)}</div>
+              <div class="role">${esc(role.title)}</div>
             </div>
-            <div class="dates">${role.dates}</div>
+            <div class="dates">${esc(role.dates)}</div>
           </div>
         `).join('');
       }
 
-      // Update Capabilities
-      document.getElementById('capabilitiesTitle').textContent = data.ui.capabilitiesTitle;
-      const skillsEl = document.getElementById('skillsList');
-      if (skillsEl) {
-        skillsEl.innerHTML = data.skills.map(s => `<li>${s}</li>`).join('');
-      }
-
-      // Update Timeline
-      document.getElementById('timelineTitle').textContent = data.ui.timelineTitle;
-      const timelineEl = document.getElementById('timelineList');
-      if (timelineEl) {
-        timelineEl.innerHTML = data.timeline.map(entry => `
-          <li class="timeline-row${entry.current ? ' current' : ''}">
-            <span class="timeline-year">${entry.year}</span>
-            <span class="timeline-dot"></span>
-            <span class="timeline-entry"><span class="t-role">${entry.role}</span><br><span class="t-sub">${entry.sub}</span></span>
-          </li>
+      // Update Education
+      document.getElementById('educationTitle').textContent = data.ui.educationTitle;
+      const eduEl = document.getElementById('educationList');
+      if (eduEl) {
+        eduEl.innerHTML = data.education.map(e => `
+          <div class="edu-row">
+            <div>
+              <div class="credential">${esc(e.credential)}</div>
+              <div class="school">${esc(e.school)}</div>
+            </div>
+            <div class="dates">${esc(e.dates)}</div>
+          </div>
         `).join('');
       }
 
@@ -365,7 +399,7 @@ title: Daniel Vásquez — Product Executive
       // Update Footer
       document.getElementById('footerEmail').textContent = data.ui.emailLabel;
       document.getElementById('footerLinkedin').textContent = data.ui.linkedinLabel;
-      document.getElementById('footerWebsite').textContent = data.ui.websiteLabel;
+      document.getElementById('footerGithub').textContent = data.ui.githubLabel;
       const footerMarkdown = document.getElementById('footerMarkdown');
       if (footerMarkdown) {
         footerMarkdown.textContent = data.ui.viewMarkdown;
@@ -378,6 +412,7 @@ title: Daniel Vásquez — Product Executive
       document.getElementById('tldrIntro').textContent = data.tldr.intro;
       const tldrBullets = document.getElementById('tldrBullets');
       if (tldrBullets) {
+        // tldr bullets deliberately carry inline anchor markup from the data file
         tldrBullets.innerHTML = data.tldr.bullets.map(b => `<li>${b}</li>`).join('');
       }
       document.getElementById('tldrPunchline').textContent = data.tldr.punchline;
@@ -387,7 +422,6 @@ title: Daniel Vásquez — Product Executive
     }
 
     function updateTldrBackBtn() {
-      const data = RESUME_DATA[currentLang];
       const backBtn = document.getElementById('tldrBackBtn');
       if (backBtn) {
         backBtn.textContent = currentLang === 'es' ? '← Clásico' : '← Classic';
@@ -421,9 +455,9 @@ title: Daniel Vásquez — Product Executive
     });
 
     document.getElementById('downloadPdfBtn').addEventListener('click', function() {
-      // The PDF is its own dedicated, print-optimized layout (three-column,
-      // executive-length) rather than a printed copy of this page — see
-      // /print/. Carry the current language selection along.
+      // The PDF is its own dedicated, print-optimized layout (single-column,
+      // ATS-parseable) rather than a printed copy of this page — see /print/.
+      // Carry the current language selection along.
       window.open('/print/?lang=' + currentLang, '_blank', 'noopener');
     });
 
@@ -459,4 +493,3 @@ title: Daniel Vásquez — Product Executive
 </script>
 </body>
 </html>
-

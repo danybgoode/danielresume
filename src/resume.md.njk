@@ -13,30 +13,46 @@ eleventyExcludeFromCollections: true
 ---
 {% set data = resume[item.lang] %}
 # {{ data.name | safe }}
-**{{ data.role | safe }}** — {{ data.location | safe }}
-{{ data.links.website.url }} · {{ data.email }} · {{ data.links.linkedin.url }}
+**{{ data.role | safe }}**
+
+{{ data.disciplines | safe }}
+
+- Location: {{ data.location | safe }}
+- Email: {{ data.email }}
+- LinkedIn: {{ data.links.linkedin.url }}
+- GitHub: {{ data.links.github.url }}
+- Golden Frijoles: {{ data.links.goldenfrijoles.url }}
+- Miyagi Sánchez: {{ data.links.website.url }}
 
 ## {{ data.ui.snapshotTitle | safe }}
 {% for para in data.snapshot %}
 {{ para | safe }}
 {% endfor %}
+## {{ data.ui.statsTitle | safe }}
+{% for stat in data.stats %}- **{{ stat.figure | safe }}** — {{ stat.label | safe }}
+{% endfor %}
 ## {{ data.ui.experienceTitle | safe }}
 {% for role in data.experience.featured %}
 ### {{ role.company | safe }} — {{ role.dates | safe }}
-*{{ role.title | safe }}*
-{% for step in role.chain %}- {{ step | safe }}
-{% endfor %}{% if role.tags %}{{ role.tags | safe }}
+{{ role.title | safe }}{% if role.url %} · {{ role.url }}{% endif %}
+{% for step in role.chain %}
+- {{ step | safe }}
+{%- endfor %}
+{% if role.tags %}
+{{ role.tags | safe }}
 {% endif %}
+{% endfor %}
+## {{ data.ui.howIWorkTitle | safe }}
+{% for item in data.howIWork %}- {{ item | safe }}
 {% endfor %}
 ## {{ data.ui.earlierTitle | safe }}
 {% for role in data.experience.earlier %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
 {% endfor %}
-## {{ data.ui.capabilitiesTitle | safe }}
-{{ data.skills | join(", ") | safe }}
-
-## {{ data.ui.timelineTitle | safe }}
-{% for entry in data.timeline %}- {{ entry.year | safe }} — {{ entry.role | safe }} ({{ entry.sub | safe }})
+## {{ data.ui.educationTitle | safe }}
+{% for e in data.education %}- **{{ e.credential | safe }}** — {{ e.school | safe }} ({{ e.dates | safe }})
 {% endfor %}
 ## {{ data.ui.approachTitle | safe }}
 {{ data.philosophy | safe }}
 
+---
+{{ data.ui.lastUpdated | safe }}

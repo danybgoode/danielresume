@@ -7,7 +7,7 @@
   --accent: #111111;
   --serif: "Literata", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --measure: 640px;
+  --measure: 660px;
   --gutter: clamp(24px, 6vw, 64px);
 }
 * { box-sizing: border-box; }
@@ -25,7 +25,7 @@ a { color: var(--text); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .page { max-width: var(--measure); margin: 0 auto; padding: clamp(48px, 9vw, 96px) var(--gutter) 80px; min-height: 100vh; display: flex; flex-direction: column; }
 .eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
-section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+section { padding: 52px 0; border-bottom: 1px solid var(--border); }
 section:last-of-type { border-bottom: none; }
 
 /* ---------- Masthead & Header Actions ---------- */
@@ -100,53 +100,111 @@ section:last-of-type { border-bottom: none; }
   padding: 0 1px;
 }
 
-.masthead .name { font-size: clamp(2.1rem, 5.4vw, 2.85rem); font-weight: 500; letter-spacing: -0.01em; margin: 0 0 6px; }
-.masthead .role { font-family: var(--sans); font-size: 1rem; font-weight: 500; color: var(--text); margin: 0 0 4px; }
-.masthead .disciplines { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin: 0 0 20px; }
-.masthead .meta { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); display: flex; gap: 18px; flex-wrap: wrap; padding-top: 20px; border-top: 1px solid var(--border); }
-.masthead .meta a { text-decoration: none; border-bottom: 1px solid var(--border); }
-.masthead .meta a:hover { border-color: var(--text); }
-
-/* ---------- View Containers & Transitions ---------- */
-.view-container {
-  width: 100%;
+/* NOTE: the name/meta block lives in .masthead-main, which is a SIBLING of
+   .masthead (it sits inside #classicView so the TL;DR view can swap it out),
+   not a child. Scoping these to `.masthead .name` silently matched nothing. */
+.masthead-main .name { font-size: clamp(2.1rem, 5.4vw, 2.85rem); font-weight: 500; letter-spacing: -0.01em; margin: 0 0 8px; line-height: 1.1; }
+.masthead-main .role { font-family: var(--sans); font-size: 0.98rem; font-weight: 600; color: var(--text); margin: 0 0 10px; }
+.masthead-main .disciplines { font-family: var(--serif); font-size: 1rem; line-height: 1.6; color: var(--muted); margin: 0 0 22px; max-width: 58ch; }
+.masthead-main .meta {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 0;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
 }
-.view-hidden {
-  display: none !important;
-}
+.masthead-main .meta > * { padding-right: 16px; margin-right: 16px; border-right: 1px solid var(--border); }
+.masthead-main .meta > *:last-child { padding-right: 0; margin-right: 0; border-right: none; }
+.masthead-main .meta a { text-decoration: none; color: var(--text); }
+.masthead-main .meta a:hover { color: var(--muted); }
 
-/* ---------- Classic Sections ---------- */
+/* ---------- View Containers ---------- */
+.view-container { width: 100%; }
+.view-hidden { display: none !important; }
+
+/* ---------- Profile ---------- */
+.snapshot p { margin: 0 0 18px; font-size: 1.05rem; }
+.snapshot p:last-child { margin-bottom: 0; }
+
+/* ---------- At a glance ---------- */
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 0; }
 .stat { padding-right: 20px; border-left: 1px solid var(--border); padding-left: 20px; }
 .stat:nth-child(3n+1) { border-left: none; padding-left: 0; }
 .stat .figure { font-size: 1.5rem; font-weight: 500; line-height: 1.1; margin: 0 0 6px; font-variant-numeric: tabular-nums; }
-.stat .label { font-family: var(--sans); font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
-.snapshot p { margin: 0 0 18px; font-size: 1.08rem; }
-.snapshot p:last-child { margin-bottom: 0; }
+.stat .label { font-family: var(--sans); font-size: 0.72rem; color: var(--muted); line-height: 1.4; margin: 0; }
+
+/* ---------- Experience ---------- */
 .role-card { padding: 28px 0; border-top: 1px solid var(--border); }
 .role-card:first-of-type { border-top: none; padding-top: 0; }
 .role-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 4px; }
-.role-company { font-size: 1.15rem; font-weight: 500; }
+.role-company { font-size: 1.18rem; font-weight: 500; }
+.role-company a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.15s ease;
+}
+.role-company a:hover { border-color: var(--text); }
 .role-dates { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.role-title { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-bottom: 14px; }
-.role-chain { font-size: 0.95rem; line-height: 1.8; margin: 0 0 12px; }
-.role-chain .sep { color: var(--faint); padding: 0 8px; }
-.role-tags { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); }
-.earlier { margin-top: 8px; }
-.earlier-row { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 12px 0; border-top: 1px solid var(--border); font-size: 0.95rem; }
-.earlier-row .role { color: var(--muted); font-family: var(--sans); font-size: 0.82rem; grid-column: 1; }
-.earlier-row .dates { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); grid-row: 1; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.tag-list { display: flex; flex-wrap: wrap; gap: 10px 12px; padding: 0; margin: 0; list-style: none; font-family: var(--sans); }
-.tag-list li { font-size: 0.82rem; padding: 6px 14px; border: 1px solid var(--border); border-radius: 999px; color: var(--text); }
-.timeline-list { list-style: none; margin: 0; padding: 0; position: relative; }
-.timeline-list::before { content: ""; position: absolute; left: 52px; top: 6px; bottom: 6px; border-left: 1px solid var(--border); }
-.timeline-row { display: grid; grid-template-columns: 40px 24px 1fr; align-items: baseline; padding: 12px 0; }
-.timeline-year { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-.timeline-dot { width: 24px; display: flex; justify-content: center; }
-.timeline-dot::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: block; }
-.timeline-row.current .timeline-dot::before { background: var(--accent); box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--border); }
-.timeline-entry .t-role { font-size: 0.98rem; }
-.timeline-entry .t-sub { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); }
+.role-title { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin: 0 0 14px; }
+.role-bullets { margin: 0 0 12px; padding-left: 20px; font-size: 0.97rem; line-height: 1.62; }
+.role-bullets li { margin-bottom: 8px; }
+.role-bullets li:last-child { margin-bottom: 0; }
+.role-bullets li::marker { color: var(--faint); }
+.role-tags { font-family: var(--sans); font-size: 0.76rem; color: var(--muted); line-height: 1.5; margin: 0; }
+
+/* ---------- How I work ----------
+   This block carries the visual weight the old Capabilities tag-cloud and
+   Timeline used to. It is the differentiating section, so it is set as a
+   numbered manifesto rather than another bulleted list. */
+.how-list { list-style: none; margin: 0; padding: 0; counter-reset: how; }
+.how-list li {
+  counter-increment: how;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.how-list li:last-child { margin-bottom: 0; }
+.how-list li::before {
+  content: counter(how, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Earlier career & Education ---------- */
+/* Flex, not grid. The markup nests company+title inside one wrapper div and
+   leaves .dates as the second child, so `.earlier-row .role { grid-column: 1 }`
+   was styling a grandchild that is not a grid item at all — while `.dates`
+   carried an explicit `grid-row: 1`. Definitely-placed items are positioned
+   before auto-placed ones, so .dates claimed column 1 and the company block
+   got pushed right: every row rendered backwards. */
+.earlier-row, .edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.earlier-row:first-child, .edu-row:first-child { border-top: none; padding-top: 0; }
+.earlier-row > div:first-child, .edu-row > div:first-child { min-width: 0; }
+.earlier-row .role, .edu-row .school { color: var(--muted); font-family: var(--sans); font-size: 0.82rem; }
+.earlier-row .dates, .edu-row .dates { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); white-space: nowrap; flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+
+/* ---------- Approach ---------- */
 .philosophy blockquote { margin: 0; font-style: italic; font-size: 1.2rem; line-height: 1.65; padding: 0; }
 
 /* ---------- TL;DR Short Version ---------- */
@@ -181,7 +239,7 @@ section:last-of-type { border-bottom: none; }
   gap: 16px;
 }
 .tldr-list li {
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   line-height: 1.65;
   position: relative;
   padding-left: 24px;
@@ -199,9 +257,7 @@ section:last-of-type { border-bottom: none; }
   text-underline-offset: 3px;
   transition: text-decoration-color 0.15s ease;
 }
-.tldr-list li a:hover {
-  text-decoration-color: var(--text);
-}
+.tldr-list li a:hover { text-decoration-color: var(--text); }
 .tldr-punchline {
   font-size: 1.2rem;
   font-style: italic;
@@ -222,9 +278,7 @@ section:last-of-type { border-bottom: none; }
   border-bottom: 1px solid var(--border);
   padding-bottom: 1px;
 }
-.tldr-contact a:hover {
-  border-color: var(--text);
-}
+.tldr-contact a:hover { border-color: var(--text); }
 .tldr-footer-nav {
   margin-top: auto;
   padding-top: 32px;
@@ -237,21 +291,10 @@ section:last-of-type { border-bottom: none; }
   font-family: var(--sans);
   font-size: 0.85rem;
 }
-.tldr-footer-nav a {
-  text-decoration: none;
-  color: var(--text);
-}
-.tldr-footer-nav a:hover {
-  color: var(--muted);
-}
-.action-link {
-  font-weight: 600;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 2px;
-}
-.action-link:hover {
-  border-color: var(--text);
-}
+.tldr-footer-nav a { text-decoration: none; color: var(--text); }
+.tldr-footer-nav a:hover { color: var(--muted); }
+.action-link { font-weight: 600; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
+.action-link:hover { border-color: var(--text); }
 
 /* ---------- Footer ---------- */
 footer { padding-top: 40px; margin-top: auto; }
@@ -261,138 +304,71 @@ footer { padding-top: 40px; margin-top: auto; }
 .footer-links a:hover { color: var(--muted); }
 .footer-note { font-family: var(--sans); font-size: 0.72rem; color: var(--faint); margin-top: 18px; }
 
-/* ---------- Responsive & Print ---------- */
+/* ---------- Responsive ---------- */
 @media (max-width: 560px) {
   .masthead-top { align-items: flex-start; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .stat:nth-child(3n+1) { border-left: 1px solid var(--border); padding-left: 20px; }
   .stat:nth-child(2n+1) { border-left: none; padding-left: 0; }
   .role-head { flex-direction: column; align-items: flex-start; gap: 2px; }
-  .timeline-list::before { left: 44px; }
-  .timeline-row { grid-template-columns: 34px 20px 1fr; }
+  .how-list li { padding-left: 32px; }
 }
 
+/* ---------- Print ----------
+   The real CV export is /print/ — a dedicated single-column sheet built for
+   text extraction (see the comment at the top of src/resume-pdf.njk). These
+   rules only exist so that someone who hits Cmd-P on THIS page still gets
+   something coherent rather than the screen chrome. Keep it single-column
+   for the same reason: Chrome emits PDF text in visual line order across the
+   full page width, so side-by-side blocks interleave in the extracted text. */
 @media print {
-  @page { size: A4; margin: 20mm; }
-  body { 
-    background: #fff; 
-    color: #1E1E1E; 
-    font-family: "Literata", "Times New Roman", Times, serif;
-    font-size: 10.5pt; 
+  @page { size: A4; margin: 16mm 18mm; }
+  body {
+    background: #fff;
+    color: #1E1E1E;
+    font-size: 10pt;
     line-height: 1.45;
   }
-  .page { max-width: none; padding: 0; margin: 0; }
+  .page { max-width: none; padding: 0; margin: 0; display: block; }
   a { text-decoration: none; color: #1E1E1E; }
-  
-  /* Hide everything except what we want in PDF */
-  .print-hide, .header-actions, #tldrView, .masthead-top,
-  .stats-section, .earlier, .skills, .timeline, .philosophy, footer { 
-    display: none !important; 
-  }
+
+  .print-hide, .header-actions, #tldrView, .masthead-top { display: none !important; }
   #classicView { display: block !important; }
 
-  /* Header - Name and Email in a single row */
-  .masthead { padding-bottom: 14px; }
-  .masthead-main { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: baseline;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  section { padding: 12pt 0; border-bottom: none; border-top: 1px solid #E4E1DB; }
+  .eyebrow {
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 0.055em;
+    color: #5F5F5F;
+    margin: 0 0 8pt;
   }
-  .masthead-main .name { 
-    font-size: 22pt; 
-    font-weight: 500; 
-    letter-spacing: -0.01em; 
-    margin: 0; 
-    padding: 0;
-  }
-  /* Hide role and disciplines */
-  .masthead-main .role, .masthead-main .disciplines { display: none !important; }
-  /* Style meta to show only email on the right */
-  .masthead-main .meta { 
-    display: block !important;
-    margin: 0;
-    padding: 0;
-    text-align: right;
-  }
-  .masthead-main .meta a#metaEmail { 
-    display: inline !important; 
-    color: #1E1E1E; 
-    text-decoration: none;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 9.5pt;
-  }
-  .masthead-main .meta a:not(#metaEmail), .masthead-main .meta span { display: none !important; }
 
-  /* Snapshot */
-  .snapshot { margin-top: 20px; }
-  .snapshot .eyebrow { 
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 7.5pt; 
-    font-weight: 600; 
-    letter-spacing: 0.1em; 
-    text-transform: uppercase; 
-    color: #6B6B6B; 
-    margin: 0 0 10px;
-  }
-  .snapshot p { 
-    margin: 0 0 12px; 
-    font-size: 10.5pt; 
-    line-height: 1.5;
-  }
-  .snapshot p:last-child { margin-bottom: 0; }
+  .masthead { padding: 0 0 8pt; }
+  .masthead-main .name { font-size: 22pt; margin: 0 0 3pt; }
+  .masthead-main .role { font-size: 9.5pt; margin: 0 0 3pt; }
+  .masthead-main .disciplines { font-size: 9pt; margin: 0 0 8pt; max-width: none; }
+  .masthead-main .meta { font-size: 8.5pt; padding-top: 8pt; }
+  .masthead-main .meta > * { padding-right: 8pt; margin-right: 8pt; }
 
-  /* Experience */
-  .experience { margin-top: 24px; }
-  .experience .eyebrow { 
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 7.5pt; 
-    font-weight: 600; 
-    letter-spacing: 0.1em; 
-    text-transform: uppercase; 
-    color: #6B6B6B; 
-    margin: 0 0 10px;
-  }
-  .role-card { 
-    padding: 12px 0; 
-    border-top: 1px solid #E4E1DB;
-  }
-  .role-card:first-of-type { border-top: none; padding-top: 0; }
-  .role-head { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: baseline; 
-    gap: 16px; 
-    flex-wrap: wrap; 
-    margin-bottom: 3px;
-  }
-  .role-company { 
-    font-size: 11pt; 
-    font-weight: 500;
-  }
-  .role-dates { 
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 8pt; 
-    color: #6B6B6B; 
-    white-space: nowrap;
-  }
-  .role-title { 
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 8.5pt; 
-    color: #6B6B6B; 
-    margin-bottom: 6px;
-  }
-  .role-chain { 
-    font-size: 9.5pt; 
-    line-height: 1.6; 
-    margin: 0 0 8px;
-  }
-  .role-chain .sep { color: #999691; padding: 0 8px; }
-  .role-tags { 
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 7.5pt; 
-    color: #6B6B6B;
-  }
+  .snapshot p { font-size: 9.2pt; margin: 0 0 6pt; }
+  .stats { grid-template-columns: repeat(3, 1fr); gap: 10pt 0; }
+  .stat .figure { font-size: 12pt; margin: 0 0 2pt; }
+  .stat .label { font-size: 7pt; }
+
+  .role-card { padding: 8pt 0; break-inside: avoid; page-break-inside: avoid; }
+  .role-company { font-size: 10pt; font-weight: 700; font-family: "Inter", Helvetica, Arial, sans-serif; }
+  .role-dates { font-size: 7.8pt; }
+  .role-title { font-size: 8.4pt; margin: 0 0 4pt; }
+  .role-bullets { font-size: 8.8pt; line-height: 1.45; margin: 0 0 4pt; padding-left: 12pt; }
+  .role-bullets li { margin-bottom: 2pt; }
+  .role-tags { font-size: 7.6pt; }
+
+  .how-list li { font-size: 8.8pt; line-height: 1.45; margin-bottom: 4pt; padding-left: 26pt; break-inside: avoid; }
+  .earlier-row, .edu-row { padding: 3pt 0; font-size: 8.6pt; break-inside: avoid; }
+  .earlier-row .role, .edu-row .school { font-size: 7.8pt; }
+  .philosophy blockquote { font-size: 10pt; }
+  footer { padding-top: 10pt; }
+  .footer-note { font-size: 7pt; }
 }
