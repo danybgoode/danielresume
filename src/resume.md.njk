@@ -12,6 +12,16 @@ permalink: "{{ item.permalink }}"
 eleventyExcludeFromCollections: true
 ---
 {% set data = resume[item.lang] %}
+{%- macro roleBlock(role) %}
+### {{ role.company | safe }} — {{ role.dates | safe }}
+{{ role.title | safe }}{% if role.url %} · {{ role.url }}{% endif %}
+{% for step in role.chain %}
+- {{ step | safe }}
+{%- endfor %}
+{% if role.tags %}
+{{ role.tags | safe }}
+{% endif %}
+{%- endmacro %}
 # {{ data.name | safe }}
 **{{ data.role | safe }}**
 
@@ -21,8 +31,8 @@ eleventyExcludeFromCollections: true
 - Email: {{ data.email }}
 - LinkedIn: {{ data.links.linkedin.url }}
 - GitHub: {{ data.links.github.url }}
-- Golden Frijoles: {{ data.links.goldenfrijoles.url }}
-- Miyagi Sánchez: {{ data.links.website.url }}
+- Site: {{ data.links.site.url }}
+- CV (PDF): {{ data.links.site.url }}{{ data.ui.cvFile }}
 
 ## {{ data.ui.snapshotTitle | safe }}
 {% for para in data.snapshot %}
@@ -32,35 +42,23 @@ eleventyExcludeFromCollections: true
 {% for stat in data.stats %}- **{{ stat.figure | safe }}** — {{ stat.label | safe }}
 {% endfor %}
 ## {{ data.ui.experienceTitle | safe }}
-{% for role in data.experience.featured %}
-### {{ role.company | safe }} — {{ role.dates | safe }}
-{{ role.title | safe }}{% if role.url %} · {{ role.url }}{% endif %}
-{% for step in role.chain %}
-- {{ step | safe }}
-{%- endfor %}
-{% if role.tags %}
-{{ role.tags | safe }}
-{% endif %}
+{% for role in data.experience.featured %}{{ roleBlock(role) }}
 {% endfor %}
 ## {{ data.ui.earlierTitle | safe }}
 {% for role in data.experience.earlier %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
 {% endfor %}
 ## {{ data.ui.venturesTitle | safe }}
-{% for role in data.experience.ventures %}
-### {{ role.company | safe }} — {{ role.dates | safe }}
-{{ role.title | safe }}{% if role.url %} · {{ role.url }}{% endif %}
-{% for step in role.chain %}
-- {{ step | safe }}
-{%- endfor %}
-{% endfor %}
-## {{ data.ui.howIWorkTitle | safe }}
-{% for item in data.howIWork %}- {{ item | safe }}
+{% for role in data.experience.ventures %}{{ roleBlock(role) }}
 {% endfor %}
 ## {{ data.ui.educationTitle | safe }}
-{% for e in data.education %}- **{{ e.credential | safe }}** — {{ e.school | safe }} ({{ e.dates | safe }})
+{% for e in data.education %}- **{{ e.credential | safe }}** — {{ e.school | safe }}{% if e.dates %} ({{ e.dates | safe }}){% endif %}
 {% endfor %}
-## {{ data.ui.approachTitle | safe }}
-{{ data.philosophy | safe }}
+## {{ data.work.contactTitle | safe }}
+{{ data.work.contactBody | safe }}
+
+- Email: {{ data.email }}
+- LinkedIn: {{ data.links.linkedin.url }}
+- GitHub: {{ data.links.github.url }}
 
 ---
 {{ data.ui.lastUpdated | safe }}

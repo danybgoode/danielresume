@@ -481,7 +481,9 @@ section:last-of-type { border-bottom: none; }
 .contact-links a { color: var(--text); text-underline-offset: 4px; text-decoration-color: var(--border); display: inline-flex; align-items: center; gap: 6px; }
 .contact-links a:hover { text-decoration-color: var(--text); }
 .work-view .work-section { border-bottom: 1px solid var(--border); }
-.work-view .work-section.contact { border-bottom: none; }
+.work-view .lang-block > .work-section:last-child { border-bottom: none; }
+footer.site-footer { padding-top: 0; }
+.site-footer .contact { border-top: 1px solid var(--border); border-bottom: none; padding-bottom: 8px; }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }

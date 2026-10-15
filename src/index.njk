@@ -169,26 +169,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
           <li><span class="step-name">{{ s.name }}</span><span class="step-text">{{ s.text }}</span></li>
           {% endfor %}
         </ol>
-        <p class="method-link"><a href="{{ d.links.methodology.url }}" target="_blank" rel="noopener noreferrer">{{ w.methodLink }}</a> <span class="link-host">goldenfrijoles.com</span></p>
-      </section>
-
-      <section class="work-section contact" aria-labelledby="contact-{{ lang }}">
-        <h2 class="work-h2" id="contact-{{ lang }}">{{ w.contactTitle }}</h2>
-        <p class="work-prose">{{ w.contactBody }}</p>
-        <div class="email-row">
-          <a class="email-big" href="mailto:{{ d.email }}">{{ d.email }}</a>
-          <button type="button" class="copy-btn" data-copy="{{ d.email }}" data-label-copy="{{ w.copy }}" data-label-copied="{{ w.copied }}" aria-label="{{ w.copyLabel }}">
-            <svg class="i-copy" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            <svg class="i-check" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span class="copy-text">{{ w.copy }}</span>
-          </button>
-          <span class="sr-only copy-status" aria-live="polite"></span>
-        </div>
-        <p class="contact-links">
-          <a href="{{ d.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="{{ d.ui.cvFile }}" download>{{ w.ctaCv }} <span class="file-tag">PDF</span></a>
-          <a href="{{ d.links.github.url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </p>
+        <p class="method-link">{{ w.methodLink }}: <a href="{{ d.links.methodology.url }}" target="_blank" rel="noopener noreferrer">{{ d.links.methodology.url }}</a></p>
       </section>
 
     </div>
@@ -281,13 +262,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       </div>
     </section>
 
-    <section class="how">
-      <p class="eyebrow" id="howTitle">{{ resume.en.ui.howIWorkTitle }}</p>
-      <ul class="how-list" id="howList">
-        {% for item in resume.en.howIWork %}<li>{{ item }}</li>{% endfor %}
-      </ul>
-    </section>
-
     <section class="education">
       <p class="eyebrow" id="educationTitle">{{ resume.en.ui.educationTitle }}</p>
       <div id="educationList">
@@ -303,21 +277,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       </div>
     </section>
 
-    <section class="philosophy">
-      <p class="eyebrow" id="approachTitle">{{ resume.en.ui.approachTitle }}</p>
-      <blockquote id="philosophyQuote">{{ resume.en.philosophy }}</blockquote>
-    </section>
-
-    <footer>
-      <div class="footer-links">
-        <a href="mailto:{{ resume.en.email }}" id="footerEmail">{{ resume.en.ui.emailLabel }}</a>
-        <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer" id="footerLinkedin">{{ resume.en.ui.linkedinLabel }}</a>
-        <a href="{{ resume.en.links.github.url }}" target="_blank" rel="noopener noreferrer" id="footerGithub">{{ resume.en.ui.githubLabel }}</a>
-        <a href="/resume.md" class="print-hide" id="footerMarkdown">{{ resume.en.ui.viewMarkdown }}</a>
-        <a href="/print/" class="print-hide" id="footerPrint">{{ resume.en.ui.printable }}</a>
-      </div>
-      <p class="footer-note" id="footerNote">{{ resume.en.ui.lastUpdated }}</p>
-    </footer>
   </main>
 
   <!-- TL;DR FULL-SCREEN VIEW -->
@@ -331,19 +290,38 @@ title: Daniel Vásquez — Product & Agentic Delivery
         {% endfor %}
       </ul>
       <p class="tldr-punchline" id="tldrPunchline">{{ resume.en.tldr.punchline }}</p>
-      <p class="tldr-contact" id="tldrContact">
-        <span id="tldrContactLabel">{{ resume.en.tldr.contactText }}</span>
-        <a href="mailto:{{ resume.en.tldr.contactEmail }}" id="tldrContactEmail">{{ resume.en.tldr.contactEmail }}</a>
-      </p>
-    </div>
-    <div class="tldr-footer-nav">
-      <div class="footer-links">
-        <a href="mailto:{{ resume.en.email }}" id="tldrFooterEmail">{{ resume.en.ui.emailLabel }}</a>
-        <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="{{ resume.en.links.github.url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
     </div>
   </main>
+
+  <!-- Shared footer: the same contact block on every view, both languages
+       server-rendered and toggled with the language switch. -->
+  <footer class="site-footer">
+    {% for lang in ["en", "es"] %}
+    {% set d = resume[lang] %}
+    {% set w = d.work %}
+    <div class="lang-block" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
+      <section class="work-section contact" aria-labelledby="contact-{{ lang }}">
+        <h2 class="work-h2" id="contact-{{ lang }}">{{ w.contactTitle }}</h2>
+        <p class="work-prose">{{ w.contactBody }}</p>
+        <div class="email-row">
+          <a class="email-big" href="mailto:{{ d.email }}">{{ d.email }}</a>
+          <button type="button" class="copy-btn" data-copy="{{ d.email }}" data-label-copy="{{ w.copy }}" data-label-copied="{{ w.copied }}" aria-label="{{ w.copyLabel }}">
+            <svg class="i-copy" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <svg class="i-check" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="copy-text">{{ w.copy }}</span>
+          </button>
+          <span class="sr-only copy-status" aria-live="polite"></span>
+        </div>
+        <p class="contact-links">
+          <a href="{{ d.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="{{ d.ui.cvFile }}" download>{{ w.ctaCv }} <span class="file-tag">PDF</span></a>
+          <a href="{{ d.links.github.url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="{{ d.ui.markdownUrl }}">{{ d.ui.viewMarkdown }}</a>
+        </p>
+      </section>
+    </div>
+    {% endfor %}
+  </footer>
 
 </div>
 
@@ -410,11 +388,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       cv.setAttribute('href', data.ui.cvFile);
       document.getElementById('cvLong').textContent = data.ui.cvButton;
       cv.setAttribute('aria-label', data.ui.cvButton + ' (PDF)');
-      const footerPrint = document.getElementById('footerPrint');
-      if (footerPrint) {
-        footerPrint.textContent = data.ui.printable;
-        footerPrint.setAttribute('href', '/print/?lang=' + lang);
-      }
 
       // Work view: both languages are server-rendered; show the right one.
       document.querySelectorAll('[data-lang-block]').forEach(function(el) {
@@ -456,13 +429,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       document.getElementById('venturesTitle').textContent = data.ui.venturesTitle;
       document.getElementById('ventureRoles').innerHTML = data.experience.ventures.map(roleCard).join('');
 
-      // Update How I Work
-      document.getElementById('howTitle').textContent = data.ui.howIWorkTitle;
-      const howEl = document.getElementById('howList');
-      if (howEl) {
-        howEl.innerHTML = data.howIWork.map(i => `<li>${esc(i)}</li>`).join('');
-      }
-
       // Update Earlier Roles
       document.getElementById('earlierTitle').textContent = data.ui.earlierTitle;
       const earlierEl = document.getElementById('earlierRoles');
@@ -493,21 +459,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
         `).join('');
       }
 
-      // Update Philosophy
-      document.getElementById('approachTitle').textContent = data.ui.approachTitle;
-      document.getElementById('philosophyQuote').textContent = data.philosophy;
-
-      // Update Footer
-      document.getElementById('footerEmail').textContent = data.ui.emailLabel;
-      document.getElementById('footerLinkedin').textContent = data.ui.linkedinLabel;
-      document.getElementById('footerGithub').textContent = data.ui.githubLabel;
-      const footerMarkdown = document.getElementById('footerMarkdown');
-      if (footerMarkdown) {
-        footerMarkdown.textContent = data.ui.viewMarkdown;
-        footerMarkdown.setAttribute('href', data.ui.markdownUrl);
-      }
-      document.getElementById('footerNote').textContent = data.ui.lastUpdated;
-
       // Update TL;DR View
       document.getElementById('tldrGreeting').textContent = data.tldr.greeting;
       document.getElementById('tldrIntro').textContent = data.tldr.intro;
@@ -517,8 +468,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
         tldrBullets.innerHTML = data.tldr.bullets.map(b => `<li>${b}</li>`).join('');
       }
       document.getElementById('tldrPunchline').textContent = data.tldr.punchline;
-      document.getElementById('tldrContactLabel').textContent = data.tldr.contactText;
-      document.getElementById('tldrFooterEmail').textContent = data.ui.emailLabel;
       setTitleForView();
     }
 
