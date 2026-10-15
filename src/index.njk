@@ -140,12 +140,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       <div class="work-hero">
         <h1 class="work-headline">{{ w.headline }}</h1>
         <p class="work-lede">{{ w.lede }}</p>
-        <p class="work-creator">{{ w.creator.before }} <a href="{{ d.links.goldenfrijoles.url }}" target="_blank" rel="noopener noreferrer">{{ w.creator.name }}</a>{{ w.creator.after }}</p>
-        <div class="work-cta">
-          <a class="btn-primary" href="mailto:{{ d.email }}?subject={{ 'Working together' if lang == 'en' else 'Trabajar juntos' }}">{{ w.ctaPrimary }}</a>
-          <a class="btn-secondary" href="{{ d.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-        <p class="work-tz">{{ w.timezone }}</p>
       </div>
 
       <section class="work-section offers" aria-labelledby="offers-{{ lang }}">
@@ -176,7 +170,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
           {% endfor %}
         </ol>
         <p class="method-link"><a href="{{ d.links.methodology.url }}" target="_blank" rel="noopener noreferrer">{{ w.methodLink }}</a> <span class="link-host">goldenfrijoles.com</span></p>
-        <p class="disclosure">{{ w.disclosure }}</p>
       </section>
 
       <section class="work-section contact" aria-labelledby="contact-{{ lang }}">
@@ -205,7 +198,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
   <!-- CLASSIC RÉSUMÉ VIEW -->
   <main id="classicView" class="view-container view-hidden" role="tabpanel" aria-labelledby="tab-classic" tabindex="-1">
     <div class="masthead-main">
-      <p class="eyebrow" id="eyebrowText">{{ resume.en.eyebrow }}</p>
       <h1 class="name" id="profileName">{{ resume.en.name }}</h1>
       <p class="role" id="profileRole">{{ resume.en.role }}</p>
       <p class="disciplines" id="profileDisciplines">{{ resume.en.disciplines }}</p>
@@ -391,7 +383,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       }
 
       // Update Eyebrow and Buttons
-      document.getElementById('eyebrowText').textContent = data.eyebrow;
       document.getElementById('tab-work').textContent = data.ui.workButton;
       document.getElementById('tab-classic').textContent = data.ui.classicButton;
       document.getElementById('tab-tldr').textContent = data.ui.tldrButton;

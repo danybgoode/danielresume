@@ -1,8 +1,8 @@
 const resumeData = {
   en: {
-    eyebrow: "Product Leadership · Agentic Delivery",
+    eyebrow: "Hands-on Product Leader",
     name: "Daniel Vásquez",
-    role: "Product Engineering · Agentic Delivery Systems",
+    role: "Hands-on Product Leader",
     disciplines:
       "Leading product since 2012, from zero-to-one to Fortune 100 scale — now shipping production software with multi-agent teams, and building the operating system they run on.",
     email: "danielvp1987@gmail.com",
@@ -21,12 +21,12 @@ const resumeData = {
       { figure: "$70M+", label: "Portfolio owned at AB InBev" },
       { figure: "70+", label: "People led, product & engineering" },
       { figure: "3", label: "Products running in production" },
-      { figure: "4", label: "Ventures founded, one acquired" },
+      { figure: "3", label: "Earlier ventures founded, one acquired" },
       { figure: "MSc", label: "Finance, University of Aberdeen" },
     ],
     snapshot: [
       "I build production software with teams of AI agents, and I design the operating system those teams run on. Three products are live today: an agentic product-management platform, a no-commission marketplace for Mexico, and the open-source plugin framework both are built with.",
-      "Before that, more than a decade of product leadership from zero-to-one to Fortune 100 scale — a $70M+ global rewards portfolio and a product and engineering organisation of 70+ people at AB InBev, post-M&A systems integration at Linio through the Falabella acquisition, and ventures of my own, one of them acquired.",
+      "Before that, more than a decade of product leadership from zero-to-one to Fortune 100 scale — a $70M+ global rewards portfolio and a product and engineering organisation of 70+ people at AB InBev, post-M&A systems integration at Linio through the Falabella acquisition, and three ventures of my own, one of them acquired.",
       "The through-line is turning ambiguity into systems: a delivery cadence humans and agents can both follow, with risk-tiered merge gates, independent cross-model review, and written retrospectives that feed the next session instead of dying in a folder. Agile, rebuilt for a team where most of the contributors are not people.",
     ],
     howIWork: [
@@ -140,20 +140,68 @@ const resumeData = {
         "Everything I build now runs through agents — grooming, planning, building, review, shipping and reporting",
         "Built <a href=\"https://github.com/danybgoode/dobby-foundation\" target=\"_blank\" rel=\"noopener noreferrer\">dobby-foundation</a>, my open-source operating system for agent product work — installed once, reused across every project I build, now the open Golden Frijoles kit",
         "Run <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, an agentic product-management platform, and <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, a no-commission marketplace for Mexico — both in production",
-        "Before all that: a $70M+ portfolio and 70+ people at AB InBev, a post-M&A integration at Linio, and ventures of my own, one of them acquired",
+        "Before all that: a $70M+ portfolio and 70+ people at AB InBev, a post-M&A integration at Linio, and three ventures of my own, one of them acquired",
       ],
       punchline: "Have a knack for taking things from 0 to the whole world.",
       contactText: "Find me at:",
       contactEmail: "danielvp1987@gmail.com",
     },
+    // Executive one-page CV (the PDF). Curated separately from the site so the
+    // page can lead with the corporate roles and stay on one sheet.
+    cv: {
+      summary: "Product and engineering leader since 2012, from zero-to-one to Fortune 100 scale. Owned a $70M+ global portfolio and led a 70+ person organisation at AB InBev, then a post-M&A integration at Linio. Today I build production software with agent teams.",
+      glance: [
+        { figure: "Since 2012", label: "leading product teams" },
+        { figure: "$70M+", label: "portfolio owned at AB InBev" },
+        { figure: "70+", label: "people led, product & engineering" },
+        { figure: "3", label: "earlier ventures founded, one acquired" },
+      ],
+      experience: [
+        {
+          company: "AB InBev", dates: "2020 — 2023",
+          title: "Global Principal Product Manager · Largest brewer worldwide",
+          bullets: [
+            "Built the global rewards ecosystem across Central America, Europe and South Korea.",
+            "Led a 70+ person cross-functional product and engineering organisation.",
+            "Owned a $70M+ portfolio, with campaigns activated at the Super Bowl and The Voice Brasil.",
+          ],
+        },
+        {
+          company: "Linio Group", dates: "2019 — 2020",
+          title: "Group Product Manager · Mexico City · acquired by Falabella",
+          bullets: [
+            "Directed post-M&A systems integration through the Falabella acquisition.",
+            "Unified multi-platform infrastructure across the merged organisations.",
+          ],
+        },
+        {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
+          title: "Founder & Product Lead · Two products in production, built with agent teams",
+          bullets: [
+            "Golden Frijoles: agentic product-management platform with telemetry, North Star metrics, feature flags, A/B experiments and outcome reports. 87 initiatives shipped behind 157 Playwright specs; open-source kit (Apache-2.0).",
+            "Miyagi Sánchez: no-commission marketplace for Mexico on Medusa v2 and Next.js, selling through the marketplace, sellers' own domains, an embeddable widget and AI shopping agents over MCP.",
+            "Designed the operating model that lets agents act inside bounds: scoped credentials, staged actions, human approval, risk-tiered merge gates and cross-model review.",
+          ],
+        },
+        {
+          company: "Bicimensajero.com", dates: "2014 — 2016",
+          title: "Founder · On-demand bike logistics",
+          bullets: [ "Built the full stack solo, scaled operations to 100+ messengers and negotiated the acquisition exit." ],
+        },
+        {
+          company: "CTIN", dates: "2012 — 2014",
+          title: "Team Lead · Centro de Tecnología e Innovación",
+          bullets: [ "Led a Bitcoin remittance platform to 5,000+ active users; authored the platform proposal to América Móvil / Grupo Carso." ],
+        },
+      ],
+      summaryTitle: "Summary",
+    },
     // "Work with me" — the consulting view. Default landing view.
     work: {
       headline: "Hands-on product leader.",
-      lede: "Since 2012, leading product and engineering teams. I turn a clear strategy into shipped, measured product, working alongside your engineers and their agents. 87 initiatives shipped on Golden Frijoles, each on a public board.",
-      creator: { before: "Creator of", name: "Golden Frijoles", after: ", an open kit for outcome-driven development." },
+      lede: "Since 2012, leading product and engineering teams. I turn a clear strategy into shipped, measured product, working alongside your team and their agents.",
       ctaPrimary: "Email me",
       ctaCv: "Download CV",
-      timezone: "Mexico City · UTC−6 · overlaps US and Canada business hours",
       offersTitle: "What I do",
       offers: [
         {
@@ -190,7 +238,6 @@ const resumeData = {
         { name: "Exit", text: "Read the evidence on the date you set. Keep it, change it or kill it." },
       ],
       methodLink: "Read the methodology",
-      disclosure: "Golden Frijoles is my own tool. I'll use it when it fits and say so; your data and your exit stay yours.",
       contactTitle: "Get in touch",
       contactBody: "Tell me what you're trying to ship. I'll reply with whether I can help, and how.",
       copy: "Copy",
@@ -199,7 +246,7 @@ const resumeData = {
     },
     ui: {
       pageTitle: "Daniel Vásquez — Hands-on Product Leader",
-      pdfTitle: "Daniel Vasquez - CV - Product Engineering and Agentic Delivery",
+      pdfTitle: "Daniel Vasquez - CV - Hands-on Product Leader",
       metaDesc:
         "Hands-on product leader for contract and fractional work. I turn a clear strategy into shipped, measured product with your engineers and their agents. Ex-AB InBev, Linio; creator of Golden Frijoles.",
       snapshotTitle: "Profile",
@@ -232,9 +279,9 @@ const resumeData = {
   },
 
   es: {
-    eyebrow: "Liderazgo de Producto · Entrega con Agentes",
+    eyebrow: "Líder de producto que construye",
     name: "Daniel Vásquez",
-    role: "Producto e Ingeniería · Sistemas de Entrega con Agentes",
+    role: "Líder de producto que construye",
     disciplines:
       "Liderando producto desde 2012, de cero-a-uno hasta escala Fortune 100 — hoy construyendo software en producción con equipos de agentes, y el sistema operativo sobre el que trabajan.",
     email: "danielvp1987@gmail.com",
@@ -253,12 +300,12 @@ const resumeData = {
       { figure: "$70M+", label: "Portafolio gestionado en AB InBev" },
       { figure: "70+", label: "Personas lideradas, producto e ingeniería" },
       { figure: "3", label: "Productos corriendo en producción" },
-      { figure: "4", label: "Emprendimientos fundados, uno adquirido" },
+      { figure: "3", label: "Emprendimientos previos fundados, uno adquirido" },
       { figure: "MSc", label: "Finanzas, University of Aberdeen" },
     ],
     snapshot: [
       "Construyo software en producción con equipos de agentes de IA, y diseño el sistema operativo sobre el que esos equipos trabajan. Hoy hay tres productos vivos: una plataforma de product management con agentes, un marketplace sin comisiones para México, y el framework de plugins open source con el que ambos están construidos.",
-      "Antes de eso, más de una década de liderazgo de producto desde cero-a-uno hasta escala Fortune 100 — un portafolio global de recompensas de más de $70M USD y una organización de producto e ingeniería de más de 70 personas en AB InBev, la integración de sistemas post-M&A en Linio durante la adquisición por Falabella, y emprendimientos propios, uno de ellos adquirido.",
+      "Antes de eso, más de una década de liderazgo de producto desde cero-a-uno hasta escala Fortune 100 — un portafolio global de recompensas de más de $70M USD y una organización de producto e ingeniería de más de 70 personas en AB InBev, la integración de sistemas post-M&A en Linio durante la adquisición por Falabella, y tres emprendimientos propios, uno de ellos adquirido.",
       "El hilo conductor es convertir la ambigüedad en sistemas: una cadencia de entrega que humanos y agentes pueden seguir por igual, con gates de merge escalonados por riesgo, revisión independiente entre familias de modelos, y retrospectivas escritas que alimentan la siguiente sesión en lugar de morir en una carpeta. Agile, reconstruido para un equipo donde la mayoría de quienes contribuyen no son personas.",
     ],
     howIWork: [
@@ -372,19 +419,65 @@ const resumeData = {
         "Todo lo que construyo ahora pasa por agentes — grooming, planeación, construcción, revisión, entrega y reporteo",
         "Construí <a href=\"https://github.com/danybgoode/dobby-foundation\" target=\"_blank\" rel=\"noopener noreferrer\">dobby-foundation</a>, mi sistema operativo open source para trabajo de producto con agentes — instalado una vez, reutilizado en cada proyecto que construyo, hoy el kit abierto de Golden Frijoles",
         "Opero <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, una plataforma de product management con agentes, y <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, un marketplace sin comisiones para México — ambos en producción",
-        "Antes de todo eso: un portafolio de $70M+ y más de 70 personas en AB InBev, una integración post-M&A en Linio, y emprendimientos propios, uno de ellos adquirido",
+        "Antes de todo eso: un portafolio de $70M+ y más de 70 personas en AB InBev, una integración post-M&A en Linio, y tres emprendimientos propios, uno de ellos adquirido",
       ],
       punchline: "Tengo facilidad para llevar las cosas de 0 a todo el mundo.",
       contactText: "Encuéntrame en:",
       contactEmail: "danielvp1987@gmail.com",
     },
+    cv: {
+      summary: "Líder de producto e ingeniería desde 2012, de cero-a-uno a escala Fortune 100. Gestioné un portafolio global de más de $70M USD y lideré una organización de más de 70 personas en AB InBev, y después una integración post-M&A en Linio. Hoy construyo software en producción con equipos de agentes.",
+      glance: [
+        { figure: "Desde 2012", label: "liderando equipos de producto" },
+        { figure: "$70M+", label: "portafolio gestionado en AB InBev" },
+        { figure: "70+", label: "personas lideradas, producto e ingeniería" },
+        { figure: "3", label: "emprendimientos previos, uno adquirido" },
+      ],
+      experience: [
+        {
+          company: "AB InBev", dates: "2020 — 2023",
+          title: "Global Principal Product Manager · La cervecera más grande del mundo",
+          bullets: [
+            "Construí el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur.",
+            "Lideré una organización multidisciplinaria de más de 70 personas de producto e ingeniería.",
+            "Gestioné un portafolio de más de $70M USD, con campañas activadas en el Super Bowl y The Voice Brasil.",
+          ],
+        },
+        {
+          company: "Linio Group", dates: "2019 — 2020",
+          title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
+          bullets: [
+            "Dirigí la integración de sistemas post-M&A durante la adquisición por Falabella.",
+            "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
+          ],
+        },
+        {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
+          title: "Fundador y Líder de Producto · Dos productos en producción, construidos con equipos de agentes",
+          bullets: [
+            "Golden Frijoles: plataforma de product management con agentes, con telemetría, métricas North Star, feature flags, experimentos A/B y reportes de resultados. 87 iniciativas entregadas con 157 specs de Playwright; kit open source (Apache-2.0).",
+            "Miyagi Sánchez: marketplace sin comisiones para México sobre Medusa v2 y Next.js, que vende por el marketplace, el dominio propio del vendedor, un widget embebible y agentes de compra de IA vía MCP.",
+            "Diseñé el modelo operativo que permite a los agentes actuar dentro de límites: credenciales acotadas, acciones en etapas, aprobación humana, gates de merge por riesgo y revisión entre modelos.",
+          ],
+        },
+        {
+          company: "Bicimensajero.com", dates: "2014 — 2016",
+          title: "Fundador · Logística en bicicleta bajo demanda",
+          bullets: [ "Desarrollé el stack completo yo solo, escalé la operación a más de 100 mensajeros y negocié la salida por adquisición." ],
+        },
+        {
+          company: "CTIN", dates: "2012 — 2014",
+          title: "Líder de Equipo · Centro de Tecnología e Innovación",
+          bullets: [ "Llevé una plataforma de remesas con Bitcoin a más de 5,000 usuarios activos; escribí la propuesta de plataforma para América Móvil / Grupo Carso." ],
+        },
+      ],
+      summaryTitle: "Resumen",
+    },
     work: {
       headline: "Líder de producto que construye.",
-      lede: "Desde 2012, liderando equipos de producto e ingeniería. Convierto una estrategia clara en producto entregado y medido, trabajando junto a tus ingenieros y sus agentes. 87 iniciativas entregadas en Golden Frijoles, cada una en un tablero público.",
-      creator: { before: "Creador de", name: "Golden Frijoles", after: ", un kit abierto para desarrollo guiado por resultados." },
+      lede: "Desde 2012, liderando equipos de producto e ingeniería. Convierto una estrategia clara en producto entregado y medido, trabajando junto a tu equipo y sus agentes.",
       ctaPrimary: "Escríbeme",
       ctaCv: "Descargar CV",
-      timezone: "Ciudad de México · UTC−6 · horario compatible con EE. UU. y Canadá",
       offersTitle: "Qué hago",
       offers: [
         {
@@ -421,7 +514,6 @@ const resumeData = {
         { name: "Salir", text: "Leer la evidencia en la fecha acordada. Mantener, cambiar o matar." },
       ],
       methodLink: "Leer la metodología",
-      disclosure: "Golden Frijoles es mi propia herramienta. La uso cuando conviene y lo digo; tus datos y tu salida siguen siendo tuyos.",
       contactTitle: "Hablemos",
       contactBody: "Cuéntame qué estás intentando lanzar. Te respondo si puedo ayudarte, y cómo.",
       copy: "Copiar",
@@ -430,7 +522,7 @@ const resumeData = {
     },
     ui: {
       pageTitle: "Daniel Vásquez — Líder de Producto",
-      pdfTitle: "Daniel Vasquez - CV - Producto e Ingenieria con Agentes",
+      pdfTitle: "Daniel Vasquez - CV - Lider de Producto",
       metaDesc:
         "Líder de producto con las manos en el código, para proyectos por contrato y roles fraccionales. Convierto una estrategia clara en producto entregado y medido. Ex-AB InBev, Linio; creador de Golden Frijoles.",
       snapshotTitle: "Perfil",

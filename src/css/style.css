@@ -359,7 +359,7 @@ section:last-of-type { border-bottom: none; }
 /* ---------- Work with me ----------
    A letter rather than a document: sentence-case serif headings instead of
    the résumé's small-caps eyebrows, so the two views read as different things. */
-.work-hero { padding-bottom: 36px; }
+.work-hero { padding-bottom: 40px; border-bottom: 1px solid var(--border); }
 .work-headline {
   font-family: var(--serif);
   font-size: clamp(1.9rem, 6vw, 2.7rem);
@@ -372,7 +372,7 @@ section:last-of-type { border-bottom: none; }
 .work-lede {
   font-size: 1.02rem;
   line-height: 1.7;
-  margin: 0 0 14px;
+  margin: 0;
   max-width: 34em;
   text-wrap: pretty;
 }

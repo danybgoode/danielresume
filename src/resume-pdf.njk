@@ -108,7 +108,7 @@ eleventyExcludeFromCollections: true
 
   .section-title{
     font-family:var(--sans);
-    font-size:7.0pt;
+    font-size:7.8pt;
     font-weight:700;
     /* Deliberately modest tracking: wide letter-spacing makes Chrome emit
        each glyph as its own positioned run, and pdftotext then reads
@@ -124,24 +124,24 @@ eleventyExcludeFromCollections: true
   .rule{ border:none; border-top:1px solid var(--border); margin:0; }
 
   /* ---------- Header ---------- */
-  .head{ padding-bottom:8pt; }
+  .head{ padding-bottom:4pt; }
   .head h1{
     font-family:var(--serif);
-    font-size:22.1pt;
+    font-size:24.8pt;
     letter-spacing:-.01em;
     line-height:1.05;
     margin:0 0 4pt;
   }
   .head .role-line{
     font-family:var(--sans);
-    font-size:8.7pt;
+    font-size:9.7pt;
     font-weight:600;
     color:var(--text);
     margin:0 0 3pt;
   }
   .head .disciplines{
     font-family:var(--serif);
-    font-size:8.1pt;
+    font-size:9.1pt;
     line-height:1.42;
     color:var(--muted);
     margin:0 0 7pt;
@@ -150,7 +150,7 @@ eleventyExcludeFromCollections: true
      every item is a real <a href>, so the PDF carries link annotations. */
   .head .contact{
     font-family:var(--sans);
-    font-size:7.9pt;
+    font-size:8.8pt;
     line-height:1.6;
     color:var(--text);
     margin:0;
@@ -161,12 +161,20 @@ eleventyExcludeFromCollections: true
   .head .contact .loc{ white-space:nowrap; }
 
   /* ---------- Section spacing ---------- */
-  section{ padding-top:8pt; }
+  section{ padding-top:13pt; }
 
+  /* ---------- Summary ---------- */
+  .summary-text{
+    font-family:var(--serif);
+    font-size:9.6pt;
+    line-height:1.5;
+    margin:0 0 5pt;
+  }
+  [hidden]{ display:none !important; }
   /* ---------- Profile ---------- */
   .profile p{
     font-family:var(--serif);
-    font-size:8.5pt;
+    font-size:9.5pt;
     line-height:1.48;
     margin:0 0 5pt;
   }
@@ -178,7 +186,7 @@ eleventyExcludeFromCollections: true
      Inline, each fact is a complete phrase wherever it is cut. ---------- */
   .glance{
     font-family:var(--sans);
-    font-size:7.9pt;
+    font-size:8.8pt;
     line-height:1.6;
     color:var(--text);
     margin:0;
@@ -190,7 +198,7 @@ eleventyExcludeFromCollections: true
   .role{
     break-inside:avoid;
     page-break-inside:avoid;
-    padding:5pt 0;
+    padding:8pt 0;
     border-top:1px solid var(--border);
   }
   .role:first-of-type{ border-top:none; padding-top:2pt; }
@@ -206,20 +214,20 @@ eleventyExcludeFromCollections: true
   .role-head h3{
     font-family:var(--sans);
     font-weight:700;
-    font-size:8.8pt;
+    font-size:9.9pt;
     line-height:1.25;
   }
   .role-head h3 a{ border-bottom:.5px solid var(--border); }
   .role-dates{
     font-family:var(--sans);
-    font-size:7.2pt;
+    font-size:8.1pt;
     color:var(--muted);
     white-space:nowrap;
     font-variant-numeric:tabular-nums;
   }
   .role-title{
     font-family:var(--sans);
-    font-size:7.7pt;
+    font-size:8.6pt;
     font-style:normal;
     color:var(--muted);
     margin:0 0 4pt;
@@ -228,15 +236,15 @@ eleventyExcludeFromCollections: true
     margin:0 0 4pt;
     padding-left:11pt;
     font-family:var(--serif);
-    font-size:8.1pt;
-    line-height:1.45;
+    font-size:9.1pt;
+    line-height:1.55;
   }
-  .role-bullets li{ margin-bottom:1.5pt; }
+  .role-bullets li{ margin-bottom:2.5pt; }
   .role-bullets li:last-child{ margin-bottom:0; }
   .role-bullets li::marker{ color:var(--faint); }
   .role-tags{
     font-family:var(--sans);
-    font-size:7.0pt;
+    font-size:7.8pt;
     font-style:normal;
     color:var(--faint);
     line-height:1.4;
@@ -248,8 +256,8 @@ eleventyExcludeFromCollections: true
     margin:0;
     padding-left:11pt;
     font-family:var(--serif);
-    font-size:8.1pt;
-    line-height:1.45;
+    font-size:9.1pt;
+    line-height:1.55;
   }
   .how-list li{ margin-bottom:2.5pt; break-inside:avoid; }
   .how-list li:last-child{ margin-bottom:0; }
@@ -264,7 +272,7 @@ eleventyExcludeFromCollections: true
     align-items:baseline;
     gap:8pt;
     font-family:var(--sans);
-    font-size:7.7pt;
+    font-size:8.6pt;
     line-height:1.5;
     padding:1pt 0;
     break-inside:avoid;
@@ -273,7 +281,7 @@ eleventyExcludeFromCollections: true
   .earlier-list .title{ color:var(--muted); font-weight:400; }
   .earlier-list .dates{
     color:var(--faint);
-    font-size:7.2pt;
+    font-size:8.1pt;
     white-space:nowrap;
     font-variant-numeric:tabular-nums;
   }
@@ -286,12 +294,12 @@ eleventyExcludeFromCollections: true
     align-items:baseline;
     gap:8pt;
     font-family:var(--sans);
-    font-size:7.9pt;
+    font-size:8.8pt;
     line-height:1.5;
   }
   .edu-list .credential{ font-weight:600; }
   .edu-list .school{ color:var(--muted); font-weight:400; }
-  .edu-list .dates{ color:var(--faint); font-size:7.2pt; white-space:nowrap; }
+  .edu-list .dates{ color:var(--faint); font-size:8.1pt; white-space:nowrap; }
 
   /* ---------- Footer ---------- */
   .foot-note{
@@ -302,7 +310,7 @@ eleventyExcludeFromCollections: true
   }
   .foot-note p{
     font-family:var(--sans);
-    font-size:6.8pt;
+    font-size:7.6pt;
     color:var(--faint);
     margin:0;
   }
@@ -314,7 +322,7 @@ eleventyExcludeFromCollections: true
     /* Page margins live on @page, not on .sheet padding — padding only
        applies to the first and last fragment, so a two-page sheet would
        run its second page hard against the paper edge. */
-    margin:13mm 16mm;
+    margin:15mm 17mm;
   }
   @media print{
     body{ background:#fff; padding:0; }
@@ -330,190 +338,86 @@ eleventyExcludeFromCollections: true
 </style>
 </head>
 <body>
-
 <div class="no-print">
-  <a href="/" id="backLink">{{ resume.en.ui.pdfBackLink }}</a>
+  <a href="/#classic" id="backLink">{{ resume.en.ui.pdfBackLink }}</a>
   <div class="actions">
     <button type="button" class="lang-btn is-active" id="langBtnEn" data-lang="en">EN</button>
     <button type="button" class="lang-btn" id="langBtnEs" data-lang="es">ES</button>
-    <button type="button" class="print-btn" id="printBtn" title="{{ resume.en.ui.pdfPrintButton }}">🖨</button>
+    <button type="button" class="print-btn" id="printBtn">{{ resume.en.ui.pdfPrintButton }}</button>
   </div>
 </div>
-
-<article class="sheet" id="sheet">
-{% set d = resume.en %}
+{#
+  Executive one-page CV. Both languages are rendered here and the toggle only
+  shows one, so the PDF build and a JS-less print produce identical text.
+  ONE column, DOM order == reading order (see the note at the top of <style>).
+#}
+{% for lang in ["en", "es"] %}
+{% set d = resume[lang] %}
+<article class="sheet" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
   <header class="head">
     <h1>{{ d.name }}</h1>
     <p class="role-line">{{ d.role }}</p>
-    <p class="disciplines">{{ d.disciplines }}</p>
-    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
+    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
   </header>
-
-  <hr class="rule">
-
-  <section class="profile">
-    <h2 class="section-title">{{ d.ui.snapshotTitle }}</h2>
-    {% for para in d.snapshot %}<p>{{ para }}</p>{% endfor %}
+  <section class="summary">
+    <h2 class="section-title">{{ d.cv.summaryTitle }}</h2>
+    <p class="summary-text">{{ d.cv.summary }}</p>
+    <p class="glance">{% for g in d.cv.glance %}<span class="figure">{{ g.figure }}</span> {{ g.label }}{% if not loop.last %}<span class="sep">·</span>{% endif %}{% endfor %}</p>
   </section>
-
-  <section class="glance-block">
-    <h2 class="section-title">{{ d.ui.statsTitle }}</h2>
-    <p class="glance">{% for stat in d.stats %}<span class="figure">{{ stat.figure }}</span> {{ stat.label }}{% if not loop.last %}<span class="sep">·</span>{% endif %}{% endfor %}</p>
-  </section>
-
   <section class="experience">
     <h2 class="section-title">{{ d.ui.experienceTitle }}</h2>
-    {% for role in d.experience.featured %}
+    {% for role in d.cv.experience %}
     <div class="role">
-      <div class="role-head">
-        <h3>{% if role.url %}<a href="{{ role.url }}">{{ role.company }}</a>{% else %}{{ role.company }}{% endif %}</h3>
-        <span class="role-dates">{{ role.dates }}</span>
-      </div>
+      <div class="role-head"><h3>{{ role.company }}</h3><span class="role-dates">{{ role.dates }}</span></div>
       <p class="role-title">{{ role.title }}</p>
-      <ul class="role-bullets">{% for step in role.chain %}<li>{{ step }}</li>{% endfor %}</ul>
-      {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
+      <ul class="role-bullets">{% for b in role.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
     </div>
     {% endfor %}
   </section>
-
-  <section class="how">
-    <h2 class="section-title">{{ d.ui.howIWorkTitle }}</h2>
-    <ul class="how-list">{% for item in d.howIWork %}<li>{{ item }}</li>{% endfor %}</ul>
-  </section>
-
   <section class="earlier">
     <h2 class="section-title">{{ d.ui.earlierTitle }}</h2>
-    <ul class="earlier-list">{% for role in d.experience.earlier %}<li><span><span class="co">{{ role.company }}</span> — <span class="title">{{ role.title }}</span></span><span class="dates">{{ role.dates }}</span></li>{% endfor %}</ul>
+    <ul class="earlier-list">{% for r in d.experience.earlier %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endfor %}</ul>
   </section>
-
   <section class="education">
     <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
     <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% endfor %}</ul>
   </section>
-
-  <footer class="foot-note">
-    <p>{{ d.ui.pdfFooterNote }} <a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a> — {{ d.ui.lastUpdated }}</p>
-  </footer>
 </article>
+{% endfor %}
 
 <script>
   (function() {
-    const RESUME_DATA = {{ resume | dump | safe }};
-
-    // Escape anything that reaches innerHTML. The data file is trusted, but a
-    // stray "&" or "<" in a bullet would otherwise silently mangle the sheet.
-    function esc(s) {
-      return String(s)
-        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
-    // Mirrors the server-rendered markup above, element for element. If you
-    // change one, change the other — the static render is what a crawler and
-    // a JS-less print see, and this is what the language toggle produces.
-    function sheetHtml(d) {
-      return `
-  <header class="head">
-    <h1>${esc(d.name)}</h1>
-    <p class="role-line">${esc(d.role)}</p>
-    <p class="disciplines">${esc(d.disciplines)}</p>
-    <p class="contact"><a href="mailto:${esc(d.email)}">${esc(d.email)}</a><span class="sep">·</span><a href="${esc(d.links.linkedin.url)}">${esc(d.links.linkedin.label)}</a><span class="sep">·</span><a href="${esc(d.links.github.url)}">${esc(d.links.github.label)}</a><span class="sep">·</span><a href="${esc(d.links.site.url)}">${esc(d.links.site.label)}</a><span class="sep">·</span><span class="loc">${esc(d.location)}</span></p>
-  </header>
-
-  <hr class="rule">
-
-  <section class="profile">
-    <h2 class="section-title">${esc(d.ui.snapshotTitle)}</h2>
-    ${d.snapshot.map(p => `<p>${esc(p)}</p>`).join('')}
-  </section>
-
-  <section class="glance-block">
-    <h2 class="section-title">${esc(d.ui.statsTitle)}</h2>
-    <p class="glance">${d.stats.map(s => `<span class="figure">${esc(s.figure)}</span> ${esc(s.label)}`).join('<span class="sep">·</span>')}</p>
-  </section>
-
-  <section class="experience">
-    <h2 class="section-title">${esc(d.ui.experienceTitle)}</h2>
-    ${d.experience.featured.map(role => `
-    <div class="role">
-      <div class="role-head">
-        <h3>${role.url ? `<a href="${esc(role.url)}">${esc(role.company)}</a>` : esc(role.company)}</h3>
-        <span class="role-dates">${esc(role.dates)}</span>
-      </div>
-      <p class="role-title">${esc(role.title)}</p>
-      <ul class="role-bullets">${role.chain.map(s => `<li>${esc(s)}</li>`).join('')}</ul>
-      ${role.tags ? `<p class="role-tags">${esc(role.tags)}</p>` : ''}
-    </div>`).join('')}
-  </section>
-
-  <section class="how">
-    <h2 class="section-title">${esc(d.ui.howIWorkTitle)}</h2>
-    <ul class="how-list">${d.howIWork.map(i => `<li>${esc(i)}</li>`).join('')}</ul>
-  </section>
-
-  <section class="earlier">
-    <h2 class="section-title">${esc(d.ui.earlierTitle)}</h2>
-    <ul class="earlier-list">${d.experience.earlier.map(r => `<li><span><span class="co">${esc(r.company)}</span> — <span class="title">${esc(r.title)}</span></span><span class="dates">${esc(r.dates)}</span></li>`).join('')}</ul>
-  </section>
-
-  <section class="education">
-    <h2 class="section-title">${esc(d.ui.educationTitle)}</h2>
-    <ul class="edu-list">${d.education.map(e => `<li><span><span class="credential">${esc(e.credential)}</span> — <span class="school">${esc(e.school)}</span></span><span class="dates">${esc(e.dates)}</span></li>`).join('')}</ul>
-  </section>
-
-  <footer class="foot-note">
-    <p>${esc(d.ui.pdfFooterNote)} <a href="${esc(d.links.site.url)}">${esc(d.links.site.label)}</a> — ${esc(d.ui.lastUpdated)}</p>
-  </footer>`;
-    }
-
+    const TITLES = { en: {{ resume.en.ui.pdfTitle | dump | safe }}, es: {{ resume.es.ui.pdfTitle | dump | safe }} };
+    const UI = {
+      en: { back: {{ resume.en.ui.pdfBackLink | dump | safe }}, print: {{ resume.en.ui.pdfPrintButton | dump | safe }} },
+      es: { back: {{ resume.es.ui.pdfBackLink | dump | safe }}, print: {{ resume.es.ui.pdfPrintButton | dump | safe }} }
+    };
     function render(lang) {
-      const d = RESUME_DATA[lang];
-      if (!d) return;
+      if (!TITLES[lang]) return;
       document.documentElement.lang = lang;
-      // The <title> becomes the PDF's /Title metadata, which is the first
-      // thing many ATS parsers and file managers read. Keep it a real name.
-      document.title = d.ui.pdfTitle;
-      document.getElementById('sheet').innerHTML = sheetHtml(d);
-
+      // <title> becomes the PDF's /Title metadata, read first by many ATS parsers.
+      document.title = TITLES[lang];
+      document.querySelectorAll('[data-lang-block]').forEach(function(el) {
+        el.hidden = el.getAttribute('data-lang-block') !== lang;
+      });
       document.getElementById('langBtnEn').classList.toggle('is-active', lang === 'en');
       document.getElementById('langBtnEs').classList.toggle('is-active', lang === 'es');
-      document.getElementById('printBtn').title = d.ui.pdfPrintButton;
-      document.getElementById('backLink').textContent = d.ui.pdfBackLink;
+      document.getElementById('printBtn').textContent = UI[lang].print;
+      document.getElementById('backLink').textContent = UI[lang].back;
     }
-
     function detectLang() {
       try {
-        const params = new URLSearchParams(window.location.search);
-        const fromQuery = params.get('lang');
-        if (fromQuery === 'es' || fromQuery === 'en') return fromQuery;
+        const q = new URLSearchParams(window.location.search).get('lang');
+        if (q === 'es' || q === 'en') return q;
         const stored = localStorage.getItem('resume_lang');
         if (stored === 'es' || stored === 'en') return stored;
       } catch (e) {}
       return 'en';
     }
-
-    const initialLang = detectLang();
-    // Skip the re-render when the server-rendered EN markup is already what we
-    // want — it keeps the no-JS output and the JS output provably identical.
-    if (initialLang !== 'en') render(initialLang);
-
-    document.getElementById('langBtnEn').addEventListener('click', () => render('en'));
-    document.getElementById('langBtnEs').addEventListener('click', () => render('es'));
-    document.getElementById('printBtn').addEventListener('click', () => window.print());
-
-    // Auto-open the print dialog once fonts are settled, so the PDF button
-    // feels instant. Users can still print manually via the button above
-    // if the browser blocks the automatic call.
-    const triggerPrint = () => {
-      // ?pdf=1 is the headless PDF build (scripts/build-pdf.mjs): no dialog.
-      if (new URLSearchParams(window.location.search).get('pdf') === '1') return;
-      setTimeout(() => window.print(), 250);
-    };
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(triggerPrint);
-    } else {
-      window.addEventListener('load', triggerPrint);
-    }
+    render(detectLang());
+    document.getElementById('langBtnEn').addEventListener('click', function() { render('en'); });
+    document.getElementById('langBtnEs').addEventListener('click', function() { render('es'); });
+    document.getElementById('printBtn').addEventListener('click', function() { window.print(); });
   })();
 </script>
 </body>
