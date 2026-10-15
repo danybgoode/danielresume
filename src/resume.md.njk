@@ -42,11 +42,19 @@ eleventyExcludeFromCollections: true
 {{ role.tags | safe }}
 {% endif %}
 {% endfor %}
-## {{ data.ui.howIWorkTitle | safe }}
-{% for item in data.howIWork %}- {{ item | safe }}
-{% endfor %}
 ## {{ data.ui.earlierTitle | safe }}
 {% for role in data.experience.earlier %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
+{% endfor %}
+## {{ data.ui.venturesTitle | safe }}
+{% for role in data.experience.ventures %}
+### {{ role.company | safe }} — {{ role.dates | safe }}
+{{ role.title | safe }}{% if role.url %} · {{ role.url }}{% endif %}
+{% for step in role.chain %}
+- {{ step | safe }}
+{%- endfor %}
+{% endfor %}
+## {{ data.ui.howIWorkTitle | safe }}
+{% for item in data.howIWork %}- {{ item | safe }}
 {% endfor %}
 ## {{ data.ui.educationTitle | safe }}
 {% for e in data.education %}- **{{ e.credential | safe }}** — {{ e.school | safe }} ({{ e.dates | safe }})

@@ -58,6 +58,15 @@ const resumeData = {
             "Unified multi-platform infrastructure across the merged organisations.",
           ],
         },
+      ],
+      earlier: [
+        { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2017 — 2019" },
+        { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
+        { company: "CTIN", title: "Team Lead — Bitcoin remittance platform, 5,000+ active users", dates: "2012 — 2014" },
+        { company: "Grupo Bimbo", title: "FinOps Analyst", dates: "2010 — 2011" },
+        { company: "CompuCom · Accenture", title: "Tech Support · Customer Service", dates: "2006 — 2010" },
+      ],
+      ventures: [
         {
           company: "Golden Frijoles",
           url: "https://goldenfrijoles.com",
@@ -95,23 +104,17 @@ const resumeData = {
           ],
         },
         {
-          company: "CTIN",
-          dates: "2012 — 2014",
-          title: "Team Lead · Centro de Tecnología e Innovación",
-          chain: [
-            "Led a Bitcoin remittance platform to 5,000+ active users.",
-            "Authored the platform proposal to América Móvil / Grupo Carso.",
-          ],
-          tags: "Second team: a gamified coding-literacy comic platform for children",
+          company: "Pokapok.mx",
+          dates: "2016 — 2017",
+          title: "Founder · Corporate wellness platform",
+          chain: [],
         },
-      ],
-      earlier: [
-        { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2017 — 2019" },
-        { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
-        { company: "Pokapok.mx", title: "Founder — corporate wellness platform", dates: "2016 — 2017" },
-        { company: "Nuuch Tech", title: "Founder & Principal Consultant — Magento, CRM, agile coaching", dates: "2012 — 2015" },
-        { company: "Grupo Bimbo", title: "FinOps Analyst", dates: "2010 — 2011" },
-        { company: "CompuCom · Accenture", title: "Tech Support · Customer Service", dates: "2006 — 2010" },
+        {
+          company: "Nuuch Tech",
+          dates: "2012 — 2015",
+          title: "Founder & Principal Consultant · Magento, CRM and agile coaching",
+          chain: [],
+        },
       ],
     },
     education: [
@@ -164,6 +167,8 @@ const resumeData = {
             "Unified multi-platform infrastructure across the merged organisations.",
           ],
         },
+      ],
+      ventures: [
         {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
           title: "Founder & Product Lead · Two products in production, built with agent teams",
@@ -179,9 +184,14 @@ const resumeData = {
           bullets: [ "Built the full stack solo, scaled operations to 100+ messengers and negotiated the acquisition exit." ],
         },
         {
-          company: "CTIN", dates: "2012 — 2014",
-          title: "Team Lead · Centro de Tecnología e Innovación",
-          bullets: [ "Led a Bitcoin remittance platform to 5,000+ active users; authored the platform proposal to América Móvil / Grupo Carso." ],
+          company: "Pokapok.mx", dates: "2016 — 2017",
+          title: "Founder · Corporate wellness platform",
+          bullets: [],
+        },
+        {
+          company: "Nuuch Tech", dates: "2012 — 2015",
+          title: "Founder & Principal Consultant · Magento, CRM and agile coaching",
+          bullets: [],
         },
       ],
       summaryTitle: "Summary",
@@ -242,6 +252,7 @@ const resumeData = {
       snapshotTitle: "Profile",
       experienceTitle: "Experience",
       earlierTitle: "Earlier Career",
+      venturesTitle: "Ventures",
       howIWorkTitle: "How I Work",
       educationTitle: "Education",
       approachTitle: "Approach",
@@ -327,6 +338,15 @@ const resumeData = {
             "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
           ],
         },
+      ],
+      earlier: [
+        { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2017 — 2019" },
+        { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
+        { company: "CTIN", title: "Líder de Equipo — plataforma de remesas con Bitcoin, más de 5,000 usuarios activos", dates: "2012 — 2014" },
+        { company: "Grupo Bimbo", title: "Analista FinOps", dates: "2010 — 2011" },
+        { company: "CompuCom · Accenture", title: "Soporte Técnico y Servicio al Cliente", dates: "2006 — 2010" },
+      ],
+      ventures: [
         {
           company: "Golden Frijoles",
           url: "https://goldenfrijoles.com",
@@ -364,23 +384,17 @@ const resumeData = {
           ],
         },
         {
-          company: "CTIN",
-          dates: "2012 — 2014",
-          title: "Líder de Equipo · Centro de Tecnología e Innovación",
-          chain: [
-            "Llevé una plataforma de remesas con Bitcoin a más de 5,000 usuarios activos.",
-            "Escribí la propuesta de plataforma para América Móvil / Grupo Carso.",
-          ],
-          tags: "Segundo equipo: un cómic interactivo y gamificado para enseñar programación a niños",
+          company: "Pokapok.mx",
+          dates: "2016 — 2017",
+          title: "Fundador · Plataforma de bienestar corporativo",
+          chain: [],
         },
-      ],
-      earlier: [
-        { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2017 — 2019" },
-        { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
-        { company: "Pokapok.mx", title: "Fundador — plataforma de bienestar corporativo", dates: "2016 — 2017" },
-        { company: "Nuuch Tech", title: "Fundador y Consultor Principal — Magento, CRM, coaching ágil", dates: "2012 — 2015" },
-        { company: "Grupo Bimbo", title: "Analista FinOps", dates: "2010 — 2011" },
-        { company: "CompuCom · Accenture", title: "Soporte Técnico y Servicio al Cliente", dates: "2006 — 2010" },
+        {
+          company: "Nuuch Tech",
+          dates: "2012 — 2015",
+          title: "Fundador y Consultor Principal · Magento, CRM y coaching ágil",
+          chain: [],
+        },
       ],
     },
     education: [
@@ -431,6 +445,8 @@ const resumeData = {
             "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
           ],
         },
+      ],
+      ventures: [
         {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
           title: "Fundador y Líder de Producto · Dos productos en producción, construidos con equipos de agentes",
@@ -446,9 +462,14 @@ const resumeData = {
           bullets: [ "Desarrollé el stack completo yo solo, escalé la operación a más de 100 mensajeros y negocié la salida por adquisición." ],
         },
         {
-          company: "CTIN", dates: "2012 — 2014",
-          title: "Líder de Equipo · Centro de Tecnología e Innovación",
-          bullets: [ "Llevé una plataforma de remesas con Bitcoin a más de 5,000 usuarios activos; escribí la propuesta de plataforma para América Móvil / Grupo Carso." ],
+          company: "Pokapok.mx", dates: "2016 — 2017",
+          title: "Fundador · Plataforma de bienestar corporativo",
+          bullets: [],
+        },
+        {
+          company: "Nuuch Tech", dates: "2012 — 2015",
+          title: "Fundador y Consultor Principal · Magento, CRM y coaching ágil",
+          bullets: [],
         },
       ],
       summaryTitle: "Resumen",
@@ -508,6 +529,7 @@ const resumeData = {
       snapshotTitle: "Perfil",
       experienceTitle: "Experiencia",
       earlierTitle: "Trayectoria Previa",
+      venturesTitle: "Emprendimientos",
       howIWorkTitle: "Cómo Trabajo",
       educationTitle: "Formación",
       approachTitle: "Enfoque",

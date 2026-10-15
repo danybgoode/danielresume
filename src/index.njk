@@ -247,13 +247,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       </div>
     </section>
 
-    <section class="how">
-      <p class="eyebrow" id="howTitle">{{ resume.en.ui.howIWorkTitle }}</p>
-      <ul class="how-list" id="howList">
-        {% for item in resume.en.howIWork %}<li>{{ item }}</li>{% endfor %}
-      </ul>
-    </section>
-
     <section class="earlier-section">
       <p class="eyebrow" id="earlierTitle">{{ resume.en.ui.earlierTitle }}</p>
       <div id="earlierRoles">
@@ -267,6 +260,32 @@ title: Daniel Vásquez — Product & Agentic Delivery
         </div>
         {% endfor %}
       </div>
+    </section>
+
+    <section class="ventures">
+      <p class="eyebrow" id="venturesTitle">{{ resume.en.ui.venturesTitle }}</p>
+      <div id="ventureRoles">
+        {% for role in resume.en.experience.ventures %}
+        <div class="role-card">
+          <div class="role-head">
+            <span class="role-company">{% if role.url %}<a href="{{ role.url }}" target="_blank" rel="noopener noreferrer">{{ role.company }}</a>{% else %}{{ role.company }}{% endif %}</span>
+            <span class="role-dates">{{ role.dates }}</span>
+          </div>
+          <p class="role-title">{{ role.title }}</p>
+          {% if role.chain.length %}<ul class="role-bullets">
+            {% for step in role.chain %}<li>{{ step }}</li>{% endfor %}
+          </ul>{% endif %}
+          {% if role.tags %}<p class="role-tags">{{ role.tags }}</p>{% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="how">
+      <p class="eyebrow" id="howTitle">{{ resume.en.ui.howIWorkTitle }}</p>
+      <ul class="how-list" id="howList">
+        {% for item in resume.en.howIWork %}<li>{{ item }}</li>{% endfor %}
+      </ul>
     </section>
 
     <section class="education">
@@ -423,20 +442,19 @@ title: Daniel Vásquez — Product & Agentic Delivery
 
       // Update Featured Experience
       document.getElementById('experienceTitle').textContent = data.ui.experienceTitle;
-      const featEl = document.getElementById('featuredRoles');
-      if (featEl) {
-        featEl.innerHTML = data.experience.featured.map(role => `
+      const roleCard = role => `
           <div class="role-card">
             <div class="role-head">
               <span class="role-company">${role.url ? `<a href="${esc(role.url)}" target="_blank" rel="noopener noreferrer">${esc(role.company)}</a>` : esc(role.company)}</span>
               <span class="role-dates">${esc(role.dates)}</span>
             </div>
             <p class="role-title">${esc(role.title)}</p>
-            <ul class="role-bullets">${role.chain.map(step => `<li>${esc(step)}</li>`).join('')}</ul>
+            ${role.chain && role.chain.length ? `<ul class="role-bullets">${role.chain.map(step => `<li>${esc(step)}</li>`).join('')}</ul>` : ''}
             ${role.tags ? `<p class="role-tags">${esc(role.tags)}</p>` : ''}
-          </div>
-        `).join('');
-      }
+          </div>`;
+      document.getElementById('featuredRoles').innerHTML = data.experience.featured.map(roleCard).join('');
+      document.getElementById('venturesTitle').textContent = data.ui.venturesTitle;
+      document.getElementById('ventureRoles').innerHTML = data.experience.ventures.map(roleCard).join('');
 
       // Update How I Work
       document.getElementById('howTitle').textContent = data.ui.howIWorkTitle;

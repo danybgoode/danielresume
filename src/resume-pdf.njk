@@ -367,13 +367,23 @@ eleventyExcludeFromCollections: true
     <div class="role">
       <div class="role-head"><h3>{{ role.company }}</h3><span class="role-dates">{{ role.dates }}</span></div>
       <p class="role-title">{{ role.title }}</p>
-      <ul class="role-bullets">{% for b in role.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+      {% if role.bullets.length %}<ul class="role-bullets">{% for b in role.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
     </div>
     {% endfor %}
   </section>
   <section class="earlier">
     <h2 class="section-title">{{ d.ui.earlierTitle }}</h2>
     <ul class="earlier-list">{% for r in d.experience.earlier %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endfor %}</ul>
+  </section>
+  <section class="ventures">
+    <h2 class="section-title">{{ d.ui.venturesTitle }}</h2>
+    {% for role in d.cv.ventures %}
+    <div class="role">
+      <div class="role-head"><h3>{{ role.company }}</h3><span class="role-dates">{{ role.dates }}</span></div>
+      <p class="role-title">{{ role.title }}</p>
+      {% if role.bullets.length %}<ul class="role-bullets">{% for b in role.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+    {% endfor %}
   </section>
   <section class="education">
     <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
