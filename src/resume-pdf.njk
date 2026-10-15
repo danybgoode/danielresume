@@ -356,14 +356,11 @@ eleventyExcludeFromCollections: true
 <article class="sheet" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
   <header class="head">
     <h1>{{ d.name }}</h1>
-    <p class="role-line">{{ d.role }}</p>
-    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
+    <p class="role-line">{{ d.cv.role }}</p>
+    <p class="disciplines">{{ d.cv.tagline }}</p>
+    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
   </header>
-  <section class="summary">
-    <h2 class="section-title">{{ d.cv.summaryTitle }}</h2>
-    <p class="summary-text">{{ d.cv.summary }}</p>
-    <p class="glance">{% for g in d.cv.glance %}<span class="figure">{{ g.figure }}</span> {{ g.label }}{% if not loop.last %}<span class="sep">·</span>{% endif %}{% endfor %}</p>
-  </section>
+  <hr class="rule">
   <section class="experience">
     <h2 class="section-title">{{ d.ui.experienceTitle }}</h2>
     {% for role in d.cv.experience %}

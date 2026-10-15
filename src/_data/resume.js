@@ -149,6 +149,8 @@ const resumeData = {
     // Executive one-page CV (the PDF). Curated separately from the site so the
     // page can lead with the corporate roles and stay on one sheet.
     cv: {
+      role: "Product Engineering · Agentic Delivery Systems",
+      tagline: "Fifteen years of product leadership from zero-to-one to Fortune 100 scale — now shipping production software with multi-agent teams, and building the operating system they run on.",
       summary: "Product and engineering leader since 2012, from zero-to-one to Fortune 100 scale. Owned a $70M+ global portfolio and led a 70+ person organisation at AB InBev, then a post-M&A integration at Linio. Today I build production software with agent teams.",
       glance: [
         { figure: "Since 2012", label: "leading product teams" },
@@ -426,6 +428,8 @@ const resumeData = {
       contactEmail: "danielvp1987@gmail.com",
     },
     cv: {
+      role: "Producto e Ingeniería · Sistemas de Entrega con Agentes",
+      tagline: "Quince años de liderazgo de producto, desde cero-a-uno hasta escala Fortune 100 — hoy construyendo software en producción con equipos de agentes, y el sistema operativo sobre el que trabajan.",
       summary: "Líder de producto e ingeniería desde 2012, de cero-a-uno a escala Fortune 100. Gestioné un portafolio global de más de $70M USD y lideré una organización de más de 70 personas en AB InBev, y después una integración post-M&A en Linio. Hoy construyo software en producción con equipos de agentes.",
       glance: [
         { figure: "Desde 2012", label: "liderando equipos de producto" },
