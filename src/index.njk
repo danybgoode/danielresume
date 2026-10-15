@@ -18,19 +18,19 @@ title: Daniel Vásquez — Product & Agentic Delivery
 <link rel="apple-touch-icon" href="/cauldron.png">
 
 <!-- Canonical & Multilingual -->
-<link rel="canonical" href="https://miyagisanchez.com/">
-<link rel="alternate" hreflang="en" href="https://miyagisanchez.com/">
-<link rel="alternate" hreflang="es" href="https://miyagisanchez.com/">
-<link rel="alternate" hreflang="x-default" href="https://miyagisanchez.com/">
+<link rel="canonical" href="https://danielresume.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://danielresume.vercel.app/">
+<link rel="alternate" hreflang="es" href="https://danielresume.vercel.app/">
+<link rel="alternate" hreflang="x-default" href="https://danielresume.vercel.app/">
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="{{ resume.en.ui.pageTitle }}">
 <meta property="og:description" content="{{ resume.en.ui.metaDesc }}">
-<meta property="og:url" content="https://miyagisanchez.com/">
+<meta property="og:url" content="https://danielresume.vercel.app/">
 <meta property="og:site_name" content="Daniel Vásquez">
-<meta property="og:image" content="https://miyagisanchez.com/cauldron.png">
-<meta property="og:image:alt" content="Daniel Vásquez — Product & Agentic Delivery">
+<meta property="og:image" content="https://danielresume.vercel.app/cauldron.png">
+<meta property="og:image:alt" content="Daniel Vásquez — Hands-on Product Leader">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="es_MX">
 
@@ -38,8 +38,8 @@ title: Daniel Vásquez — Product & Agentic Delivery
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ resume.en.ui.pageTitle }}">
 <meta name="twitter:description" content="{{ resume.en.ui.metaDesc }}">
-<meta name="twitter:image" content="https://miyagisanchez.com/cauldron.png">
-<meta name="twitter:image:alt" content="Daniel Vásquez — Product & Agentic Delivery">
+<meta name="twitter:image" content="https://danielresume.vercel.app/cauldron.png">
+<meta name="twitter:image:alt" content="Daniel Vásquez — Hands-on Product Leader">
 
 <!-- Structured Data (JSON-LD).
      The visible Capabilities tag-cloud is gone, but keyword matching has not
@@ -51,8 +51,8 @@ title: Daniel Vásquez — Product & Agentic Delivery
   "@type": "Person",
   "name": "Daniel Vásquez",
   "jobTitle": "Product Engineering Leader",
-  "description": "Product leader shipping production software with multi-agent teams, and designing the operating system those teams run on.",
-  "url": "https://miyagisanchez.com",
+  "description": "Hands-on product leader available for contract and fractional engagements: turns a clear strategy into shipped, measured product with engineers and their agents.",
+  "url": "https://danielresume.vercel.app",
   "email": "mailto:danielvp1987@gmail.com",
   "address": {
     "@type": "PostalAddress",
@@ -100,9 +100,8 @@ title: Daniel Vásquez — Product & Agentic Delivery
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400;1,7..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -110,26 +109,127 @@ title: Daniel Vásquez — Product & Agentic Delivery
 
   <header class="masthead">
     <div class="masthead-top">
-      <p class="eyebrow" id="eyebrowText">{{ resume.en.eyebrow }}</p>
+      <div class="view-switch" role="tablist" aria-label="{{ resume.en.ui.viewsLabel }}" id="viewSwitch">
+        <button type="button" role="tab" id="tab-work" class="view-tab" aria-selected="true" aria-controls="workView" data-view="work">{{ resume.en.ui.workButton }}</button>
+        <button type="button" role="tab" id="tab-classic" class="view-tab" aria-selected="false" aria-controls="classicView" data-view="classic" tabindex="-1">{{ resume.en.ui.classicButton }}</button>
+        <button type="button" role="tab" id="tab-tldr" class="view-tab" aria-selected="false" aria-controls="tldrView" data-view="tldr" tabindex="-1">{{ resume.en.ui.tldrButton }}</button>
+      </div>
       <div class="header-actions">
-        <button id="viewToggleBtn" class="action-btn toggle-view-btn" type="button" aria-label="Toggle TL;DR quick summary view">
-          <span id="viewToggleText">TL;DR</span>
-        </button>
-        <button id="downloadPdfBtn" class="action-btn" type="button" aria-label="Download resume as PDF">
-          <span id="downloadPdfText">PDF</span>
-        </button>
+        <a id="cvLink" class="cv-btn" href="{{ resume.en.ui.cvFile }}" download>
+          <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v8.5M4.5 7 8 10.5 11.5 7M3 13.5h10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="cv-long" id="cvLong">{{ resume.en.ui.cvButton }}</span><span class="cv-short" id="cvShort" aria-hidden="true">{{ resume.en.ui.cvButtonShort }}</span>
+          <span class="file-tag">PDF</span>
+        </a>
         <div class="lang-switch" role="group" aria-label="Language selector">
           <button type="button" class="lang-btn is-active" id="langBtnEn" data-lang="en" aria-pressed="true">EN</button>
-          <span class="lang-divider">/</span>
+          <span class="lang-divider" aria-hidden="true">/</span>
           <button type="button" class="lang-btn" id="langBtnEs" data-lang="es" aria-pressed="false">ES</button>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- WORK WITH ME VIEW (default). Both languages are rendered server-side and
+       the language switch only toggles which block is visible, so this view
+       needs no client-side templating and reads fine with JS off. -->
+  <main id="workView" class="view-container work-view" role="tabpanel" aria-labelledby="tab-work" tabindex="-1">
+    {% for lang in ["en", "es"] %}
+    {% set d = resume[lang] %}
+    {% set w = d.work %}
+    <div class="lang-block" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
+
+      <div class="work-hero">
+        <p class="availability"><span class="dot" aria-hidden="true"></span>{{ w.availability }}</p>
+        <h1 class="work-headline">{{ w.headline }}</h1>
+        <p class="work-lede">{{ w.lede }}</p>
+        <p class="work-creator">{{ w.creator.before }} <a href="{{ d.links.goldenfrijoles.url }}" target="_blank" rel="noopener noreferrer">{{ w.creator.name }}</a>{{ w.creator.after }}</p>
+        <div class="work-cta">
+          <a class="btn-primary" href="mailto:{{ d.email }}?subject={{ 'Working together' if lang == 'en' else 'Trabajar juntos' }}">{{ w.ctaPrimary }}</a>
+          <a class="btn-secondary" href="{{ d.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+        <p class="work-tz">{{ w.timezone }}</p>
+      </div>
+
+      <ul class="proof">
+        {% for p in w.proof %}
+        <li><strong>{{ p.figure }}</strong> {% if p.linkKey %}<a href="{{ d.links[p.linkKey].url }}" target="_blank" rel="noopener noreferrer">{{ p.label }}</a>{% else %}{{ p.label }}{% endif %}</li>
+        {% endfor %}
+      </ul>
+
+      <section class="work-section offers" aria-labelledby="offers-{{ lang }}">
+        <h2 class="work-h2" id="offers-{{ lang }}">{{ w.offersTitle }}</h2>
+        {% for o in w.offers %}
+        <article class="offer">
+          <h3 class="offer-title">{{ o.title }}</h3>
+          <p class="offer-hook">{{ o.hook }}</p>
+          <p class="offer-body">{{ o.body }}</p>
+          <p class="offer-shape">{{ o.shape }}</p>
+        </article>
+        {% endfor %}
+      </section>
+
+      <section class="work-section" aria-labelledby="includes-{{ lang }}">
+        <h2 class="work-h2" id="includes-{{ lang }}">{{ w.includesTitle }}</h2>
+        <ul class="includes">
+          {% for i in w.includes %}<li>{{ i }}</li>{% endfor %}
+        </ul>
+      </section>
+
+      <section class="work-section" aria-labelledby="fit-{{ lang }}">
+        <h2 class="work-h2" id="fit-{{ lang }}">{{ w.fitTitle }}</h2>
+        <p class="work-prose">{{ w.fit }}</p>
+      </section>
+
+      <section class="work-section method" aria-labelledby="method-{{ lang }}">
+        <h2 class="work-h2" id="method-{{ lang }}">{{ w.methodTitle }}</h2>
+        <p class="method-headline">{{ w.methodHeadline }}</p>
+        <p class="work-prose">{{ w.methodBody }}</p>
+        <ol class="method-steps">
+          {% for s in w.methodSteps %}
+          <li><span class="step-name">{{ s.name }}</span><span class="step-text">{{ s.text }}</span></li>
+          {% endfor %}
+        </ol>
+        <p class="method-link"><a href="{{ d.links.methodology.url }}" target="_blank" rel="noopener noreferrer">{{ w.methodLink }}</a> <span class="link-host">goldenfrijoles.com</span></p>
+        <p class="disclosure">{{ w.disclosure }}</p>
+      </section>
+
+      <section class="work-section" aria-labelledby="track-{{ lang }}">
+        <h2 class="work-h2" id="track-{{ lang }}">{{ w.trackTitle }}</h2>
+        <dl class="track">
+          {% for t in w.track %}
+          <div class="track-row"><dt>{{ t.name }}</dt><dd>{{ t.text }}</dd></div>
+          {% endfor %}
+        </dl>
+        <p><a href="#classic" class="text-btn" data-goto-view="classic">{{ w.trackLink }}</a></p>
+      </section>
+
+      <section class="work-section contact" aria-labelledby="contact-{{ lang }}">
+        <h2 class="work-h2" id="contact-{{ lang }}">{{ w.contactTitle }}</h2>
+        <p class="work-prose">{{ w.contactBody }}</p>
+        <div class="email-row">
+          <a class="email-big" href="mailto:{{ d.email }}">{{ d.email }}</a>
+          <button type="button" class="copy-btn" data-copy="{{ d.email }}" data-label-copy="{{ w.copy }}" data-label-copied="{{ w.copied }}" aria-label="{{ w.copyLabel }}">
+            <svg class="i-copy" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 5V3.5A1.5 1.5 0 0 0 9.5 2h-6A1.5 1.5 0 0 0 2 3.5v6A1.5 1.5 0 0 0 3.5 11H5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+            <svg class="i-check" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="copy-text">{{ w.copy }}</span>
+          </button>
+          <span class="sr-only copy-status" aria-live="polite"></span>
+        </div>
+        <p class="contact-links">
+          <a href="{{ d.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="{{ d.ui.cvFile }}" download>{{ w.ctaCv }} <span class="file-tag">PDF</span></a>
+          <a href="{{ d.links.github.url }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+      </section>
+
+    </div>
+    {% endfor %}
+  </main>
+
   <!-- CLASSIC RÉSUMÉ VIEW -->
-  <main id="classicView" class="view-container">
+  <main id="classicView" class="view-container view-hidden" role="tabpanel" aria-labelledby="tab-classic" tabindex="-1">
     <div class="masthead-main">
+      <p class="eyebrow" id="eyebrowText">{{ resume.en.eyebrow }}</p>
       <h1 class="name" id="profileName">{{ resume.en.name }}</h1>
       <p class="role" id="profileRole">{{ resume.en.role }}</p>
       <p class="disciplines" id="profileDisciplines">{{ resume.en.disciplines }}</p>
@@ -227,13 +327,14 @@ title: Daniel Vásquez — Product & Agentic Delivery
         <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer" id="footerLinkedin">{{ resume.en.ui.linkedinLabel }}</a>
         <a href="{{ resume.en.links.github.url }}" target="_blank" rel="noopener noreferrer" id="footerGithub">{{ resume.en.ui.githubLabel }}</a>
         <a href="/resume.md" class="print-hide" id="footerMarkdown">{{ resume.en.ui.viewMarkdown }}</a>
+        <a href="/print/" class="print-hide" id="footerPrint">{{ resume.en.ui.printable }}</a>
       </div>
       <p class="footer-note" id="footerNote">{{ resume.en.ui.lastUpdated }}</p>
     </footer>
   </main>
 
   <!-- TL;DR FULL-SCREEN VIEW -->
-  <main id="tldrView" class="view-container tldr-view view-hidden">
+  <main id="tldrView" class="view-container tldr-view view-hidden" role="tabpanel" aria-labelledby="tab-tldr" tabindex="-1">
     <div class="tldr-content">
       <h1 class="tldr-greeting" id="tldrGreeting">{{ resume.en.tldr.greeting }}</h1>
       <p class="tldr-intro" id="tldrIntro">{{ resume.en.tldr.intro }}</p>
@@ -249,7 +350,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
       </p>
     </div>
     <div class="tldr-footer-nav">
-      <a href="#" id="tldrBackBtn" class="action-link">← Classic</a>
       <div class="footer-links">
         <a href="mailto:{{ resume.en.email }}" id="tldrFooterEmail">{{ resume.en.ui.emailLabel }}</a>
         <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -264,7 +364,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
   (function() {
     const RESUME_DATA = {{ resume | dump | safe }};
     let currentLang = 'en';
-    let currentView = 'classic';
+    let currentView = 'work';
 
     function esc(s) {
       return String(s)
@@ -316,8 +416,24 @@ title: Daniel Vásquez — Product & Agentic Delivery
 
       // Update Eyebrow and Buttons
       document.getElementById('eyebrowText').textContent = data.eyebrow;
-      document.getElementById('viewToggleText').textContent = currentView === 'tldr' ? data.ui.classicButton : data.ui.tldrButton;
-      document.getElementById('downloadPdfText').textContent = data.ui.downloadPdf;
+      document.getElementById('tab-work').textContent = data.ui.workButton;
+      document.getElementById('tab-classic').textContent = data.ui.classicButton;
+      document.getElementById('tab-tldr').textContent = data.ui.tldrButton;
+      document.getElementById('viewSwitch').setAttribute('aria-label', data.ui.viewsLabel);
+      const cv = document.getElementById('cvLink');
+      cv.setAttribute('href', data.ui.cvFile);
+      document.getElementById('cvLong').textContent = data.ui.cvButton;
+      cv.setAttribute('aria-label', data.ui.cvButton + ' (PDF)');
+      const footerPrint = document.getElementById('footerPrint');
+      if (footerPrint) {
+        footerPrint.textContent = data.ui.printable;
+        footerPrint.setAttribute('href', '/print/?lang=' + lang);
+      }
+
+      // Work view: both languages are server-rendered; show the right one.
+      document.querySelectorAll('[data-lang-block]').forEach(function(el) {
+        el.hidden = el.getAttribute('data-lang-block') !== lang;
+      });
 
       // Update Masthead
       document.getElementById('profileRole').textContent = data.role;
@@ -418,76 +534,113 @@ title: Daniel Vásquez — Product & Agentic Delivery
       document.getElementById('tldrPunchline').textContent = data.tldr.punchline;
       document.getElementById('tldrContactLabel').textContent = data.tldr.contactText;
       document.getElementById('tldrFooterEmail').textContent = data.ui.emailLabel;
-      updateTldrBackBtn();
+      setTitleForView();
     }
 
-    function updateTldrBackBtn() {
-      const backBtn = document.getElementById('tldrBackBtn');
-      if (backBtn) {
-        backBtn.textContent = currentLang === 'es' ? '← Clásico' : '← Classic';
-      }
+    const VIEWS = ['work', 'classic', 'tldr'];
+    const PANEL = { work: 'workView', classic: 'classicView', tldr: 'tldrView' };
+
+    function viewFromHash() {
+      const h = (window.location.hash || '').replace('#', '');
+      if (h === 'classic' || h === 'tldr' || h === 'work') return h;
+      if (h === 'forward') return 'work';
+      return 'work';
     }
 
-    function setView(view) {
-      currentView = view;
-      const classicEl = document.getElementById('classicView');
-      const tldrEl = document.getElementById('tldrView');
-      const toggleBtnText = document.getElementById('viewToggleText');
+    function setTitleForView() {
       const data = RESUME_DATA[currentLang];
-
-      if (view === 'tldr') {
-        classicEl.classList.add('view-hidden');
-        tldrEl.classList.remove('view-hidden');
-        toggleBtnText.textContent = data.ui.classicButton;
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        if (history.replaceState) history.replaceState(null, '', '#tldr');
-      } else {
-        tldrEl.classList.add('view-hidden');
-        classicEl.classList.remove('view-hidden');
-        toggleBtnText.textContent = data.ui.tldrButton;
-        if (history.replaceState) history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
+      const names = { work: data.ui.workButton, classic: data.ui.classicButton, tldr: data.ui.tldrButton };
+      document.title = currentView === 'work' ? data.ui.pageTitle : names[currentView] + ' — ' + data.name;
     }
 
-    // Event Listeners
-    document.getElementById('viewToggleBtn').addEventListener('click', function() {
-      setView(currentView === 'classic' ? 'tldr' : 'classic');
-    });
-
-    document.getElementById('downloadPdfBtn').addEventListener('click', function() {
-      // The PDF is its own dedicated, print-optimized layout (single-column,
-      // ATS-parseable) rather than a printed copy of this page — see /print/.
-      // Carry the current language selection along.
-      window.open('/print/?lang=' + currentLang, '_blank', 'noopener');
-    });
-
-    document.getElementById('tldrBackBtn').addEventListener('click', function(e) {
-      e.preventDefault();
-      setView('classic');
-    });
-
-    document.getElementById('langBtnEn').addEventListener('click', function() {
-      setLanguage('en');
-    });
-
-    document.getElementById('langBtnEs').addEventListener('click', function() {
-      setLanguage('es');
-    });
-
-    window.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && currentView === 'tldr') {
-        setView('classic');
+    function setView(view, opts) {
+      opts = opts || {};
+      if (VIEWS.indexOf(view) === -1) view = 'work';
+      currentView = view;
+      VIEWS.forEach(function(v) {
+        const tab = document.getElementById('tab-' + v);
+        const panel = document.getElementById(PANEL[v]);
+        const on = v === view;
+        tab.setAttribute('aria-selected', on ? 'true' : 'false');
+        tab.tabIndex = on ? 0 : -1;
+        panel.classList.toggle('view-hidden', !on);
+      });
+      setTitleForView();
+      if (opts.push) {
+        const url = window.location.pathname + window.location.search + '#' + view;
+        if (history.pushState) history.pushState({ view: view }, '', url);
       }
+      if (opts.scroll && window.scrollY > 120) window.scrollTo({ top: 0 });
+    }
+
+    // Tabs: click, plus arrow/Home/End keys per the WAI-ARIA tabs pattern.
+    const tabs = Array.prototype.slice.call(document.querySelectorAll('.view-tab'));
+    tabs.forEach(function(tab, i) {
+      tab.addEventListener('click', function() {
+        setView(tab.getAttribute('data-view'), { push: true, scroll: true });
+      });
+      tab.addEventListener('keydown', function(e) {
+        let next = null;
+        if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+        else if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === 'Home') next = tabs[0];
+        else if (e.key === 'End') next = tabs[tabs.length - 1];
+        if (next) {
+          e.preventDefault();
+          next.focus();
+          setView(next.getAttribute('data-view'), { push: true });
+        }
+      });
     });
 
-    // Check initial hash
-    if (window.location.hash === '#tldr') {
-      currentView = 'tldr';
+    // In-content links that jump to another view ("See the full résumé").
+    document.querySelectorAll('[data-goto-view]').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        setView(a.getAttribute('data-goto-view'), { push: true });
+        window.scrollTo({ top: 0 });
+        document.getElementById('tab-' + a.getAttribute('data-goto-view')).focus();
+      });
+    });
+
+    window.addEventListener('popstate', function() { setView(viewFromHash()); });
+    window.addEventListener('hashchange', function() { setView(viewFromHash()); });
+
+    // Copy-to-clipboard for the email address.
+    function copyText(text) {
+      if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+      return new Promise(function(resolve, reject) {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy') ? resolve() : reject(); } catch (err) { reject(err); }
+        document.body.removeChild(ta);
+      });
     }
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const label = btn.querySelector('.copy-text');
+        const status = btn.parentNode.querySelector('.copy-status');
+        copyText(btn.getAttribute('data-copy')).then(function() {
+          btn.classList.add('is-copied');
+          label.textContent = btn.getAttribute('data-label-copied');
+          if (status) status.textContent = btn.getAttribute('data-label-copied');
+          clearTimeout(btn._t);
+          btn._t = setTimeout(function() {
+            btn.classList.remove('is-copied');
+            label.textContent = btn.getAttribute('data-label-copy');
+            if (status) status.textContent = '';
+          }, 2000);
+        }).catch(function() {});
+      });
+    });
+
+    document.getElementById('langBtnEn').addEventListener('click', function() { setLanguage('en'); });
+    document.getElementById('langBtnEs').addEventListener('click', function() { setLanguage('es'); });
 
     // Initialize
-    const initLang = detectInitialLang();
-    setLanguage(initLang);
+    currentView = viewFromHash();
+    setLanguage(detectInitialLang());
     setView(currentView);
   })();
 </script>

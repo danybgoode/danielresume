@@ -13,9 +13,19 @@ eleventyExcludeFromCollections: true
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" href="/cauldron.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Static (non-variable) instances on purpose: Chrome embeds variable fonts
+     in PDFs as Type 3 glyph programs; static TrueType embeds cleanly, which is
+     friendlier to ATS parsers and PDF viewers. */
+  @font-face{ font-family:"Literata"; font-style:normal; font-weight:400; src:url(/fonts/static/literata-latin-400-normal.woff2) format("woff2"); }
+  @font-face{ font-family:"Literata"; font-style:normal; font-weight:500; src:url(/fonts/static/literata-latin-500-normal.woff2) format("woff2"); }
+  @font-face{ font-family:"Literata"; font-style:normal; font-weight:600; src:url(/fonts/static/literata-latin-600-normal.woff2) format("woff2"); }
+  @font-face{ font-family:"Literata"; font-style:italic; font-weight:400; src:url(/fonts/static/literata-latin-400-italic.woff2) format("woff2"); }
+  @font-face{ font-family:"Inter"; font-style:normal; font-weight:400; src:url(/fonts/static/inter-latin-400-normal.woff2) format("woff2"); }
+  @font-face{ font-family:"Inter"; font-style:normal; font-weight:600; src:url(/fonts/static/inter-latin-600-normal.woff2) format("woff2"); }
+  @font-face{ font-family:"Inter"; font-style:normal; font-weight:700; src:url(/fonts/static/inter-latin-700-normal.woff2) format("woff2"); }
+  @font-face{ font-family:"Inter"; font-style:italic; font-weight:400; src:url(/fonts/static/inter-latin-400-italic.woff2) format("woff2"); }
+</style>
 
 <style>
   /* ============================================================
@@ -339,7 +349,7 @@ eleventyExcludeFromCollections: true
     <h1>{{ d.name }}</h1>
     <p class="role-line">{{ d.role }}</p>
     <p class="disciplines">{{ d.disciplines }}</p>
-    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><a href="{{ d.links.website.url }}">{{ d.links.website.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
+    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
   </header>
 
   <hr class="rule">
@@ -385,7 +395,7 @@ eleventyExcludeFromCollections: true
   </section>
 
   <footer class="foot-note">
-    <p>{{ d.ui.pdfFooterNote }} <a href="{{ d.links.website.url }}">{{ d.links.website.label }}</a> — {{ d.ui.lastUpdated }}</p>
+    <p>{{ d.ui.pdfFooterNote }} <a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a> — {{ d.ui.lastUpdated }}</p>
   </footer>
 </article>
 
@@ -410,7 +420,7 @@ eleventyExcludeFromCollections: true
     <h1>${esc(d.name)}</h1>
     <p class="role-line">${esc(d.role)}</p>
     <p class="disciplines">${esc(d.disciplines)}</p>
-    <p class="contact"><a href="mailto:${esc(d.email)}">${esc(d.email)}</a><span class="sep">·</span><a href="${esc(d.links.linkedin.url)}">${esc(d.links.linkedin.label)}</a><span class="sep">·</span><a href="${esc(d.links.github.url)}">${esc(d.links.github.label)}</a><span class="sep">·</span><a href="${esc(d.links.website.url)}">${esc(d.links.website.label)}</a><span class="sep">·</span><span class="loc">${esc(d.location)}</span></p>
+    <p class="contact"><a href="mailto:${esc(d.email)}">${esc(d.email)}</a><span class="sep">·</span><a href="${esc(d.links.linkedin.url)}">${esc(d.links.linkedin.label)}</a><span class="sep">·</span><a href="${esc(d.links.github.url)}">${esc(d.links.github.label)}</a><span class="sep">·</span><a href="${esc(d.links.site.url)}">${esc(d.links.site.label)}</a><span class="sep">·</span><span class="loc">${esc(d.location)}</span></p>
   </header>
 
   <hr class="rule">
@@ -455,7 +465,7 @@ eleventyExcludeFromCollections: true
   </section>
 
   <footer class="foot-note">
-    <p>${esc(d.ui.pdfFooterNote)} <a href="${esc(d.links.website.url)}">${esc(d.links.website.label)}</a> — ${esc(d.ui.lastUpdated)}</p>
+    <p>${esc(d.ui.pdfFooterNote)} <a href="${esc(d.links.site.url)}">${esc(d.links.site.label)}</a> — ${esc(d.ui.lastUpdated)}</p>
   </footer>`;
     }
 
@@ -497,7 +507,11 @@ eleventyExcludeFromCollections: true
     // Auto-open the print dialog once fonts are settled, so the PDF button
     // feels instant. Users can still print manually via the button above
     // if the browser blocks the automatic call.
-    const triggerPrint = () => setTimeout(() => window.print(), 250);
+    const triggerPrint = () => {
+      // ?pdf=1 is the headless PDF build (scripts/build-pdf.mjs): no dialog.
+      if (new URLSearchParams(window.location.search).get('pdf') === '1') return;
+      setTimeout(() => window.print(), 250);
+    };
     if (document.fonts && document.fonts.ready) {
       document.fonts.ready.then(triggerPrint);
     } else {

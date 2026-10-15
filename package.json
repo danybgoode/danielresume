@@ -1,12 +1,13 @@
 {
   "name": "miyagisanchez-resume",
   "version": "1.0.0",
-  "description": "Daniel Vásquez résumé site",
+  "description": "Daniel V\u00e1squez r\u00e9sum\u00e9 site",
   "type": "module",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve",
-    "dev": "eleventy --serve"
+    "dev": "eleventy --serve",
+    "pdf": "eleventy && node scripts/build-pdf.mjs && eleventy"
   },
   "engines": {
     "node": ">=18"
