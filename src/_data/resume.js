@@ -20,12 +20,12 @@ const resumeData = {
       { figure: "Since 2012", label: "Leading product teams" },
       { figure: "$70M+", label: "Portfolio owned at AB InBev" },
       { figure: "70+", label: "People led, product & engineering" },
-      { figure: "3", label: "Products running in production" },
+      { figure: "2", label: "Products running in production" },
       { figure: "3", label: "Earlier ventures founded, one acquired" },
       { figure: "MSc", label: "Finance, University of Aberdeen" },
     ],
     snapshot: [
-      "I build production software with teams of AI agents, and I design the operating system those teams run on. Three products are live today: an agentic product-management platform, a no-commission marketplace for Mexico, and the open-source plugin framework both are built with.",
+      "I build production software with teams of AI agents, and I design the operating system those teams run on. Two products are live today: an agentic product-management platform and a no-commission marketplace for Mexico, both built on an open-source kit of my own.",
       "Before that, more than a decade of product leadership from zero-to-one to Fortune 100 scale — a $70M+ global rewards portfolio and a product and engineering organisation of 70+ people at AB InBev, post-M&A systems integration at Linio through the Falabella acquisition, and three ventures of my own, one of them acquired.",
       "The through-line is turning ambiguity into systems: a delivery cadence humans and agents can both follow, with risk-tiered merge gates, independent cross-model review, and written retrospectives that feed the next session instead of dying in a folder. Agile, rebuilt for a team where most of the contributors are not people.",
     ],
@@ -39,6 +39,25 @@ const resumeData = {
     ],
     experience: {
       featured: [
+        {
+          company: "AB InBev",
+          dates: "2020 — 2023",
+          title: "Global Principal Product Manager · Largest brewer worldwide",
+          chain: [
+            "Built the global rewards ecosystem across Central America, Europe and South Korea.",
+            "Led a 70+ person cross-functional product and engineering organisation.",
+            "Owned a $70M+ portfolio, with campaigns activated at the Super Bowl and The Voice Brasil.",
+          ],
+        },
+        {
+          company: "Linio Group",
+          dates: "2019 — 2020",
+          title: "Group Product Manager · Mexico City · acquired by Falabella",
+          chain: [
+            "Directed post-M&A systems integration through the Falabella acquisition.",
+            "Unified multi-platform infrastructure across the merged organisations.",
+          ],
+        },
         {
           company: "Golden Frijoles",
           url: "https://goldenfrijoles.com",
@@ -64,37 +83,6 @@ const resumeData = {
             "Runs on Cloud Run and Cloud Build behind Cloudflare, with an ad-funded print edition as the first revenue channel.",
           ],
           tags: "Payments · marketplace trust · agent-readable commerce · ~1,000 commits across backend and storefront",
-        },
-        {
-          company: "dobby-foundation",
-          url: "https://github.com/danybgoode/dobby-foundation",
-          dates: "2025 — Present",
-          title: "Creator · Open-source ways-of-work for agent teams",
-          chain: [
-            "An agent plugin and project template — five skills: refine, setup, strategy, smoke tests and reporting — installed once per project and updated from one place, so an improvement reaches every project without fork drift.",
-            "CI guards enforce portability: a leak checker keeps project-specific residue out of every shipped skill, and a contract audit fails the build when a skill declares a dependency nothing provides.",
-            "Reproducible, byte-for-byte skill packaging so the same methodology loads into both Claude Code and Cowork.",
-          ],
-          tags: "The methodology as a product — extracted from a live codebase, now shipped as the open Golden Frijoles kit (Apache-2.0)",
-        },
-        {
-          company: "AB InBev",
-          dates: "2020 — 2023",
-          title: "Global Principal Product Manager · Largest brewer worldwide",
-          chain: [
-            "Built the global rewards ecosystem across Central America, Europe and South Korea.",
-            "Led a 70+ person cross-functional product and engineering organisation.",
-            "Owned a $70M+ portfolio, with campaigns activated at the Super Bowl and The Voice Brasil.",
-          ],
-        },
-        {
-          company: "Linio Group",
-          dates: "2019 — 2020",
-          title: "Group Product Manager · Mexico City",
-          chain: [
-            "Directed post-M&A systems integration through the Falabella acquisition.",
-            "Unified multi-platform infrastructure across the merged organisations.",
-          ],
         },
         {
           company: "Bicimensajero.com",
@@ -138,7 +126,7 @@ const resumeData = {
         "Learned to code in high school while managing a local computer shop",
         "Started in tech support, moved into software development, then settled in Product Management",
         "Everything I build now runs through agents — grooming, planning, building, review, shipping and reporting",
-        "Built <a href=\"https://github.com/danybgoode/dobby-foundation\" target=\"_blank\" rel=\"noopener noreferrer\">dobby-foundation</a>, my open-source operating system for agent product work — installed once, reused across every project I build, now the open Golden Frijoles kit",
+        "Built an open-source operating system for agent product work, installed once and reused across every project I build — now the open Golden Frijoles kit",
         "Run <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, an agentic product-management platform, and <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, a no-commission marketplace for Mexico — both in production",
         "Before all that: a $70M+ portfolio and 70+ people at AB InBev, a post-M&A integration at Linio, and three ventures of my own, one of them acquired",
       ],
@@ -150,7 +138,7 @@ const resumeData = {
     // page can lead with the corporate roles and stay on one sheet.
     cv: {
       role: "Product Engineering · Agentic Delivery Systems",
-      tagline: "Fifteen years of product leadership from zero-to-one to Fortune 100 scale — now shipping production software with multi-agent teams, and building the operating system they run on.",
+      tagline: "Leading product since 2012, from zero-to-one to Fortune 100 scale — now shipping production software with multi-agent teams, and building the operating system they run on.",
       summary: "Product and engineering leader since 2012, from zero-to-one to Fortune 100 scale. Owned a $70M+ global portfolio and led a 70+ person organisation at AB InBev, then a post-M&A integration at Linio. Today I build production software with agent teams.",
       glance: [
         { figure: "Since 2012", label: "leading product teams" },
@@ -301,12 +289,12 @@ const resumeData = {
       { figure: "Desde 2012", label: "Liderando equipos de producto" },
       { figure: "$70M+", label: "Portafolio gestionado en AB InBev" },
       { figure: "70+", label: "Personas lideradas, producto e ingeniería" },
-      { figure: "3", label: "Productos corriendo en producción" },
+      { figure: "2", label: "Productos corriendo en producción" },
       { figure: "3", label: "Emprendimientos previos fundados, uno adquirido" },
       { figure: "MSc", label: "Finanzas, University of Aberdeen" },
     ],
     snapshot: [
-      "Construyo software en producción con equipos de agentes de IA, y diseño el sistema operativo sobre el que esos equipos trabajan. Hoy hay tres productos vivos: una plataforma de product management con agentes, un marketplace sin comisiones para México, y el framework de plugins open source con el que ambos están construidos.",
+      "Construyo software en producción con equipos de agentes de IA, y diseño el sistema operativo sobre el que esos equipos trabajan. Hoy hay dos productos vivos: una plataforma de product management con agentes y un marketplace sin comisiones para México, ambos construidos sobre un kit open source propio.",
       "Antes de eso, más de una década de liderazgo de producto desde cero-a-uno hasta escala Fortune 100 — un portafolio global de recompensas de más de $70M USD y una organización de producto e ingeniería de más de 70 personas en AB InBev, la integración de sistemas post-M&A en Linio durante la adquisición por Falabella, y tres emprendimientos propios, uno de ellos adquirido.",
       "El hilo conductor es convertir la ambigüedad en sistemas: una cadencia de entrega que humanos y agentes pueden seguir por igual, con gates de merge escalonados por riesgo, revisión independiente entre familias de modelos, y retrospectivas escritas que alimentan la siguiente sesión en lugar de morir en una carpeta. Agile, reconstruido para un equipo donde la mayoría de quienes contribuyen no son personas.",
     ],
@@ -320,6 +308,25 @@ const resumeData = {
     ],
     experience: {
       featured: [
+        {
+          company: "AB InBev",
+          dates: "2020 — 2023",
+          title: "Global Principal Product Manager · La cervecera más grande del mundo",
+          chain: [
+            "Construí el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur.",
+            "Lideré una organización multidisciplinaria de más de 70 personas de producto e ingeniería.",
+            "Gestioné un portafolio de más de $70M USD, con campañas activadas en el Super Bowl y The Voice Brasil.",
+          ],
+        },
+        {
+          company: "Linio Group",
+          dates: "2019 — 2020",
+          title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
+          chain: [
+            "Dirigí la integración de sistemas post-M&A durante la adquisición por Falabella.",
+            "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
+          ],
+        },
         {
           company: "Golden Frijoles",
           url: "https://goldenfrijoles.com",
@@ -345,37 +352,6 @@ const resumeData = {
             "Corre sobre Cloud Run y Cloud Build detrás de Cloudflare, con una edición impresa financiada por publicidad como primer canal de ingresos.",
           ],
           tags: "Pagos · confianza en marketplace · comercio legible por agentes · ~1,000 commits entre backend y storefront",
-        },
-        {
-          company: "dobby-foundation",
-          url: "https://github.com/danybgoode/dobby-foundation",
-          dates: "2025 — Presente",
-          title: "Creador · Formas de trabajo open source para equipos de agentes",
-          chain: [
-            "Un plugin para agentes y una plantilla de proyecto — cinco skills: refinamiento, setup, estrategia, smoke tests y reporteo — instalados una vez por proyecto y actualizados desde un solo lugar, para que una mejora llegue a todos los proyectos sin fork drift.",
-            "Guardas de CI aseguran la portabilidad: un verificador de fugas mantiene fuera de cada skill el residuo específico del proyecto, y una auditoría del contrato skill-script rompe el build cuando un skill declara una dependencia que nada provee.",
-            "Empaquetado de skills reproducible, byte a byte, para que la misma metodología cargue tanto en Claude Code como en Cowork.",
-          ],
-          tags: "La metodología como producto — extraída de un código vivo, hoy publicada como el kit abierto de Golden Frijoles (Apache-2.0)",
-        },
-        {
-          company: "AB InBev",
-          dates: "2020 — 2023",
-          title: "Global Principal Product Manager · La cervecera más grande del mundo",
-          chain: [
-            "Construí el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur.",
-            "Lideré una organización multidisciplinaria de más de 70 personas de producto e ingeniería.",
-            "Gestioné un portafolio de más de $70M USD, con campañas activadas en el Super Bowl y The Voice Brasil.",
-          ],
-        },
-        {
-          company: "Linio Group",
-          dates: "2019 — 2020",
-          title: "Group Product Manager · Ciudad de México",
-          chain: [
-            "Dirigí la integración de sistemas post-M&A durante la adquisición por Falabella.",
-            "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
-          ],
         },
         {
           company: "Bicimensajero.com",
@@ -419,7 +395,7 @@ const resumeData = {
         "Aprendí a programar en la prepa mientras administraba una tienda local de computación",
         "Empecé en soporte técnico, pasé a desarrollo de software y después me consolidé en Product Management",
         "Todo lo que construyo ahora pasa por agentes — grooming, planeación, construcción, revisión, entrega y reporteo",
-        "Construí <a href=\"https://github.com/danybgoode/dobby-foundation\" target=\"_blank\" rel=\"noopener noreferrer\">dobby-foundation</a>, mi sistema operativo open source para trabajo de producto con agentes — instalado una vez, reutilizado en cada proyecto que construyo, hoy el kit abierto de Golden Frijoles",
+        "Construí un sistema operativo open source para trabajo de producto con agentes, instalado una vez y reutilizado en cada proyecto que construyo — hoy el kit abierto de Golden Frijoles",
         "Opero <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, una plataforma de product management con agentes, y <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, un marketplace sin comisiones para México — ambos en producción",
         "Antes de todo eso: un portafolio de $70M+ y más de 70 personas en AB InBev, una integración post-M&A en Linio, y tres emprendimientos propios, uno de ellos adquirido",
       ],
@@ -429,7 +405,7 @@ const resumeData = {
     },
     cv: {
       role: "Producto e Ingeniería · Sistemas de Entrega con Agentes",
-      tagline: "Quince años de liderazgo de producto, desde cero-a-uno hasta escala Fortune 100 — hoy construyendo software en producción con equipos de agentes, y el sistema operativo sobre el que trabajan.",
+      tagline: "Liderando producto desde 2012, de cero-a-uno hasta escala Fortune 100 — hoy construyendo software en producción con equipos de agentes, y el sistema operativo sobre el que trabajan.",
       summary: "Líder de producto e ingeniería desde 2012, de cero-a-uno a escala Fortune 100. Gestioné un portafolio global de más de $70M USD y lideré una organización de más de 70 personas en AB InBev, y después una integración post-M&A en Linio. Hoy construyo software en producción con equipos de agentes.",
       glance: [
         { figure: "Desde 2012", label: "liderando equipos de producto" },
