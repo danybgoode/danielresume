@@ -17,14 +17,10 @@ eleventyExcludeFromCollections: true
   /* Static (non-variable) instances on purpose: Chrome embeds variable fonts
      in PDFs as Type 3 glyph programs; static TrueType embeds cleanly, which is
      friendlier to ATS parsers and PDF viewers. */
-  @font-face{ font-family:"Literata"; font-style:normal; font-weight:400; src:url(/fonts/static/literata-latin-400-normal.woff2) format("woff2"); }
-  @font-face{ font-family:"Literata"; font-style:normal; font-weight:500; src:url(/fonts/static/literata-latin-500-normal.woff2) format("woff2"); }
-  @font-face{ font-family:"Literata"; font-style:normal; font-weight:600; src:url(/fonts/static/literata-latin-600-normal.woff2) format("woff2"); }
-  @font-face{ font-family:"Literata"; font-style:italic; font-weight:400; src:url(/fonts/static/literata-latin-400-italic.woff2) format("woff2"); }
-  @font-face{ font-family:"Inter"; font-style:normal; font-weight:400; src:url(/fonts/static/inter-latin-400-normal.woff2) format("woff2"); }
-  @font-face{ font-family:"Inter"; font-style:normal; font-weight:600; src:url(/fonts/static/inter-latin-600-normal.woff2) format("woff2"); }
-  @font-face{ font-family:"Inter"; font-style:normal; font-weight:700; src:url(/fonts/static/inter-latin-700-normal.woff2) format("woff2"); }
-  @font-face{ font-family:"Inter"; font-style:italic; font-weight:400; src:url(/fonts/static/inter-latin-400-italic.woff2) format("woff2"); }
+  @font-face{ font-family:"Paper Mono"; font-weight:400; src:url(/fonts/static/PaperMono-Regular.woff2) format("woff2"); }
+  @font-face{ font-family:"Paper Mono"; font-weight:500; src:url(/fonts/static/PaperMono-Medium.woff2) format("woff2"); }
+  @font-face{ font-family:"Paper Mono"; font-weight:600; src:url(/fonts/static/PaperMono-SemiBold.woff2) format("woff2"); }
+  @font-face{ font-family:"Paper Mono"; font-weight:700; src:url(/fonts/static/PaperMono-Bold.woff2) format("woff2"); }
 </style>
 
 <style>
@@ -53,12 +49,13 @@ eleventyExcludeFromCollections: true
     --muted:#5F5F5F;
     --faint:#8C8983;
     --border:#E4E1DB;
-    --serif:"Literata", Georgia, "Times New Roman", serif;
-    --sans:"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif:"Paper Mono", ui-monospace, Menlo, Consolas, monospace;
+    --sans:"Paper Mono", ui-monospace, Menlo, Consolas, monospace;
   }
   *{ box-sizing:border-box; }
   html,body{ margin:0; padding:0; }
   body{
+    font-synthesis:none;
     background:#EDEBE6;
     font-family:var(--serif);
     color:var(--text);
@@ -111,7 +108,7 @@ eleventyExcludeFromCollections: true
 
   .section-title{
     font-family:var(--sans);
-    font-size:7.6pt;
+    font-size:7.0pt;
     font-weight:700;
     /* Deliberately modest tracking: wide letter-spacing makes Chrome emit
        each glyph as its own positioned run, and pdftotext then reads
@@ -130,21 +127,21 @@ eleventyExcludeFromCollections: true
   .head{ padding-bottom:8pt; }
   .head h1{
     font-family:var(--serif);
-    font-size:24pt;
+    font-size:22.1pt;
     letter-spacing:-.01em;
     line-height:1.05;
     margin:0 0 4pt;
   }
   .head .role-line{
     font-family:var(--sans);
-    font-size:9.5pt;
+    font-size:8.7pt;
     font-weight:600;
     color:var(--text);
     margin:0 0 3pt;
   }
   .head .disciplines{
     font-family:var(--serif);
-    font-size:8.8pt;
+    font-size:8.1pt;
     line-height:1.42;
     color:var(--muted);
     margin:0 0 7pt;
@@ -153,7 +150,7 @@ eleventyExcludeFromCollections: true
      every item is a real <a href>, so the PDF carries link annotations. */
   .head .contact{
     font-family:var(--sans);
-    font-size:8.6pt;
+    font-size:7.9pt;
     line-height:1.6;
     color:var(--text);
     margin:0;
@@ -169,7 +166,7 @@ eleventyExcludeFromCollections: true
   /* ---------- Profile ---------- */
   .profile p{
     font-family:var(--serif);
-    font-size:9.2pt;
+    font-size:8.5pt;
     line-height:1.48;
     margin:0 0 5pt;
   }
@@ -181,7 +178,7 @@ eleventyExcludeFromCollections: true
      Inline, each fact is a complete phrase wherever it is cut. ---------- */
   .glance{
     font-family:var(--sans);
-    font-size:8.6pt;
+    font-size:7.9pt;
     line-height:1.6;
     color:var(--text);
     margin:0;
@@ -209,21 +206,21 @@ eleventyExcludeFromCollections: true
   .role-head h3{
     font-family:var(--sans);
     font-weight:700;
-    font-size:9.6pt;
+    font-size:8.8pt;
     line-height:1.25;
   }
   .role-head h3 a{ border-bottom:.5px solid var(--border); }
   .role-dates{
     font-family:var(--sans);
-    font-size:7.8pt;
+    font-size:7.2pt;
     color:var(--muted);
     white-space:nowrap;
     font-variant-numeric:tabular-nums;
   }
   .role-title{
     font-family:var(--sans);
-    font-size:8.4pt;
-    font-style:italic;
+    font-size:7.7pt;
+    font-style:normal;
     color:var(--muted);
     margin:0 0 4pt;
   }
@@ -231,7 +228,7 @@ eleventyExcludeFromCollections: true
     margin:0 0 4pt;
     padding-left:11pt;
     font-family:var(--serif);
-    font-size:8.8pt;
+    font-size:8.1pt;
     line-height:1.45;
   }
   .role-bullets li{ margin-bottom:1.5pt; }
@@ -239,8 +236,8 @@ eleventyExcludeFromCollections: true
   .role-bullets li::marker{ color:var(--faint); }
   .role-tags{
     font-family:var(--sans);
-    font-size:7.6pt;
-    font-style:italic;
+    font-size:7.0pt;
+    font-style:normal;
     color:var(--faint);
     line-height:1.4;
     margin:0;
@@ -251,7 +248,7 @@ eleventyExcludeFromCollections: true
     margin:0;
     padding-left:11pt;
     font-family:var(--serif);
-    font-size:8.8pt;
+    font-size:8.1pt;
     line-height:1.45;
   }
   .how-list li{ margin-bottom:2.5pt; break-inside:avoid; }
@@ -267,7 +264,7 @@ eleventyExcludeFromCollections: true
     align-items:baseline;
     gap:8pt;
     font-family:var(--sans);
-    font-size:8.4pt;
+    font-size:7.7pt;
     line-height:1.5;
     padding:1pt 0;
     break-inside:avoid;
@@ -276,7 +273,7 @@ eleventyExcludeFromCollections: true
   .earlier-list .title{ color:var(--muted); font-weight:400; }
   .earlier-list .dates{
     color:var(--faint);
-    font-size:7.8pt;
+    font-size:7.2pt;
     white-space:nowrap;
     font-variant-numeric:tabular-nums;
   }
@@ -289,12 +286,12 @@ eleventyExcludeFromCollections: true
     align-items:baseline;
     gap:8pt;
     font-family:var(--sans);
-    font-size:8.6pt;
+    font-size:7.9pt;
     line-height:1.5;
   }
   .edu-list .credential{ font-weight:600; }
   .edu-list .school{ color:var(--muted); font-weight:400; }
-  .edu-list .dates{ color:var(--faint); font-size:7.8pt; white-space:nowrap; }
+  .edu-list .dates{ color:var(--faint); font-size:7.2pt; white-space:nowrap; }
 
   /* ---------- Footer ---------- */
   .foot-note{
@@ -305,7 +302,7 @@ eleventyExcludeFromCollections: true
   }
   .foot-note p{
     font-family:var(--sans);
-    font-size:7.4pt;
+    font-size:6.8pt;
     color:var(--faint);
     margin:0;
   }

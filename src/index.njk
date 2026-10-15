@@ -100,8 +100,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
 }
 </script>
 
-<link rel="preload" href="/fonts/literata-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/PaperMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -139,7 +138,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
     <div class="lang-block" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
 
       <div class="work-hero">
-        <p class="availability"><span class="dot" aria-hidden="true"></span>{{ w.availability }}</p>
         <h1 class="work-headline">{{ w.headline }}</h1>
         <p class="work-lede">{{ w.lede }}</p>
         <p class="work-creator">{{ w.creator.before }} <a href="{{ d.links.goldenfrijoles.url }}" target="_blank" rel="noopener noreferrer">{{ w.creator.name }}</a>{{ w.creator.after }}</p>
@@ -150,18 +148,11 @@ title: Daniel Vásquez — Product & Agentic Delivery
         <p class="work-tz">{{ w.timezone }}</p>
       </div>
 
-      <ul class="proof">
-        {% for p in w.proof %}
-        <li><strong>{{ p.figure }}</strong> {% if p.linkKey %}<a href="{{ d.links[p.linkKey].url }}" target="_blank" rel="noopener noreferrer">{{ p.label }}</a>{% else %}{{ p.label }}{% endif %}</li>
-        {% endfor %}
-      </ul>
-
       <section class="work-section offers" aria-labelledby="offers-{{ lang }}">
         <h2 class="work-h2" id="offers-{{ lang }}">{{ w.offersTitle }}</h2>
         {% for o in w.offers %}
         <article class="offer">
           <h3 class="offer-title">{{ o.title }}</h3>
-          <p class="offer-hook">{{ o.hook }}</p>
           <p class="offer-body">{{ o.body }}</p>
           <p class="offer-shape">{{ o.shape }}</p>
         </article>
@@ -175,11 +166,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
         </ul>
       </section>
 
-      <section class="work-section" aria-labelledby="fit-{{ lang }}">
-        <h2 class="work-h2" id="fit-{{ lang }}">{{ w.fitTitle }}</h2>
-        <p class="work-prose">{{ w.fit }}</p>
-      </section>
-
       <section class="work-section method" aria-labelledby="method-{{ lang }}">
         <h2 class="work-h2" id="method-{{ lang }}">{{ w.methodTitle }}</h2>
         <p class="method-headline">{{ w.methodHeadline }}</p>
@@ -191,16 +177,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
         </ol>
         <p class="method-link"><a href="{{ d.links.methodology.url }}" target="_blank" rel="noopener noreferrer">{{ w.methodLink }}</a> <span class="link-host">goldenfrijoles.com</span></p>
         <p class="disclosure">{{ w.disclosure }}</p>
-      </section>
-
-      <section class="work-section" aria-labelledby="track-{{ lang }}">
-        <h2 class="work-h2" id="track-{{ lang }}">{{ w.trackTitle }}</h2>
-        <dl class="track">
-          {% for t in w.track %}
-          <div class="track-row"><dt>{{ t.name }}</dt><dd>{{ t.text }}</dd></div>
-          {% endfor %}
-        </dl>
-        <p><a href="#classic" class="text-btn" data-goto-view="classic">{{ w.trackLink }}</a></p>
       </section>
 
       <section class="work-section contact" aria-labelledby="contact-{{ lang }}">
