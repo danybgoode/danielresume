@@ -102,8 +102,16 @@ title: Daniel Vásquez — Product & Agentic Delivery
 
 <link rel="preload" href="/fonts/PaperMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/discoball.css">
+<script type="module" src="/js/discoball.js"></script>
 </head>
 <body>
+<!-- Funk mode entry: an ASCII disco ball hanging from the top of the page. It opens /funk/.
+     The frame below is rendered at build time; /js/discoball.js spins it (not with reduced motion). -->
+<a class="funk-ball" href="/funk/">
+  <pre class="funk-ball-art" data-discoball data-cols="24" data-rows="12" aria-hidden="true">{% discoball 24, 12 %}</pre>
+  <span class="funk-ball-lbl"><span data-lang-block="en" lang="en">Turn the funk on</span><span data-lang-block="es" lang="es" hidden>Activa el funk</span></span>
+</a>
 <div class="page">
 
   <header class="masthead">

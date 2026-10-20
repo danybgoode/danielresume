@@ -1,0 +1,81 @@
+/* Disco ball: the funk mode entry, hanging from the top right of the main page. Links to /funk/.
+   The art is 24x12 characters. line-height is twice Paper Mono's glyph width (0.61em), so every
+   cell is exactly 1:2 and the sphere is round; discoball.js measures the real cell anyway. */
+.funk-ball {
+  position: absolute;
+  top: 0;
+  right: clamp(12px, 3vw, 40px);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--muted);
+  text-decoration: none;
+  transform-origin: 50% 0;
+  animation: funk-sway 6s ease-in-out infinite alternate;
+  transition: color 0.2s;
+}
+/* the cord, and the little cap it clips into */
+.funk-ball::before {
+  content: "";
+  width: 1px;
+  height: clamp(14px, 3vw, 30px);
+  background: linear-gradient(var(--border), var(--faint));
+}
+.funk-ball-art {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  font: 500 6.5px/1.22 var(--mono);
+  letter-spacing: 0;
+  white-space: pre;
+  user-select: none;
+}
+.funk-ball-art::before {
+  /* cap */
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 9px;
+  height: 4px;
+  margin-left: -4.5px;
+  border-radius: 2px 2px 1px 1px;
+  background: var(--faint);
+}
+.funk-ball-art b { font-weight: 700; color: #C9A227; }
+.funk-ball:hover, .funk-ball:focus-visible { color: var(--text); }
+.funk-ball:focus-visible { outline: none; }
+.funk-ball:focus-visible .funk-ball-art { outline: 1px solid var(--accent); outline-offset: 4px; border-radius: 50%; }
+
+/* label: invisible until hover/focus, but always the link's accessible name */
+.funk-ball-lbl {
+  margin-top: 6px;
+  padding: 2px 7px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  font: 500 10px/1.5 var(--mono);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-3px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.funk-ball:hover .funk-ball-lbl, .funk-ball:focus-visible .funk-ball-lbl { opacity: 1; transform: none; }
+
+@keyframes funk-sway { from { transform: rotate(-1.5deg); } to { transform: rotate(1.5deg); } }
+
+/* Below ~960px the 660px column reaches the right edge and the header controls sit there,
+   so the ball moves to the top left, where the header has empty space above the tabs, and shrinks
+   to fit inside the page's top padding. */
+@media (max-width: 960px) {
+  .funk-ball { right: auto; left: clamp(8px, 2.5vw, 20px); }
+  .funk-ball { color: var(--text); }
+  .funk-ball-art { font-size: 4.2px; font-weight: 700; }
+  .funk-ball::before { height: 6px; }
+  .funk-ball-lbl { position: absolute; top: 100%; left: 0; margin-top: 4px; }
+}
+@media (prefers-reduced-motion: reduce) { .funk-ball { animation: none; } }
+@media print { .funk-ball { display: none; } }

@@ -1,0 +1,294 @@
+---
+title: Daniel Vásquez — Funk Mode
+permalink: /funk/index.html
+eleventyExcludeFromCollections: true
+---
+{%- set d = resume.en -%}
+{%- set w = d.work -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ d.name }} — Funk Mode</title>
+<meta name="description" content="The funky, 1990s-homepage edition of {{ d.name }}’s résumé. Same hands-on product leader, more modem.">
+<meta name="author" content="{{ d.name }}">
+<!-- Novelty view of the same résumé: keep search results pointing at the main page. Remove this line to index it. -->
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#150a26">
+<link rel="icon" type="image/png" href="/cauldron.png">
+<link rel="apple-touch-icon" href="/cauldron.png">
+<link rel="preload" href="/fonts/PaperMono-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/funk.css">
+<!-- Skip the dial-up screen when JS is off, and on reloads within the same visit. -->
+<noscript><style>.dial{display:none}</style></noscript>
+<script>try{if(sessionStorage.getItem('funk-connected'))document.documentElement.classList.add('connected')}catch(e){}</script>
+</head>
+<body>
+
+<div class="dial" id="dial" role="dialog" aria-modal="true" aria-labelledby="dt" aria-describedby="st">
+ <div class="win">
+  <div class="ti"><span id="dt">Connect to danielvasquez.funk</span><a class="x" href="/" aria-label="Close and go back to the normal résumé">×</a></div>
+  <div class="bd">
+   <div class="fld"><span>User name:</span><output>funky-guest</output></div>
+   <div class="fld"><span>Password:</span><output aria-label="hidden">••••••••</output></div>
+   <div class="fld"><span>Phone number:</span><output>1-800-555-FUNK</output></div>
+   <div class="fld"><span>Dialing from:</span><output>New Location</output></div>
+   <div class="prog" aria-hidden="true"><i id="pg"></i></div>
+   <div id="st" aria-live="polite">Ready to dial.</div>
+   <div class="bt2"><button type="button" id="go">Turn the funk on</button><a class="wb" href="/">Cancel</a></div>
+  </div>
+ </div>
+</div>
+
+<div class="page" id="page">
+<div class="tick" aria-hidden="true"><div id="tk"></div></div>
+<div class="wrap">
+<header>
+ <div class="uc">UNDER CONSTRUCTION<small>PLEASE CHECK BACK SOON!!!</small></div>
+ <h1>{{ d.name }}</h1>
+ <div class="sub">~ MY HOME PAGE ON THE WORLD WIDE WEB ~</div>
+ <div class="hdr-ctl">
+  <button type="button" class="btn" id="shuf">★ Shuffle my theme!!! ★</button>
+  <span class="chip" id="thm" aria-live="polite">NOW VIEWING THEME <b>61</b> OF <b>99</b>: SPACE INVADERS</span>
+ </div>
+</header>
+
+<div class="cols">
+<aside>
+ <nav class="p" aria-label="Sections"><h2>Your choices</h2><div class="in"><ul class="nav">
+  <li><span class="dot r"></span><a href="#welcome">[ Home ]</a></li>
+  <li><span class="dot b"></span><a href="#about">[ About Me ]</a></li>
+  <li><span class="dot g"></span><a href="#pot">[ My Cauldron ]</a></li>
+  <li><span class="dot y"></span><a href="#work">[ Where I Work ]</a></li>
+  <li><span class="dot k"></span><a href="#hire">[ Work With Me ]</a></li>
+  <li><span class="dot r"></span><a href="#links">[ Cool Links ]</a></li>
+  <li><span class="dot g"></span><a href="mailto:{{ d.email }}">[ E-Mail Me ]</a></li>
+  <li><span class="dot y"></span><a href="/">[ Funk Off ]</a></li>
+ </ul></div></nav>
+
+ <section class="p" id="pot"><h2>My cauldron</h2><div class="in c">
+  <button type="button" class="pot" id="stir" aria-label="Stir the cauldron" aria-describedby="stn"><span class="sp" data-s="cauldron" data-z="7"></span></button>
+  <b>THE POT IS ALWAYS COOKING</b><br>
+  <button type="button" class="btn sm" id="stir2" aria-describedby="stn">Click here to stir the pot</button>
+  <p class="note" id="stn" aria-live="polite">Visitors have stirred the pot <b id="stc">…</b> times.</p>
+ </div></section>
+
+ <section class="p poll" aria-labelledby="pq"><h2>Vote in my poll</h2><div class="in">
+  <b id="pq">IS GOLDEN FRIJOLES A GOOD PRODUCT?</b>
+  <div id="opts"></div>
+  <p class="note c" id="pn" aria-live="polite"></p>
+ </div></section>
+
+ <section class="p"><h2>This site is</h2><div class="in bt">
+  <div class="b88" style="background:#000;color:#fff"><em style="background:#fff;color:#14b">N</em><span>Netscape<br>now! 4.0</span></div>
+  <div class="b88" style="background:#00007a;color:#fff"><em style="background:#fff;color:#00007a">0%</em><span>Commission<br>always</span></div>
+  <div class="b88" style="background:#0a0;color:#fff"><em style="background:#c00">Y2K</em><span style="color:#ff0">Y2K safe<br>no bugs!</span></div>
+  <div class="b88" style="background:#064;color:#9f9"><em style="background:#043;color:#fff">800</em><span>Best at<br>800x600</span></div>
+  <div class="b88" style="background:#505;color:#f9f"><em style="background:#d4d;color:#fff">56K</em><span>Powered<br>by modem</span></div>
+  <div class="b88" style="background:#800;color:#fff"><em style="background:#fc0;color:#800">!</em><span>No frames<br>ever!!!</span></div>
+ </div></section>
+
+ <section class="p"><h2>Weather in CDMX</h2><div class="in c">
+  <span class="sp cloud" data-s="cloud" data-z="6"></span>
+  <div class="wx" id="wx" aria-live="polite"><span class="big">…</span><span class="note">checking the sky</span></div>
+  <b>SHIPPING WEATHER</b><br>
+  <span class="note">100% chance of merge</span>
+ </div></section>
+</aside>
+
+<main>
+ <section class="p" id="welcome"><h2>Welcome!!!</h2><div class="in">
+  <div class="globe" aria-hidden="true"></div>
+  <p class="quote"><span class="sr-only">“{{ d.philosophy }}”</span><span id="qt" aria-hidden="true" data-quote="{{ d.philosophy }}">C:\&gt; “{{ d.philosophy }}”</span><span class="cur" aria-hidden="true"></span></p>
+  <p class="c" style="margin:0 0 12px"><b>— {{ d.name }}</b></p>
+  <p>You have reached the <b>OFFICIAL HOME PAGE</b> of {{ d.name }} on the <b style="color:#7dff9a">World</b> <b style="color:#6fb3ff">Wide</b> <b style="color:#ff8ad6">Web</b>. I lead product the hands-on way: from zero-to-one to Fortune 100 scale, and now with teams of AI agents. This page is under construction <u>FOREVER</u>, so please excuse the mess and check back often for updates!!!</p>
+ </div></section>
+
+ <section class="p" id="about"><h2>About {{ d.name }}</h2><div class="in">
+  <p>Hi, I’m <b>{{ d.name }}</b>. I’ve led product teams since <b>2012</b> at <b>AB InBev</b> and <b>Linio</b>, and founded a few ventures along the way. Now I build <b>Golden Frijoles</b> and <b>Miyagi Sánchez</b> with agents. I live in <b>{{ d.location }}</b>. <span class="sp" data-s="heart" data-z="3"></span></p>
+  <table>
+   <tr><th scope="row">NAME:</th><td>{{ d.name }}</td></tr>
+   <tr><th scope="row">A.K.A.:</th><td>{{ d.role }}</td></tr>
+   <tr><th scope="row">LOCATION:</th><td>{{ d.location }}, MX, Earth, Milky Way</td></tr>
+   <tr><th scope="row">SINCE:</th><td>2012 (leading product teams)</td></tr>
+   <tr><th scope="row">PORTFOLIO:</th><td>$70M+ at AB InBev</td></tr>
+   <tr><th scope="row">TEAM LED:</th><td>70+ people, product &amp; engineering</td></tr>
+   <tr><th scope="row">E-MAIL:</th><td><a href="mailto:{{ d.email }}">{{ d.email }}</a></td></tr>
+   <tr><th scope="row">ICQ:</th><td>ask me!!</td></tr>
+   <tr><th scope="row">MODEM:</th><td>56K (v.90)</td></tr>
+  </table>
+ </div></section>
+
+ <section class="p"><h2>Things I shipped</h2><div class="in c">
+  <span class="sp" data-s="invader" data-z="5"></span>
+  <p class="shipped">I love shipping. Lately I shipped <b id="ship">a no-commission marketplace for Mexico</b>.</p>
+  <p class="note">Hundreds more on the <a href="{{ d.links.board.url }}" target="_blank" rel="noopener">public roadmap</a>.</p>
+ </div></section>
+
+ <section class="p" id="work"><h2>Where I work</h2><div class="in">
+  <p>Here is my <b>RESUME</b> in chronological order. Please do not steal it. <span style="opacity:.7">(Click a bullet for details.)</span></p>
+  <details><summary><span class="dot b"></span><b>CTIN</b> — computers that remit<span class="d">2012–14</span></summary><p>Team Lead on a Bitcoin remittance platform with 5,000+ active users.</p></details>
+  <details><summary><span class="dot g"></span><b>Bicimensajero.com</b> — bikes that deliver<span class="d">2014–16</span></summary><p>Founded an on-demand bike courier service. Built the product myself, grew it to 100+ couriers and led the company to an acquisition.</p></details>
+  <details><summary><span class="dot y"></span><b>Linio Group</b> — warehouses that merge<span class="d">2019–20</span></summary><p>Group Product Manager. Directed post-M&amp;A systems integration through the Falabella acquisition and unified multi-platform infrastructure.</p></details>
+  <details><summary><span class="dot r"></span><b>AB InBev</b> — beer that rewards<span class="d">2020–23</span></summary><p>Global Principal Product Manager. Built the global rewards ecosystem across Central America, Europe and South Korea. Led 70+ people and owned a $70M+ portfolio, with campaigns at the Super Bowl and The Voice Brasil.</p></details>
+  <details open><summary><span class="dot k"></span><b>Golden Frijoles</b> &amp; <b>Miyagi Sánchez</b> — agents that ship<span class="new">NEW</span><span class="d">2025–now</span></summary><p>Founder &amp; Product Lead on two products in production. <a href="{{ d.links.goldenfrijoles.url }}" target="_blank" rel="noopener">Golden Frijoles</a> is an agentic product-management platform (87 initiatives shipped in the open). <a href="https://miyagisanchez.com" target="_blank" rel="noopener">Miyagi Sánchez</a> is a no-commission marketplace for Mexico (147 initiatives shipped).</p></details>
+  <div class="fire"><span class="sp" data-s="flame" data-z="4"></span>MY ROADMAP IS ON FIRE<span class="sp" data-s="flame" data-z="4"></span></div>
+ </div></section>
+
+ <section class="p" id="hire"><h2>Work with me</h2><div class="in">
+  <p>{{ w.contactBody }}</p>
+  <div class="offers">
+   {%- for o in w.offers %}
+   <div class="offer"><h3>{{ o.title }}</h3><p>{{ o.body }}</p><small>{{ o.shape }}</small></div>
+   {%- endfor %}
+  </div>
+  <p style="margin:12px 0 6px"><b>EVERY ENGAGEMENT INCLUDES:</b></p>
+  <ul class="inc">{% for i in w.includes %}<li>{{ i }}</li>{% endfor %}</ul>
+  <div class="cta"><button type="button" class="btn" id="mail" data-email="{{ d.email }}">Copy my e-mail</button><a class="btn" href="mailto:{{ d.email }}">E-mail me</a></div>
+ </div></section>
+
+ <section class="p"><h2>How I work</h2><div class="in">
+  <p><b>{{ w.methodHeadline | upper }}</b> The principles hold up. Many rituals only existed to relay intent between people. With agents, intent can travel intact from idea to code to measured result.</p>
+  <div class="steps">
+   {%- for s in w.methodSteps %}
+   <div class="step"><b>{{ loop.index }} · {{ s.name | upper }}</b>{{ s.text }}</div>{% if not loop.last %}<span class="arrow" aria-hidden="true">▶</span>{% endif %}
+   {%- endfor %}
+  </div>
+ </div></section>
+
+ <section class="p" id="links"><h2>Cool links</h2><div class="in">
+  <ul class="nav" style="line-height:2">
+   <li><span class="dot k"></span>Find me on LinkedIn: <a href="{{ d.links.linkedin.url }}" target="_blank" rel="noopener">danielvasquezparedes</a></li>
+   <li><span class="dot b"></span>Code lives on GitHub: <a href="{{ d.links.github.url }}" target="_blank" rel="noopener">danybgoode</a></li>
+   <li><span class="dot g"></span>{{ w.methodLink }}: <a href="{{ d.links.methodology.url }}" target="_blank" rel="noopener">{{ d.links.methodology.label }}</a></li>
+   <li><span class="dot y"></span>Download my résumé: <a href="{{ d.ui.cvFile }}" download>Daniel-Vasquez-CV.pdf</a></li>
+   <li><span class="dot r"></span>See what’s shipping: <a href="{{ d.links.board.url }}" target="_blank" rel="noopener">{{ d.links.board.label }}</a></li>
+  </ul>
+ </div></section>
+
+</main>
+</div>
+
+<footer class="p">
+ <div class="in">
+  <div>You are visitor number</div>
+  <div class="odo" id="odo" role="img" aria-label="Visitor counter loading">--------</div>
+  <p class="note" id="since">&nbsp;</p>
+  <p id="online" aria-live="polite"><b>★ 1 PERSON IS BROWSING THIS PAGE RIGHT NOW (that’s you) ★</b></p>
+  <div class="dance" aria-hidden="true"><span class="sp" data-s="cauldron" data-z="4"></span><span class="sp" data-s="invader" data-z="4"></span><span class="sp" data-s="cauldron" data-z="4"></span><span class="sp" data-s="invader" data-z="4"></span><span class="sp" data-s="cauldron" data-z="4"></span></div>
+  <p>Questions? Comments? Broken links? <a href="mailto:{{ d.email }}">E-mail the webmaster</a> (it’s me)</p>
+  <p>Best viewed in <b>Netscape Navigator 4.0</b> at <b>800x600</b> with <b>256 colors</b>. On a 56K modem this page would take <b id="lt">…</b> seconds to load.</p>
+  <p>This page is hosted at <b>http://www.geocities.com/SiliconValley/Heights/1987/</b> · <button type="button" class="link" id="again">Dial in again</button></p>
+  <details class="faq"><summary>▶ Frequently asked questions about {{ d.name }}</summary>
+   <q>Q: Who is {{ d.name }}?</q>A: A hands-on product leader in {{ d.location }}. He has led product teams since 2012 and now builds with AI agents.
+   <q>Q: What has he built?</q>A: Golden Frijoles, an agentic product-management platform, and Miyagi Sánchez, a no-commission marketplace for Mexico. Both are in production.
+   <q>Q: Can I hire him?</q>A: Yes. Contract and fractional work. E-mail {{ d.email }}.
+   <q>Q: Is this the real résumé?</q>A: Yes, just funkier. Choose “Funk Off” in the menu to go back to the normal view.
+  </details>
+  <p>{{ d.ui.lastUpdated }} · © 1998 {{ d.name }}. Please do not steal my HTML.</p>
+ </div>
+</footer>
+</div>
+</div>
+<div id="toast" role="status"></div>
+
+<script>
+{% raw %}
+const $=s=>document.querySelector(s),T=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(T.i);T.i=setTimeout(()=>t.classList.remove('on'),2600)};
+const calm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+// pixel sprites
+const SP={cauldron:{c:{k:'#1b1b2f',a:'#3dff7a',b:'#c8ffd8',g:'#4a4a70',h:'#8888b8',f:'#ff9a1f',y:'#ffe14d'},r:["...b....a..b..","..a...b....a..",".kkkkkkkkkkkk.","kaabaaabaaabak","kggggggggggggk","kghhgggggggggk","kghggggggggggk",".kggggggggggk.","..kkggggggkk..","..f.f.yf.f.f.."]},
+invader:{c:{i:'#3dff7a'},r:["..i.....i..","...i...i...","..iiiiiii..",".ii.iii.ii.","iiiiiiiiiii","i.iiiiiii.i","i.i.....i.i","...ii.ii..."]},
+flame:{c:{o:'#ff6a00',y:'#ffd23d',r:'#d8230f'},r:["...o...","..oo...","..ooo.o",".oooyoo",".ooyyoo","ooyyyyo","ooyyyyo",".ooyyo."]},
+cloud:{c:{w:'#e8e8f8',s:'#9a9ac8'},r:["....wwww....","..wwwwwwww..",".wwwwwwwwwww","wwwwwwwwwwww","ssssssssssss"]},
+heart:{c:{r:'#ff3b5c'},r:[".rr.rr.","rrrrrrr","rrrrrrr",".rrrrr.","..rrr..","...r..."]}};
+document.querySelectorAll('.sp').forEach(e=>{const s=SP[e.dataset.s],z=+e.dataset.z,w=Math.max(...s.r.map(r=>r.length));let h='';s.r.forEach((r,y)=>[...r].forEach((ch,x)=>{if(s.c[ch])h+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${s.c[ch]}"/>`}));e.innerHTML=`<svg width="${w*z}" height="${s.r.length*z}" viewBox="0 0 ${w} ${s.r.length}" aria-hidden="true">${h}</svg>`});
+
+// themes (the number is the joke: there are six, not 99). The choice sticks for the next visit.
+const TH=[[61,'SPACE INVADERS',{}],[17,'DISCO INFERNO',{bg:'#1a0524',dot:'#5a0c44',pan:'#2a0a3c',ln:'#ff5ccf',h1:'#4a0a6e',h2:'#0a6e8e',tx:'#ffd0f5',hi:'#5ef2ff',ac:'#ffe14d',hh:'#fff'}],[1,'SKY BLUE DREAMS',{bg:'#cfe8ff',dot:'#b2d6f7',pan:'#f4faff',ln:'#2a5db0',h1:'#2f6fd0',h2:'#6aa6ee',tx:'#1d2f5c',hi:'#a80d44',ac:'#0a6e32',hh:'#fff'}],[70,'MUSTARD GROOVE',{bg:'#3b1f0e',dot:'#5e3514',pan:'#4a2812',ln:'#f2a900',h1:'#7a3b0c',h2:'#b3261e',tx:'#f6d9a8',hi:'#ffc933',ac:'#9be564',hh:'#ffe9a8'}],[42,'GRAPE SODA',{bg:'#120a3a',dot:'#2a1a78',pan:'#1c1260',ln:'#b69cff',h1:'#3a1d9a',h2:'#8a2be2',tx:'#dcd0ff',hi:'#7dffd4',ac:'#ff9ee6',hh:'#fff'}],[8,'FRIJOL GOLD',{bg:'#1a1208',dot:'#3d2b0c',pan:'#261a0a',ln:'#e8c15a',h1:'#4a3210',h2:'#7a2e12',tx:'#e9d7b0',hi:'#ffd35a',ac:'#b7e07a',hh:'#ffe9a0'}]];
+const VARS=['bg','dot','pan','ln','h1','h2','tx','hi','ac','hh'];let ti=0;
+function theme(i){ti=i;const [n,nm,v]=TH[i],r=document.documentElement.style;VARS.forEach(k=>v[k]?r.setProperty('--'+k,v[k]):r.removeProperty('--'+k));
+ document.querySelector('meta[name=theme-color]').content=v.bg||'#150a26';
+ $('#thm').innerHTML=`NOW VIEWING THEME <b>${n}</b> OF <b>99</b>: ${nm}`;
+ $('#tk').textContent=` ★ NOW ENTERING: ${nm} ★ WELCOME TO MY HOME PAGE ★ SIGN MY GUESTBOOK (JUST E-MAIL ME) ★ THIS PAGE IS 100% Y2K COMPLIANT ★`.repeat(3);store.set('funk-theme',i)}
+$('#shuf').onclick=()=>{let n;do n=Math.floor(Math.random()*TH.length);while(n===ti);theme(n)};
+theme(Math.min(TH.length-1,Math.max(0,+store.get('funk-theme')||0)));
+
+// dial-up gate = the "turn the funk on" moment. The page behind it is inert until connected.
+const dial=$('#dial'),page=$('#page'),st=$('#st'),go=$('#go');let busy=0,timers=[];
+const later=(f,ms)=>timers.push(setTimeout(f,ms));
+function enter(){timers.forEach(clearTimeout);timers=[];dial.hidden=true;page.inert=false;busy=0;try{sessionStorage.setItem('funk-connected','1')}catch(e){}type()}
+function connect(){if(busy)return;busy=1;go.disabled=true;
+ if(calm){st.textContent='Connected at 56000 bps.';later(enter,400);return}
+ $('#pg').style.width='100%';
+ [['Dialing…',0],['Verifying user name and password…',900],['Logging on to the funk…',1800],['Connected at 56000 bps.',2500]].forEach(([m,t])=>later(()=>st.textContent=m,t));
+ later(()=>{dial.classList.add('out');later(()=>{dial.classList.remove('out');enter()},450)},3000)}
+function showDial(){document.documentElement.classList.remove('connected');dial.hidden=false;page.inert=true;go.disabled=false;busy=0;const p=$('#pg');p.style.transition='none';p.style.width='0';void p.offsetWidth;p.style.transition='';st.textContent='Ready to dial.';scrollTo(0,0);go.focus()}
+go.onclick=connect;
+dial.addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventDefault();enter()}
+ if(e.key==='Tab'){const f=[...dial.querySelectorAll('a[href],button:not([disabled])')];const i=f.indexOf(document.activeElement);if(e.shiftKey&&i<=0||!e.shiftKey&&i===f.length-1){e.preventDefault();f[e.shiftKey?f.length-1:0].focus()}}});
+$('#again').onclick=showDial;
+if(document.documentElement.classList.contains('connected'))enter();else showDial();
+
+// typewriter quote (the full quote is already in the markup and in a screen-reader-only copy)
+function type(){const q=$('#qt'),s='C:\\> “'+q.dataset.quote+'”';if(calm||type.done){q.textContent=s;return}type.done=1;let i=0;q.textContent='';const t=setInterval(()=>{q.textContent=s.slice(0,++i);if(i>=s.length)clearInterval(t)},55)}
+
+// 56K load time, from the real size of this page
+$('#lt').textContent=(document.documentElement.outerHTML.length*8/53000).toFixed(1);
+
+// ---- live widgets: /api/funk keeps the shared numbers (visitors, who's online, stirs, votes) ----
+const API='/api/funk';
+const ID=store.get('funk-id')||(()=>{const v=(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2,12));store.set('funk-id',v);return v})();
+let live=false;
+const call=(op,extra)=>fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({op,id:ID,...extra}),keepalive:op==='stir'}).then(r=>r.ok?r.json():Promise.reject(r.status));
+const fmt=n=>Number(n).toLocaleString('en-US');
+
+// visitor odometer
+const odo=$('#odo');
+function roll(to){let n=calm?to:Math.max(0,to-40);const tick=()=>{n=Math.min(to,n+Math.max(1,Math.ceil((to-n)/5)));odo.textContent=String(n).padStart(8,'0');if(n<to)setTimeout(tick,70)};tick();odo.setAttribute('aria-label','Visitor number '+fmt(to))}
+function online(n){$('#online').innerHTML=n>1?`<b>★ ${fmt(n)} PEOPLE ARE BROWSING THIS PAGE RIGHT NOW (you + ${fmt(n-1)}) ★</b>`:'<b>★ 1 PERSON IS BROWSING THIS PAGE RIGHT NOW (that’s you) ★</b>'}
+function offline(){live=false;odo.textContent='--------';odo.setAttribute('aria-label','Visitor counter offline');$('#since').textContent='the counter is out to lunch, back soon';$('#stc').textContent='many';drawPoll()}
+
+// cauldron: count locally right away, send the stirs in batches
+let stirs=0,pend=0,flushT;const stc=$('#stc');
+const showStirs=()=>{stc.textContent=fmt(stirs)};
+function flush(){if(!pend)return;const n=Math.min(25,pend);pend-=n;call('stir',{n}).then(r=>{stirs=Math.max(stirs,r.stirs+pend);showStirs()}).catch(()=>{});if(pend)flushT=setTimeout(flush,400)}
+function stir(){const b=$('#stir');b.classList.remove('st');void b.offsetWidth;b.classList.add('st');if(!live){T('The pot is resting. Try again in a bit.');return}stirs++;pend++;showStirs();clearTimeout(flushT);flushT=setTimeout(flush,600)}
+$('#stir').onclick=stir;$('#stir2').onclick=stir;
+
+// poll: one vote per browser, shared results
+const O=['YES','ALSO YES','EXTREMELY YES'];let V=[0,0,0],mine=null;const box=$('#opts');
+function drawPoll(){const tot=V.reduce((a,b)=>a+b,0);
+ if(mine===null){box.innerHTML=O.map((o,i)=>`<button type="button" data-i="${i}"${live?'':' disabled'}>${o}</button>`).join('');$('#pn').textContent=live?'Click to cast your vote!':'The ballot box is closed for now.';return}
+ box.innerHTML=O.map((o,i)=>{const p=tot?Math.round(V[i]/tot*100):0;return`<div class="row"><span>${o}${i===mine?' ✓':''}</span><b>${p}%</b></div><div class="bar" data-w="${tot?V[i]/tot*100:0}"></div>`}).join('');
+ $('#pn').textContent=`${fmt(tot)} vote${tot===1?'':'s'} so far. Thanks for voting!`;
+ requestAnimationFrame(()=>box.querySelectorAll('.bar').forEach(b=>b.style.width=b.dataset.w+'%'))}
+box.onclick=e=>{const b=e.target.closest('button');if(!b||mine!==null||!live)return;box.querySelectorAll('button').forEach(x=>x.disabled=true);
+ call('vote',{choice:+b.dataset.i}).then(r=>{V=r.poll;mine=r.vote;drawPoll();T('Your vote is in. Democracy!!!')},()=>{drawPoll();T('Could not reach the ballot box. Try again.')})};
+
+function apply(r){if(r.visitors!=null)roll(r.visitors);if(r.online)online(r.online);if(r.stirs!=null){stirs=Math.max(stirs-pend,r.stirs)+pend;showStirs()}if(r.poll)V=r.poll;if('vote' in r)mine=r.vote;
+ if(r.since)$('#since').textContent='since '+new Date(r.since).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});drawPoll()}
+call('visit').then(r=>{live=true;apply(r);if(r.firstVisit)T('Welcome, new visitor!!!')},offline);
+
+// heartbeat for "browsing right now": every 30 s while the tab is visible; say bye when leaving
+setInterval(()=>{if(live&&!document.hidden)call('ping').then(apply,()=>{})},30000);
+document.addEventListener('visibilitychange',()=>{if(live&&!document.hidden)call('ping').then(apply,()=>{})});
+addEventListener('pagehide',()=>{flush();if(live&&navigator.sendBeacon)navigator.sendBeacon(API,JSON.stringify({op:'bye',id:ID}))});
+drawPoll();
+
+// things I shipped (from the public roadmap)
+{const L=['a no-commission marketplace for Mexico','an ad-funded print edition','a risk-tiered merge gate','a public roadmap, 87 initiatives deep','a retrospective the next session reads first'];let i=0;const e=$('#ship');if(!calm)setInterval(()=>{if(document.hidden)return;i=(i+1)%L.length;e.textContent=L[i]},3600)}
+
+// weather in Mexico City, live from Open-Meteo (free, no key)
+{const W={0:'clear skies',1:'mostly clear',2:'partly cloudy',3:'overcast',45:'foggy',48:'foggy',51:'drizzle',53:'drizzle',55:'drizzle',61:'rain',63:'rain',65:'heavy rain',80:'showers',81:'showers',82:'heavy showers',95:'thunderstorms',96:'thunderstorms',99:'thunderstorms'};
+ fetch('https://api.open-meteo.com/v1/forecast?latitude=19.43&longitude=-99.13&current=temperature_2m,weather_code&timezone=America%2FMexico_City').then(r=>r.ok?r.json():Promise.reject()).then(r=>{const c=r.current;$('#wx').innerHTML=`<span class="big">${Math.round(c.temperature_2m)}°C</span><span class="note">${W[c.weather_code]||'weather happening'} right now</span>`},()=>{$('#wx').innerHTML='<span class="note">the weather balloon is lost</span>'})}
+
+// copy e-mail
+$('#mail').onclick=()=>{const m=$('#mail').dataset.email;(navigator.clipboard&&isSecureContext?navigator.clipboard.writeText(m):Promise.reject()).then(()=>T('Copied: '+m),()=>T(m))};
+{% endraw %}
+</script>
+</body>
+</html>
