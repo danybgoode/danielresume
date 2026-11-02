@@ -1,4 +1,6 @@
-// Funk mode widgets backend (Vercel Function): visitor counter, who's online, the cauldron and the poll.
+// Funk mode widgets backend: visitor counter, who's online, the cauldron and the poll. Host-neutral (a web
+// Request in, a Response out): Cloudflare Pages calls it through functions/api/funk.js with its env bindings;
+// any Node host that passes process.env works the same.
 // Storage is Upstash Redis over its REST API, so there is no dependency to install. Add an Upstash
 // Redis store to the Vercel project (Storage tab, or `vercel integration add upstash`); it sets
 // KV_REST_API_URL and KV_REST_API_TOKEN. Without them every call answers 503 and the page says the
@@ -11,8 +13,14 @@
 //   POST /api/funk {op:"stir", id, n}    -> adds n (1-25) stirs to the shared cauldron
 //   POST /api/funk {op:"vote", id, choice} -> one vote per browser id in the poll
 
-const URL_ = process.env.KV_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL;
-const TOKEN = process.env.KV_REST_API_TOKEN || process.env.UPSTASH_REDIS_REST_TOKEN;
+let URL_ = "";
+let TOKEN = "";
+// Read per request: on Cloudflare the env arrives with the request, not as process.env.
+const configure = (env) => {
+  const e = env || (typeof process !== "undefined" ? process.env : {}) || {};
+  URL_ = e.KV_REST_API_URL || e.UPSTASH_REDIS_REST_URL || "";
+  TOKEN = e.KV_REST_API_TOKEN || e.UPSTASH_REDIS_REST_TOKEN || "";
+};
 const K = "funk:";
 const ONLINE_MS = 75_000;         // a visitor counts as online for 75 s after their last heartbeat
 const POLL_OPTIONS = 3;
@@ -55,7 +63,8 @@ const stats = (r) => ({
   since: r[5],
 });
 
-export async function GET() {
+export async function GET(_request, env) {
+  configure(env);
   if (!URL_ || !TOKEN) return json({ error: "not-configured" }, 503);
   try {
     return json(stats(await redis(statsCommands(Date.now()))));
@@ -64,7 +73,8 @@ export async function GET() {
   }
 }
 
-export async function POST(request) {
+export async function POST(request, env) {
+  configure(env);
   if (!URL_ || !TOKEN) return json({ error: "not-configured" }, 503);
   let body;
   try {
@@ -76,7 +86,10 @@ export async function POST(request) {
   if (typeof id !== "string" || !/^[a-z0-9-]{8,64}$/i.test(id)) return json({ error: "bad-id" }, 400);
 
   const now = Date.now();
-  const ip = (request.headers.get("x-forwarded-for") || "").split(",")[0].trim() || "unknown";
+  const ip =
+    request.headers.get("cf-connecting-ip") ||
+    (request.headers.get("x-forwarded-for") || "").split(",")[0].trim() ||
+    "unknown";
   const rl = K + "rl:" + ip + ":" + Math.floor(now / 60_000);
 
   try {
