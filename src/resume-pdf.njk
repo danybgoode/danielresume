@@ -164,7 +164,7 @@ eleventyExcludeFromCollections: true
     margin:0;
   }
   .head .contact a{ text-decoration:none; border-bottom:.5px solid var(--border); }
-  .head .contact .sep{ color:var(--faint); padding:0 5pt; }
+  .head .contact .sep{ color:var(--faint); padding:0 2pt; }
   /* Keep the city pair from breaking mid-phrase across the wrap. */
   .head .contact .loc{ white-space:nowrap; }
 
@@ -360,6 +360,7 @@ eleventyExcludeFromCollections: true
   /* Lane CVs run fuller than the classic sheet, so they get slimmer margins
      to stay on one page in browsers that set text a little looser. */
   @page{ margin:11mm 14mm; }
+  @media print{ .sheet--lane{ zoom:.75; } }
   {% endif %}
   @media print{
     body{ background:#fff; padding:0; }
@@ -370,6 +371,11 @@ eleventyExcludeFromCollections: true
       padding:0;
       box-shadow:none;
       background:#fff;
+      /* The sheet's type scale is set for this zoom. Until the contact line
+         could wrap it overflowed the page and Chrome shrank everything to fit,
+         while Safari printed at full size onto two pages; an explicit zoom makes
+         every browser print the same one-page layout. */
+      zoom:.78;
     }
   }
 </style>
@@ -396,7 +402,7 @@ eleventyExcludeFromCollections: true
     <h1>{{ d.name }}</h1>
     <p class="role-line">{{ c.role }}</p>
     <p class="disciplines">{{ c.tagline }}</p>
-    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
+    <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a> <span class="sep">·</span> <a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a> <span class="sep">·</span> <a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a> <span class="sep">·</span> <a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a> <span class="sep">·</span> <span class="loc">{{ d.location }}</span></p>
   </header>
   <hr class="rule">
   {% if lanePdf %}

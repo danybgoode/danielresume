@@ -213,7 +213,7 @@ const resumeData = {
       ventures: [
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · bike courier grown to 100+ couriers and acquired; wellness platform; e-commerce consultancy", dates: "2012 — 2017" },
       ],
-      dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets” (GARCH, EGARCH, GJR-GARCH).",
+      dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”.",
       languages: "Spanish (native) · English (full professional)",
     },
     lanes: {
@@ -225,7 +225,7 @@ const resumeData = {
         summary: "I've built an operating model where AI agents plan, build, review and ship production software under outcome-driven development, my own open product and engineering methodology. Before that I led a 70+ person product and engineering organisation and a $70M+ global portfolio at AB InBev, and a post-M&A platform integration at Linio.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
-          title: "Founder & Product Lead · Agentic product platform and marketplace, both in production",
+          title: "Founder & Product Lead · Agentic product platform and commerce infrastructure, both in production",
           bullets: [
             "Designed and run an agentic delivery model: agents investigate, plan, build, review and ship; humans approve anything touching money, auth, migrations or customer data.",
             "Built it as a reusable platform, not one-off automations: an open-source kit, SDK and CLI (Apache-2.0) installed once and reused across every product.",
@@ -253,7 +253,7 @@ const resumeData = {
             ],
           },
         ],
-        hideEarlier: [],
+        hideEarlier: ["CompuCom · Accenture"],
         skills: [
           { label: "Agentic AI", text: "multi-agent orchestration, tool use / MCP, retrieval (RAG), memory, evaluation, human-in-the-loop design" },
           { label: "Governance", text: "risk-tiered autonomy, approval gates, cross-model review, audit trails, escalation paths" },
@@ -264,16 +264,16 @@ const resumeData = {
       p: {
         pdfTitle: "Daniel Vasquez - CV - Marketplace & Platform Product Leader",
         role: "Product Leader · Marketplaces, Money Movement & AI-native Platforms",
-        tagline: "Zero-to-one and Fortune 100 scale product leader since 2012. I build two-sided platforms where the buyer is sometimes an agent.",
-        summary: "I founded and run Miyagi Sánchez, a no-commission marketplace where sellers list once and reach buyers through the marketplace, their own website and AI shopping assistants. Before that I owned a $70M+ global rewards portfolio at AB InBev, integrated commerce platforms through Linio's acquisition by Falabella, and led a Bitcoin remittance platform to 5,000+ active users.",
+        tagline: "Zero-to-one and Fortune 100 scale product leader since 2012. I build commerce and payments infrastructure where the buyer is sometimes an agent.",
+        summary: "I founded and run Miyagi Sánchez, e-commerce infrastructure for everyone with the lowest possible entry point: a merchant describes their business in one sentence and gets a shop ready to take payments and share. Before that I owned a $70M+ global rewards portfolio at AB InBev, integrated commerce platforms through Linio's acquisition by Falabella, and led a Bitcoin remittance platform to 5,000+ active users.",
         current: {
           company: "Miyagi Sánchez · Golden Frijoles", dates: "2025 — Present",
-          title: "Founder & Product Lead · No-commission marketplace and agentic product platform",
+          title: "Founder & Product Lead · Prompt-to-shop commerce infrastructure and agentic product platform",
           bullets: [
-            "Miyagi Sánchez: zero-to-one, zero-commission marketplace for Mexico's micro-merchants. Buyers pay sellers directly by card, Mercado Pago, SPEI or cash, and can make offers and chat before paying.",
-            "AI-native by design: a seller describes their business in one sentence and the shop builds itself; every shop also lives on the seller's own domain and where AI shopping assistants can buy from it.",
-            "Built with AI agent teams since June 2026: 1,000+ commits, with human approval on anything touching money, auth or customer data.",
-            "Golden Frijoles: agentic product-management platform with an open-source SDK and CLI for feature flags, A/B tests and outcome reporting; 250+ pull requests merged in under four months.",
+            "Miyagi Sánchez: e-commerce infrastructure for everyone, from prompt to shop. A merchant describes their business in one sentence and gets a shop ready to take payments, free to start and with 0% platform commission.",
+            "One shop, every channel: their own domain, a catalog link, PDF and WhatsApp / Instagram feed, in-person sales (card by QR, transfers, offline cash, payment links), the marketplace and AI shopping assistants.",
+            "Payments go straight to the merchant by card, Mercado Pago, SPEI or cash; the business model rests on optional extras such as custom domains and print ads, not commission.",
+            "Both products built with AI agent teams: 1,000+ commits on Miyagi Sánchez since June 2026 and 250+ merged pull requests on Golden Frijoles, an agentic product platform with an open-source SDK and CLI.",
           ],
         },
         experience: [
@@ -295,15 +295,13 @@ const resumeData = {
           },
           {
             company: "CTIN", dates: "2012 — 2014",
-            title: "Team Lead · Bitcoin remittance platform",
-            bullets: [
-              "Led the team behind a Bitcoin-based remittance product to 5,000+ active users.",
-            ],
+            title: "Team Lead · Bitcoin remittance platform, grown to 5,000+ active users",
+            bullets: [],
           },
         ],
-        hideEarlier: ["CTIN"],
+        hideEarlier: ["CTIN", "CompuCom · Accenture"],
         skills: [
-          { label: "Platforms", text: "two-sided marketplaces, partner onboarding and listings, rewards and loyalty, payments and remittance" },
+          { label: "Platforms", text: "commerce infrastructure, merchant onboarding, two-sided marketplaces, rewards and loyalty, payments and remittance" },
           { label: "Commercial", text: "pricing and incentives, unit economics, LTV / CAC, business cases, M&A integration" },
           { label: "Quant", text: "MSc Finance: econometrics, time-series forecasting, forecast evaluation, A/B testing" },
         ],
@@ -601,7 +599,7 @@ const resumeData = {
       ventures: [
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · mensajería con más de 100 mensajeros, adquirida; bienestar corporativo; consultoría e-commerce", dates: "2012 — 2017" },
       ],
-      dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets” (GARCH, EGARCH, GJR-GARCH).",
+      dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”.",
       languages: "Español (nativo) · Inglés (profesional completo)",
     },
     lanes: {
@@ -612,11 +610,11 @@ const resumeData = {
         summary: "Construí un modelo operativo en el que agentes de IA planean, construyen, revisan y lanzan software en producción bajo desarrollo guiado por resultados, mi propia metodología abierta de producto e ingeniería. Antes lideré una organización de producto e ingeniería de más de 70 personas y un portafolio global de más de $70M USD en AB InBev, y una integración de plataformas post-M&A en Linio.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
-          title: "Fundador y Líder de Producto · Plataforma de producto agéntica y marketplace, ambos en producción",
+          title: "Fundador y Líder de Producto · Plataforma de producto agéntica e infraestructura de comercio, ambas en producción",
           bullets: [
             "Diseñé y opero un modelo de entrega agéntico: los agentes investigan, planean, construyen, revisan y lanzan; las personas aprueban todo lo que toca dinero, autenticación, migraciones o datos de clientes.",
             "Lo construí como plataforma reutilizable, no como automatizaciones sueltas: un kit, SDK y CLI open source (Apache-2.0) que se instala una vez y se reutiliza en cada producto.",
-            "Velocidad con controles: más de 250 pull requests integrados en Golden Frijoles en menos de cuatro meses, respaldados por más de 650 archivos de pruebas automatizadas, y más de 1,000 commits en Miyagi Sánchez.",
+            "Velocidad con controles: más de 250 pull requests en Golden Frijoles en menos de cuatro meses, con más de 650 archivos de pruebas, y más de 1,000 commits en Miyagi Sánchez.",
             "La revisión independiente entre modelos y las retrospectivas escritas alimentan cada sesión siguiente, así la calidad y los controles se acumulan en lugar de degradarse.",
           ],
         },
@@ -626,9 +624,9 @@ const resumeData = {
             title: "Global Principal Product Manager · La cervecera más grande del mundo",
             bullets: [
               "Construí el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur.",
-              "Lideré una organización multidisciplinaria de producto e ingeniería de más de 70 personas a través de 5 gerentes, en una empresa global matricial.",
+              "Lideré una organización de producto e ingeniería de más de 70 personas a través de 5 gerentes, en una empresa global matricial.",
               "Gestioné un portafolio de más de $70M USD: roadmaps, casos de negocio y seguimiento de valor entre regiones.",
-              "Entregué en una categoría altamente regulada dentro de una empresa pública: cada lanzamiento pasó por equipos legales internos y asesores externos en cada jurisdicción.",
+              "Entregué en una categoría altamente regulada en una empresa pública: cada lanzamiento pasó por legal interno y asesores externos.",
             ],
           },
           {
@@ -640,7 +638,7 @@ const resumeData = {
             ],
           },
         ],
-        hideEarlier: [],
+        hideEarlier: ["CompuCom · Accenture"],
         skills: [
           { label: "IA agéntica", text: "orquestación multi-agente, uso de herramientas / MCP, recuperación (RAG), memoria, evaluación, diseño con humano en el ciclo" },
           { label: "Gobernanza", text: "autonomía escalonada por riesgo, puntos de aprobación, revisión entre modelos, trazabilidad, rutas de escalamiento" },
@@ -650,16 +648,16 @@ const resumeData = {
       p: {
         pdfTitle: "Daniel Vasquez - CV - Lider de Producto Marketplaces y Plataformas",
         role: "Líder de Producto · Marketplaces, Movimiento de Dinero y Plataformas Nativas de IA",
-        tagline: "Líder de producto de cero-a-uno a escala Fortune 100 desde 2012. Construyo plataformas de dos lados donde a veces quien compra es un agente.",
-        summary: "Fundé y opero Miyagi Sánchez, un marketplace sin comisiones donde los vendedores publican una vez y llegan a sus compradores por el marketplace, su propio sitio y asistentes de compra con IA. Antes gestioné un portafolio global de recompensas de más de $70M USD en AB InBev, integré plataformas de comercio durante la adquisición de Linio por Falabella y llevé una plataforma de remesas con Bitcoin a más de 5,000 usuarios activos.",
+        tagline: "Líder de producto de cero-a-uno a escala Fortune 100 desde 2012. Construyo infraestructura de comercio y pagos donde a veces quien compra es un agente.",
+        summary: "Fundé y opero Miyagi Sánchez, infraestructura de e-commerce con la barrera de entrada más baja: el comerciante describe su negocio en una frase y obtiene una tienda lista para cobrar. Antes gestioné un portafolio de recompensas de más de $70M USD en AB InBev, integré plataformas en la adquisición de Linio por Falabella y llevé una plataforma de remesas con Bitcoin a más de 5,000 usuarios activos.",
         current: {
           company: "Miyagi Sánchez · Golden Frijoles", dates: "2025 — Presente",
-          title: "Fundador y Líder de Producto · Marketplace sin comisiones y plataforma de producto agéntica",
+          title: "Fundador y Líder de Producto · Infraestructura de comercio de prompt a tienda y plataforma de producto agéntica",
           bullets: [
-            "Miyagi Sánchez: marketplace de cero-a-uno y sin comisiones para microcomerciantes en México. Los compradores pagan directo al vendedor con tarjeta, Mercado Pago, SPEI o efectivo, y pueden hacer ofertas y chatear antes de pagar.",
-            "Nativo de IA por diseño: el vendedor describe su negocio en una frase y la tienda se arma sola; cada tienda vive también en el dominio propio del vendedor y donde los asistentes de compra con IA pueden encontrarla y comprarle.",
-            "Construido con equipos de agentes de IA desde junio de 2026: más de 1,000 commits, con aprobación humana en todo lo que toca dinero, autenticación o datos de clientes.",
-            "Golden Frijoles: plataforma de product management agéntica con SDK y CLI open source para feature flags, pruebas A/B, embudos y reportes de resultados; más de 250 pull requests integrados en menos de cuatro meses.",
+            "Miyagi Sánchez: infraestructura de e-commerce para todos, de prompt a tienda: una frase basta para tener una tienda lista para cobrar, gratis y con 0% de comisión.",
+            "Una tienda, todos los canales: dominio propio, catálogo en enlace, PDF y WhatsApp / Instagram, ventas en persona (QR, transferencia, efectivo, ligas de pago), el marketplace y asistentes de compra con IA.",
+            "Pagos directos al comerciante (tarjeta, Mercado Pago, SPEI, efectivo); el modelo se basa en extras opcionales como dominios y anuncios impresos, no en comisiones.",
+            "Ambos construidos con equipos de agentes de IA: más de 1,000 commits en Miyagi Sánchez y más de 250 pull requests en Golden Frijoles, plataforma de producto agéntica con SDK y CLI open source.",
           ],
         },
         experience: [
@@ -681,17 +679,15 @@ const resumeData = {
           },
           {
             company: "CTIN", dates: "2012 — 2014",
-            title: "Líder de Equipo · Plataforma de remesas con Bitcoin",
-            bullets: [
-              "Lideré al equipo detrás de un producto de remesas basado en Bitcoin hasta más de 5,000 usuarios activos.",
-            ],
+            title: "Líder de Equipo · Plataforma de remesas con Bitcoin, con más de 5,000 usuarios activos",
+            bullets: [],
           },
         ],
-        hideEarlier: ["CTIN"],
+        hideEarlier: ["CTIN", "CompuCom · Accenture"],
         skills: [
-          { label: "Plataformas", text: "marketplaces de dos lados, alta de socios y publicaciones, recompensas y lealtad, pagos y remesas" },
+          { label: "Plataformas", text: "infraestructura de comercio, alta de comerciantes, marketplaces, lealtad, pagos y remesas" },
           { label: "Comercial", text: "precios e incentivos, unit economics, LTV / CAC, casos de negocio, integración post-M&A" },
-          { label: "Cuantitativo", text: "Maestría en Finanzas: econometría, pronóstico de series de tiempo, evaluación de pronósticos, pruebas A/B" },
+          { label: "Cuantitativo", text: "Maestría en Finanzas: econometría, series de tiempo, evaluación de pronósticos, pruebas A/B" },
         ],
       },
     },
