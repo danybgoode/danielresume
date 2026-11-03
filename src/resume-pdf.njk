@@ -356,6 +356,11 @@ eleventyExcludeFromCollections: true
        run its second page hard against the paper edge. */
     margin:15mm 17mm;
   }
+  {% if lanePdf %}
+  /* Lane CVs run fuller than the classic sheet, so they get slimmer margins
+     to stay on one page in browsers that set text a little looser. */
+  @page{ margin:11mm 14mm; }
+  {% endif %}
   @media print{
     body{ background:#fff; padding:0; }
     .no-print{ display:none !important; }
