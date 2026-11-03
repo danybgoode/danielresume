@@ -386,7 +386,12 @@ eleventyExcludeFromCollections: true
   <div class="actions">
     <button type="button" class="lang-btn is-active" id="langBtnEn" data-lang="en">EN</button>
     <button type="button" class="lang-btn" id="langBtnEs" data-lang="es">ES</button>
+    {% if lanePdf %}
+    {# Lanes download their pre-built PDF: a browser's own print re-lays out the page and can spill onto a second sheet. #}
+    <a class="print-btn" id="printBtn" href="{{ resume.en.lanes[variant].pdfFile }}" download>{{ resume.en.lanesShared.titles.download }}</a>
+    {% else %}
     <button type="button" class="print-btn" id="printBtn">{{ resume.en.ui.pdfPrintButton }}</button>
+    {% endif %}
   </div>
 </div>
 {#
@@ -470,8 +475,13 @@ eleventyExcludeFromCollections: true
     const TITLES = { en: {{ resume.en.ui.pdfTitle | dump | safe }}, es: {{ resume.es.ui.pdfTitle | dump | safe }} };
     {% endif %}
     const UI = {
+      {% if lanePdf %}
+      en: { back: {{ resume.en.ui.pdfBackLink | dump | safe }}, print: {{ resume.en.lanesShared.titles.download | dump | safe }}, pdf: {{ resume.en.lanes[variant].pdfFile | dump | safe }} },
+      es: { back: {{ resume.es.ui.pdfBackLink | dump | safe }}, print: {{ resume.es.lanesShared.titles.download | dump | safe }}, pdf: {{ resume.es.lanes[variant].pdfFile | dump | safe }} }
+      {% else %}
       en: { back: {{ resume.en.ui.pdfBackLink | dump | safe }}, print: {{ resume.en.ui.pdfPrintButton | dump | safe }} },
       es: { back: {{ resume.es.ui.pdfBackLink | dump | safe }}, print: {{ resume.es.ui.pdfPrintButton | dump | safe }} }
+      {% endif %}
     };
     function render(lang) {
       if (!TITLES[lang]) return;
@@ -484,6 +494,7 @@ eleventyExcludeFromCollections: true
       document.getElementById('langBtnEn').classList.toggle('is-active', lang === 'en');
       document.getElementById('langBtnEs').classList.toggle('is-active', lang === 'es');
       document.getElementById('printBtn').textContent = UI[lang].print;
+      if (UI[lang].pdf) document.getElementById('printBtn').setAttribute('href', UI[lang].pdf);
       document.getElementById('backLink').textContent = UI[lang].back;
     }
     function detectLang() {
@@ -498,7 +509,7 @@ eleventyExcludeFromCollections: true
     render(detectLang());
     document.getElementById('langBtnEn').addEventListener('click', function() { render('en'); });
     document.getElementById('langBtnEs').addEventListener('click', function() { render('es'); });
-    document.getElementById('printBtn').addEventListener('click', function() { window.print(); });
+    {% if not lanePdf %}document.getElementById('printBtn').addEventListener('click', function() { window.print(); });{% endif %}
   })();
 </script>
 </body>

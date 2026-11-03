@@ -209,7 +209,7 @@ const resumeData = {
     // /print/a/ and /print/p/ and built to their own PDFs by `npm run pdf`.
     // Earlier career and education come from the shared blocks above.
     lanesShared: {
-      titles: { summary: "Summary", current: "Current", skills: "Skills", ventures: "Earlier Ventures", languages: "Languages" },
+      titles: { summary: "Summary", current: "Current", skills: "Skills", ventures: "Earlier Ventures", languages: "Languages", download: "Download PDF" },
       ventures: [
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · bike courier grown to 100+ couriers and acquired; wellness platform; e-commerce consultancy", dates: "2012 — 2017" },
       ],
@@ -220,6 +220,7 @@ const resumeData = {
       // A — enterprise agentic AI platform and transformation roles.
       a: {
         pdfTitle: "Daniel Vasquez - CV - Product Leader, Agentic AI",
+        pdfFile: "/Daniel-Vasquez-CV-Agentic-AI.pdf",
         role: "Product Leader · Agentic AI & Operating Models",
         tagline: "Product and engineering leader since 2012, from zero-to-one to Fortune 100 scale. I run production software with teams of AI agents, and design the controls they run under.",
         summary: "I've built an operating model where AI agents plan, build, review and ship production software under outcome-driven development, my own open product and engineering methodology. Before that I led a 70+ person product and engineering organisation and a $70M+ global portfolio at AB InBev, and a post-M&A platform integration at Linio.",
@@ -263,6 +264,7 @@ const resumeData = {
       // P — commerce infrastructure, payments, marketplace and AI-native platform product roles.
       p: {
         pdfTitle: "Daniel Vasquez - CV - Commerce & Platform Product Leader",
+        pdfFile: "/Daniel-Vasquez-CV-Product-Platforms.pdf",
         role: "Product Leader · Commerce Infrastructure, Payments & AI-native Platforms",
         tagline: "Zero-to-one and Fortune 100 scale product leader since 2012. I build commerce and payments infrastructure where the buyer is sometimes an agent.",
         summary: "I founded and run Miyagi Sánchez, e-commerce infrastructure for everyone with the lowest possible entry point: a merchant describes their business in one sentence and gets a shop ready to take payments and share. Before that I owned a $70M+ global rewards portfolio at AB InBev, integrated commerce platforms through Linio's acquisition by Falabella, and led a Bitcoin remittance platform to 5,000+ active users.",
@@ -595,7 +597,7 @@ const resumeData = {
       summaryTitle: "Resumen",
     },
     lanesShared: {
-      titles: { summary: "Resumen", current: "Actualidad", skills: "Habilidades", ventures: "Emprendimientos Previos", languages: "Idiomas" },
+      titles: { summary: "Resumen", current: "Actualidad", skills: "Habilidades", ventures: "Emprendimientos Previos", languages: "Idiomas", download: "Descargar PDF" },
       ventures: [
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · mensajería con más de 100 mensajeros, adquirida; bienestar corporativo; consultoría e-commerce", dates: "2012 — 2017" },
       ],
@@ -605,6 +607,7 @@ const resumeData = {
     lanes: {
       a: {
         pdfTitle: "Daniel Vasquez - CV - Lider de Producto, IA Agentica",
+        pdfFile: "/Daniel-Vasquez-CV-Agentic-AI-ES.pdf",
         role: "Líder de Producto · IA Agéntica y Modelos Operativos",
         tagline: "Líder de producto e ingeniería desde 2012, de cero-a-uno a escala Fortune 100. Opero software en producción con equipos de agentes de IA y diseño los controles bajo los que trabajan.",
         summary: "Construí un modelo operativo en el que agentes de IA planean, construyen, revisan y lanzan software en producción bajo desarrollo guiado por resultados, mi propia metodología abierta de producto e ingeniería. Antes lideré una organización de producto e ingeniería de más de 70 personas y un portafolio global de más de $70M USD en AB InBev, y una integración de plataformas post-M&A en Linio.",
@@ -647,6 +650,7 @@ const resumeData = {
       },
       p: {
         pdfTitle: "Daniel Vasquez - CV - Lider de Producto Comercio y Plataformas",
+        pdfFile: "/Daniel-Vasquez-CV-Product-Platforms-ES.pdf",
         role: "Líder de Producto · Infraestructura de Comercio, Pagos y Plataformas Nativas de IA",
         tagline: "Líder de producto de cero-a-uno a escala Fortune 100 desde 2012. Construyo infraestructura de comercio y pagos donde a veces quien compra es un agente.",
         summary: "Fundé y opero Miyagi Sánchez, infraestructura de e-commerce con la barrera de entrada más baja: el comerciante describe su negocio en una frase y obtiene una tienda lista para cobrar. Antes gestioné un portafolio de recompensas de más de $70M USD en AB InBev, integré plataformas en la adquisición de Linio por Falabella y llevé una plataforma de remesas con Bitcoin a más de 5,000 usuarios activos.",
