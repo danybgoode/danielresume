@@ -308,7 +308,8 @@ eleventyExcludeFromCollections: true
   .edu-list .credential{ font-weight:600; }
   .edu-list .school{ color:var(--muted); font-weight:400; }
   .edu-list .dates{ color:var(--faint); font-size:8.1pt; white-space:nowrap; }
-  .edu-note{
+  .edu-list li.edu-note{
+    display:block;
     font-family:var(--serif);
     font-size:8.3pt;
     line-height:1.45;
@@ -444,8 +445,8 @@ eleventyExcludeFromCollections: true
   {% endif %}
   <section class="education">
     <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
-    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% endfor %}</ul>
-    {% if lanePdf %}<p class="edu-note">{{ d.lanesShared.dissertation }}</p>{% endif %}
+    {# Lane CVs carry the dissertation directly under the MSc, the first credential. #}
+    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% if lanePdf and loop.first %}<li class="edu-note">{{ d.lanesShared.dissertation }}</li>{% endif %}{% endfor %}</ul>
   </section>
 </article>
 {% endfor %}

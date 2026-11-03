@@ -4,8 +4,8 @@
 //   npm run pdf      (builds the site first, then writes src/files/*.pdf)
 //
 // Re-run it whenever src/_data/resume.js changes, and commit the PDFs.
-// Needs Playwright with a Chromium build available:
-//   npm i -D playwright && npx playwright install chromium
+// Playwright is a devDependency; a fresh machine also needs its Chromium once:
+//   npx playwright install chromium
 import { createServer } from "node:http";
 import { readFile, mkdir } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";

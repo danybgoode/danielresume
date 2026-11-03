@@ -214,15 +214,15 @@ const resumeData = {
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · bike courier grown to 100+ couriers and acquired; wellness platform; e-commerce consultancy", dates: "2012 — 2017" },
       ],
       dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets” (GARCH, EGARCH, GJR-GARCH).",
-      languages: "Spanish (native) · English (fluent)",
+      languages: "Spanish (native) · English (full professional)",
     },
     lanes: {
       // A — enterprise agentic AI platform and transformation roles.
       a: {
-        pdfTitle: "Daniel Vasquez - CV - Agentic AI Platform Leader",
-        role: "Agentic AI Platform & Operating-Model Leader",
+        pdfTitle: "Daniel Vasquez - CV - Product Leader, Agentic AI",
+        role: "Product Leader · Agentic AI & Operating Models",
         tagline: "Product and engineering leader since 2012, from zero-to-one to Fortune 100 scale. I run production software with teams of AI agents, and design the controls they run under.",
-        summary: "I've built an operating model where AI agents plan, build, review and ship production software inside explicit limits: low-risk work merges on green CI, while anything touching money, authentication or customer data needs human approval. Every agent action is reviewed by a second model and kept on record. Before that I led a 70+ person product and engineering organisation and a $70M+ global portfolio at AB InBev, and a post-M&A platform integration at Linio.",
+        summary: "I've built an operating model where AI agents plan, build, review and ship production software inside explicit limits, run under outcome-driven development, my own open product and engineering methodology. Before that I led a 70+ person product and engineering organisation and a $70M+ global portfolio at AB InBev, and a post-M&A platform integration at Linio.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
           title: "Founder & Product Lead · Agentic product platform and marketplace, both in production",
@@ -604,14 +604,14 @@ const resumeData = {
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · mensajería con más de 100 mensajeros, adquirida; bienestar corporativo; consultoría e-commerce", dates: "2012 — 2017" },
       ],
       dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets” (GARCH, EGARCH, GJR-GARCH).",
-      languages: "Español (nativo) · Inglés (fluido)",
+      languages: "Español (nativo) · Inglés (profesional completo)",
     },
     lanes: {
       a: {
-        pdfTitle: "Daniel Vasquez - CV - Lider de Plataformas de IA Agentica",
-        role: "Líder de Plataformas de IA Agéntica y Modelos Operativos",
+        pdfTitle: "Daniel Vasquez - CV - Lider de Producto, IA Agentica",
+        role: "Líder de Producto · IA Agéntica y Modelos Operativos",
         tagline: "Líder de producto e ingeniería desde 2012, de cero-a-uno a escala Fortune 100. Opero software en producción con equipos de agentes de IA y diseño los controles bajo los que trabajan.",
-        summary: "Construí un modelo operativo en el que agentes de IA planean, construyen, revisan y lanzan software en producción dentro de límites explícitos: el trabajo de bajo riesgo se integra con CI en verde, y todo lo que toca dinero, autenticación o datos de clientes requiere aprobación humana. Cada acción de un agente la revisa un segundo modelo y queda registrada. Antes lideré una organización de producto e ingeniería de más de 70 personas y un portafolio global de más de $70M USD en AB InBev, y una integración de plataformas post-M&A en Linio.",
+        summary: "Construí un modelo operativo en el que agentes de IA planean, construyen, revisan y lanzan software en producción dentro de límites explícitos, bajo desarrollo guiado por resultados, mi propia metodología abierta de producto e ingeniería. Antes lideré una organización de producto e ingeniería de más de 70 personas y un portafolio global de más de $70M USD en AB InBev, y una integración de plataformas post-M&A en Linio.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
           title: "Fundador y Líder de Producto · Plataforma de producto agéntica y marketplace, ambos en producción",

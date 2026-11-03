@@ -1,7 +1,7 @@
 {
   "name": "miyagisanchez-resume",
   "version": "1.0.0",
-  "description": "Daniel V\u00e1squez r\u00e9sum\u00e9 site",
+  "description": "Daniel Vásquez résumé site",
   "type": "module",
   "scripts": {
     "build": "eleventy",
@@ -17,5 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1"
   }
 }
