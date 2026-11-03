@@ -1,13 +1,21 @@
 ---
-permalink: "print/index.html"
+# One sheet per CV variant: "classic" is the executive CV at /print/, the
+# lanes (resume[lang].lanes) render at /print/<lane>/.
+pagination:
+  data: variants
+  size: 1
+  alias: variant
+variants: ["classic", "a", "p"]
+permalink: "{% if variant == 'classic' %}print/index.html{% else %}print/{{ variant }}/index.html{% endif %}"
 eleventyExcludeFromCollections: true
 ---
+{% set lanePdf = variant != "classic" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ resume.en.ui.pdfTitle }}</title>
+<title>{{ resume.en.lanes[variant].pdfTitle if lanePdf else resume.en.ui.pdfTitle }}</title>
 <meta name="author" content="{{ resume.en.name }}">
 <meta name="description" content="{{ resume.en.ui.metaDesc }}">
 <meta name="robots" content="noindex, nofollow">
@@ -300,6 +308,29 @@ eleventyExcludeFromCollections: true
   .edu-list .credential{ font-weight:600; }
   .edu-list .school{ color:var(--muted); font-weight:400; }
   .edu-list .dates{ color:var(--faint); font-size:8.1pt; white-space:nowrap; }
+  .edu-note{
+    font-family:var(--serif);
+    font-size:8.3pt;
+    line-height:1.45;
+    color:var(--muted);
+    margin-top:2pt;
+  }
+
+  /* Lane CVs carry a summary, a current role and skills on the same one page. */
+  .sheet--lane section{ padding-top:8pt; }
+  .sheet--lane .role{ padding:6pt 0; }
+
+  /* ---------- Skills (lane CVs) ---------- */
+  .skills-list{
+    margin:0;
+    padding:0;
+    list-style:none;
+    font-family:var(--serif);
+    font-size:8.8pt;
+    line-height:1.5;
+  }
+  .skills-list li{ margin-bottom:1pt; }
+  .skills-list .label{ font-weight:600; }
 
   /* ---------- Footer ---------- */
   .foot-note{
@@ -353,17 +384,32 @@ eleventyExcludeFromCollections: true
 #}
 {% for lang in ["en", "es"] %}
 {% set d = resume[lang] %}
-<article class="sheet" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
+{% set c = d.lanes[variant] if lanePdf else d.cv %}
+<article class="sheet{% if lanePdf %} sheet--lane{% endif %}" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
   <header class="head">
     <h1>{{ d.name }}</h1>
-    <p class="role-line">{{ d.cv.role }}</p>
-    <p class="disciplines">{{ d.cv.tagline }}</p>
+    <p class="role-line">{{ c.role }}</p>
+    <p class="disciplines">{{ c.tagline }}</p>
     <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a><span class="sep">·</span><a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a><span class="sep">·</span><a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a><span class="sep">·</span><a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a><span class="sep">·</span><span class="loc">{{ d.location }}</span></p>
   </header>
   <hr class="rule">
+  {% if lanePdf %}
+  <section class="summary">
+    <h2 class="section-title">{{ d.lanesShared.titles.summary }}</h2>
+    <p class="summary-text">{{ c.summary }}</p>
+  </section>
+  <section class="current">
+    <h2 class="section-title">{{ d.lanesShared.titles.current }}</h2>
+    <div class="role">
+      <div class="role-head"><h3>{{ c.current.company }}</h3><span class="role-dates">{{ c.current.dates }}</span></div>
+      <p class="role-title">{{ c.current.title }}</p>
+      <ul class="role-bullets">{% for b in c.current.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+    </div>
+  </section>
+  {% endif %}
   <section class="experience">
     <h2 class="section-title">{{ d.ui.experienceTitle }}</h2>
-    {% for role in d.cv.experience %}
+    {% for role in c.experience %}
     <div class="role">
       <div class="role-head"><h3>{{ role.company }}</h3><span class="role-dates">{{ role.dates }}</span></div>
       <p class="role-title">{{ role.title }}</p>
@@ -373,8 +419,18 @@ eleventyExcludeFromCollections: true
   </section>
   <section class="earlier">
     <h2 class="section-title">{{ d.ui.earlierTitle }}</h2>
-    <ul class="earlier-list">{% for r in d.experience.earlier %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endfor %}</ul>
+    <ul class="earlier-list">{% for r in d.experience.earlier %}{% if not lanePdf or not (r.company in c.hideEarlier) %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endif %}{% endfor %}</ul>
   </section>
+  {% if lanePdf %}
+  <section class="ventures">
+    <h2 class="section-title">{{ d.lanesShared.titles.ventures }}</h2>
+    <ul class="earlier-list">{% for r in d.lanesShared.ventures %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endfor %}</ul>
+  </section>
+  <section class="skills">
+    <h2 class="section-title">{{ d.lanesShared.titles.skills }}</h2>
+    <ul class="skills-list">{% for s in c.skills %}<li><span class="label">{{ s.label }}:</span> {{ s.text }}</li>{% endfor %}<li><span class="label">{{ d.lanesShared.titles.languages }}:</span> {{ d.lanesShared.languages }}</li></ul>
+  </section>
+  {% else %}
   <section class="ventures">
     <h2 class="section-title">{{ d.ui.venturesTitle }}</h2>
     {% for role in d.cv.ventures %}
@@ -385,16 +441,22 @@ eleventyExcludeFromCollections: true
     </div>
     {% endfor %}
   </section>
+  {% endif %}
   <section class="education">
     <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
     <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% endfor %}</ul>
+    {% if lanePdf %}<p class="edu-note">{{ d.lanesShared.dissertation }}</p>{% endif %}
   </section>
 </article>
 {% endfor %}
 
 <script>
   (function() {
+    {% if lanePdf %}
+    const TITLES = { en: {{ resume.en.lanes[variant].pdfTitle | dump | safe }}, es: {{ resume.es.lanes[variant].pdfTitle | dump | safe }} };
+    {% else %}
     const TITLES = { en: {{ resume.en.ui.pdfTitle | dump | safe }}, es: {{ resume.es.ui.pdfTitle | dump | safe }} };
+    {% endif %}
     const UI = {
       en: { back: {{ resume.en.ui.pdfBackLink | dump | safe }}, print: {{ resume.en.ui.pdfPrintButton | dump | safe }} },
       es: { back: {{ resume.es.ui.pdfBackLink | dump | safe }}, print: {{ resume.es.ui.pdfPrintButton | dump | safe }} }

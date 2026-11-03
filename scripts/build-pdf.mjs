@@ -37,13 +37,18 @@ const port = server.address().port;
 
 await mkdir(OUT, { recursive: true });
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+// The executive CV plus one PDF per lane (resume[lang].lanes, rendered at /print/<lane>/).
 const jobs = [
-  { lang: "en", file: "Daniel-Vasquez-CV.pdf" },
-  { lang: "es", file: "Daniel-Vasquez-CV-ES.pdf" },
+  { path: "print/", lang: "en", file: "Daniel-Vasquez-CV.pdf" },
+  { path: "print/", lang: "es", file: "Daniel-Vasquez-CV-ES.pdf" },
+  { path: "print/a/", lang: "en", file: "Daniel-Vasquez-CV-Agentic-AI.pdf" },
+  { path: "print/a/", lang: "es", file: "Daniel-Vasquez-CV-Agentic-AI-ES.pdf" },
+  { path: "print/p/", lang: "en", file: "Daniel-Vasquez-CV-Product-Platforms.pdf" },
+  { path: "print/p/", lang: "es", file: "Daniel-Vasquez-CV-Product-Platforms-ES.pdf" },
 ];
-for (const { lang, file } of jobs) {
+for (const { path, lang, file } of jobs) {
   const page = await browser.newPage();
-  await page.goto(`http://localhost:${port}/print/?lang=${lang}&pdf=1`, { waitUntil: "networkidle" });
+  await page.goto(`http://localhost:${port}/${path}?lang=${lang}&pdf=1`, { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
   await page.emulateMedia({ media: "print" });
   await page.pdf({ path: join(OUT, file), preferCSSPageSize: true, printBackground: true });

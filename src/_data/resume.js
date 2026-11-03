@@ -205,6 +205,112 @@ const resumeData = {
       ],
       summaryTitle: "Summary",
     },
+    // Lane CVs: the same facts, re-led for one kind of role each. Rendered at
+    // /print/a/ and /print/p/ and built to their own PDFs by `npm run pdf`.
+    // Earlier career and education come from the shared blocks above.
+    lanesShared: {
+      titles: { summary: "Summary", current: "Current", skills: "Skills", ventures: "Earlier Ventures", languages: "Languages" },
+      ventures: [
+        { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · bike courier grown to 100+ couriers and acquired; wellness platform; e-commerce consultancy", dates: "2012 — 2017" },
+      ],
+      dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets” (GARCH, EGARCH, GJR-GARCH).",
+      languages: "Spanish (native) · English (fluent)",
+    },
+    lanes: {
+      // A — enterprise agentic AI platform and transformation roles.
+      a: {
+        pdfTitle: "Daniel Vasquez - CV - Agentic AI Platform Leader",
+        role: "Agentic AI Platform & Operating-Model Leader",
+        tagline: "Product and engineering leader since 2012, from zero-to-one to Fortune 100 scale. I run production software with teams of AI agents, and design the controls they run under.",
+        summary: "I've built an operating model where AI agents plan, build, review and ship production software inside explicit limits: low-risk work merges on green CI, while anything touching money, authentication or customer data needs human approval. Every agent action is reviewed by a second model and kept on record. Before that I led a 70+ person product and engineering organisation and a $70M+ global portfolio at AB InBev, and a post-M&A platform integration at Linio.",
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
+          title: "Founder & Product Lead · Agentic product platform and marketplace, both in production",
+          bullets: [
+            "Designed and run an agentic delivery model: agents investigate, plan, build, review and ship; humans approve anything touching money, auth, migrations or customer data.",
+            "Built it as a reusable platform, not one-off automations: an open-source kit, SDK and CLI (Apache-2.0) installed once and reused across every product.",
+            "Throughput with controls: 250+ pull requests merged on Golden Frijoles in under four months, backed by 650+ automated test files, plus 1,000+ commits on Miyagi Sánchez.",
+            "Independent cross-model review and written retrospectives feed each next session, so quality and controls compound instead of decaying.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · Largest brewer worldwide",
+            bullets: [
+              "Built the global rewards ecosystem across Central America, Europe and South Korea.",
+              "Led a 70+ person cross-functional product and engineering organisation through 5 managers, in a matrixed global company.",
+              "Owned a $70M+ portfolio: roadmaps, business cases and value tracking across regions.",
+              "Delivered in a heavily regulated category at a publicly listed company: every market launch cleared internal legal and external counsel across jurisdictions.",
+            ],
+          },
+          {
+            company: "Linio Group", dates: "2019 — 2020",
+            title: "Group Product Manager · Mexico City · acquired by Falabella",
+            bullets: [
+              "Directed post-M&A systems integration through the Falabella acquisition, leading two managers.",
+              "Unified multi-platform infrastructure across the merged organisations.",
+            ],
+          },
+        ],
+        hideEarlier: [],
+        skills: [
+          { label: "Agentic AI", text: "multi-agent orchestration, tool use / MCP, retrieval (RAG), memory, evaluation, human-in-the-loop design" },
+          { label: "Governance", text: "risk-tiered autonomy, approval gates, cross-model review, audit trails, escalation paths" },
+          { label: "Product", text: "platform strategy, roadmaps, business cases, value realisation, agile at scale" },
+          { label: "Stack", text: "TypeScript, Next.js, React, Postgres / Supabase, Stripe, Vercel, Claude Code" },
+        ],
+      },
+      // P — marketplace, payments and AI-native platform product roles.
+      p: {
+        pdfTitle: "Daniel Vasquez - CV - Marketplace & Platform Product Leader",
+        role: "Product Leader · Marketplaces, Money Movement & AI-native Platforms",
+        tagline: "Zero-to-one and Fortune 100 scale product leader since 2012. I build two-sided platforms where the buyer is sometimes an agent.",
+        summary: "I founded and run Miyagi Sánchez, a no-commission marketplace where sellers list once and reach buyers through the marketplace, their own website and AI shopping assistants. Before that I owned a $70M+ global rewards portfolio at AB InBev, integrated commerce platforms through Linio's acquisition by Falabella, and led a Bitcoin remittance platform to 5,000+ active users. With an MSc in Finance, I own the commercial model and the metrics as well as the product.",
+        current: {
+          company: "Miyagi Sánchez · Golden Frijoles", dates: "2025 — Present",
+          title: "Founder & Product Lead · No-commission marketplace and agentic product platform",
+          bullets: [
+            "Miyagi Sánchez: zero-to-one, zero-commission marketplace for Mexico's micro-merchants. Buyers pay sellers directly by card, Mercado Pago, SPEI or cash, and can make offers and chat before paying.",
+            "AI-native by design: a seller describes their business in one sentence and the shop builds itself; every shop also lives on the seller's own domain and where AI shopping assistants can buy from it.",
+            "Built with AI agent teams since June 2026: 1,000+ commits, with human approval on anything touching money, auth or customer data.",
+            "Golden Frijoles: agentic product-management platform with an open-source SDK and CLI for feature flags, A/B tests and outcome reporting; 250+ pull requests merged in under four months.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · Largest brewer worldwide",
+            bullets: [
+              "Owned a $70M+ global rewards ecosystem across Central America, Europe and South Korea: incentives, partner activations and consumer economics.",
+              "Led a 70+ person product and engineering organisation through 5 managers, depending on many teams that didn't report to me.",
+              "Shipped in a heavily regulated category at a publicly listed company, clearing every launch with internal legal and external counsel across markets.",
+            ],
+          },
+          {
+            company: "Linio Group", dates: "2019 — 2020",
+            title: "Group Product Manager · Mexico City · acquired by Falabella",
+            bullets: [
+              "Directed post-M&A integration of marketplace and commerce systems through the Falabella acquisition, leading two managers.",
+            ],
+          },
+          {
+            company: "CTIN", dates: "2012 — 2014",
+            title: "Team Lead · Bitcoin remittance platform",
+            bullets: [
+              "Led the team behind a Bitcoin-based remittance product to 5,000+ active users.",
+            ],
+          },
+        ],
+        hideEarlier: ["CTIN"],
+        skills: [
+          { label: "Platforms", text: "two-sided marketplaces, partner onboarding and listings, rewards and loyalty, payments and remittance" },
+          { label: "Commercial", text: "pricing and incentives, unit economics, LTV / CAC, business cases, M&A integration" },
+          { label: "Quant", text: "MSc Finance: econometrics, time-series forecasting, forecast evaluation, A/B testing" },
+          { label: "Stack", text: "TypeScript, Next.js, React, Postgres / Supabase, Stripe, Vercel, Claude Code" },
+        ],
+      },
+    },
     // "Work with me" — the consulting view. Default landing view.
     work: {
       headline: "Hands-on product leader.",
@@ -491,6 +597,107 @@ const resumeData = {
         },
       ],
       summaryTitle: "Resumen",
+    },
+    lanesShared: {
+      titles: { summary: "Resumen", current: "Actualidad", skills: "Habilidades", ventures: "Emprendimientos Previos", languages: "Idiomas" },
+      ventures: [
+        { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · mensajería con más de 100 mensajeros, adquirida; bienestar corporativo; consultoría e-commerce", dates: "2012 — 2017" },
+      ],
+      dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets” (GARCH, EGARCH, GJR-GARCH).",
+      languages: "Español (nativo) · Inglés (fluido)",
+    },
+    lanes: {
+      a: {
+        pdfTitle: "Daniel Vasquez - CV - Lider de Plataformas de IA Agentica",
+        role: "Líder de Plataformas de IA Agéntica y Modelos Operativos",
+        tagline: "Líder de producto e ingeniería desde 2012, de cero-a-uno a escala Fortune 100. Opero software en producción con equipos de agentes de IA y diseño los controles bajo los que trabajan.",
+        summary: "Construí un modelo operativo en el que agentes de IA planean, construyen, revisan y lanzan software en producción dentro de límites explícitos: el trabajo de bajo riesgo se integra con CI en verde, y todo lo que toca dinero, autenticación o datos de clientes requiere aprobación humana. Cada acción de un agente la revisa un segundo modelo y queda registrada. Antes lideré una organización de producto e ingeniería de más de 70 personas y un portafolio global de más de $70M USD en AB InBev, y una integración de plataformas post-M&A en Linio.",
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
+          title: "Fundador y Líder de Producto · Plataforma de producto agéntica y marketplace, ambos en producción",
+          bullets: [
+            "Diseñé y opero un modelo de entrega agéntico: los agentes investigan, planean, construyen, revisan y lanzan; las personas aprueban todo lo que toca dinero, autenticación, migraciones o datos de clientes.",
+            "Lo construí como plataforma reutilizable, no como automatizaciones sueltas: un kit, SDK y CLI open source (Apache-2.0) que se instala una vez y se reutiliza en cada producto.",
+            "Velocidad con controles: más de 250 pull requests integrados en Golden Frijoles en menos de cuatro meses, respaldados por más de 650 archivos de pruebas automatizadas, y más de 1,000 commits en Miyagi Sánchez.",
+            "La revisión independiente entre modelos y las retrospectivas escritas alimentan cada sesión siguiente, así la calidad y los controles se acumulan en lugar de degradarse.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · La cervecera más grande del mundo",
+            bullets: [
+              "Construí el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur.",
+              "Lideré una organización multidisciplinaria de producto e ingeniería de más de 70 personas a través de 5 gerentes, en una empresa global matricial.",
+              "Gestioné un portafolio de más de $70M USD: roadmaps, casos de negocio y seguimiento de valor entre regiones.",
+              "Entregué en una categoría altamente regulada dentro de una empresa pública: cada lanzamiento pasó por equipos legales internos y asesores externos en cada jurisdicción.",
+            ],
+          },
+          {
+            company: "Linio Group", dates: "2019 — 2020",
+            title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
+            bullets: [
+              "Dirigí la integración de sistemas post-M&A durante la adquisición por Falabella, liderando a dos gerentes.",
+              "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
+            ],
+          },
+        ],
+        hideEarlier: [],
+        skills: [
+          { label: "IA agéntica", text: "orquestación multi-agente, uso de herramientas / MCP, recuperación (RAG), memoria, evaluación, diseño con humano en el ciclo" },
+          { label: "Gobernanza", text: "autonomía escalonada por riesgo, puntos de aprobación, revisión entre modelos, trazabilidad, rutas de escalamiento" },
+          { label: "Producto", text: "estrategia de plataforma, roadmaps, casos de negocio, realización de valor, agile a escala" },
+          { label: "Stack", text: "TypeScript, Next.js, React, Postgres / Supabase, Stripe, Vercel, Claude Code" },
+        ],
+      },
+      p: {
+        pdfTitle: "Daniel Vasquez - CV - Lider de Producto Marketplaces y Plataformas",
+        role: "Líder de Producto · Marketplaces, Movimiento de Dinero y Plataformas Nativas de IA",
+        tagline: "Líder de producto de cero-a-uno a escala Fortune 100 desde 2012. Construyo plataformas de dos lados donde a veces quien compra es un agente.",
+        summary: "Fundé y opero Miyagi Sánchez, un marketplace sin comisiones donde los vendedores publican una vez y llegan a sus compradores por el marketplace, su propio sitio y asistentes de compra con IA. Antes gestioné un portafolio global de recompensas de más de $70M USD en AB InBev, integré plataformas de comercio durante la adquisición de Linio por Falabella y llevé una plataforma de remesas con Bitcoin a más de 5,000 usuarios activos. Tengo una maestría en Finanzas y me siento cómodo siendo dueño del modelo comercial, las métricas y el producto.",
+        current: {
+          company: "Miyagi Sánchez · Golden Frijoles", dates: "2025 — Presente",
+          title: "Fundador y Líder de Producto · Marketplace sin comisiones y plataforma de producto agéntica",
+          bullets: [
+            "Miyagi Sánchez: marketplace de cero-a-uno y sin comisiones para microcomerciantes en México. Los compradores pagan directo al vendedor con tarjeta, Mercado Pago, SPEI o efectivo, y pueden hacer ofertas y chatear antes de pagar.",
+            "Nativo de IA por diseño: el vendedor describe su negocio en una frase y la tienda se arma sola; cada tienda vive también en el dominio propio del vendedor y donde los asistentes de compra con IA pueden encontrarla y comprarle.",
+            "Construido con equipos de agentes de IA desde junio de 2026: más de 1,000 commits, con aprobación humana en todo lo que toca dinero, autenticación o datos de clientes.",
+            "Golden Frijoles: plataforma de product management agéntica con SDK y CLI open source para feature flags, pruebas A/B, embudos y reportes de resultados; más de 250 pull requests integrados en menos de cuatro meses.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · La cervecera más grande del mundo",
+            bullets: [
+              "Gestioné un ecosistema global de recompensas de más de $70M USD en Centroamérica, Europa y Corea del Sur: incentivos, activaciones con socios y economía del consumidor.",
+              "Lideré una organización de producto e ingeniería de más de 70 personas a través de 5 gerentes, dependiendo de muchos equipos que no me reportaban.",
+              "Entregué en una categoría altamente regulada dentro de una empresa pública, validando cada lanzamiento con equipos legales internos y asesores externos en cada mercado.",
+            ],
+          },
+          {
+            company: "Linio Group", dates: "2019 — 2020",
+            title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
+            bullets: [
+              "Dirigí la integración post-M&A de los sistemas de marketplace y comercio durante la adquisición por Falabella, liderando a dos gerentes.",
+            ],
+          },
+          {
+            company: "CTIN", dates: "2012 — 2014",
+            title: "Líder de Equipo · Plataforma de remesas con Bitcoin",
+            bullets: [
+              "Lideré al equipo detrás de un producto de remesas basado en Bitcoin hasta más de 5,000 usuarios activos.",
+            ],
+          },
+        ],
+        hideEarlier: ["CTIN"],
+        skills: [
+          { label: "Plataformas", text: "marketplaces de dos lados, alta de socios y publicaciones, recompensas y lealtad, pagos y remesas" },
+          { label: "Comercial", text: "precios e incentivos, unit economics, LTV / CAC, casos de negocio, integración post-M&A" },
+          { label: "Cuantitativo", text: "Maestría en Finanzas: econometría, pronóstico de series de tiempo, evaluación de pronósticos, pruebas A/B" },
+          { label: "Stack", text: "TypeScript, Next.js, React, Postgres / Supabase, Stripe, Vercel, Claude Code" },
+        ],
+      },
     },
     work: {
       headline: "Líder de producto que construye.",
