@@ -32,3 +32,6 @@ dist/
 .temp/
 .gemini/
 .system_generated/
+
+# Local reference only (contains student ID); never publish
+/DVPdissertation.pdf
