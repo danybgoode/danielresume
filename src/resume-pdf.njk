@@ -1,21 +1,20 @@
 ---
-# One sheet per CV variant: "classic" is the executive CV at /print/, the
-# lanes (resume[lang].lanes) render at /print/<lane>/.
+# One sheet per CV lane (resume[lang].lanes): "main" is the flagship CV at
+# /print/ behind every "Download CV" button; the others render at /print/<lane>/.
 pagination:
   data: variants
   size: 1
   alias: variant
-variants: ["classic", "a", "p"]
-permalink: "{% if variant == 'classic' %}print/index.html{% else %}print/{{ variant }}/index.html{% endif %}"
+variants: ["main", "a", "p"]
+permalink: "{% if variant == 'main' %}print/index.html{% else %}print/{{ variant }}/index.html{% endif %}"
 eleventyExcludeFromCollections: true
 ---
-{% set lanePdf = variant != "classic" %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ resume.en.lanes[variant].pdfTitle if lanePdf else resume.en.ui.pdfTitle }}</title>
+<title>{{ resume.en.lanes[variant].pdfTitle }}</title>
 <meta name="author" content="{{ resume.en.name }}">
 <meta name="description" content="{{ resume.en.ui.metaDesc }}">
 <meta name="robots" content="noindex, nofollow">
@@ -354,14 +353,11 @@ eleventyExcludeFromCollections: true
     /* Page margins live on @page, not on .sheet padding — padding only
        applies to the first and last fragment, so a two-page sheet would
        run its second page hard against the paper edge. */
-    margin:15mm 17mm;
+    margin:11mm 14mm;
   }
-  {% if lanePdf %}
-  /* Lane CVs run fuller than the classic sheet, so they get slimmer margins
-     to stay on one page in browsers that set text a little looser. */
-  @page{ margin:11mm 14mm; }
+  /* Lane CVs run full, so they print slightly zoomed out to stay on one page
+     in browsers that set text a little looser. */
   @media print{ .sheet--lane{ zoom:.75; } }
-  {% endif %}
   @media print{
     body{ background:#fff; padding:0; }
     .no-print{ display:none !important; }
@@ -382,16 +378,12 @@ eleventyExcludeFromCollections: true
 </head>
 <body>
 <div class="no-print">
-  <a href="/#classic" id="backLink">{{ resume.en.ui.pdfBackLink }}</a>
+  <a href="/#resume" id="backLink">{{ resume.en.ui.pdfBackLink }}</a>
   <div class="actions">
     <button type="button" class="lang-btn is-active" id="langBtnEn" data-lang="en">EN</button>
     <button type="button" class="lang-btn" id="langBtnEs" data-lang="es">ES</button>
-    {% if lanePdf %}
-    {# Lanes download their pre-built PDF: a browser's own print re-lays out the page and can spill onto a second sheet. #}
+    {# Download the pre-built PDF: a browser's own print re-lays out the page and can spill onto a second sheet. #}
     <a class="print-btn" id="printBtn" href="{{ resume.en.lanes[variant].pdfFile }}" download>{{ resume.en.lanesShared.titles.download }}</a>
-    {% else %}
-    <button type="button" class="print-btn" id="printBtn">{{ resume.en.ui.pdfPrintButton }}</button>
-    {% endif %}
   </div>
 </div>
 {#
@@ -401,8 +393,8 @@ eleventyExcludeFromCollections: true
 #}
 {% for lang in ["en", "es"] %}
 {% set d = resume[lang] %}
-{% set c = d.lanes[variant] if lanePdf else d.cv %}
-<article class="sheet{% if lanePdf %} sheet--lane{% endif %}" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
+{% set c = d.lanes[variant] %}
+<article class="sheet sheet--lane" data-lang-block="{{ lang }}" lang="{{ lang }}"{% if lang != "en" %} hidden{% endif %}>
   <header class="head">
     <h1>{{ d.name }}</h1>
     <p class="role-line">{{ c.role }}</p>
@@ -410,7 +402,6 @@ eleventyExcludeFromCollections: true
     <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a> <span class="sep">·</span> <a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a> <span class="sep">·</span> <a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a> <span class="sep">·</span> <a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a> <span class="sep">·</span> <span class="loc">{{ d.location }}</span></p>
   </header>
   <hr class="rule">
-  {% if lanePdf %}
   <section class="summary">
     <h2 class="section-title">{{ d.lanesShared.titles.summary }}</h2>
     <p class="summary-text">{{ c.summary }}</p>
@@ -423,7 +414,6 @@ eleventyExcludeFromCollections: true
       <ul class="role-bullets">{% for b in c.current.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
     </div>
   </section>
-  {% endif %}
   <section class="experience">
     <h2 class="section-title">{{ d.ui.experienceTitle }}</h2>
     {% for role in c.experience %}
@@ -436,9 +426,8 @@ eleventyExcludeFromCollections: true
   </section>
   <section class="earlier">
     <h2 class="section-title">{{ d.ui.earlierTitle }}</h2>
-    <ul class="earlier-list">{% for r in d.experience.earlier %}{% if not lanePdf or not (r.company in c.hideEarlier) %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endif %}{% endfor %}</ul>
+    <ul class="earlier-list">{% for r in d.experience.earlier %}{% if not (r.company in c.hideEarlier) %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endif %}{% endfor %}</ul>
   </section>
-  {% if lanePdf %}
   <section class="ventures">
     <h2 class="section-title">{{ d.lanesShared.titles.ventures }}</h2>
     <ul class="earlier-list">{% for r in d.lanesShared.ventures %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endfor %}</ul>
@@ -447,41 +436,20 @@ eleventyExcludeFromCollections: true
     <h2 class="section-title">{{ d.lanesShared.titles.skills }}</h2>
     <ul class="skills-list">{% for s in c.skills %}<li><span class="label">{{ s.label }}:</span> {{ s.text }}</li>{% endfor %}<li><span class="label">{{ d.lanesShared.titles.languages }}:</span> {{ d.lanesShared.languages }}</li></ul>
   </section>
-  {% else %}
-  <section class="ventures">
-    <h2 class="section-title">{{ d.ui.venturesTitle }}</h2>
-    {% for role in d.cv.ventures %}
-    <div class="role">
-      <div class="role-head"><h3>{{ role.company }}</h3><span class="role-dates">{{ role.dates }}</span></div>
-      <p class="role-title">{{ role.title }}</p>
-      {% if role.bullets.length %}<ul class="role-bullets">{% for b in role.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
-    </div>
-    {% endfor %}
-  </section>
-  {% endif %}
   <section class="education">
     <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
-    {# Lane CVs carry the dissertation directly under the MSc, the first credential. #}
-    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% if lanePdf and loop.first %}<li class="edu-note">{{ d.lanesShared.dissertation }}</li>{% endif %}{% endfor %}</ul>
+    {# The dissertation sits directly under the MSc, the first credential. #}
+    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% if loop.first %}<li class="edu-note">{{ d.lanesShared.dissertation }}</li>{% endif %}{% endfor %}</ul>
   </section>
 </article>
 {% endfor %}
 
 <script>
   (function() {
-    {% if lanePdf %}
     const TITLES = { en: {{ resume.en.lanes[variant].pdfTitle | dump | safe }}, es: {{ resume.es.lanes[variant].pdfTitle | dump | safe }} };
-    {% else %}
-    const TITLES = { en: {{ resume.en.ui.pdfTitle | dump | safe }}, es: {{ resume.es.ui.pdfTitle | dump | safe }} };
-    {% endif %}
     const UI = {
-      {% if lanePdf %}
       en: { back: {{ resume.en.ui.pdfBackLink | dump | safe }}, print: {{ resume.en.lanesShared.titles.download | dump | safe }}, pdf: {{ resume.en.lanes[variant].pdfFile | dump | safe }} },
       es: { back: {{ resume.es.ui.pdfBackLink | dump | safe }}, print: {{ resume.es.lanesShared.titles.download | dump | safe }}, pdf: {{ resume.es.lanes[variant].pdfFile | dump | safe }} }
-      {% else %}
-      en: { back: {{ resume.en.ui.pdfBackLink | dump | safe }}, print: {{ resume.en.ui.pdfPrintButton | dump | safe }} },
-      es: { back: {{ resume.es.ui.pdfBackLink | dump | safe }}, print: {{ resume.es.ui.pdfPrintButton | dump | safe }} }
-      {% endif %}
     };
     function render(lang) {
       if (!TITLES[lang]) return;
@@ -509,7 +477,6 @@ eleventyExcludeFromCollections: true
     render(detectLang());
     document.getElementById('langBtnEn').addEventListener('click', function() { render('en'); });
     document.getElementById('langBtnEs').addEventListener('click', function() { render('es'); });
-    {% if not lanePdf %}document.getElementById('printBtn').addEventListener('click', function() { window.print(); });{% endif %}
   })();
 </script>
 </body>

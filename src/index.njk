@@ -117,9 +117,9 @@ title: Daniel Vásquez — Product & Agentic Delivery
   <header class="masthead">
     <div class="masthead-top">
       <div class="view-switch" role="tablist" aria-label="{{ resume.en.ui.viewsLabel }}" id="viewSwitch">
-        <button type="button" role="tab" id="tab-work" class="view-tab" aria-selected="true" aria-controls="workView" data-view="work">{{ resume.en.ui.workButton }}</button>
-        <button type="button" role="tab" id="tab-classic" class="view-tab" aria-selected="false" aria-controls="classicView" data-view="classic" tabindex="-1">{{ resume.en.ui.classicButton }}</button>
+        <button type="button" role="tab" id="tab-classic" class="view-tab" aria-selected="true" aria-controls="classicView" data-view="classic">{{ resume.en.ui.classicButton }}</button>
         <button type="button" role="tab" id="tab-tldr" class="view-tab" aria-selected="false" aria-controls="tldrView" data-view="tldr" tabindex="-1">{{ resume.en.ui.tldrButton }}</button>
+        <button type="button" role="tab" id="tab-work" class="view-tab" aria-selected="false" aria-controls="workView" data-view="work" tabindex="-1">{{ resume.en.ui.workButton }}</button>
       </div>
       <div class="header-actions">
         <a id="cvLink" class="cv-btn" href="{{ resume.en.ui.cvFile }}" download>
@@ -139,7 +139,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
   <!-- WORK WITH ME VIEW (default). Both languages are rendered server-side and
        the language switch only toggles which block is visible, so this view
        needs no client-side templating and reads fine with JS off. -->
-  <main id="workView" class="view-container work-view" role="tabpanel" aria-labelledby="tab-work" tabindex="-1">
+  <main id="workView" class="view-container work-view view-hidden" role="tabpanel" aria-labelledby="tab-work" tabindex="-1">
     {% for lang in ["en", "es"] %}
     {% set d = resume[lang] %}
     {% set w = d.work %}
@@ -185,7 +185,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
   </main>
 
   <!-- CLASSIC RÉSUMÉ VIEW -->
-  <main id="classicView" class="view-container view-hidden" role="tabpanel" aria-labelledby="tab-classic" tabindex="-1">
+  <main id="classicView" class="view-container" role="tabpanel" aria-labelledby="tab-classic" tabindex="-1">
     <div class="masthead-main">
       <h1 class="name" id="profileName">{{ resume.en.name }}</h1>
       <p class="role" id="profileRole">{{ resume.en.role }}</p>
@@ -337,7 +337,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
   (function() {
     const RESUME_DATA = {{ resume | dump | safe }};
     let currentLang = 'en';
-    let currentView = 'work';
+    let currentView = 'classic';
 
     function esc(s) {
       return String(s)
@@ -479,25 +479,26 @@ title: Daniel Vásquez — Product & Agentic Delivery
       setTitleForView();
     }
 
-    const VIEWS = ['work', 'classic', 'tldr'];
+    const VIEWS = ['classic', 'tldr', 'work'];
     const PANEL = { work: 'workView', classic: 'classicView', tldr: 'tldrView' };
 
     function viewFromHash() {
       const h = (window.location.hash || '').replace('#', '');
       if (h === 'classic' || h === 'tldr' || h === 'work') return h;
       if (h === 'forward') return 'work';
-      return 'work';
+      if (h === 'resume') return 'classic';
+      return 'classic';
     }
 
     function setTitleForView() {
       const data = RESUME_DATA[currentLang];
       const names = { work: data.ui.workButton, classic: data.ui.classicButton, tldr: data.ui.tldrButton };
-      document.title = currentView === 'work' ? data.ui.pageTitle : names[currentView] + ' — ' + data.name;
+      document.title = currentView === 'classic' ? data.ui.pageTitle : names[currentView] + ' — ' + data.name;
     }
 
     function setView(view, opts) {
       opts = opts || {};
-      if (VIEWS.indexOf(view) === -1) view = 'work';
+      if (VIEWS.indexOf(view) === -1) view = 'classic';
       currentView = view;
       VIEWS.forEach(function(v) {
         const tab = document.getElementById('tab-' + v);

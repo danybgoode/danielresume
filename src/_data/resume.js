@@ -1,10 +1,10 @@
 const resumeData = {
   en: {
-    eyebrow: "Hands-on Product Leader",
+    eyebrow: "Product Director · Fintech, Payments & AI-native Platforms",
     name: "Daniel Vásquez",
-    role: "Hands-on Product Leader",
+    role: "Product Director · Fintech, Payments & AI-native Platforms",
     disciplines:
-      "Leading product since 2012, from zero-to-one to Fortune 100 scale — now shipping production software with multi-agent teams, and building the operating system they run on.",
+      "Product executive since 2012, from zero-to-one to Fortune 100 scale. I turn product organisations from cost centres into revenue engines, with every initiative tied to the P&L.",
     email: "danielvp1987@gmail.com",
     location: "Mexico City",
     links: {
@@ -22,12 +22,12 @@ const resumeData = {
       { figure: "70+", label: "People led, product & engineering" },
       { figure: "2", label: "Products running in production" },
       { figure: "3", label: "Earlier ventures founded, one acquired" },
-      { figure: "MSc", label: "Finance, University of Aberdeen" },
+      { figure: "MSc", label: "Finance & Investment Management, Aberdeen" },
     ],
     snapshot: [
-      "I build production software with teams of AI agents, and I design the operating system those teams run on. Two products are live today: an agentic product-management platform and prompt-to-shop e-commerce infrastructure for Mexico, both built on an open-source kit of my own.",
-      "Before that, more than a decade of product leadership from zero-to-one to Fortune 100 scale — a $70M+ global rewards portfolio and a product and engineering organisation of 70+ people at AB InBev, post-M&A systems integration at Linio through the Falabella acquisition, and three ventures of my own, one of them acquired.",
-      "The through-line is turning ambiguity into systems: a delivery cadence humans and agents can both follow, with risk-tiered merge gates, independent cross-model review, and written retrospectives that feed the next session instead of dying in a folder. Agile, rebuilt for a team where most of the contributors are not people.",
+      "I turn product organisations from cost centres into revenue engines. Every initiative carries its own line to the P&L, whether direct or indirect gross profit, retention or cost to serve. It is set before we build and read after we ship, in numbers and in the story behind them.",
+      "I have led product since 2012, from zero-to-one to Fortune 100 scale: a $70M+ global rewards portfolio and a 70+ person product and engineering organisation at AB InBev, post-M&A platform integration at Linio after its acquisition by Falabella, a Bitcoin remittance platform at Grupo Carso's technology and innovation centre in 2012, and three ventures of my own, one of them acquired. Underneath it sits an MSc in Finance & Investment Management from the University of Aberdeen, with a dissertation on volatility forecasting and market risk.",
+      "My mission is to turn every product manager into a product builder. PMs were prompting long before it had a name: PRDs, personas, epics, user stories and Gherkin acceptance criteria written so tests could run themselves. With agents, that same intent compiles into working software. I run two products in production this way, Golden Frijoles and Miyagi Sánchez, under controls a bank would recognise: risk-tiered approvals, independent review and an audit trail on every change.",
     ],
     howIWork: [
       "Plan, build, ship — one user story at a time, with a deterministic gate that has to be green before anything merges.",
@@ -42,19 +42,20 @@ const resumeData = {
         {
           company: "AB InBev",
           dates: "2020 — 2023",
-          title: "Global Principal Product Manager · Largest brewer worldwide",
+          title: "Global Principal Product Manager · World's largest brewer",
           chain: [
-            "Built the global rewards ecosystem across Central America, Europe and South Korea.",
-            "Led a 70+ person cross-functional product and engineering organisation.",
-            "Owned a $70M+ portfolio, with campaigns activated at the Super Bowl and The Voice Brasil.",
+            "Built and ran the global rewards ecosystem across Central America, Europe and South Korea: incentives, loyalty economics and partner activations.",
+            "Led a 70+ person product and engineering organisation through 5 managers in a matrixed, publicly listed company.",
+            "Owned a $70M+ portfolio with a business case and value tracking per initiative, and campaigns activated at the Super Bowl and The Voice Brasil.",
+            "Shipped in a regulated category: every market launch cleared internal legal and external counsel across jurisdictions.",
           ],
         },
         {
-          company: "Linio Group",
+          company: "Linio · Falabella",
           dates: "2019 — 2020",
-          title: "Group Product Manager · Mexico City · acquired by Falabella",
+          title: "Group Product Manager · Mexico City",
           chain: [
-            "Directed post-M&A systems integration through the Falabella acquisition.",
+            "Directed post-M&A integration of marketplace and commerce platforms after Linio's acquisition by Falabella, leading two managers.",
             "Unified multi-platform infrastructure across the merged organisations.",
           ],
         },
@@ -62,7 +63,7 @@ const resumeData = {
       earlier: [
         { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2017 — 2019" },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
-        { company: "CTIN", title: "Team Lead — Bitcoin remittance platform, 5,000+ active users", dates: "2012 — 2014" },
+        { company: "CTIN · Grupo Carso", title: "Team Lead · Bitcoin remittance platform, 5,000+ active users", dates: "2012 — 2014" },
         { company: "Grupo Bimbo", title: "FinOps Analyst", dates: "2010 — 2011" },
         { company: "CompuCom · Accenture", title: "Tech Support · Customer Service", dates: "2006 — 2010" },
       ],
@@ -119,7 +120,7 @@ const resumeData = {
       ],
     },
     education: [
-      { school: "University of Aberdeen · Scotland", credential: "MSc Finance", dates: "2023" },
+      { school: "University of Aberdeen · Scotland", credential: "MSc (Econ) Finance & Investment Management", dates: "2023 — 2024" },
       { school: "Escuela Bancaria y Comercial · Mexico City", credential: "Bachelor's, International Trade and Business", dates: "" },
     ],
     philosophy: "I build products on purpose.",
@@ -132,78 +133,13 @@ const resumeData = {
         "Everything I build now runs through agents — grooming, planning, building, review, shipping and reporting",
         "Built an open-source operating system for agent product work, installed once and reused across every project I build — now the open Golden Frijoles kit",
         "Run <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, an agentic product-management platform, and <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, prompt-to-shop e-commerce infrastructure for Mexico — both in production",
-        "Before all that: a $70M+ portfolio and 70+ people at AB InBev, a post-M&A integration at Linio, and three ventures of my own, one of them acquired",
+        "Before all that: a $70M+ portfolio and 70+ people at AB InBev, a post-M&A integration at Linio · Falabella, a Bitcoin remittance platform at Grupo Carso back in 2012, and three ventures of my own, one of them acquired",
+        "Went back to school for an MSc in Finance & Investment Management in Scotland; wrote my dissertation on forecasting market volatility",
+        "On a mission to turn every product manager into a product builder. We were prompting all along, through Jira tickets",
       ],
       punchline: "Have a knack for taking things from 0 to the whole world.",
       contactText: "Find me at:",
       contactEmail: "danielvp1987@gmail.com",
-    },
-    // Executive one-page CV (the PDF). Curated separately from the site so the
-    // page can lead with the corporate roles and stay on one sheet.
-    cv: {
-      role: "Hands-on Product Leader",
-      tagline: "Leading product since 2012, from zero-to-one to Fortune 100 scale — now shipping production software with multi-agent teams, and building the operating system they run on.",
-      summary: "Product and engineering leader since 2012, from zero-to-one to Fortune 100 scale. Owned a $70M+ global portfolio and led a 70+ person organisation at AB InBev, then a post-M&A integration at Linio. Today I build production software with agent teams.",
-      glance: [
-        { figure: "Since 2012", label: "leading product teams" },
-        { figure: "$70M+", label: "portfolio owned at AB InBev" },
-        { figure: "70+", label: "people led, product & engineering" },
-        { figure: "3", label: "earlier ventures founded, one acquired" },
-      ],
-      experience: [
-        {
-          company: "AB InBev", dates: "2020 — 2023",
-          title: "Global Principal Product Manager · Largest brewer worldwide",
-          bullets: [
-            "Built the global rewards ecosystem across Central America, Europe and South Korea.",
-            "Led a 70+ person cross-functional product and engineering organisation.",
-            "Owned a $70M+ portfolio, with campaigns activated at the Super Bowl and The Voice Brasil.",
-          ],
-        },
-        {
-          company: "Linio Group", dates: "2019 — 2020",
-          title: "Group Product Manager · Mexico City · acquired by Falabella",
-          bullets: [
-            "Directed post-M&A systems integration through the Falabella acquisition.",
-            "Unified multi-platform infrastructure across the merged organisations.",
-          ],
-        },
-      ],
-      ventures: [
-        {
-          company: "Golden Frijoles · Miyagi Sánchez",
-          dates: "2025 — Present",
-          title: "Founder & Product Lead · Two products in production, built with AI agent teams",
-          bullets: [
-            "Golden Frijoles: a product-management platform that lets one person and their AI agents decide what to build, ship it safely and prove whether it paid off. 87 initiatives shipped in the open.",
-            "Miyagi Sánchez: e-commerce infrastructure for Mexico, from prompt to shop. A merchant describes their business in one sentence and sells through their own site, WhatsApp and Instagram, in person, the marketplace and AI shopping assistants.",
-            "Designed the operating model behind both: agents do the building inside clear limits, and people approve anything that touches money, security or customer data.",
-          ],
-        },
-        {
-          company: "Bicimensajero.com",
-          dates: "2014 — 2016",
-          title: "Founder · On-demand bike courier service",
-          bullets: [
-            "Built the product myself, grew the operation to 100+ couriers and led the company to an acquisition.",
-          ],
-        },
-        {
-          company: "Pokapok.mx",
-          dates: "2016 — 2017",
-          title: "Founder · Corporate wellness platform",
-          bullets: [
-          ],
-        },
-        {
-          company: "Nuuch Tech",
-          dates: "2012 — 2015",
-          title: "Founder & Principal Consultant · E-commerce, CRM and agile consulting",
-          bullets: [
-          ],
-        },
-      ],
-      summaryTitle: "Summary",
     },
     // Lane CVs: the same facts, re-led for one kind of role each. Rendered at
     // /print/a/ and /print/p/ and built to their own PDFs by `npm run pdf`.
@@ -213,10 +149,60 @@ const resumeData = {
       ventures: [
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · bike courier grown to 100+ couriers and acquired; wellness platform; e-commerce consultancy", dates: "2012 — 2017" },
       ],
-      dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”.",
+      dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. GARCH-family risk models on four equity markets, 2006–2024.",
       languages: "Spanish (native) · English (full professional)",
     },
     lanes: {
+      // MAIN — the flagship CV behind every "Download CV" button: Product Director, fintech & banking.
+      main: {
+        pdfTitle: "Daniel Vasquez - CV - Product Director, Fintech",
+        pdfFile: "/Daniel-Vasquez-CV.pdf",
+        role: "Product Director · Fintech, Payments & AI-native Platforms",
+        tagline: "Product executive since 2012, from zero-to-one to Fortune 100 scale. I turn product organisations from cost centres into revenue engines, with every initiative tied to the P&L.",
+        summary: "I run product as a P&L, not a cost centre: every initiative carries a business case, a baseline and a gross profit line read after launch. I owned a $70M+ rewards portfolio and led 70+ people at AB InBev, integrated platforms after Falabella acquired Linio, and launched a Bitcoin remittance platform at Grupo Carso in 2012. Today I run two products with AI agent teams under bank-grade controls, and coach PMs to become product builders.",
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
+          title: "Founder & Product Lead · Payments-enabled commerce infrastructure and an agentic product platform, both in production",
+          bullets: [
+            "Miyagi Sánchez: prompt-to-shop commerce for Mexican merchants. Payments settle straight to the merchant by card, Mercado Pago, SPEI, QR or cash, with 0% platform commission; revenue comes from optional extras.",
+            "Golden Frijoles: a product-management platform that ties every initiative to an outcome, a baseline and a read date.",
+            "Operating model built for regulated work: agents plan, build and review; people approve anything touching money, auth, migrations or customer data, and every change leaves an audit trail.",
+            "Throughput with controls: 250+ merged pull requests on Golden Frijoles backed by 650+ automated test files, and 1,000+ commits on Miyagi Sánchez.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · World's largest brewer",
+            bullets: [
+              "Owned a $70M+ global rewards portfolio across Central America, Europe and South Korea: incentives, loyalty economics and partner activations, with a business case and value tracking per initiative.",
+              "Led a 70+ person product and engineering organisation through 5 managers in a matrixed, publicly listed company.",
+              "Shipped in a regulated category: every market launch cleared internal legal and external counsel across jurisdictions.",
+            ],
+          },
+          {
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Mexico City",
+            bullets: [
+              "Directed post-M&A integration of marketplace and commerce platforms after Linio's acquisition by Falabella, leading two managers and unifying infrastructure across the merged organisations.",
+            ],
+          },
+          {
+            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
+            title: "Team Lead · Centro de Tecnología e Innovación",
+            bullets: [
+              "Delivered innovation projects sponsored by group executives, including a Bitcoin remittance platform launched in 2012 and grown to 5,000+ active users.",
+            ],
+          },
+        ],
+        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
+        skills: [
+          { label: "Fintech", text: "payments (cards, SPEI, QR, wallets), remittance, onboarding funnels, loyalty and rewards economics, marketplaces" },
+          { label: "P&L", text: "initiative-level P&L attribution, business cases, pricing and unit economics (LTV / CAC), portfolio governance, M&A integration" },
+          { label: "Leadership", text: "building PM organisations, coaching PMs into product builders, agentic delivery with risk-tiered controls and audit trails" },
+          { label: "Quant", text: "MSc Finance & Investment Management: econometrics, volatility and risk modelling, forecasting, A/B testing" },
+        ],
+      },
       // A — enterprise agentic AI platform and transformation roles.
       a: {
         pdfTitle: "Daniel Vasquez - CV - Product Leader, Agentic AI",
@@ -237,7 +223,7 @@ const resumeData = {
         experience: [
           {
             company: "AB InBev", dates: "2020 — 2023",
-            title: "Global Principal Product Manager · Largest brewer worldwide",
+            title: "Global Principal Product Manager · World's largest brewer",
             bullets: [
               "Built the global rewards ecosystem across Central America, Europe and South Korea.",
               "Led a 70+ person cross-functional product and engineering organisation through 5 managers, in a matrixed global company.",
@@ -246,10 +232,10 @@ const resumeData = {
             ],
           },
           {
-            company: "Linio Group", dates: "2019 — 2020",
-            title: "Group Product Manager · Mexico City · acquired by Falabella",
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Mexico City",
             bullets: [
-              "Directed post-M&A systems integration through the Falabella acquisition, leading two managers.",
+              "Directed post-M&A systems integration after Linio's acquisition by Falabella, leading two managers.",
               "Unified multi-platform infrastructure across the merged organisations.",
             ],
           },
@@ -281,7 +267,7 @@ const resumeData = {
         experience: [
           {
             company: "AB InBev", dates: "2020 — 2023",
-            title: "Global Principal Product Manager · Largest brewer worldwide",
+            title: "Global Principal Product Manager · World's largest brewer",
             bullets: [
               "Owned a $70M+ global rewards ecosystem across Central America, Europe and South Korea: incentives, partner activations and consumer economics.",
               "Led a 70+ person product and engineering organisation through 5 managers, across teams that didn't report to me.",
@@ -289,30 +275,30 @@ const resumeData = {
             ],
           },
           {
-            company: "Linio Group", dates: "2019 — 2020",
-            title: "Group Product Manager · Mexico City · acquired by Falabella",
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Mexico City",
             bullets: [
-              "Directed post-M&A integration of marketplace and commerce systems through the Falabella acquisition, leading two managers.",
+              "Directed post-M&A integration of marketplace and commerce systems after Linio's acquisition by Falabella, leading two managers.",
             ],
           },
           {
-            company: "CTIN", dates: "2012 — 2014",
+            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
             title: "Team Lead · Bitcoin remittance platform, grown to 5,000+ active users",
             bullets: [],
           },
         ],
-        hideEarlier: ["CTIN", "CompuCom · Accenture"],
+        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
         skills: [
           { label: "Platforms", text: "commerce infrastructure, merchant onboarding, two-sided marketplaces, rewards and loyalty, payments and remittance" },
           { label: "Commercial", text: "pricing and incentives, unit economics, LTV / CAC, business cases, M&A integration" },
-          { label: "Quant", text: "MSc Finance: econometrics, time-series forecasting, forecast evaluation, A/B testing" },
+          { label: "Quant", text: "MSc Finance & Investment Management: econometrics, time-series forecasting, forecast evaluation, A/B testing" },
         ],
       },
     },
     // "Work with me" — the consulting view. Default landing view.
     work: {
-      headline: "Hands-on product leader.",
-      lede: "Since 2012, leading product and engineering teams. I turn a clear strategy into shipped, measured product, working alongside your team and their agents.",
+      headline: "Product that pays for itself.",
+      lede: "Since 2012, leading product and engineering teams. I turn product organisations into revenue engines and product managers into product builders, working alongside your team and their agents.",
       ctaPrimary: "Email me",
       ctaCv: "Download CV",
       offersTitle: "What I do",
@@ -358,10 +344,9 @@ const resumeData = {
       copyLabel: "Copy email address",
     },
     ui: {
-      pageTitle: "Daniel Vásquez — Hands-on Product Leader",
-      pdfTitle: "Daniel Vasquez - CV - Hands-on Product Leader",
+      pageTitle: "Daniel Vásquez — Product Director · Fintech & AI",
       metaDesc:
-        "Hands-on product leader for contract and fractional work. I turn a clear strategy into shipped, measured product with your engineers and their agents. Ex-AB InBev, Linio; creator of Golden Frijoles.",
+        "Product Director for fintech, payments and AI-native platforms. I turn product organisations into revenue engines, with every initiative tied to the P&L. Ex-AB InBev ($70M+ portfolio, 70+ people), Linio · Falabella; MSc Finance & Investment Management.",
       snapshotTitle: "Profile",
       experienceTitle: "Experience",
       earlierTitle: "Earlier Career",
@@ -370,14 +355,14 @@ const resumeData = {
       educationTitle: "Education",
       approachTitle: "Approach",
       tldrButton: "TL;DR",
-      classicButton: "Classic",
+      classicButton: "Résumé",
       workButton: "Work with me",
       viewsLabel: "Choose a view",
       cvButton: "Download CV",
       cvButtonShort: "CV",
       cvFile: "/Daniel-Vasquez-CV.pdf",
       printable: "Printable version",
-      lastUpdated: "Last updated October 2026",
+      lastUpdated: "Last updated November 2026",
       viewMarkdown: "View Markdown",
       markdownUrl: "/resume.md",
       downloadPdf: "PDF",
@@ -393,11 +378,11 @@ const resumeData = {
   },
 
   es: {
-    eyebrow: "Líder de producto que construye",
+    eyebrow: "Director de Producto · Fintech, Pagos y Plataformas Nativas de IA",
     name: "Daniel Vásquez",
-    role: "Líder de producto que construye",
+    role: "Director de Producto · Fintech, Pagos y Plataformas Nativas de IA",
     disciplines:
-      "Liderando producto desde 2012, de cero-a-uno hasta escala Fortune 100 — hoy construyendo software en producción con equipos de agentes, y el sistema operativo sobre el que trabajan.",
+      "Ejecutivo de producto desde 2012, de cero-a-uno a escala Fortune 100. Convierto organizaciones de producto de centros de costo en motores de ingresos, con cada iniciativa ligada al P&L.",
     email: "danielvp1987@gmail.com",
     location: "Ciudad de México",
     links: {
@@ -415,12 +400,12 @@ const resumeData = {
       { figure: "70+", label: "Personas lideradas, producto e ingeniería" },
       { figure: "2", label: "Productos corriendo en producción" },
       { figure: "3", label: "Emprendimientos previos fundados, uno adquirido" },
-      { figure: "MSc", label: "Finanzas, University of Aberdeen" },
+      { figure: "MSc", label: "Finanzas y Gestión de Inversiones, Aberdeen" },
     ],
     snapshot: [
-      "Construyo software en producción con equipos de agentes de IA, y diseño el sistema operativo sobre el que esos equipos trabajan. Hoy hay dos productos vivos: una plataforma de product management con agentes y una infraestructura de e-commerce de prompt a tienda para México, ambos construidos sobre un kit open source propio.",
-      "Antes de eso, más de una década de liderazgo de producto desde cero-a-uno hasta escala Fortune 100 — un portafolio global de recompensas de más de $70M USD y una organización de producto e ingeniería de más de 70 personas en AB InBev, la integración de sistemas post-M&A en Linio durante la adquisición por Falabella, y tres emprendimientos propios, uno de ellos adquirido.",
-      "El hilo conductor es convertir la ambigüedad en sistemas: una cadencia de entrega que humanos y agentes pueden seguir por igual, con gates de merge escalonados por riesgo, revisión independiente entre familias de modelos, y retrospectivas escritas que alimentan la siguiente sesión en lugar de morir en una carpeta. Agile, reconstruido para un equipo donde la mayoría de quienes contribuyen no son personas.",
+      "Convierto organizaciones de producto de centros de costo en motores de ingresos. Cada iniciativa lleva su propia línea al P&L, ya sea utilidad bruta directa o indirecta, retención o costo de servir. Se define antes de construir y se lee después de lanzar, en números y en la historia detrás de ellos.",
+      "Lidero producto desde 2012, de cero-a-uno a escala Fortune 100: un portafolio global de recompensas de más de $70M USD y una organización de producto e ingeniería de más de 70 personas en AB InBev, la integración de plataformas post-M&A en Linio tras su adquisición por Falabella, una plataforma de remesas con Bitcoin en el Centro de Tecnología e Innovación de Grupo Carso en 2012, y tres emprendimientos propios, uno de ellos adquirido. Debajo de todo hay una Maestría en Finanzas y Gestión de Inversiones por la University of Aberdeen, con una tesis sobre pronóstico de volatilidad y riesgo de mercado.",
+      "Mi misión es convertir a cada product manager en product builder. Los PMs ya hacían prompting antes de que tuviera nombre: PRDs, personas, épicas, historias de usuario y criterios de aceptación en Gherkin escritos para que las pruebas corrieran solas. Con agentes, esa misma intención se compila en software funcionando. Así opero dos productos en producción, Golden Frijoles y Miyagi Sánchez, bajo controles que un banco reconocería: aprobaciones escalonadas por riesgo, revisión independiente y trazabilidad en cada cambio.",
     ],
     howIWork: [
       "Planear, construir, entregar — una historia de usuario a la vez, con un gate determinista que debe estar en verde antes de cualquier merge.",
@@ -437,17 +422,18 @@ const resumeData = {
           dates: "2020 — 2023",
           title: "Global Principal Product Manager · La cervecera más grande del mundo",
           chain: [
-            "Construí el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur.",
-            "Lideré una organización multidisciplinaria de más de 70 personas de producto e ingeniería.",
-            "Gestioné un portafolio de más de $70M USD, con campañas activadas en el Super Bowl y The Voice Brasil.",
+            "Construí y operé el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur: incentivos, economía de lealtad y activaciones con socios.",
+            "Lideré una organización de producto e ingeniería de más de 70 personas a través de 5 gerentes, en una empresa pública y matricial.",
+            "Gestioné un portafolio de más de $70M USD con caso de negocio y seguimiento de valor por iniciativa, y campañas activadas en el Super Bowl y The Voice Brasil.",
+            "Entregué en una categoría regulada: cada lanzamiento pasó por legal interno y asesores externos en cada jurisdicción.",
           ],
         },
         {
-          company: "Linio Group",
+          company: "Linio · Falabella",
           dates: "2019 — 2020",
-          title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
+          title: "Group Product Manager · Ciudad de México",
           chain: [
-            "Dirigí la integración de sistemas post-M&A durante la adquisición por Falabella.",
+            "Dirigí la integración post-M&A de las plataformas de marketplace y comercio tras la adquisición de Linio por Falabella, liderando a dos gerentes.",
             "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
           ],
         },
@@ -455,7 +441,7 @@ const resumeData = {
       earlier: [
         { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2017 — 2019" },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
-        { company: "CTIN", title: "Líder de Equipo — plataforma de remesas con Bitcoin, más de 5,000 usuarios activos", dates: "2012 — 2014" },
+        { company: "CTIN · Grupo Carso", title: "Líder de Equipo · plataforma de remesas con Bitcoin, más de 5,000 usuarios activos", dates: "2012 — 2014" },
         { company: "Grupo Bimbo", title: "Analista FinOps", dates: "2010 — 2011" },
         { company: "CompuCom · Accenture", title: "Soporte Técnico y Servicio al Cliente", dates: "2006 — 2010" },
       ],
@@ -512,7 +498,7 @@ const resumeData = {
       ],
     },
     education: [
-      { school: "University of Aberdeen · Escocia", credential: "MSc en Finanzas", dates: "2023" },
+      { school: "University of Aberdeen · Escocia", credential: "MSc (Econ) en Finanzas y Gestión de Inversiones", dates: "2023 — 2024" },
       { school: "Escuela Bancaria y Comercial · Ciudad de México", credential: "Licenciatura en Comercio y Negocios Internacionales", dates: "" },
     ],
     philosophy: "Construyo productos con propósito.",
@@ -525,86 +511,72 @@ const resumeData = {
         "Todo lo que construyo ahora pasa por agentes — grooming, planeación, construcción, revisión, entrega y reporteo",
         "Construí un sistema operativo open source para trabajo de producto con agentes, instalado una vez y reutilizado en cada proyecto que construyo — hoy el kit abierto de Golden Frijoles",
         "Opero <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, una plataforma de product management con agentes, y <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, una infraestructura de e-commerce de prompt a tienda para México — ambos en producción",
-        "Antes de todo eso: un portafolio de $70M+ y más de 70 personas en AB InBev, una integración post-M&A en Linio, y tres emprendimientos propios, uno de ellos adquirido",
+        "Antes de todo eso: un portafolio de $70M+ y más de 70 personas en AB InBev, una integración post-M&A en Linio · Falabella, una plataforma de remesas con Bitcoin en Grupo Carso allá por 2012, y tres emprendimientos propios, uno de ellos adquirido",
+        "Volví a la escuela por una Maestría en Finanzas y Gestión de Inversiones en Escocia; mi tesis fue sobre pronóstico de volatilidad de mercados",
+        "Mi misión: que cada product manager se convierta en product builder. Siempre hicimos prompting, solo que en tickets de Jira",
       ],
       punchline: "Tengo facilidad para llevar las cosas de 0 a todo el mundo.",
       contactText: "Encuéntrame en:",
       contactEmail: "danielvp1987@gmail.com",
-    },
-    cv: {
-      role: "Líder de producto que construye",
-      tagline: "Liderando producto desde 2012, de cero-a-uno hasta escala Fortune 100 — hoy construyendo software en producción con equipos de agentes, y el sistema operativo sobre el que trabajan.",
-      summary: "Líder de producto e ingeniería desde 2012, de cero-a-uno a escala Fortune 100. Gestioné un portafolio global de más de $70M USD y lideré una organización de más de 70 personas en AB InBev, y después una integración post-M&A en Linio. Hoy construyo software en producción con equipos de agentes.",
-      glance: [
-        { figure: "Desde 2012", label: "liderando equipos de producto" },
-        { figure: "$70M+", label: "portafolio gestionado en AB InBev" },
-        { figure: "70+", label: "personas lideradas, producto e ingeniería" },
-        { figure: "3", label: "emprendimientos previos, uno adquirido" },
-      ],
-      experience: [
-        {
-          company: "AB InBev", dates: "2020 — 2023",
-          title: "Global Principal Product Manager · La cervecera más grande del mundo",
-          bullets: [
-            "Construí el ecosistema global de recompensas en Centroamérica, Europa y Corea del Sur.",
-            "Lideré una organización multidisciplinaria de más de 70 personas de producto e ingeniería.",
-            "Gestioné un portafolio de más de $70M USD, con campañas activadas en el Super Bowl y The Voice Brasil.",
-          ],
-        },
-        {
-          company: "Linio Group", dates: "2019 — 2020",
-          title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
-          bullets: [
-            "Dirigí la integración de sistemas post-M&A durante la adquisición por Falabella.",
-            "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
-          ],
-        },
-      ],
-      ventures: [
-        {
-          company: "Golden Frijoles · Miyagi Sánchez",
-          dates: "2025 — Presente",
-          title: "Fundador y Líder de Producto · Dos productos en producción, construidos con equipos de agentes de IA",
-          bullets: [
-            "Golden Frijoles: una plataforma de product management que permite a una persona y sus agentes de IA decidir qué construir, lanzarlo con seguridad y demostrar si dio resultado. 87 iniciativas entregadas en abierto.",
-            "Miyagi Sánchez: infraestructura de e-commerce para México, de prompt a tienda. El comerciante describe su negocio en una frase y vende en su propio sitio, WhatsApp e Instagram, en persona, el marketplace y asistentes de compra con IA.",
-            "Diseñé el modelo operativo de ambos: los agentes construyen dentro de límites claros y las personas aprueban todo lo que toca dinero, seguridad o datos de clientes.",
-          ],
-        },
-        {
-          company: "Bicimensajero.com",
-          dates: "2014 — 2016",
-          title: "Fundador · Mensajería en bicicleta bajo demanda",
-          bullets: [
-            "Construí el producto yo mismo, hice crecer la operación a más de 100 mensajeros y llevé la empresa a una adquisición.",
-          ],
-        },
-        {
-          company: "Pokapok.mx",
-          dates: "2016 — 2017",
-          title: "Fundador · Plataforma de bienestar corporativo",
-          bullets: [
-          ],
-        },
-        {
-          company: "Nuuch Tech",
-          dates: "2012 — 2015",
-          title: "Fundador y Consultor Principal · Consultoría en e-commerce, CRM y agile",
-          bullets: [
-          ],
-        },
-      ],
-      summaryTitle: "Resumen",
     },
     lanesShared: {
       titles: { summary: "Resumen", current: "Actualidad", skills: "Habilidades", ventures: "Emprendimientos Previos", languages: "Idiomas", download: "Descargar PDF" },
       ventures: [
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · mensajería con más de 100 mensajeros, adquirida; bienestar corporativo; consultoría e-commerce", dates: "2012 — 2017" },
       ],
-      dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”.",
+      dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. Modelos GARCH en 4 mercados, 2006–2024.",
       languages: "Español (nativo) · Inglés (profesional completo)",
     },
     lanes: {
+      main: {
+        pdfTitle: "Daniel Vasquez - CV - Director de Producto, Fintech",
+        pdfFile: "/Daniel-Vasquez-CV-ES.pdf",
+        role: "Director de Producto · Fintech, Pagos y Plataformas Nativas de IA",
+        tagline: "Ejecutivo de producto desde 2012, de cero-a-uno a escala Fortune 100. Convierto organizaciones de producto de centros de costo en motores de ingresos, con cada iniciativa ligada al P&L.",
+        summary: "Dirijo producto como un P&L, no como un centro de costo: cada iniciativa lleva caso de negocio, línea base y una línea de utilidad bruta que se lee tras el lanzamiento. Gestioné un portafolio de recompensas de $70M+ USD y lideré a 70+ personas en AB InBev, integré plataformas tras la adquisición de Linio por Falabella y lancé una plataforma de remesas con Bitcoin en Grupo Carso en 2012. Hoy opero dos productos con equipos de agentes de IA bajo controles de nivel bancario, y formo PMs como product builders.",
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
+          title: "Fundador y Líder de Producto · Infraestructura de comercio con pagos y plataforma de producto agéntica, ambas en producción",
+          bullets: [
+            "Miyagi Sánchez: comercio de prompt a tienda para México. Los pagos llegan directo al comerciante (tarjeta, Mercado Pago, SPEI, QR, efectivo) con 0% de comisión; ingresos por extras opcionales.",
+            "Golden Frijoles: plataforma de product management que liga cada iniciativa a un resultado y una línea base.",
+            "Modelo operativo para trabajo regulado: los agentes planean, construyen y revisan; las personas aprueban todo lo que toca dinero, autenticación o datos de clientes, con trazabilidad en cada cambio.",
+            "Velocidad con controles: 250+ pull requests y 650+ archivos de pruebas en Golden Frijoles; 1,000+ commits en Miyagi.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · La cervecera más grande del mundo",
+            bullets: [
+              "Gestioné un portafolio global de recompensas de $70M+ USD en Centroamérica, Europa y Corea del Sur, con caso de negocio y seguimiento de valor por iniciativa.",
+              "Lideré una organización de producto e ingeniería de 70+ personas a través de 5 gerentes, en una empresa pública.",
+              "Entregué en una categoría regulada: cada lanzamiento pasó por legal interno y asesores externos en cada jurisdicción.",
+            ],
+          },
+          {
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Ciudad de México",
+            bullets: [
+              "Dirigí la integración post-M&A de plataformas de marketplace y comercio tras la adquisición de Linio por Falabella, liderando a dos gerentes.",
+            ],
+          },
+          {
+            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
+            title: "Líder de Equipo · Centro de Tecnología e Innovación",
+            bullets: [
+              "Proyectos de innovación para directivos del grupo, incluida una plataforma de remesas con Bitcoin lanzada en 2012 que llegó a 5,000+ usuarios activos.",
+            ],
+          },
+        ],
+        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
+        skills: [
+          { label: "Fintech", text: "pagos (tarjetas, SPEI, QR, wallets), remesas, funnels de onboarding, lealtad y recompensas" },
+          { label: "P&L", text: "atribución de P&L por iniciativa, casos de negocio, unit economics (LTV / CAC), integración post-M&A" },
+          { label: "Liderazgo", text: "organizaciones de producto, PMs como product builders, entrega agéntica con controles por riesgo" },
+          { label: "Cuantitativo", text: "econometría, modelado de volatilidad y riesgo, pronósticos, pruebas A/B" },
+        ],
+      },
       a: {
         pdfTitle: "Daniel Vasquez - CV - Lider de Producto, IA Agentica",
         pdfFile: "/Daniel-Vasquez-CV-Agentic-AI-ES.pdf",
@@ -633,8 +605,8 @@ const resumeData = {
             ],
           },
           {
-            company: "Linio Group", dates: "2019 — 2020",
-            title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Ciudad de México",
             bullets: [
               "Dirigí la integración de sistemas post-M&A durante la adquisición por Falabella, liderando a dos gerentes.",
               "Unifiqué la infraestructura multiplataforma de las organizaciones fusionadas.",
@@ -675,29 +647,29 @@ const resumeData = {
             ],
           },
           {
-            company: "Linio Group", dates: "2019 — 2020",
-            title: "Group Product Manager · Ciudad de México · adquirida por Falabella",
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Ciudad de México",
             bullets: [
               "Dirigí la integración post-M&A de los sistemas de marketplace y comercio durante la adquisición por Falabella, liderando a dos gerentes.",
             ],
           },
           {
-            company: "CTIN", dates: "2012 — 2014",
+            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
             title: "Líder de Equipo · Plataforma de remesas con Bitcoin, con más de 5,000 usuarios activos",
             bullets: [],
           },
         ],
-        hideEarlier: ["CTIN", "CompuCom · Accenture"],
+        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
         skills: [
           { label: "Plataformas", text: "infraestructura de comercio, alta de comerciantes, marketplaces, lealtad, pagos y remesas" },
           { label: "Comercial", text: "precios e incentivos, unit economics, LTV / CAC, casos de negocio, integración post-M&A" },
-          { label: "Cuantitativo", text: "Maestría en Finanzas: econometría, series de tiempo, evaluación de pronósticos, pruebas A/B" },
+          { label: "Cuantitativo", text: "Maestría en Finanzas y Gestión de Inversiones: econometría, series de tiempo, evaluación de pronósticos, pruebas A/B" },
         ],
       },
     },
     work: {
-      headline: "Líder de producto que construye.",
-      lede: "Desde 2012, liderando equipos de producto e ingeniería. Convierto una estrategia clara en producto entregado y medido, trabajando junto a tu equipo y sus agentes.",
+      headline: "Producto que se paga solo.",
+      lede: "Desde 2012, liderando equipos de producto e ingeniería. Convierto organizaciones de producto en motores de ingresos y a los product managers en product builders, trabajando junto a tu equipo y sus agentes.",
       ctaPrimary: "Escríbeme",
       ctaCv: "Descargar CV",
       offersTitle: "Qué hago",
@@ -743,10 +715,9 @@ const resumeData = {
       copyLabel: "Copiar correo electrónico",
     },
     ui: {
-      pageTitle: "Daniel Vásquez — Líder de Producto",
-      pdfTitle: "Daniel Vasquez - CV - Lider de Producto",
+      pageTitle: "Daniel Vásquez — Director de Producto · Fintech e IA",
       metaDesc:
-        "Líder de producto con las manos en el código, para proyectos por contrato y roles fraccionales. Convierto una estrategia clara en producto entregado y medido. Ex-AB InBev, Linio; creador de Golden Frijoles.",
+        "Director de Producto para fintech, pagos y plataformas nativas de IA. Convierto organizaciones de producto en motores de ingresos, con cada iniciativa ligada al P&L. Ex-AB InBev ($70M+ de portafolio, 70+ personas), Linio · Falabella; Maestría en Finanzas y Gestión de Inversiones.",
       snapshotTitle: "Perfil",
       experienceTitle: "Experiencia",
       earlierTitle: "Trayectoria Previa",
@@ -755,14 +726,14 @@ const resumeData = {
       educationTitle: "Formación",
       approachTitle: "Enfoque",
       tldrButton: "TL;DR",
-      classicButton: "Clásico",
+      classicButton: "Currículum",
       workButton: "Trabajemos",
       viewsLabel: "Elige una vista",
       cvButton: "Descargar CV",
       cvButtonShort: "CV",
       cvFile: "/Daniel-Vasquez-CV-ES.pdf",
       printable: "Versión imprimible",
-      lastUpdated: "Última actualización: Octubre 2026",
+      lastUpdated: "Última actualización: Noviembre 2026",
       viewMarkdown: "Ver Markdown",
       markdownUrl: "/resume-es.md",
       downloadPdf: "PDF",
