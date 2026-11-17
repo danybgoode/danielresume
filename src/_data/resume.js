@@ -26,7 +26,7 @@ const resumeData = {
     ],
     snapshot: [
       "I turn product organisations from cost centres into revenue engines. Every initiative carries its own line to the P&L, whether direct or indirect gross profit, retention or cost to serve. It is set before we build and read after we ship, in numbers and in the story behind them.",
-      "I have led product since 2012, from zero-to-one to Fortune 100 scale: a $70M+ global rewards portfolio and a 70+ person product and engineering organisation at AB InBev, post-M&A platform integration at Linio after its acquisition by Falabella, a Bitcoin remittance platform at Grupo Carso's technology and innovation centre in 2012, and three ventures of my own, one of them acquired. Underneath it sits an MSc in Finance & Investment Management from the University of Aberdeen, with a dissertation on volatility forecasting and market risk.",
+      "I have led product since 2012, from zero-to-one to Fortune 100 scale: a $70M+ global rewards portfolio and a 70+ person product and engineering organisation at AB InBev, post-M&A platform integration at Linio after its acquisition by Falabella, a Bitcoin remittance platform at Telmex's technology and innovation centre (Grupo Carso) in 2012, and three ventures of my own, one of them acquired. Underneath it sits an MSc in Finance & Investment Management from the University of Aberdeen, with a dissertation on volatility forecasting and market risk.",
       "My mission is to turn every product manager into a product builder. PMs were prompting long before it had a name: PRDs, personas, epics, user stories and Gherkin acceptance criteria written so tests could run themselves. With agents, that same intent compiles into working software. I run two products in production this way, Golden Frijoles and Miyagi Sánchez, under controls a bank would recognise: risk-tiered approvals, independent review and an audit trail on every change.",
     ],
     howIWork: [
@@ -62,9 +62,10 @@ const resumeData = {
       ],
       earlier: [
         { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2017 — 2019" },
+        { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018" },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
-        { company: "CTIN · Grupo Carso", title: "Team Lead · Bitcoin remittance platform, 5,000+ active users", dates: "2012 — 2014" },
-        { company: "Grupo Bimbo", title: "FinOps Analyst", dates: "2010 — 2011" },
+        { company: "CTIN · Telmex (Grupo Carso)", title: "Team Lead · Bitcoin remittance platform, 5,000+ active users", dates: "2012 — 2014" },
+        { company: "Grupo Bimbo", title: "FinOps Analyst · card payment acceptance", dates: "2010 — 2011" },
         { company: "CompuCom · Accenture", title: "Tech Support · Customer Service", dates: "2006 — 2010" },
       ],
       ventures: [
@@ -133,7 +134,7 @@ const resumeData = {
         "Everything I build now runs through agents — grooming, planning, building, review, shipping and reporting",
         "Built an open-source operating system for agent product work, installed once and reused across every project I build — now the open Golden Frijoles kit",
         "Run <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, an agentic product-management platform, and <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, prompt-to-shop e-commerce infrastructure for Mexico — both in production",
-        "Before all that: a $70M+ portfolio and 70+ people at AB InBev, a post-M&A integration at Linio · Falabella, a Bitcoin remittance platform at Grupo Carso back in 2012, and three ventures of my own, one of them acquired",
+        "Before all that: a $70M+ portfolio and 70+ people at AB InBev, a post-M&A integration at Linio · Falabella, a Bitcoin remittance platform at Telmex (Grupo Carso) back in 2012, and three ventures of my own, one of them acquired",
         "Went back to school for an MSc in Finance & Investment Management in Scotland; wrote my dissertation on forecasting market volatility",
         "On a mission to turn every product manager into a product builder. We were prompting all along, through Jira tickets",
       ],
@@ -149,7 +150,7 @@ const resumeData = {
       ventures: [
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · bike courier grown to 100+ couriers and acquired; wellness platform; e-commerce consultancy", dates: "2012 — 2017" },
       ],
-      dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. GARCH-family risk models on four equity markets, 2006–2024.",
+      dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. GARCH models on 4 markets, 2006–2024.",
       languages: "Spanish (native) · English (full professional)",
     },
     lanes: {
@@ -159,7 +160,7 @@ const resumeData = {
         pdfFile: "/Daniel-Vasquez-CV.pdf",
         role: "Product Director · Fintech, Payments & AI-native Platforms",
         tagline: "Product executive since 2012, from zero-to-one to Fortune 100 scale. I turn product organisations from cost centres into revenue engines, with every initiative tied to the P&L.",
-        summary: "I run product as a P&L, not a cost centre: every initiative carries a business case, a baseline and a gross profit line read after launch. I owned a $70M+ rewards portfolio and led 70+ people at AB InBev, integrated platforms after Falabella acquired Linio, and launched a Bitcoin remittance platform at Grupo Carso in 2012. Today I run two products with AI agent teams under bank-grade controls, and coach PMs to become product builders.",
+        summary: "I run product as a P&L, not a cost centre: every initiative carries a business case, a baseline and a gross profit line read after launch. I owned a $70M+ rewards portfolio and led 70+ people at AB InBev, integrated platforms after Falabella acquired Linio, and launched a Bitcoin remittance platform at Telmex (Grupo Carso) in 2012. Today I run two products with AI agent teams under bank-grade controls, and coach PMs to become product builders.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
           title: "Founder & Product Lead · Payments-enabled commerce infrastructure and an agentic product platform, both in production",
@@ -188,18 +189,18 @@ const resumeData = {
             ],
           },
           {
-            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
+            company: "CTIN · Telmex (Grupo Carso)", dates: "2012 — 2014",
             title: "Team Lead · Centro de Tecnología e Innovación",
             bullets: [
               "Delivered innovation projects sponsored by group executives, including a Bitcoin remittance platform launched in 2012 and grown to 5,000+ active users.",
             ],
           },
         ],
-        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
+        hideEarlier: ["CTIN · Telmex (Grupo Carso)", "CompuCom · Accenture"],
         skills: [
           { label: "Fintech", text: "payments (cards, SPEI, QR, wallets), remittance, onboarding funnels, loyalty and rewards economics, marketplaces" },
-          { label: "P&L", text: "initiative-level P&L attribution, business cases, pricing and unit economics (LTV / CAC), portfolio governance, M&A integration" },
-          { label: "Leadership", text: "building PM organisations, coaching PMs into product builders, agentic delivery with risk-tiered controls and audit trails" },
+          { label: "P&L", text: "initiative-level P&L attribution, business cases, unit economics (LTV / CAC), M&A integration" },
+          { label: "Leadership", text: "building PM organisations, PMs as product builders, agentic delivery with risk-tiered controls" },
           { label: "Quant", text: "MSc Finance & Investment Management: econometrics, volatility and risk modelling, forecasting, A/B testing" },
         ],
       },
@@ -282,12 +283,12 @@ const resumeData = {
             ],
           },
           {
-            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
+            company: "CTIN · Telmex (Grupo Carso)", dates: "2012 — 2014",
             title: "Team Lead · Bitcoin remittance platform, grown to 5,000+ active users",
             bullets: [],
           },
         ],
-        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
+        hideEarlier: ["CTIN · Telmex (Grupo Carso)", "CompuCom · Accenture"],
         skills: [
           { label: "Platforms", text: "commerce infrastructure, merchant onboarding, two-sided marketplaces, rewards and loyalty, payments and remittance" },
           { label: "Commercial", text: "pricing and incentives, unit economics, LTV / CAC, business cases, M&A integration" },
@@ -404,7 +405,7 @@ const resumeData = {
     ],
     snapshot: [
       "Convierto organizaciones de producto de centros de costo en motores de ingresos. Cada iniciativa lleva su propia línea al P&L, ya sea utilidad bruta directa o indirecta, retención o costo de servir. Se define antes de construir y se lee después de lanzar, en números y en la historia detrás de ellos.",
-      "Lidero producto desde 2012, de cero-a-uno a escala Fortune 100: un portafolio global de recompensas de más de $70M USD y una organización de producto e ingeniería de más de 70 personas en AB InBev, la integración de plataformas post-M&A en Linio tras su adquisición por Falabella, una plataforma de remesas con Bitcoin en el Centro de Tecnología e Innovación de Grupo Carso en 2012, y tres emprendimientos propios, uno de ellos adquirido. Debajo de todo hay una Maestría en Finanzas y Gestión de Inversiones por la University of Aberdeen, con una tesis sobre pronóstico de volatilidad y riesgo de mercado.",
+      "Lidero producto desde 2012, de cero-a-uno a escala Fortune 100: un portafolio global de recompensas de más de $70M USD y una organización de producto e ingeniería de más de 70 personas en AB InBev, la integración de plataformas post-M&A en Linio tras su adquisición por Falabella, una plataforma de remesas con Bitcoin en el Centro de Tecnología e Innovación de Telmex (Grupo Carso) en 2012, y tres emprendimientos propios, uno de ellos adquirido. Debajo de todo hay una Maestría en Finanzas y Gestión de Inversiones por la University of Aberdeen, con una tesis sobre pronóstico de volatilidad y riesgo de mercado.",
       "Mi misión es convertir a cada product manager en product builder. Los PMs ya hacían prompting antes de que tuviera nombre: PRDs, personas, épicas, historias de usuario y criterios de aceptación en Gherkin escritos para que las pruebas corrieran solas. Con agentes, esa misma intención se compila en software funcionando. Así opero dos productos en producción, Golden Frijoles y Miyagi Sánchez, bajo controles que un banco reconocería: aprobaciones escalonadas por riesgo, revisión independiente y trazabilidad en cada cambio.",
     ],
     howIWork: [
@@ -440,9 +441,10 @@ const resumeData = {
       ],
       earlier: [
         { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2017 — 2019" },
+        { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018" },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
-        { company: "CTIN · Grupo Carso", title: "Líder de Equipo · plataforma de remesas con Bitcoin, más de 5,000 usuarios activos", dates: "2012 — 2014" },
-        { company: "Grupo Bimbo", title: "Analista FinOps", dates: "2010 — 2011" },
+        { company: "CTIN · Telmex (Grupo Carso)", title: "Líder de Equipo · plataforma de remesas con Bitcoin, más de 5,000 usuarios activos", dates: "2012 — 2014" },
+        { company: "Grupo Bimbo", title: "Analista FinOps · aceptación de pagos con tarjeta", dates: "2010 — 2011" },
         { company: "CompuCom · Accenture", title: "Soporte Técnico y Servicio al Cliente", dates: "2006 — 2010" },
       ],
       ventures: [
@@ -511,7 +513,7 @@ const resumeData = {
         "Todo lo que construyo ahora pasa por agentes — grooming, planeación, construcción, revisión, entrega y reporteo",
         "Construí un sistema operativo open source para trabajo de producto con agentes, instalado una vez y reutilizado en cada proyecto que construyo — hoy el kit abierto de Golden Frijoles",
         "Opero <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, una plataforma de product management con agentes, y <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, una infraestructura de e-commerce de prompt a tienda para México — ambos en producción",
-        "Antes de todo eso: un portafolio de $70M+ y más de 70 personas en AB InBev, una integración post-M&A en Linio · Falabella, una plataforma de remesas con Bitcoin en Grupo Carso allá por 2012, y tres emprendimientos propios, uno de ellos adquirido",
+        "Antes de todo eso: un portafolio de $70M+ y más de 70 personas en AB InBev, una integración post-M&A en Linio · Falabella, una plataforma de remesas con Bitcoin en Telmex (Grupo Carso) allá por 2012, y tres emprendimientos propios, uno de ellos adquirido",
         "Volví a la escuela por una Maestría en Finanzas y Gestión de Inversiones en Escocia; mi tesis fue sobre pronóstico de volatilidad de mercados",
         "Mi misión: que cada product manager se convierta en product builder. Siempre hicimos prompting, solo que en tickets de Jira",
       ],
@@ -533,7 +535,7 @@ const resumeData = {
         pdfFile: "/Daniel-Vasquez-CV-ES.pdf",
         role: "Director de Producto · Fintech, Pagos y Plataformas Nativas de IA",
         tagline: "Ejecutivo de producto desde 2012, de cero-a-uno a escala Fortune 100. Convierto organizaciones de producto de centros de costo en motores de ingresos, con cada iniciativa ligada al P&L.",
-        summary: "Dirijo producto como un P&L, no como un centro de costo: cada iniciativa lleva caso de negocio, línea base y una línea de utilidad bruta que se lee tras el lanzamiento. Gestioné un portafolio de recompensas de $70M+ USD y lideré a 70+ personas en AB InBev, integré plataformas tras la adquisición de Linio por Falabella y lancé una plataforma de remesas con Bitcoin en Grupo Carso en 2012. Hoy opero dos productos con equipos de agentes de IA bajo controles de nivel bancario, y formo PMs como product builders.",
+        summary: "Dirijo producto como un P&L, no como un centro de costo: cada iniciativa lleva caso de negocio, línea base y una línea de utilidad bruta que se lee tras el lanzamiento. Gestioné un portafolio de recompensas de $70M+ USD y lideré a 70+ personas en AB InBev, integré plataformas tras la adquisición de Linio por Falabella y lancé una plataforma de remesas con Bitcoin en Telmex (Grupo Carso) en 2012. Hoy opero dos productos con equipos de agentes de IA bajo controles de nivel bancario, y formo PMs como product builders.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
           title: "Fundador y Líder de Producto · Infraestructura de comercio con pagos y plataforma de producto agéntica, ambas en producción",
@@ -562,14 +564,14 @@ const resumeData = {
             ],
           },
           {
-            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
+            company: "CTIN · Telmex (Grupo Carso)", dates: "2012 — 2014",
             title: "Líder de Equipo · Centro de Tecnología e Innovación",
             bullets: [
               "Proyectos de innovación para directivos del grupo, incluida una plataforma de remesas con Bitcoin lanzada en 2012 que llegó a 5,000+ usuarios activos.",
             ],
           },
         ],
-        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
+        hideEarlier: ["CTIN · Telmex (Grupo Carso)", "CompuCom · Accenture"],
         skills: [
           { label: "Fintech", text: "pagos (tarjetas, SPEI, QR, wallets), remesas, funnels de onboarding, lealtad y recompensas" },
           { label: "P&L", text: "atribución de P&L por iniciativa, casos de negocio, unit economics (LTV / CAC), integración post-M&A" },
@@ -654,12 +656,12 @@ const resumeData = {
             ],
           },
           {
-            company: "CTIN · Grupo Carso", dates: "2012 — 2014",
+            company: "CTIN · Telmex (Grupo Carso)", dates: "2012 — 2014",
             title: "Líder de Equipo · Plataforma de remesas con Bitcoin, con más de 5,000 usuarios activos",
             bullets: [],
           },
         ],
-        hideEarlier: ["CTIN · Grupo Carso", "CompuCom · Accenture"],
+        hideEarlier: ["CTIN · Telmex (Grupo Carso)", "CompuCom · Accenture"],
         skills: [
           { label: "Plataformas", text: "infraestructura de comercio, alta de comerciantes, marketplaces, lealtad, pagos y remesas" },
           { label: "Comercial", text: "precios e incentivos, unit economics, LTV / CAC, casos de negocio, integración post-M&A" },
