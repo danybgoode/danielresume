@@ -43,8 +43,8 @@ eleventyExcludeFromCollections: true
 {% for role in data.experience.featured %}{{ roleBlock(role) }}
 {% endfor %}
 ## {{ data.ui.earlierTitle | safe }}
-{% for role in data.experience.earlier %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
-{% endfor %}
+{% for role in data.experience.earlier %}{% if not role.siteHidden %}- **{{ role.company | safe }}** — {{ role.title | safe }} ({{ role.dates | safe }})
+{% endif %}{% endfor %}
 ## {{ data.ui.venturesTitle | safe }}
 {% for role in data.experience.ventures %}{{ roleBlock(role) }}
 {% endfor %}
