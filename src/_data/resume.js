@@ -62,7 +62,7 @@ const resumeData = {
         },
         {
           company: "Wagento Commerce",
-          dates: "2018 — 2019",
+          dates: "2017 — 2019",
           title: "Head of Customer Experience & Project Management · Minneapolis, Austin, Mexico City",
           chain: [
             "Set up and ran the Mexico City office. Its 15 people reported to me, as did the firm's product managers, about six. I owned hiring, performance reviews and pay, and defined career paths, training and delivery practices.",
@@ -81,7 +81,7 @@ const resumeData = {
         },
       ],
       earlier: [
-        { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2018 — 2019", siteHidden: true },
+        { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2017 — 2019", siteHidden: true },
         { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018", siteHidden: true },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
         { company: "CTIN · Telmex (Grupo Carso)", title: "Team Lead · Bitcoin remittance platform, 5,000+ active users", dates: "2012 — 2014" },
@@ -211,7 +211,7 @@ const resumeData = {
             ],
           },
           {
-            company: "Wagento Commerce", dates: "2018 — 2019",
+            company: "Wagento Commerce", dates: "2017 — 2019",
             title: "Head of Customer Experience & Project Management · Minneapolis, Austin, Mexico City",
             bullets: [
               "Set up and ran the Mexico City office (about 15 people) and led the PMs: hiring, reviews, pay and career paths.",
@@ -245,7 +245,7 @@ const resumeData = {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
           title: "Founder & Product Lead · Agentic product platform and commerce infrastructure, both in production",
           bullets: [
-            "Golden Frijoles: agentic product management. Agents investigate, plan, build, review and report; people approve anything touching money, auth, migrations or customer data, and every action is on record.",
+            "Golden Frijoles: agentic product management. Agents turn a raw ask into user stories with acceptance criteria, wireframes and a sized plan, then build, test and review; people approve what touches money, auth or customer data.",
             "Codifies my own practice: a cold read and PMF narrative with sourced personas, a North Star with input metrics, risk validation, and an outcome report per initiative against a target set before building.",
             "Ships the tooling too: feature flags, A/B tests and events through an open-source SDK and CLI, in place of separate analytics, flag and experiment tools.",
             "Reports at every level, generated from the work itself: daily standup, weekly executive recap, PMO delivery metrics (including DORA) and a monthly stakeholder pack.",
@@ -319,7 +319,7 @@ const resumeData = {
             ],
           },
           {
-            company: "Wagento Commerce", dates: "2018 — 2019",
+            company: "Wagento Commerce", dates: "2017 — 2019",
             title: "Head of Customer Experience & Project Management · Minneapolis, Austin, Mexico City",
             bullets: [
               "Set up and ran the Mexico City office (about 15 people) and led the PMs: hiring, reviews, pay and career paths.",
@@ -494,7 +494,7 @@ const resumeData = {
         },
         {
           company: "Wagento Commerce",
-          dates: "2018 — 2019",
+          dates: "2017 — 2019",
           title: "Director de Experiencia de Cliente y Gestión de Proyectos · Minneapolis, Austin, Ciudad de México",
           chain: [
             "Abrí y dirigí la oficina de Ciudad de México. Sus 15 personas me reportaban, igual que los product managers de la firma, unos seis. Llevé contratación, evaluaciones y sueldos, y definí planes de carrera, capacitación y prácticas de entrega.",
@@ -513,7 +513,7 @@ const resumeData = {
         },
       ],
       earlier: [
-        { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2018 — 2019", siteHidden: true },
+        { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2017 — 2019", siteHidden: true },
         { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018", siteHidden: true },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
         { company: "CTIN · Telmex (Grupo Carso)", title: "Líder de Equipo · plataforma de remesas con Bitcoin, más de 5,000 usuarios activos", dates: "2012 — 2014" },
@@ -639,7 +639,7 @@ const resumeData = {
             ],
           },
           {
-            company: "Wagento Commerce", dates: "2018 — 2019",
+            company: "Wagento Commerce", dates: "2017 — 2019",
             title: "Director de Experiencia de Cliente y Gestión de Proyectos · Minneapolis, Austin, Ciudad de México",
             bullets: [
               "Abrí y dirigí la oficina de CDMX (unas 15 personas) y a los PMs: contratación, evaluaciones, sueldos y carrera.",
@@ -672,7 +672,7 @@ const resumeData = {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
           title: "Fundador y Líder de Producto · Plataforma de producto agéntica e infraestructura de comercio, ambas en producción",
           bullets: [
-            "Golden Frijoles: product management agéntico. Los agentes investigan, planean, construyen y reportan; las personas aprueban lo que toca dinero, autenticación, migraciones o datos de clientes.",
+            "Golden Frijoles: product management agéntico. Los agentes llevan una idea a historias de usuario con criterios de aceptación, wireframes y un plan dimensionado, y construyen y prueban; las personas aprueban dinero y datos.",
             "Codifica mi propia práctica: lectura en frío y narrativa de PMF con personas sustentadas, North Star con métricas de entrada, validación de riesgos y un reporte de resultados por iniciativa contra una meta fijada antes de construir.",
             "También la herramienta: feature flags, pruebas A/B y eventos con un SDK y CLI open source, en lugar de herramientas separadas de analítica, flags y experimentos.",
             "Reportes a todos los niveles, generados desde el trabajo mismo: standup diario, resumen ejecutivo semanal, métricas de entrega PMO (incluidas DORA) y un paquete mensual para stakeholders.",
@@ -745,7 +745,7 @@ const resumeData = {
             ],
           },
           {
-            company: "Wagento Commerce", dates: "2018 — 2019",
+            company: "Wagento Commerce", dates: "2017 — 2019",
             title: "Director de Experiencia de Cliente y Gestión de Proyectos · Minneapolis, Austin, Ciudad de México",
             bullets: [
               "Abrí y dirigí la oficina de CDMX (unas 15 personas) y a los PMs: contratación, evaluaciones, sueldos y carrera.",
