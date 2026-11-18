@@ -189,7 +189,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
     <div class="masthead-main">
       <h1 class="name" id="profileName">{{ resume.en.name }}</h1>
       <p class="role" id="profileRole">{{ resume.en.role }}</p>
-      <p class="disciplines" id="profileDisciplines">{{ resume.en.disciplines }}</p>
       <div class="meta">
         <a href="mailto:{{ resume.en.email }}" id="metaEmail">{{ resume.en.email }}</a>
         <a href="{{ resume.en.links.linkedin.url }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -404,7 +403,6 @@ title: Daniel Vásquez — Product & Agentic Delivery
 
       // Update Masthead
       document.getElementById('profileRole').textContent = data.role;
-      document.getElementById('profileDisciplines').textContent = data.disciplines;
       document.getElementById('metaLocation').textContent = data.location;
 
       // Update Profile

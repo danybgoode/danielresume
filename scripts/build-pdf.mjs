@@ -43,8 +43,8 @@ const jobs = [
   { path: "print/", lang: "es", file: "Daniel-Vasquez-CV-ES.pdf" },
   { path: "print/a/", lang: "en", file: "Daniel-Vasquez-CV-Agentic-AI.pdf" },
   { path: "print/a/", lang: "es", file: "Daniel-Vasquez-CV-Agentic-AI-ES.pdf" },
-  { path: "print/p/", lang: "en", file: "Daniel-Vasquez-CV-Product-Platforms.pdf" },
-  { path: "print/p/", lang: "es", file: "Daniel-Vasquez-CV-Product-Platforms-ES.pdf" },
+  { path: "print/x/", lang: "en", file: "Daniel-Vasquez-CV-Digital-Experience.pdf" },
+  { path: "print/x/", lang: "es", file: "Daniel-Vasquez-CV-Digital-Experience-ES.pdf" },
 ];
 for (const { path, lang, file } of jobs) {
   const page = await browser.newPage();

@@ -5,7 +5,7 @@ pagination:
   data: variants
   size: 1
   alias: variant
-variants: ["main", "a", "p"]
+variants: ["main", "a", "x"]
 permalink: "{% if variant == 'main' %}print/index.html{% else %}print/{{ variant }}/index.html{% endif %}"
 eleventyExcludeFromCollections: true
 ---
@@ -398,7 +398,6 @@ eleventyExcludeFromCollections: true
   <header class="head">
     <h1>{{ d.name }}</h1>
     <p class="role-line">{{ c.role }}</p>
-    <p class="disciplines">{{ c.tagline }}</p>
     <p class="contact"><a href="mailto:{{ d.email }}">{{ d.email }}</a> <span class="sep">·</span> <a href="{{ d.links.linkedin.url }}">{{ d.links.linkedin.label }}</a> <span class="sep">·</span> <a href="{{ d.links.github.url }}">{{ d.links.github.label }}</a> <span class="sep">·</span> <a href="{{ d.links.site.url }}">{{ d.links.site.label }}</a> <span class="sep">·</span> <span class="loc">{{ d.location }}</span></p>
   </header>
   <hr class="rule">
@@ -406,6 +405,7 @@ eleventyExcludeFromCollections: true
     <h2 class="section-title">{{ d.lanesShared.titles.summary }}</h2>
     <p class="summary-text">{{ c.summary }}</p>
   </section>
+  {% if not c.currentAfter %}
   <section class="current">
     <h2 class="section-title">{{ d.lanesShared.titles.current }}</h2>
     <div class="role">
@@ -414,6 +414,7 @@ eleventyExcludeFromCollections: true
       <ul class="role-bullets">{% for b in c.current.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
     </div>
   </section>
+  {% endif %}
   <section class="experience">
     <h2 class="section-title">{{ d.ui.experienceTitle }}</h2>
     {% for role in c.experience %}
@@ -424,13 +425,24 @@ eleventyExcludeFromCollections: true
     </div>
     {% endfor %}
   </section>
+  {# Some lanes lead with corporate scale and print the current role after Experience. #}
+  {% if c.currentAfter %}
+  <section class="current">
+    <h2 class="section-title">{{ d.lanesShared.titles.current }}</h2>
+    <div class="role">
+      <div class="role-head"><h3>{{ c.current.company }}</h3><span class="role-dates">{{ c.current.dates }}</span></div>
+      <p class="role-title">{{ c.current.title }}</p>
+      <ul class="role-bullets">{% for b in c.current.bullets %}<li>{{ b }}</li>{% endfor %}</ul>
+    </div>
+  </section>
+  {% endif %}
   <section class="earlier">
     <h2 class="section-title">{{ d.ui.earlierTitle }}</h2>
     <ul class="earlier-list">{% for r in d.experience.earlier %}{% if not (r.company in c.hideEarlier) %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endif %}{% endfor %}</ul>
   </section>
   <section class="ventures">
     <h2 class="section-title">{{ d.lanesShared.titles.ventures }}</h2>
-    <ul class="earlier-list">{% for r in d.lanesShared.ventures %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endfor %}</ul>
+    <ul class="earlier-list">{% for r in (c.ventures or d.lanesShared.ventures) %}<li><span><span class="co">{{ r.company }}</span> — <span class="title">{{ r.title }}</span></span><span class="dates">{{ r.dates }}</span></li>{% endfor %}</ul>
   </section>
   <section class="skills">
     <h2 class="section-title">{{ d.lanesShared.titles.skills }}</h2>
