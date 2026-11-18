@@ -238,7 +238,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
     <section class="earlier-section">
       <p class="eyebrow" id="earlierTitle">{{ resume.en.ui.earlierTitle }}</p>
       <div id="earlierRoles">
-        {% for role in resume.en.experience.earlier %}
+        {% for role in resume.en.experience.earlier %}{% if not role.siteHidden %}
         <div class="earlier-row">
           <div>
             <div class="co">{{ role.company }}</div>
@@ -246,7 +246,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
           </div>
           <div class="dates">{{ role.dates }}</div>
         </div>
-        {% endfor %}
+        {% endif %}{% endfor %}
       </div>
     </section>
 
@@ -439,7 +439,7 @@ title: Daniel Vásquez — Product & Agentic Delivery
       document.getElementById('earlierTitle').textContent = data.ui.earlierTitle;
       const earlierEl = document.getElementById('earlierRoles');
       if (earlierEl) {
-        earlierEl.innerHTML = data.experience.earlier.map(role => `
+        earlierEl.innerHTML = data.experience.earlier.filter(role => !role.siteHidden).map(role => `
           <div class="earlier-row">
             <div>
               <div class="co">${esc(role.company)}</div>

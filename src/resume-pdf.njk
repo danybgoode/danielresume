@@ -451,7 +451,7 @@ eleventyExcludeFromCollections: true
   <section class="education">
     <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
     {# The dissertation sits directly under the MSc, the first credential. #}
-    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% if loop.first %}<li class="edu-note">{{ d.lanesShared.dissertation }}</li>{% endif %}{% endfor %}</ul>
+    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% if loop.first and not c.hideDissertation %}<li class="edu-note">{{ d.lanesShared.dissertation }}</li>{% endif %}{% endfor %}</ul>
   </section>
 </article>
 {% endfor %}

@@ -24,7 +24,7 @@ const resumeData = {
     ],
     snapshot: [
       "Product leader since 2012. The work starts with a customer conversation and ends with a measured result, and I build alongside my teams in between.",
-      "At AB InBev I built the global rewards platform from scratch, with a $70M+ yearly product budget and 70+ people across product, design and engineering. At Linio I led the storefront redesign, the reviews platform built for Falabella's global platforms, and the consolidation after the acquisition. Earlier: usability research for US commerce clients, a Bitcoin remittance platform at Telmex (Grupo Carso) in 2012, and three ventures of my own, one of them acquired.",
+      "At AB InBev I built the global rewards platform from scratch, with a $70M+ yearly product budget and 70+ people across product, design and engineering. At Linio I ran the frontend half of the product organisation, built a reviews platform later rolled out across Falabella group's e-commerce, and led the consolidation after the acquisition. Before that, I set up and ran Wagento's Mexico City office and led product at Nolte in New York. Earlier: a Bitcoin remittance platform at Telmex (Grupo Carso) in 2012, and three ventures of my own, one of them acquired.",
       "Today I run Golden Frijoles and Miyagi Sánchez, two AI-native products in production. Golden Frijoles is my own practice turned into software, from persona research to experiments to outcome reports: agents do the work, and people approve what matters. Underneath it all, an MSc in Finance & Investment Management from the University of Aberdeen.",
     ],
     howIWork: [
@@ -54,16 +54,35 @@ const resumeData = {
           dates: "2019 — 2020",
           title: "Group Product Manager · Mexico City",
           chain: [
-            "Redesigned the storefront end to end, then led the post-acquisition consolidation of the Linio and Falabella platforms, leading two managers.",
-            "Rebuilt the reviews system from scratch; it became a standalone product integrated into Falabella's global platforms, run by my team from corporate in Santiago de Chile.",
-            "Scaled the frontend team into Discovery, Linio's largest team, owning web, iOS and Android end to end alongside marketing and customer support.",
-            "On the leadership team, co-designed and implemented Linio's organisational shift to Spotify-model squads.",
-          ],
+            "Hired to run the frontend half of Linio's product organisation, at a time when the company was split into frontend and backend. Grew it into Discovery, the largest team, owning web, iOS and Android end to end alongside marketing and customer support.",
+            "Pitched the idea for a new reviews system, secured its funding and built it into Linio, then expanded it to all of Falabella group's e-commerce, run by my team from corporate in Santiago de Chile.",
+            "Redesigned the storefront end to end, then led the consolidation of the Linio and Falabella platforms after the acquisition.",
+            "Managed two product managers end to end, from hiring and performance reviews to pay and budget. On the leadership team, co-designed and implemented Linio's shift to Spotify-model squads, and mentored PMs, designers and junior engineers.",
+                   ],
+        },
+        {
+          company: "Wagento Commerce",
+          dates: "2018 — 2019",
+          title: "Head of Customer Experience & Project Management · Minneapolis, Austin, Mexico City",
+          chain: [
+            "Set up and ran the Mexico City office. Its 15 people reported to me, as did the firm's product managers, about six. I owned hiring, performance reviews and pay, and defined career paths, training and delivery practices.",
+            "Took e-commerce clients, Warner Music among them, from discovery and onboarding through delivery in Mexico and abroad, usability and accessibility testing included. Owned proposals and account growth.",
+            "On the leadership team of a firm of about 60 people across the US, Mexico and India, set the quarterly direction of the company.",
+                   ],
+        },
+        {
+          company: "Nolte Worldwide",
+          dates: "2017 — 2018",
+          title: "Head of Product Management · New York",
+          chain: [
+            "Ran product at a boutique digital firm: hired and led the team, set its practices and took part in quarterly planning on where the firm was going.",
+            "Managed the New York Chamber of Commerce account from discovery to delivery, including its regular reports throughout the year.",
+                   ],
         },
       ],
       earlier: [
-        { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2017 — 2019" },
-        { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018" },
+        { company: "Wagento Commerce", title: "Head of Customer Experience & Project Management", dates: "2018 — 2019", siteHidden: true },
+        { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018", siteHidden: true },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
         { company: "CTIN · Telmex (Grupo Carso)", title: "Team Lead · Bitcoin remittance platform, 5,000+ active users", dates: "2012 — 2014" },
         { company: "Grupo Bimbo", title: "FinOps Analyst · card payment acceptance", dates: "2010 — 2011" },
@@ -135,7 +154,7 @@ const resumeData = {
         "Everything I build now runs through agents — grooming, planning, building, review, shipping and reporting",
         "Built an open-source operating system for agent product work, installed once and reused across every project I build — now the open Golden Frijoles kit",
         "Run <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, an agentic product-management platform, and <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, prompt-to-shop e-commerce infrastructure for Mexico — both in production",
-        "Before all that: a $70M+ yearly product budget and 70+ people at AB InBev, the storefront, reviews platform and post-M&A consolidation at Linio · Falabella, a Bitcoin remittance platform at Telmex (Grupo Carso) back in 2012, and three ventures of my own, one of them acquired",
+        "Before all that: a $70M+ yearly product budget and 70+ people at AB InBev, the frontend organisation, a group-wide reviews platform and the post-M&A consolidation at Linio · Falabella, a Bitcoin remittance platform at Telmex (Grupo Carso) back in 2012, and three ventures of my own, one of them acquired",
         "Went back to school for an MSc in Finance & Investment Management in Scotland; wrote my dissertation on forecasting market volatility",
         "On a mission to turn every product manager into a product builder. We were prompting all along, through Jira tickets",
       ],
@@ -149,7 +168,7 @@ const resumeData = {
     lanesShared: {
       titles: { summary: "Summary", current: "Current", skills: "Skills", ventures: "Earlier Ventures", languages: "Languages", download: "Download PDF" },
       ventures: [
-        { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · bike courier grown to 100+ couriers and acquired; wellness platform; e-commerce consultancy", dates: "2012 — 2017" },
+        { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · 100+ courier network, acquired; wellness app; consultancy", dates: "2012 — 2017" },
       ],
       dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. GARCH models on 4 markets, 2006–2024.",
       languages: "Spanish (native) · English (full professional)",
@@ -160,14 +179,14 @@ const resumeData = {
         pdfTitle: "Daniel Vasquez - CV - Product Director",
         pdfFile: "/Daniel-Vasquez-CV.pdf",
         role: "Product Director · Customer insight to shipped software",
-        summary: "Product leader since 2012, from AB InBev's global rewards platform to Linio's consolidation with Falabella, and now two AI-native products in production. The work starts with a customer conversation and ends with a measured result.",
+        summary: "Product leader since 2012, from AB InBev's global rewards platform to Linio's consolidation with Falabella, now two AI-native products in production. The work starts with a customer conversation and ends with a measured result.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
           title: "Founder & Product Lead · Commerce infrastructure and an agentic product platform, both in production",
           bullets: [
-            "Miyagi Sánchez: prompt-to-shop commerce for Mexico. A merchant describes their business in one sentence and gets a shop that sells on its own domain, WhatsApp, the marketplace and AI shopping assistants, paid by card, SPEI, Mercado Pago or cash at 0% commission.",
-            "Golden Frijoles: my product practice, codified. Persona and PMF research, a North Star with its input metrics, feature flags and A/B tests, and outcome reports from the team standup to the stakeholder pack.",
-            "Both run with AI agents under risk-tiered controls: people approve anything touching money, auth or customer data, and every change leaves an audit trail.",
+            "Miyagi Sánchez: prompt-to-shop commerce for Mexico. One sentence about the business becomes a shop that sells on its own domain, WhatsApp, the marketplace and AI assistants, paid by card, SPEI, Mercado Pago or cash at 0% commission.",
+            "Golden Frijoles: my product practice, codified: persona and PMF research, North Star metrics, A/B tests and reports.",
+            "Both run with AI agents under risk-tiered controls: people approve anything touching money, auth or customer data.",
           ],
         },
         experience: [
@@ -176,7 +195,7 @@ const resumeData = {
             title: "Global Principal Product Manager · World's largest brewer",
             bullets: [
               "Built the global rewards platform from scratch across Central America, Europe and South Korea. Led platform selection with BCG and procurement's competitive bid, and launched SessionM worldwide.",
-              "Owned the $70M+ yearly product budget (headcount, tools and operations): the annual case to C-levels, budget requests during the year and resource negotiations with peer directors.",
+              "Owned the $70M+ yearly product budget (headcount, tools, operations): the annual C-level case and peer negotiations.",
               "Led 70+ people across product, design and engineering through 5 managers; ran hiring and performance reviews.",
               "Introduced NPS as an annual goal, then moved targets to GMV, first-party data and tool-consolidation savings.",
             ],
@@ -185,17 +204,26 @@ const resumeData = {
             company: "Linio · Falabella", dates: "2019 — 2020",
             title: "Group Product Manager · Mexico City",
             bullets: [
-              "Redesigned the storefront end to end, then led the post-acquisition Linio–Falabella platform consolidation.",
-              "Rebuilt the reviews system from scratch; it became a standalone product integrated into Falabella's global platforms, run by my team from corporate in Santiago de Chile.",
-              "Scaled the frontend team into Discovery, Linio's largest: web, iOS and Android end to end, with marketing and customer support.",
-              "On the leadership team, co-designed and implemented Linio's shift to Spotify-model squads.",
+              "Hired to run the frontend half of Linio's product organisation; grew it into Discovery, the largest team: web, iOS and Android with marketing and customer support. Managed two PMs: hiring, reviews, pay and budget.",
+              "Pitched, funded and built a new reviews system, then rolled it out across Falabella group's e-commerce from Santiago.",
+              "Redesigned the storefront end to end, then led the platform consolidation with Falabella after the acquisition.",
+              "On the leadership team, co-designed the move to Spotify-model squads; mentored PMs, designers and junior engineers.",
             ],
           },
           {
-            company: "Wagento Commerce · Nolte Worldwide", dates: "2017 — 2019",
-            title: "Head of Customer Experience · Head of Product Management · Austin, Minneapolis, New York",
+            company: "Wagento Commerce", dates: "2018 — 2019",
+            title: "Head of Customer Experience & Project Management · Minneapolis, Austin, Mexico City",
             bullets: [
-              "Ran discovery, usability and accessibility testing for US commerce clients; owned proposals and account growth.",
+              "Set up and ran the Mexico City office (about 15 people) and led the PMs: hiring, reviews, pay and career paths.",
+              "Took e-commerce clients, Warner Music among them, from discovery to delivery; owned proposals and account growth.",
+              "On the leadership team of a 60-person firm across the US, Mexico and India, set quarterly direction.",
+            ],
+          },
+          {
+            company: "Nolte Worldwide", dates: "2017 — 2018",
+            title: "Head of Product Management · New York",
+            bullets: [
+              "Hired and led the product team; ran the New York Chamber of Commerce account from discovery to its regular reports.",
             ],
           },
         ],
@@ -230,7 +258,7 @@ const resumeData = {
             title: "Global Principal Product Manager · World's largest brewer",
             bullets: [
               "Built the global rewards platform from scratch across Central America, Europe and South Korea. Led platform selection with BCG and procurement's competitive bid, and launched SessionM worldwide.",
-              "Owned the $70M+ yearly product budget (headcount, tools and operations): the annual case to C-levels, budget requests during the year and resource negotiations with peer directors.",
+              "Owned the $70M+ yearly product budget (headcount, tools, operations): the annual C-level case and peer negotiations.",
               "Led 70+ people across product, design and engineering through 5 managers; ran hiring and performance reviews.",
             ],
           },
@@ -238,10 +266,10 @@ const resumeData = {
             company: "Linio · Falabella", dates: "2019 — 2020",
             title: "Group Product Manager · Mexico City",
             bullets: [
-              "Redesigned the storefront end to end, then led the post-acquisition Linio–Falabella platform consolidation.",
-              "Rebuilt the reviews system from scratch; it became a standalone product integrated into Falabella's global platforms, run by my team from corporate in Santiago de Chile.",
-              "Scaled the frontend team into Discovery, Linio's largest: web, iOS and Android end to end, with marketing and customer support.",
-              "On the leadership team, co-designed and implemented Linio's shift to Spotify-model squads.",
+              "Hired to run the frontend half of Linio's product organisation; grew it into Discovery, the largest team: web, iOS and Android with marketing and customer support. Managed two PMs: hiring, reviews, pay and budget.",
+              "Pitched, funded and built a new reviews system, then rolled it out across Falabella group's e-commerce from Santiago.",
+              "Redesigned the storefront end to end, then led the platform consolidation with Falabella after the acquisition.",
+              "On the leadership team, co-designed the move to Spotify-model squads; mentored PMs, designers and junior engineers.",
             ],
           },
         ],
@@ -255,7 +283,7 @@ const resumeData = {
       // X — digital experience and CX strategy roles (banks, e.g. Citi): research-led, corporate scale first.
       x: {
         pdfTitle: "Daniel Vasquez - CV - Digital Experience Leader",
-        pdfFile: "/Daniel-Vasquez-CV-Digital-Experience.pdf",
+        pdfFile: "/Daniel-Vasquez-CV-Digital-Experience.pdf", hideDissertation: true,
         role: "Digital Experience Leader · Research, design and delivery across digital and in-person channels",
         summary: "Product leader since 2012 who starts with customer research and delivers through design and engineering. Built AB InBev's global rewards platform from scratch and consolidated Linio's storefront with Falabella's. Today, working prototypes reach users in minutes, built with AI agents under human approval.",
         // Corporate scale first: the current role prints after Experience on this lane.
@@ -264,8 +292,8 @@ const resumeData = {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
           title: "Founder & Product Lead · Two AI-native products in production",
           bullets: [
-            "Miyagi Sánchez: prompt-to-shop commerce for Mexican merchants, with payments by card, SPEI, Mercado Pago, QR or cash. Live, with its first merchants signing up organically.",
-            "Golden Frijoles: my research-to-results practice as a product: sourced personas, A/B tests, feature flags and outcome reports from team standup to stakeholder pack, with human approval on money and data.",
+            "Miyagi Sánchez: prompt-to-shop commerce for Mexican merchants; live, with its first merchants joining organically.",
+            "Golden Frijoles: my research-to-results practice as software: personas, A/B tests and reports, with human approval.",
           ],
         },
         experience: [
@@ -274,7 +302,7 @@ const resumeData = {
             title: "Global Principal Product Manager · World's largest brewer",
             bullets: [
               "Built the global rewards platform from scratch across Central America, Europe and South Korea. Led platform selection with BCG and procurement's competitive bid, and launched SessionM worldwide.",
-              "Owned the $70M+ yearly product budget (headcount, tools and operations): the annual case to C-levels, budget requests during the year and resource negotiations with peer directors.",
+              "Owned the $70M+ yearly product budget (headcount, tools, operations): the annual C-level case and peer negotiations.",
               "Led 70+ people across product, design and engineering through 5 managers; ran hiring and performance reviews.",
               "Introduced NPS as an annual goal, then moved targets to GMV, first-party data and tool-consolidation savings.",
               "Managed global and local agencies for marketing, branding and tech; every launch cleared legal review.",
@@ -284,23 +312,32 @@ const resumeData = {
             company: "Linio · Falabella", dates: "2019 — 2020",
             title: "Group Product Manager · Mexico City",
             bullets: [
-              "Redesigned the storefront end to end, then led the post-acquisition Linio–Falabella platform consolidation.",
-              "Rebuilt the reviews system from scratch; it became a standalone product integrated into Falabella's global platforms, run by my team from corporate in Santiago de Chile.",
-              "Scaled the frontend team into Discovery, Linio's largest: web, iOS and Android end to end, with marketing and customer support.",
-              "On the leadership team, co-designed and implemented Linio's shift to Spotify-model squads.",
+              "Redesigned the storefront end to end, then led the platform consolidation with Falabella after the acquisition.",
+              "Pitched, funded and built a new reviews system, then rolled it out across Falabella group's e-commerce from Santiago.",
+              "Hired to run the frontend half of Linio's product organisation; grew it into Discovery, the largest team: web, iOS and Android with marketing and customer support. Managed two PMs: hiring, reviews, pay and budget.",
+              "On the leadership team, co-designed the move to Spotify-model squads; mentored PMs, designers and junior engineers.",
             ],
           },
           {
-            company: "Wagento Commerce · Nolte Worldwide", dates: "2017 — 2019",
-            title: "Head of Customer Experience · Head of Product Management · Austin, Minneapolis, New York",
+            company: "Wagento Commerce", dates: "2018 — 2019",
+            title: "Head of Customer Experience & Project Management · Minneapolis, Austin, Mexico City",
             bullets: [
-              "Ran discovery, usability and accessibility testing for US commerce clients; owned proposals and account growth.",
+              "Set up and ran the Mexico City office (about 15 people) and led the PMs: hiring, reviews, pay and career paths.",
+              "Took e-commerce clients, Warner Music among them, from discovery to delivery with usability and accessibility testing.",
+              "On the leadership team of a 60-person firm across the US, Mexico and India, set quarterly direction.",
+            ],
+          },
+          {
+            company: "Nolte Worldwide", dates: "2017 — 2018",
+            title: "Head of Product Management · New York",
+            bullets: [
+              "Hired and led the product team; ran the New York Chamber of Commerce account from discovery to its regular reports.",
             ],
           },
         ],
         hideEarlier: ["Wagento Commerce", "Nolte Worldwide", "CompuCom · Accenture"],
         ventures: [
-          { company: "Bicimensajero.com", title: "Founder · worked as couriers to research the job, built the platform and united courier groups into a 100+ network; acquired", dates: "2014 — 2016" },
+          { company: "Bicimensajero.com", title: "Founder · worked as couriers to research the job, then built a 100+ courier network; acquired", dates: "2014 — 2016" },
           { company: "Nuuch Tech", title: "Founder & Principal Consultant · e-commerce, CRM and agile consulting", dates: "2012 — 2015" },
         ],
         skills: [
@@ -419,7 +456,7 @@ const resumeData = {
     ],
     snapshot: [
       "Líder de producto desde 2012. El trabajo empieza con una conversación con el cliente y termina con un resultado medido, y en medio construyo junto a mis equipos.",
-      "En AB InBev construí desde cero la plataforma global de recompensas, con un presupuesto anual de producto de más de $70M USD y más de 70 personas en producto, diseño e ingeniería. En Linio lideré el rediseño del storefront, la plataforma de reseñas construida para las plataformas globales de Falabella y la consolidación tras la adquisición. Antes: investigación de usabilidad para clientes de comercio en Estados Unidos, una plataforma de remesas con Bitcoin en Telmex (Grupo Carso) en 2012 y tres emprendimientos propios, uno de ellos adquirido.",
+      "En AB InBev construí desde cero la plataforma global de recompensas, con un presupuesto anual de producto de más de $70M USD y más de 70 personas en producto, diseño e ingeniería. En Linio dirigí la mitad frontend de la organización de producto, construí una plataforma de reseñas que después se extendió a todo el e-commerce del grupo Falabella y lideré la consolidación tras la adquisición. Antes abrí y dirigí la oficina de Wagento en Ciudad de México y lideré producto en Nolte en Nueva York. Y antes: una plataforma de remesas con Bitcoin en Telmex (Grupo Carso) en 2012 y tres emprendimientos propios, uno de ellos adquirido.",
       "Hoy opero Golden Frijoles y Miyagi Sánchez, dos productos AI-native en producción. Golden Frijoles es mi propia práctica convertida en software, de la investigación de personas a los experimentos y los reportes de resultados: los agentes hacen el trabajo y las personas aprueban lo que importa. Debajo de todo, una Maestría en Finanzas y Gestión de Inversiones por la University of Aberdeen.",
     ],
     howIWork: [
@@ -449,16 +486,35 @@ const resumeData = {
           dates: "2019 — 2020",
           title: "Group Product Manager · Ciudad de México",
           chain: [
-            "Rediseñé la tienda de punta a punta y, tras la adquisición, lideré la consolidación de las plataformas de Linio y Falabella, liderando a dos gerentes.",
-            "Rehíce el sistema de reseñas desde cero; se volvió un producto independiente integrado a las plataformas globales de Falabella, operado por mi equipo desde el corporativo en Santiago de Chile.",
-            "Escalé el equipo de frontend hasta Discovery, el equipo más grande de Linio, dueño de web, iOS y Android de punta a punta junto con marketing y atención a clientes.",
-            "Desde el equipo de liderazgo, co-diseñé e implementé la transformación organizacional de Linio a squads al estilo Spotify.",
-          ],
+            "Contratado para dirigir la mitad frontend de la organización de producto de Linio, cuando la empresa estaba dividida en frontend y backend. La convertí en Discovery, el equipo más grande, dueño de web, iOS y Android de punta a punta junto con marketing y atención a clientes.",
+            "Propuse un nuevo sistema de reseñas, conseguí su financiamiento y lo construí en Linio; después lo extendí a todo el e-commerce del grupo Falabella, operado por mi equipo desde el corporativo en Santiago de Chile.",
+            "Rediseñé la tienda de punta a punta y, tras la adquisición, lideré la consolidación de las plataformas de Linio y Falabella.",
+            "Dirigí a dos product managers de principio a fin, de la contratación y las evaluaciones de desempeño a sueldos y presupuesto. Desde el equipo de liderazgo, co-diseñé e implementé la transición de Linio a squads al estilo Spotify y mentoreé a PMs, diseñadores e ingenieros junior.",
+                   ],
+        },
+        {
+          company: "Wagento Commerce",
+          dates: "2018 — 2019",
+          title: "Director de Experiencia de Cliente y Gestión de Proyectos · Minneapolis, Austin, Ciudad de México",
+          chain: [
+            "Abrí y dirigí la oficina de Ciudad de México. Sus 15 personas me reportaban, igual que los product managers de la firma, unos seis. Llevé contratación, evaluaciones y sueldos, y definí planes de carrera, capacitación y prácticas de entrega.",
+            "Llevé a clientes de e-commerce, entre ellos Warner Music, del discovery y el onboarding a la entrega en México y el extranjero, con pruebas de usabilidad y accesibilidad. Propuestas y crecimiento de cuentas a mi cargo.",
+            "En el equipo de liderazgo de una firma de unas 60 personas en EE. UU., México e India, definí la dirección trimestral de la empresa.",
+                   ],
+        },
+        {
+          company: "Nolte Worldwide",
+          dates: "2017 — 2018",
+          title: "Head of Product Management · Nueva York",
+          chain: [
+            "Dirigí producto en una firma digital boutique: contraté y lideré al equipo, definí sus prácticas y participé en la planeación trimestral sobre el rumbo de la firma.",
+            "Llevé la cuenta de la Cámara de Comercio de Nueva York del discovery a la entrega, incluidos sus reportes periódicos durante el año.",
+                   ],
         },
       ],
       earlier: [
-        { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2017 — 2019" },
-        { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018" },
+        { company: "Wagento Commerce", title: "Director de Experiencia de Cliente y Gestión de Proyectos", dates: "2018 — 2019", siteHidden: true },
+        { company: "Nolte Worldwide", title: "Head of Product Management", dates: "2017 — 2018", siteHidden: true },
         { company: "MagmaLabs", title: "Senior Product Manager", dates: "2016 — 2017" },
         { company: "CTIN · Telmex (Grupo Carso)", title: "Líder de Equipo · plataforma de remesas con Bitcoin, más de 5,000 usuarios activos", dates: "2012 — 2014" },
         { company: "Grupo Bimbo", title: "Analista FinOps · aceptación de pagos con tarjeta", dates: "2010 — 2011" },
@@ -530,7 +586,7 @@ const resumeData = {
         "Todo lo que construyo ahora pasa por agentes — grooming, planeación, construcción, revisión, entrega y reporteo",
         "Construí un sistema operativo open source para trabajo de producto con agentes, instalado una vez y reutilizado en cada proyecto que construyo — hoy el kit abierto de Golden Frijoles",
         "Opero <a href=\"https://goldenfrijoles.com\" target=\"_blank\" rel=\"noopener noreferrer\">goldenfrijoles.com</a>, una plataforma de product management con agentes, y <a href=\"https://miyagisanchez.com\" target=\"_blank\" rel=\"noopener noreferrer\">miyagisanchez.com</a>, una infraestructura de e-commerce de prompt a tienda para México — ambos en producción",
-        "Antes de todo eso: un presupuesto anual de producto de $70M+ y más de 70 personas en AB InBev, la tienda, la plataforma de reseñas y la consolidación post-M&A en Linio · Falabella, una plataforma de remesas con Bitcoin en Telmex (Grupo Carso) allá por 2012, y tres emprendimientos propios, uno de ellos adquirido",
+        "Antes de todo eso: un presupuesto anual de producto de $70M+ y más de 70 personas en AB InBev, la organización frontend, una plataforma de reseñas para todo el grupo y la consolidación post-M&A en Linio · Falabella, una plataforma de remesas con Bitcoin en Telmex (Grupo Carso) allá por 2012, y tres emprendimientos propios, uno de ellos adquirido",
         "Volví a la escuela por una Maestría en Finanzas y Gestión de Inversiones en Escocia; mi tesis fue sobre pronóstico de volatilidad de mercados",
         "Mi misión: que cada product manager se convierta en product builder. Siempre hicimos prompting, solo que en tickets de Jira",
       ],
@@ -541,7 +597,7 @@ const resumeData = {
     lanesShared: {
       titles: { summary: "Resumen", current: "Actualidad", skills: "Habilidades", ventures: "Emprendimientos Previos", languages: "Idiomas", download: "Descargar PDF" },
       ventures: [
-        { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · mensajería con más de 100 mensajeros, adquirida; bienestar corporativo; consultoría e-commerce", dates: "2012 — 2017" },
+        { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · red de 100+ mensajeros, adquirida; bienestar; consultoría", dates: "2012 — 2017" },
       ],
       dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. Modelos GARCH en 4 mercados, 2006–2024.",
       languages: "Español (nativo) · Inglés (profesional completo)",
@@ -556,9 +612,9 @@ const resumeData = {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
           title: "Fundador y Líder de Producto · Infraestructura de comercio y plataforma de producto agéntica, ambas en producción",
           bullets: [
-            "Miyagi Sánchez: comercio de prompt a tienda para México. Con una frase, el comerciante tiene una tienda que vende en su dominio, WhatsApp, el marketplace y asistentes de compra con IA, con cobro por tarjeta, SPEI, Mercado Pago, QR o efectivo y 0% de comisión.",
-            "Golden Frijoles: mi práctica de producto, codificada. Investigación de personas y PMF, North Star con sus métricas de entrada, feature flags y pruebas A/B, y reportes de resultados del standup al paquete para stakeholders.",
-            "Ambos operan con agentes de IA bajo controles por riesgo: las personas aprueban todo lo que toca dinero, autenticación o datos de clientes, con trazabilidad en cada cambio.",
+            "Miyagi Sánchez: comercio de prompt a tienda para México. Con una frase, el comerciante tiene una tienda en su dominio, WhatsApp, el marketplace y asistentes con IA, con cobro por tarjeta, SPEI, Mercado Pago o efectivo, sin comisión.",
+            "Golden Frijoles: mi práctica de producto, codificada: personas y PMF, North Star, pruebas A/B y reportes por nivel.",
+            "Ambos operan con agentes de IA y controles por riesgo: las personas aprueban lo que toca dinero, accesos o datos.",
           ],
         },
         experience: [
@@ -567,7 +623,7 @@ const resumeData = {
             title: "Global Principal Product Manager · La cervecera más grande del mundo",
             bullets: [
               "Construí desde cero la plataforma global de recompensas en Centroamérica, Europa y Corea del Sur. Dirigí la selección de plataforma con BCG y la licitación competitiva de compras, y lancé SessionM a nivel mundial.",
-              "Administré el presupuesto anual de producto de $70M+ USD (estructura, herramientas y operación): el caso anual ante el C-level, solicitudes durante el año y negociación de recursos con otros directores.",
+              "Administré el presupuesto anual de producto de $70M+ (equipo, herramientas, operación) y lo defendí ante el C-level.",
               "Lideré a 70+ personas de producto, diseño e ingeniería con 5 gerentes; contratación y evaluación de desempeño.",
               "Introduje NPS como meta anual; después moví los objetivos a GMV, datos propios y ahorro por consolidar herramientas.",
             ],
@@ -576,17 +632,26 @@ const resumeData = {
             company: "Linio · Falabella", dates: "2019 — 2020",
             title: "Group Product Manager · Ciudad de México",
             bullets: [
-              "Rediseñé la tienda de punta a punta y, tras la adquisición, consolidé las plataformas de Linio y Falabella.",
-              "Rehíce el sistema de reseñas desde cero; se volvió un producto independiente integrado a las plataformas globales de Falabella, operado por mi equipo desde el corporativo en Santiago de Chile.",
-              "Escalé el equipo de frontend hasta Discovery, el más grande de Linio: web, iOS y Android de punta a punta, con marketing y atención a clientes.",
-              "Desde el equipo de liderazgo, co-diseñé e implementé la transformación de Linio a squads al estilo Spotify.",
+              "Contratado para dirigir la mitad frontend de producto; la convertí en Discovery, el equipo más grande: web, iOS y Android con marketing y soporte. Dirigí a dos PMs: contratación, evaluaciones, sueldos y presupuesto.",
+              "Propuse, financié y construí un sistema de reseñas y lo llevé a todo el e-commerce del grupo Falabella.",
+              "Rediseñé la tienda de punta a punta y, tras la adquisición, lideré la consolidación de plataformas con Falabella.",
+              "Desde el liderazgo, co-diseñé el paso a squads estilo Spotify; mentoreé a PMs, diseñadores e ingenieros junior.",
             ],
           },
           {
-            company: "Wagento Commerce · Nolte Worldwide", dates: "2017 — 2019",
-            title: "Head of Customer Experience · Head of Product Management · Austin, Minneapolis, Nueva York",
+            company: "Wagento Commerce", dates: "2018 — 2019",
+            title: "Director de Experiencia de Cliente y Gestión de Proyectos · Minneapolis, Austin, Ciudad de México",
             bullets: [
-              "Discovery, pruebas de usabilidad y accesibilidad para clientes de comercio en EE. UU.; propuestas y cuentas.",
+              "Abrí y dirigí la oficina de CDMX (unas 15 personas) y a los PMs: contratación, evaluaciones, sueldos y carrera.",
+              "Llevé a clientes de e-commerce, entre ellos Warner Music, del discovery a la entrega; propuestas y cuentas.",
+              "En el equipo de liderazgo de una firma de 60 personas en EE. UU., México e India, definí la dirección trimestral.",
+            ],
+          },
+          {
+            company: "Nolte Worldwide", dates: "2017 — 2018",
+            title: "Head of Product Management · Nueva York",
+            bullets: [
+              "Contraté y lideré al equipo de producto; llevé la cuenta de la Cámara de Comercio de Nueva York y sus reportes.",
             ],
           },
         ],
@@ -620,7 +685,7 @@ const resumeData = {
             title: "Global Principal Product Manager · La cervecera más grande del mundo",
             bullets: [
               "Construí desde cero la plataforma global de recompensas en Centroamérica, Europa y Corea del Sur. Dirigí la selección de plataforma con BCG y la licitación competitiva de compras, y lancé SessionM a nivel mundial.",
-              "Administré el presupuesto anual de producto de $70M+ USD (estructura, herramientas y operación): el caso anual ante el C-level, solicitudes durante el año y negociación de recursos con otros directores.",
+              "Administré el presupuesto anual de producto de $70M+ (equipo, herramientas, operación) y lo defendí ante el C-level.",
               "Lideré a 70+ personas de producto, diseño e ingeniería con 5 gerentes; contratación y evaluación de desempeño.",
             ],
           },
@@ -628,10 +693,10 @@ const resumeData = {
             company: "Linio · Falabella", dates: "2019 — 2020",
             title: "Group Product Manager · Ciudad de México",
             bullets: [
-              "Rediseñé la tienda de punta a punta y, tras la adquisición, consolidé las plataformas de Linio y Falabella.",
-              "Rehíce el sistema de reseñas desde cero; se volvió un producto independiente integrado a las plataformas globales de Falabella, operado por mi equipo desde el corporativo en Santiago de Chile.",
-              "Escalé el equipo de frontend hasta Discovery, el más grande de Linio: web, iOS y Android de punta a punta, con marketing y atención a clientes.",
-              "Desde el equipo de liderazgo, co-diseñé e implementé la transformación de Linio a squads al estilo Spotify.",
+              "Contratado para dirigir la mitad frontend de producto; la convertí en Discovery, el equipo más grande: web, iOS y Android con marketing y soporte. Dirigí a dos PMs: contratación, evaluaciones, sueldos y presupuesto.",
+              "Propuse, financié y construí un sistema de reseñas y lo llevé a todo el e-commerce del grupo Falabella.",
+              "Rediseñé la tienda de punta a punta y, tras la adquisición, lideré la consolidación de plataformas con Falabella.",
+              "Desde el liderazgo, co-diseñé el paso a squads estilo Spotify; mentoreé a PMs, diseñadores e ingenieros junior.",
             ],
           },
         ],
@@ -644,17 +709,17 @@ const resumeData = {
       },
       x: {
         pdfTitle: "Daniel Vasquez - CV - Lider de Experiencia Digital",
-        pdfFile: "/Daniel-Vasquez-CV-Digital-Experience-ES.pdf",
+        pdfFile: "/Daniel-Vasquez-CV-Digital-Experience-ES.pdf", hideDissertation: true,
         role: "Líder de Experiencia Digital · Investigación, diseño y entrega en canales digitales y presenciales",
-        summary: "Líder de producto desde 2012 que empieza por la investigación con clientes y entrega a través de diseño e ingeniería. Construí desde cero la plataforma global de recompensas de AB InBev y consolidé la tienda en línea de Linio con la de Falabella. Hoy, prototipos funcionales llegan a usuarios en minutos, con agentes de IA y aprobación humana.",
+        summary: "Líder de producto desde 2012 que empieza por la investigación con clientes y entrega con diseño e ingeniería. Construí desde cero la plataforma global de recompensas de AB InBev y consolidé la tienda de Linio con la de Falabella. Hoy, prototipos funcionales llegan a usuarios en minutos, con agentes de IA y aprobación humana.",
         // Corporate scale first: the current role prints after Experience on this lane.
         currentAfter: true,
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
           title: "Fundador y Líder de Producto · Dos productos nativos de IA en producción",
           bullets: [
-            "Miyagi Sánchez: comercio de prompt a tienda para México, con pagos por tarjeta, SPEI, Mercado Pago, QR o efectivo. En vivo, con sus primeros comercios sumándose de forma orgánica.",
-            "Golden Frijoles: mi práctica de investigación a resultados como producto: personas sustentadas, pruebas A/B y feature flags, y reportes del standup al paquete para stakeholders. Ambos con aprobación humana en dinero y datos de clientes.",
+            "Miyagi Sánchez: comercio de prompt a tienda para México; en vivo, con sus primeros comercios sumándose solos.",
+            "Golden Frijoles: mi práctica de producto como software: personas, pruebas A/B y reportes, con aprobación humana.",
           ],
         },
         experience: [
@@ -663,7 +728,7 @@ const resumeData = {
             title: "Global Principal Product Manager · La cervecera más grande del mundo",
             bullets: [
               "Construí desde cero la plataforma global de recompensas en Centroamérica, Europa y Corea del Sur. Dirigí la selección de plataforma con BCG y la licitación competitiva de compras, y lancé SessionM a nivel mundial.",
-              "Administré el presupuesto anual de producto de $70M+ USD (estructura, herramientas y operación): el caso anual ante el C-level, solicitudes durante el año y negociación de recursos con otros directores.",
+              "Administré el presupuesto anual de producto de $70M+ (equipo, herramientas, operación) y lo defendí ante el C-level.",
               "Lideré a 70+ personas de producto, diseño e ingeniería con 5 gerentes; contratación y evaluación de desempeño.",
               "Introduje NPS como meta anual; después moví los objetivos a GMV, datos propios y ahorro por consolidar herramientas.",
               "Gestioné agencias globales y locales de marketing, marca y tecnología; cada lanzamiento pasó revisión legal.",
@@ -673,23 +738,32 @@ const resumeData = {
             company: "Linio · Falabella", dates: "2019 — 2020",
             title: "Group Product Manager · Ciudad de México",
             bullets: [
-              "Rediseñé la tienda de punta a punta y, tras la adquisición, consolidé las plataformas de Linio y Falabella.",
-              "Rehíce el sistema de reseñas desde cero; se volvió un producto independiente integrado a las plataformas globales de Falabella, operado por mi equipo desde el corporativo en Santiago de Chile.",
-              "Escalé el equipo de frontend hasta Discovery, el más grande de Linio: web, iOS y Android de punta a punta, con marketing y atención a clientes.",
-              "Desde el equipo de liderazgo, co-diseñé e implementé la transformación de Linio a squads al estilo Spotify.",
+              "Rediseñé la tienda de punta a punta y, tras la adquisición, lideré la consolidación de plataformas con Falabella.",
+              "Propuse, financié y construí un sistema de reseñas y lo llevé a todo el e-commerce del grupo Falabella.",
+              "Contratado para dirigir la mitad frontend de producto; la convertí en Discovery, el equipo más grande: web, iOS y Android con marketing y soporte. Dirigí a dos PMs: contratación, evaluaciones, sueldos y presupuesto.",
+              "Desde el liderazgo, co-diseñé el paso a squads estilo Spotify; mentoreé a PMs, diseñadores e ingenieros junior.",
             ],
           },
           {
-            company: "Wagento Commerce · Nolte Worldwide", dates: "2017 — 2019",
-            title: "Head of Customer Experience · Head of Product Management · Austin, Minneapolis, Nueva York",
+            company: "Wagento Commerce", dates: "2018 — 2019",
+            title: "Director de Experiencia de Cliente y Gestión de Proyectos · Minneapolis, Austin, Ciudad de México",
             bullets: [
-              "Discovery, pruebas de usabilidad y accesibilidad para clientes de comercio en EE. UU.; propuestas y cuentas.",
+              "Abrí y dirigí la oficina de CDMX (unas 15 personas) y a los PMs: contratación, evaluaciones, sueldos y carrera.",
+              "Llevé clientes de e-commerce, como Warner Music, del discovery a la entrega con usabilidad y accesibilidad.",
+              "En el equipo de liderazgo de una firma de 60 personas en EE. UU., México e India, definí la dirección trimestral.",
+            ],
+          },
+          {
+            company: "Nolte Worldwide", dates: "2017 — 2018",
+            title: "Head of Product Management · Nueva York",
+            bullets: [
+              "Contraté y lideré al equipo de producto; llevé la cuenta de la Cámara de Comercio de Nueva York y sus reportes.",
             ],
           },
         ],
         hideEarlier: ["Wagento Commerce", "Nolte Worldwide", "CompuCom · Accenture"],
         ventures: [
-          { company: "Bicimensajero.com", title: "Fundador · trabajamos como mensajeros para investigar el oficio, construí la plataforma y uní a grupos de mensajeros en una red de 100+; adquirida", dates: "2014 — 2016" },
+          { company: "Bicimensajero.com", title: "Fundador · fuimos mensajeros para conocer el oficio; armé una red de 100+, adquirida", dates: "2014 — 2016" },
           { company: "Nuuch Tech", title: "Fundador y Consultor Principal · consultoría en e-commerce, CRM y agile", dates: "2012 — 2015" },
         ],
         skills: [
