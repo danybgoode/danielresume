@@ -348,6 +348,53 @@ const resumeData = {
           { label: "Tools", text: "Figma, Hotjar, Optimizely, Flagsmith, observation-room labs; built Golden Frijoles for personas and experiments" },
         ],
       },
+      // C — payments, cards and partner-led programmes (e.g. Amazon Mexico co-branded card): rewards, partners and legal first.
+      c: {
+        pdfTitle: "Daniel Vasquez - CV - Payments Product Leader",
+        pdfFile: "/Daniel-Vasquez-CV-Payments.pdf",
+        role: "Product Leader · Payments, rewards and partner-led programmes",
+        summary: "Product leader since 2012 who builds customer programmes with outside partners. Took AB InBev's global rewards platform from vendor selection with BCG to a worldwide launch, and today runs a Mexican commerce platform that takes card, SPEI, Mercado Pago and cash payments. MSc in Finance & Investment Management.",
+        // Corporate scale first: the current role prints after Experience on this lane.
+        currentAfter: true,
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
+          title: "Founder & Product Lead · Commerce infrastructure and an agentic product platform, both in production",
+          bullets: [
+            "Miyagi Sánchez: prompt-to-shop commerce for Mexico. Merchants get paid by card, SPEI, Mercado Pago or cash at 0% platform commission; live, with its first merchants joining organically.",
+            "Golden Frijoles: my product practice as software: personas, North Star metrics, A/B tests and reports, run by AI agents, with people approving anything that touches money.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · World's largest brewer",
+            bullets: [
+              "Built the global rewards platform from scratch across Central America, Europe and South Korea, and launched SessionM worldwide as its engine.",
+              "Chose the platform partner with BCG and procurement's competitive bid (a Dutch auction adapted for AB InBev), and negotiated with the vendors competing for the deal.",
+              "Owned the $70M+ yearly product budget: the annual case to C-levels, requests during the year and resource negotiations with peer directors.",
+              "Set the programme's metrics: introduced NPS as an annual goal, then moved targets to GMV, first-party data and tool-consolidation savings.",
+              "Every launch cleared internal legal and external counsel; ran global and local agencies, with campaigns at the Super Bowl and The Voice Brasil.",
+              "Led 70+ people across product, design and engineering through 5 managers; ran hiring and performance reviews.",
+            ],
+          },
+          {
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Mexico City",
+            bullets: [
+              "Ran the frontend half of Linio's product organisation and grew it into Discovery, the largest team: web, iOS and Android, working with marketing and customer support.",
+              "Pitched, funded and built a new reviews system for customer feedback, then rolled it out across Falabella group's e-commerce from Santiago.",
+              "Redesigned the storefront end to end, then led the platform consolidation with Falabella after the acquisition.",
+            ],
+          },
+        ],
+        hideEarlier: ["CompuCom · Accenture"],
+        skills: [
+          { label: "Payments", text: "card acceptance, SPEI, QR, wallets, remittance, checkout, rewards and loyalty programmes" },
+          { label: "Partners", text: "vendor selection and competitive bids, agency management, legal review, C-level business cases" },
+          { label: "Product", text: "usability research, NPS programmes, North Star metrics, A/B tests and feature flags" },
+          { label: "Quant", text: "MSc Finance & Investment Management: econometrics, forecasting, risk modelling" },
+        ],
+      },
     },
     // "Work with me" — the consulting view. Default landing view.
     work: {
@@ -772,6 +819,51 @@ const resumeData = {
           { label: "Liderazgo", text: "presupuesto, contratación y desempeño, agencias y proveedores, presentaciones al C-level" },
           { label: "Dominio", text: "pagos (tarjetas, SPEI, remesas), lealtad y recompensas, e-commerce, marketplaces" },
           { label: "Herramientas", text: "Figma, Hotjar, Optimizely, Flagsmith, cámara Gesell y Golden Frijoles, construido por mí" },
+        ],
+      },
+      c: {
+        pdfTitle: "Daniel Vasquez - CV - Lider de Producto de Pagos",
+        pdfFile: "/Daniel-Vasquez-CV-Payments-ES.pdf",
+        role: "Líder de Producto · Pagos, recompensas y programas con socios",
+        summary: "Líder de producto desde 2012 que construye programas para clientes junto con socios externos. Llevé la plataforma global de recompensas de AB InBev de la selección de proveedor con BCG al lanzamiento mundial, y hoy dirijo una plataforma de comercio en México que cobra con tarjeta, SPEI, Mercado Pago y efectivo. MSc en Finanzas y Gestión de Inversiones.",
+        currentAfter: true,
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
+          title: "Fundador y Líder de Producto · Infraestructura de comercio y plataforma de producto agéntica, ambas en producción",
+          bullets: [
+            "Miyagi Sánchez: comercio de prompt a tienda para México. Los comercios cobran con tarjeta, SPEI, Mercado Pago o efectivo, sin comisión de plataforma; en vivo, con sus primeros comercios sumándose solos.",
+            "Golden Frijoles: mi práctica de producto como software: personas, North Star, pruebas A/B y reportes, con agentes de IA y aprobación humana en todo lo que toca dinero.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · La cervecera más grande del mundo",
+            bullets: [
+              "Construí desde cero la plataforma global de recompensas en Centroamérica, Europa y Corea del Sur, y lancé SessionM a nivel mundial como su motor.",
+              "Elegí al socio de plataforma con BCG y la licitación competitiva de compras (una subasta holandesa adaptada a AB InBev), y negocié con los proveedores en competencia.",
+              "Administré el presupuesto anual de producto de $70M+: el caso anual ante el C-level, solicitudes durante el año y negociación de recursos con otros directores.",
+              "Definí las métricas del programa: introduje NPS como meta anual y después moví los objetivos a GMV, datos propios y ahorro por consolidar herramientas.",
+              "Cada lanzamiento pasó revisión legal interna y externa; dirigí agencias globales y locales, con campañas en el Super Bowl y La Voz Brasil.",
+              "Lideré a 70+ personas de producto, diseño e ingeniería con 5 gerentes; contratación y evaluación de desempeño.",
+            ],
+          },
+          {
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Ciudad de México",
+            bullets: [
+              "Dirigí la mitad frontend de producto y la convertí en Discovery, el equipo más grande: web, iOS y Android, junto con marketing y soporte.",
+              "Propuse, financié y construí un sistema de reseñas para la opinión de los clientes y lo llevé a todo el e-commerce del grupo Falabella.",
+              "Rediseñé la tienda de punta a punta y, tras la adquisición, lideré la consolidación de plataformas con Falabella.",
+            ],
+          },
+        ],
+        hideEarlier: ["CompuCom · Accenture"],
+        skills: [
+          { label: "Pagos", text: "aceptación con tarjeta, SPEI, QR, wallets, remesas, checkout, programas de lealtad y recompensas" },
+          { label: "Socios", text: "selección de proveedores y licitaciones, agencias, revisión legal, casos de negocio ante el C-level" },
+          { label: "Producto", text: "investigación de usabilidad, programas de NPS, North Star, pruebas A/B y feature flags" },
+          { label: "Cuantitativo", text: "MSc en Finanzas y Gestión de Inversiones: econometría, pronósticos, modelos de riesgo" },
         ],
       },
     },
