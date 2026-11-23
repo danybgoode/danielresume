@@ -47,6 +47,8 @@ const jobs = [
   { path: "print/x/", lang: "es", file: "Daniel-Vasquez-CV-Digital-Experience-ES.pdf" },
   { path: "print/c/", lang: "en", file: "Daniel-Vasquez-CV-Payments.pdf" },
   { path: "print/c/", lang: "es", file: "Daniel-Vasquez-CV-Payments-ES.pdf" },
+  { path: "print/m/", lang: "en", file: "Daniel-Vasquez-CV-Product-Model.pdf" },
+  { path: "print/m/", lang: "es", file: "Daniel-Vasquez-CV-Product-Model-ES.pdf" },
 ];
 for (const { path, lang, file } of jobs) {
   const page = await browser.newPage();

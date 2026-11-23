@@ -395,6 +395,64 @@ const resumeData = {
           { label: "Quant", text: "MSc Finance & Investment Management: econometrics, forecasting, risk modelling" },
         ],
       },
+      // M — product operating model coaching and consulting roles (e.g. Product Model Coach): operating model, coaching and training first.
+      m: {
+        pdfTitle: "Daniel Vasquez - CV - Product Operating Model",
+        pdfFile: "/Daniel-Vasquez-CV-Product-Model.pdf",
+        role: "Product leader · Building product operating models, and the teams that run them",
+        summary: "Product leader since 2012 who builds how product teams work: squads, outcome goals, discovery, career paths and training. Co-designed Linio's move to Spotify-model squads, built AB InBev's global rewards product organisation from scratch, and now runs that practice as software operated by AI agents.",
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
+          title: "Founder & Product Lead · A product operating model as software, run by AI agents",
+          bullets: [
+            "Golden Frijoles: my product model as software: PMF and personas, North Star metrics, experiments and outcome reports.",
+            "AI agents turn a raw ask into stories, plans and shipped code; people approve anything touching money, auth or data.",
+            "Product ops from the work itself: daily standup, weekly exec recap, PMO and DORA metrics, monthly stakeholder pack.",
+            "Miyagi Sánchez: prompt-to-shop commerce for Mexico, run on the same model; first merchants joining organically.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · World's largest brewer",
+            bullets: [
+              "Built the global rewards product organisation from scratch (Central America, Europe, South Korea); launched SessionM worldwide.",
+              "Introduced NPS as an annual goal, then moved the team to outcome targets: GMV, first-party data, tool savings.",
+              "Led 70+ people in product, design and engineering through 5 managers; ran hiring and calibration round tables.",
+            ],
+          },
+          {
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Mexico City",
+            bullets: [
+              "On the leadership team, co-designed Linio's move to Spotify-model squads and coached teams through the change.",
+              "Ran the frontend half of product; grew it into Discovery, the largest team: web, iOS and Android end to end.",
+              "Mentored PMs, designers and junior engineers; managed two PMs end to end, from hiring and reviews to pay.",
+              "Pitched, funded and built a reviews system, then rolled it out across Falabella group's e-commerce.",
+            ],
+          },
+          {
+            company: "Wagento Commerce", dates: "2017 — 2019",
+            title: "Head of Customer Experience & Project Management · Minneapolis, Austin, Mexico City",
+            bullets: [
+              "Set up the Mexico City office (about 15 people); designed and delivered career paths, training and practices.",
+              "Ran discovery and onboarding for e-commerce clients like Warner Music through delivery; owned account growth.",
+              "On the leadership team of a 60-person firm across the US, Mexico and India, set quarterly direction.",
+            ],
+          },
+        ],
+        hideEarlier: ["Wagento Commerce", "CompuCom · Accenture"],
+        ventures: [
+          { company: "Nuuch Tech", title: "Founder & Principal Consultant · coached client teams in agile delivery; e-commerce and CRM", dates: "2012 — 2015" },
+          { company: "Bicimensajero.com · Pokapok.mx", title: "Founder · 100+ courier network, acquired; corporate wellness app", dates: "2014 — 2017" },
+        ],
+        skills: [
+          { label: "Product model", text: "operating model design, squads, outcome goals, North Star metrics, discovery and delivery" },
+          { label: "Coaching", text: "training and workshop design, career paths, calibration, PM mentoring, client onboarding" },
+          { label: "Product ops", text: "Jira and Jira Product Discovery, roadmaps, PMO and DORA reporting, A/B tests, feature flags" },
+          { label: "AI", text: "built Golden Frijoles, AI agents running a product practice with approval gates and an audit trail" },
+        ],
+      },
     },
     // "Work with me" — the consulting view. Default landing view.
     work: {
@@ -864,6 +922,63 @@ const resumeData = {
           { label: "Socios", text: "selección de proveedores y licitaciones, agencias, revisión legal, casos de negocio ante el C-level" },
           { label: "Producto", text: "investigación de usabilidad, programas de NPS, North Star, pruebas A/B y feature flags" },
           { label: "Cuantitativo", text: "MSc en Finanzas y Gestión de Inversiones: econometría, pronósticos, modelos de riesgo" },
+        ],
+      },
+      m: {
+        pdfTitle: "Daniel Vasquez - CV - Modelo Operativo de Producto",
+        pdfFile: "/Daniel-Vasquez-CV-Product-Model-ES.pdf",
+        role: "Líder de producto · Construyo modelos operativos de producto y los equipos que los operan",
+        summary: "Líder de producto desde 2012 que construye cómo trabajan los equipos: squads, metas por resultados, discovery, planes de carrera y capacitación. Co-diseñé el paso de Linio a squads estilo Spotify, construí desde cero la organización de producto de recompensas de AB InBev y hoy opero esa práctica como software con agentes de IA.",
+        current: {
+          company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
+          title: "Fundador y Líder de Producto · Un modelo operativo de producto como software, con agentes de IA",
+          bullets: [
+            "Golden Frijoles: mi modelo de producto como software: PMF y personas, North Star, experimentos y reportes de resultados.",
+            "Agentes de IA convierten una idea en historias, planes y código; las personas aprueban lo que toca dinero o datos.",
+            "Product ops desde el trabajo mismo: standup diario, resumen ejecutivo, métricas PMO y DORA, paquete mensual.",
+            "Miyagi Sánchez: comercio de prompt a tienda para México con el mismo modelo; primeros comercios sumándose solos.",
+          ],
+        },
+        experience: [
+          {
+            company: "AB InBev", dates: "2020 — 2023",
+            title: "Global Principal Product Manager · La cervecera más grande del mundo",
+            bullets: [
+              "Construí desde cero la organización de producto de recompensas (Centroamérica, Europa, Corea); lancé SessionM global.",
+              "Introduje NPS como meta anual y luego moví al equipo a metas de resultado: GMV, datos propios, ahorro.",
+              "Lideré a 70+ personas de producto, diseño e ingeniería con 5 gerentes; contratación y mesas de calibración.",
+            ],
+          },
+          {
+            company: "Linio · Falabella", dates: "2019 — 2020",
+            title: "Group Product Manager · Ciudad de México",
+            bullets: [
+              "Desde el liderazgo, co-diseñé el paso de Linio a squads estilo Spotify y acompañé a los equipos en el cambio.",
+              "Dirigí la mitad frontend de producto; la convertí en Discovery, el equipo más grande: web, iOS y Android.",
+              "Mentoreé a PMs, diseñadores e ingenieros junior; dirigí a dos PMs: contratación, evaluaciones y sueldos.",
+              "Propuse, financié y construí un sistema de reseñas y lo llevé a todo el e-commerce del grupo Falabella.",
+            ],
+          },
+          {
+            company: "Wagento Commerce", dates: "2017 — 2019",
+            title: "Director de Experiencia de Cliente y Gestión de Proyectos · Minneapolis, Austin, CDMX",
+            bullets: [
+              "Abrí la oficina de CDMX (unas 15 personas); diseñé e impartí planes de carrera, capacitación y prácticas.",
+              "Llevé discovery y onboarding de clientes de e-commerce, como Warner Music, hasta la entrega.",
+              "En el liderazgo de una firma de 60 personas en EE. UU., México e India, definí la dirección trimestral.",
+            ],
+          },
+        ],
+        hideEarlier: ["Wagento Commerce", "CompuCom · Accenture"],
+        ventures: [
+          { company: "Nuuch Tech", title: "Fundador y Consultor Principal · coaching ágil a equipos de clientes; e-commerce y CRM", dates: "2012 — 2015" },
+          { company: "Bicimensajero.com · Pokapok.mx", title: "Fundador · red de 100+ mensajeros, adquirida; app de bienestar", dates: "2014 — 2017" },
+        ],
+        skills: [
+          { label: "Modelo de producto", text: "diseño de modelo operativo, squads, metas por resultados, North Star, discovery y entrega" },
+          { label: "Coaching", text: "diseño de capacitación y talleres, planes de carrera, calibración, mentoría de PMs" },
+          { label: "Product ops", text: "Jira y Jira Product Discovery, roadmaps, reportes PMO y DORA, pruebas A/B, feature flags" },
+          { label: "IA", text: "construí Golden Frijoles: agentes de IA que operan una práctica de producto, con aprobaciones" },
         ],
       },
     },
