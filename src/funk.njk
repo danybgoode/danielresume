@@ -23,6 +23,8 @@ eleventyExcludeFromCollections: true
 <!-- Skip the dial-up screen when JS is off, and on reloads within the same visit. -->
 <noscript><style>.dial{display:none}</style></noscript>
 <script>try{if(sessionStorage.getItem('funk-connected'))document.documentElement.classList.add('connected')}catch(e){}</script>
+<!-- tally: first-party analytics (page views, Web Vitals, errors; no cookies). ~/dobby/tally -->
+<script defer src="https://tally.goldenfrijoles.com/t.js" data-site="resume"></script>
 </head>
 <body>
 
