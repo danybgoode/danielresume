@@ -417,6 +417,13 @@ eleventyExcludeFromCollections: true
   {% endif %}
   <section class="experience">
     <h2 class="section-title">{{ d.ui.experienceTitle }}</h2>
+    {# The full-time MSc leads Experience so the year after AB InBev reads as study. #}
+    {% set st = d.lanesShared.study %}
+    <div class="role">
+      <div class="role-head"><h3>{{ st.company }}</h3><span class="role-dates">{{ st.dates }}</span></div>
+      <p class="role-title">{{ st.title }}</p>
+      {% if st.bullets.length %}<ul class="role-bullets">{% for b in st.bullets %}<li>{{ b }}</li>{% endfor %}</ul>{% endif %}
+    </div>
     {% for role in c.experience %}
     <div class="role">
       <div class="role-head"><h3>{{ role.company }}</h3><span class="role-dates">{{ role.dates }}</span></div>
@@ -450,8 +457,8 @@ eleventyExcludeFromCollections: true
   </section>
   <section class="education">
     <h2 class="section-title">{{ d.ui.educationTitle }}</h2>
-    {# The dissertation sits directly under the MSc, the first credential. #}
-    <ul class="edu-list">{% for e in d.education %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% if loop.first and not c.hideDissertation %}<li class="edu-note">{{ d.lanesShared.dissertation }}</li>{% endif %}{% endfor %}</ul>
+    {# The MSc (the first credential) and its dissertation print in the timeline above. #}
+    <ul class="edu-list">{% for e in d.education %}{% if not loop.first %}<li><span><span class="credential">{{ e.credential }}</span> — <span class="school">{{ e.school }}</span></span><span class="dates">{{ e.dates }}</span></li>{% endif %}{% endfor %}</ul>
   </section>
 </article>
 {% endfor %}
