@@ -141,7 +141,7 @@ const resumeData = {
       ],
     },
     education: [
-      { school: "University of Aberdeen · Scotland", credential: "MSc (Econ) Finance & Investment Management", dates: "2023 — 2024" },
+      { school: "University of Aberdeen · Scotland", credential: "MSc (Econ) Finance & Investment Management", dates: "2024" },
       { school: "Escuela Bancaria y Comercial · Mexico City", credential: "Bachelor's, International Trade and Business", dates: "" },
     ],
     philosophy: "I build products on purpose.",
@@ -171,6 +171,12 @@ const resumeData = {
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Founder · 100+ courier network, acquired; wellness app; consultancy", dates: "2012 — 2017" },
       ],
       dissertation: "Dissertation: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. GARCH models on 4 markets, 2006–2024.",
+      // The full-time MSc sits in the timeline between the current role and AB InBev, so the year reads as study, not a gap.
+      study: {
+        company: "University of Aberdeen · Scotland", dates: "2024",
+        title: "MSc (Econ) Finance & Investment Management · Full-time · Dissertation on GARCH volatility forecasting, 4 markets",
+        bullets: [],
+      },
       languages: "Spanish (native) · English (full professional)",
     },
     lanes: {
@@ -179,7 +185,7 @@ const resumeData = {
         pdfTitle: "Daniel Vasquez - CV - Product Director",
         pdfFile: "/Daniel-Vasquez-CV.pdf",
         role: "Product Director · Customer insight to shipped software",
-        summary: "Product leader since 2012, from AB InBev's global rewards platform to Linio's consolidation with Falabella, now two AI-native products in production. The work starts with a customer conversation and ends with a measured result.",
+        summary: "Product leader since 2012, from AB InBev's rewards platform to Linio's consolidation with Falabella, now two AI-native products in production. The work starts with a customer conversation and ends with a measured result.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Present",
           title: "Founder & Product Lead · Commerce infrastructure and an agentic product platform, both in production",
@@ -314,7 +320,7 @@ const resumeData = {
             bullets: [
               "Redesigned the storefront end to end, then led the platform consolidation with Falabella after the acquisition.",
               "Pitched, funded and built a new reviews system, then rolled it out across Falabella group's e-commerce from Santiago.",
-              "Hired to run the frontend half of Linio's product organisation; grew it into Discovery, the largest team: web, iOS and Android with marketing and customer support. Managed two PMs: hiring, reviews, pay and budget.",
+              "Hired to run the frontend half of product; grew it into Discovery, the largest team: web, iOS and Android. Managed two PMs.",
               "On the leadership team, co-designed the move to Spotify-model squads; mentored PMs, designers and junior engineers.",
             ],
           },
@@ -324,14 +330,12 @@ const resumeData = {
             bullets: [
               "Set up and ran the Mexico City office (about 15 people) and led the PMs: hiring, reviews, pay and career paths.",
               "Took e-commerce clients, Warner Music among them, from discovery to delivery with usability and accessibility testing.",
-              "On the leadership team of a 60-person firm across the US, Mexico and India, set quarterly direction.",
             ],
           },
           {
             company: "Nolte Worldwide", dates: "2017 — 2018",
             title: "Head of Product Management · New York",
             bullets: [
-              "Hired and led the product team; ran the New York Chamber of Commerce account from discovery to its regular reports.",
             ],
           },
         ],
@@ -678,7 +682,7 @@ const resumeData = {
       ],
     },
     education: [
-      { school: "University of Aberdeen · Escocia", credential: "MSc (Econ) en Finanzas y Gestión de Inversiones", dates: "2023 — 2024" },
+      { school: "University of Aberdeen · Escocia", credential: "MSc (Econ) en Finanzas y Gestión de Inversiones", dates: "2024" },
       { school: "Escuela Bancaria y Comercial · Ciudad de México", credential: "Licenciatura en Comercio y Negocios Internacionales", dates: "" },
     ],
     philosophy: "Construyo productos con propósito.",
@@ -705,6 +709,11 @@ const resumeData = {
         { company: "Bicimensajero.com · Pokapok.mx · Nuuch Tech", title: "Fundador · red de 100+ mensajeros, adquirida; bienestar; consultoría", dates: "2012 — 2017" },
       ],
       dissertation: "Tesis: “Global Shocks: Volatility Forecasting in Emerging and Developed Markets”. Modelos GARCH en 4 mercados, 2006–2024.",
+      study: {
+        company: "University of Aberdeen · Escocia", dates: "2024",
+        title: "MSc (Econ) en Finanzas y Gestión de Inversiones · Tiempo completo · Tesis: volatilidad con modelos GARCH",
+        bullets: [],
+      },
       languages: "Español (nativo) · Inglés (profesional completo)",
     },
     lanes: {
@@ -712,7 +721,7 @@ const resumeData = {
         pdfTitle: "Daniel Vasquez - CV - Director de Producto",
         pdfFile: "/Daniel-Vasquez-CV-ES.pdf",
         role: "Director de Producto · Del insight del cliente al software en producción",
-        summary: "Líder de producto desde 2012, de la plataforma global de recompensas de AB InBev a la consolidación de Linio con Falabella, y hoy dos productos nativos de IA en producción. El trabajo empieza con una conversación con el cliente y termina con un resultado medido.",
+        summary: "Líder de producto desde 2012, de la plataforma de recompensas de AB InBev a la integración Linio–Falabella, y hoy dos productos con IA en producción. El trabajo empieza hablando con el cliente y termina con un resultado medido.",
         current: {
           company: "Golden Frijoles · Miyagi Sánchez", dates: "2025 — Presente",
           title: "Fundador y Líder de Producto · Infraestructura de comercio y plataforma de producto agéntica, ambas en producción",
@@ -845,7 +854,7 @@ const resumeData = {
             bullets: [
               "Rediseñé la tienda de punta a punta y, tras la adquisición, lideré la consolidación de plataformas con Falabella.",
               "Propuse, financié y construí un sistema de reseñas y lo llevé a todo el e-commerce del grupo Falabella.",
-              "Contratado para dirigir la mitad frontend de producto; la convertí en Discovery, el equipo más grande: web, iOS y Android con marketing y soporte. Dirigí a dos PMs: contratación, evaluaciones, sueldos y presupuesto.",
+              "Contratado para dirigir la mitad frontend de producto; la convertí en Discovery, el equipo más grande: web, iOS y Android. Dirigí a dos PMs.",
               "Desde el liderazgo, co-diseñé el paso a squads estilo Spotify; mentoreé a PMs, diseñadores e ingenieros junior.",
             ],
           },
@@ -855,14 +864,12 @@ const resumeData = {
             bullets: [
               "Abrí y dirigí la oficina de CDMX (unas 15 personas) y a los PMs: contratación, evaluaciones, sueldos y carrera.",
               "Llevé clientes de e-commerce, como Warner Music, del discovery a la entrega con usabilidad y accesibilidad.",
-              "En el equipo de liderazgo de una firma de 60 personas en EE. UU., México e India, definí la dirección trimestral.",
             ],
           },
           {
             company: "Nolte Worldwide", dates: "2017 — 2018",
             title: "Head of Product Management · Nueva York",
             bullets: [
-              "Contraté y lideré al equipo de producto; llevé la cuenta de la Cámara de Comercio de Nueva York y sus reportes.",
             ],
           },
         ],
